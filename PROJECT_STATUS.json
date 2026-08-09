@@ -6,13 +6,14 @@
   "portfolio_class": "early_research_computational_biomanufacturing",
   "maturity": "EARLY_RESEARCH",
   "completion_status": "ACTIVE_EVIDENCE_INFRASTRUCTURE_AND_SIMULATION",
-  "summary": "Source-blind C2 production/context research workspace with fail-closed human evidence provenance, route/compartment separation, explicit uncertainty capture and no collapsed biological reference vector.",
+  "summary": "Source-blind C2 production/context research workspace with fail-closed human evidence provenance, route/compartment separation, exact citation localization, explicit uncertainty capture and no collapsed biological reference vector.",
   "core_invariants": [
     "GM_PRODUCER_NE_GM_ACETATE",
     "SAME_MOLECULE_NE_SAME_PHYSIOLOGICAL_EVENT",
     "ACETATE_PRODUCER_PROVENANCE_NE_EVIDENCE_PROVENANCE",
     "PRODUCER_PROVENANCE_MUST_NOT_AFFECT_SCORE",
     "EVIDENCE_PROVENANCE_MUST_BE_PRESERVED",
+    "EXACT_CITATION_LOCATOR_REQUIRED_FOR_AUTHORITATIVE_OBSERVATION",
     "MISSING_UNCERTAINTY_CANNOT_ENTER_AUTHORITATIVE_REFERENCE",
     "UNIT_CONVERSION_MUST_BE_EXPLICIT_AND_TESTED",
     "PLASMA_VALUE_NE_LUMINAL_VALUE",
@@ -32,6 +33,7 @@
     "primary-human candidate evidence ledger",
     "reference-observation JSON schema",
     "fail-closed evidence admission validator",
+    "stable source identifier and citation-locator checks",
     "explicit unit conversion checks",
     "route/compartment/state separation tests",
     "reference-vector collapse prohibition"
