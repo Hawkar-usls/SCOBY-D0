@@ -1,0 +1,75 @@
+{
+  "schema": "scoby-d0.cross-study-independence-preanalytic-hardening.v0.6.3",
+  "artifact_id": "SCOBY-D0-CROSS-STUDY-INDEPENDENCE-PREANALYTIC-HARDENING-v0.6.3",
+  "status": "PREREGISTERED_EXECUTABLE_HARDENING_GATE",
+  "created_at": "2026-08-09T11:45:00+03:00",
+  "parent_gate": {
+    "artifact": "experiments/SCOBY-D0-COMPARABLE-CONTEXT-BUCKET-QUALIFICATION-v0.6.2.json",
+    "sha256": "8efdf5966c60eb7c7f98941426df510109da62e33523406db63e9a8bb98d4069",
+    "merge_commit": "5945245dd1ab86fa0c95e2557c55a554fd630046"
+  },
+  "new_separations": [
+    "DIFFERENT_PUBLICATION_NE_INDEPENDENT_COHORT",
+    "SAME_BIOLOGICAL_CONTEXT_NE_SAME_MEASUREMENT_CONTEXT",
+    "FRESH_SPECIMEN_NE_STORED_SPECIMEN_UNLESS_VALIDATED_TRANSFORM_EXISTS",
+    "ANALYTICAL_METHOD_FAMILY_MUST_BE_EXPLICIT_FOR_EXACT_COMPARABILITY"
+  ],
+  "expanded_comparability_fields": [
+    "population_health_class",
+    "specimen",
+    "route_or_exposure",
+    "fasting_duration",
+    "tracer_state",
+    "analyte",
+    "metric",
+    "units",
+    "uncertainty_semantics",
+    "preanalytic_handling",
+    "analytical_method_family"
+  ],
+  "independence_requirements": [
+    "DISTINCT_PRIMARY_SOURCE_IDENTITY",
+    "COHORT_INDEPENDENCE_STATUS_REQUIRED",
+    "CONFIRMED_PARTICIPANT_OVERLAP_BLOCKS_INDEPENDENT_STUDY_COUNT",
+    "UNRESOLVED_PARTICIPANT_OVERLAP_DOES_NOT_COUNT_AS_ESTABLISHED_DISTINCT_COHORT",
+    "DISTINCT_COHORT_ESTABLISHED_REQUIRED_FOR_MULTI_STUDY_READY"
+  ],
+  "preanalytic_requirements": [
+    "PREANALYTIC_HANDLING_REQUIRED",
+    "ANALYTICAL_METHOD_FAMILY_REQUIRED",
+    "UNKNOWN_PREANALYTIC_HANDLING_FAILS_CLOSED",
+    "UNKNOWN_ANALYTICAL_METHOD_FAILS_CLOSED",
+    "NO_ASSUMED_EQUIVALENCE_ACROSS_STORAGE_OR_PREPARATION"
+  ],
+  "evidence_trigger": {
+    "source": "Tollinger, Vreman & Weiner 1979",
+    "doi": "10.1093/clinchem/25.10.1787",
+    "finding": "Primary abstract reports plasma storage at -20 C for 24 h changed measured acetate from 26 ± 6 to 63 ± 4 umol/L.",
+    "interpretation": "Pre-analytic handling can materially alter measured acetate and therefore belongs in comparability semantics."
+  },
+  "known_overlap_example": {
+    "source": "Fernandes, Vogt & Wolever 2014",
+    "pmid": "25052228",
+    "pmcid": "PMC4500642",
+    "doi": "10.1038/ejcn.2014.136",
+    "finding": "Methods state the study was part of a series in the same participants and references two previously published acetate studies.",
+    "interpretation": "Publication identity alone is insufficient to establish cohort independence."
+  },
+  "gate_state": {
+    "authoritative_observations": 10,
+    "v0_6_2_exact_comparable_buckets": 0,
+    "v0_6_3_independence_hardened_ready_buckets": 0,
+    "pooled_reference_created": false,
+    "averaging_performed": false,
+    "human_reference_standard": "NOT_ESTABLISHED",
+    "biological_reference_vector": "UNSET_PENDING_PRIMARY_DATA_AND_EXTERNAL_REVIEW",
+    "pareto_search": "BLOCKED"
+  },
+  "claim_ceiling": [
+    "This hardening changes comparability admission semantics, not biological truth.",
+    "No existing ingestion-authoritative observation is removed.",
+    "No pooled human acetate reference is created.",
+    "No clinical target, safe formulation or human dosing recommendation is established."
+  ],
+  "content_sha256": "1832de82793c150cfdb2ea8aa6caa06ad7f59f4780eab14d3402973e94fd3649"
+}

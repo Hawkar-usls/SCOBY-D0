@@ -9,16 +9,7 @@
 
 ## Status
 
-**Early research / computational hypothesis.** SCOBY-D0 separates production science from context science. It does not establish a human feeding system, clinical effect, food safety, a universal human SCFA reference vector, or a validated engineered organism.
-
-## Core boundaries
-
-```text
-GM_PRODUCER != GM_ACETATE
-SAME_MOLECULE != SAME_PHYSIOLOGICAL_EVENT
-ACETATE_PRODUCER_PROVENANCE != EVIDENCE_PROVENANCE
-CITATION_LOCATOR != EXTRACTION_PROVENANCE
-```
+**Early research / computational hypothesis.** SCOBY-D0 separates production science from context science. It does not establish a human feeding system, clinical effect, food safety, universal human SCFA reference vector, or validated engineered organism.
 
 ## Research ladder
 
@@ -35,83 +26,62 @@ v0.6   FIRST INGESTION-AUTHORITATIVE OBSERVATION
   ↓
 v0.6.1 MULTICONTEXT AUTHORITATIVE EXPANSION
   ↓
-v0.6.2 COMPARABLE-CONTEXT QUALIFICATION        ← current
+v0.6.2 EXACT COMPARABLE-CONTEXT QUALIFICATION
+  ↓
+v0.6.3 COHORT + PREANALYTIC HARDENING          ← current
   ↓
 v0.7   UNCERTAINTY-AWARE PARETO SEARCH         🔒 BLOCKED
 ```
 
-## Current evidence state
-
-v0.6.1 established **10 ingestion-authoritative observations from 3 primary human studies**, retained in **6 context buckets**. v0.6.2 asks a stricter question: do at least two independent primary studies support observations with an **exactly matching context key**?
+## Current state
 
 ```text
 AUTHORITATIVE_OBSERVATIONS = 10
-PRIMARY_HUMAN_STUDIES_WITH_INGESTION_AUTHORITY = 3
 EXISTING_CONTEXT_BUCKETS = 6
-
-COMPARABLE_CANDIDATE_STUDIES_EXAMINED = 4
-EXACT_MULTI_STUDY_COMPARABLE_BUCKETS = 0
-CROSS_STUDY_AGGREGATION = BLOCKED
+V0_6_2_EXACT_MULTI_STUDY_BUCKETS = 0
+V0_6_3_HARDENED_READY_BUCKETS = 0
+POOLED_REFERENCE = NOT_CREATED
+BIOLOGICAL_REFERENCE_VECTOR = UNSET
+PARETO_SEARCH = BLOCKED
 ```
 
-The exact comparability key contains:
+v0.6.3 closes two additional routes to false comparability:
 
 ```text
-population_health_class
-specimen
-route_or_exposure
-fasting_duration
-tracer_state
-analyte
-metric
-units
-uncertainty_semantics
+DIFFERENT_PUBLICATION != INDEPENDENT_COHORT
+SAME_BIOLOGICAL_CONTEXT != SAME_MEASUREMENT_CONTEXT
 ```
 
-A bucket becomes `COMPARABLE_READY_NOT_POOLED` only when at least two independent primary studies have complete, exactly matching keys.
+A multi-study bucket now requires established distinct cohorts, not merely distinct PMID/DOI values. Confirmed participant overlap blocks the independent-study count; unresolved overlap does not count as established cohort independence.
 
-## v0.6.2 — negative result is preserved
-
-The first target family was superficially simple:
+The exact measurement-context key now also contains:
 
 ```text
-HEALTHY_FASTING_PERIPHERAL_ACETATE_CONCENTRATION
+preanalytic_handling
+analytical_method_family
 ```
 
-Four primary-study candidates were examined, but no exact multi-study bucket qualified.
+This is necessary because measured acetate can depend materially on sample handling. A primary 1979 Clinical Chemistry study reported a change in measured plasma acetate after defined frozen storage, so fresh and stored specimens are not silently treated as the same measurement context.
 
-Key blockers include:
-
-```text
-TRACER_EXPOSURE_MISMATCH
-SPECIMEN_IDENTITY_DIFFERENCE
-POPULATION_CLASS_DIFFERENCE
-FASTING_DURATION_UNRESOLVED
-UNCERTAINTY_SEMANTICS_DIFFERENCE_OR_UNRESOLVED
-SECOND_SOURCE_REPRESENTATION_MISSING
-```
-
-For example, a 12-h fasting plasma acetate value obtained after a low-dose isotope-tracer baseline is **not silently merged** with an untraced fasting plasma value. Serum and plasma remain distinct unless an equivalence rule is predeclared and independently supported. Missing fasting duration is preserved as unresolved rather than inferred.
-
-## Fail-closed comparability invariants
+## Hardened invariants
 
 ```text
-PLASMA != FECAL
-SERUM != PLASMA            unless equivalence is predeclared + supported
-RATE_OF_APPEARANCE != CONCENTRATION
+CONFIRMED_PARTICIPANT_OVERLAP => NOT_INDEPENDENT
+UNRESOLVED_PARTICIPANT_OVERLAP != DISTINCT_COHORT_ESTABLISHED
+FRESH_SPECIMEN != STORED_SPECIMEN unless a validated transform is predeclared
+UNKNOWN_PREANALYTIC_HANDLING => NOT_COMPARABLE
+UNKNOWN_ANALYTICAL_METHOD => NOT_COMPARABLE
+SERUM != PLASMA unless equivalence is predeclared + supported
 TRACER != NO_TRACER
 UNKNOWN_FASTING_DURATION != 12_HOURS
 SD != SE != SEM != IQR != RANGE
-SAME_STUDY_MULTIPLE_COHORTS != TWO_INDEPENDENT_STUDIES
-UNRESOLVED_KEY_FIELD => NOT_COMPARABLE
-TWO_INDEPENDENT_PRIMARY_STUDIES_REQUIRED_FOR COMPARABLE_READY
 COMPARABLE_READY != POOLED_REFERENCE
-NO_AVERAGING_AT_V0_6_2
+NO_AVERAGING_AT_V0_6_3
 ```
 
-This negative qualification does not invalidate any study and does not remove any of the 10 existing ingestion-authoritative observations. It only prevents an unjustified cross-study collapse.
+A synthetic positive fixture may become `COMPARABLE_READY_NOT_POOLED` only when two primary sources have distinct established cohort IDs and an identical complete hardened key. v0.6.3 itself never averages those observations.
 
-## Current reference state
+## Evidence state remains bounded
 
 ```text
 HUMAN_REFERENCE_STANDARD = NOT_ESTABLISHED
@@ -126,19 +96,19 @@ Historical manifests remain preserved:
 REFERENCE_DATASET_V0_1 → 0 authoritative observations
 REFERENCE_DATASET_V0_2 → 1 authoritative observation
 REFERENCE_DATASET_V0_3 → 10 context-separated authoritative observations
-REFERENCE_DATASET_V0_4 → comparability qualification: 0 exact multi-study buckets
+REFERENCE_DATASET_V0_4 → 0 exact comparable multi-study buckets
+REFERENCE_DATASET_V0_5 → cohort/preanalytic hardening active, still 0 ready buckets
 ```
 
 ## Current objects
 
-- [`experiments/SCOBY-D0-EVIDENCE-DERIVED-REFERENCE-CONTEXT-v0.4.json`](experiments/SCOBY-D0-EVIDENCE-DERIVED-REFERENCE-CONTEXT-v0.4.json)
-- [`experiments/SCOBY-D0-EVIDENCE-EXTRACTION-LINEAGE-v0.5.json`](experiments/SCOBY-D0-EVIDENCE-EXTRACTION-LINEAGE-v0.5.json)
-- [`experiments/SCOBY-D0-AUTHORITATIVE-REFERENCE-ADMISSION-v0.6.json`](experiments/SCOBY-D0-AUTHORITATIVE-REFERENCE-ADMISSION-v0.6.json)
-- [`experiments/SCOBY-D0-MULTICONTEXT-REFERENCE-EXPANSION-v0.6.1.json`](experiments/SCOBY-D0-MULTICONTEXT-REFERENCE-EXPANSION-v0.6.1.json)
 - [`experiments/SCOBY-D0-COMPARABLE-CONTEXT-BUCKET-QUALIFICATION-v0.6.2.json`](experiments/SCOBY-D0-COMPARABLE-CONTEXT-BUCKET-QUALIFICATION-v0.6.2.json)
-- [`evidence/reference_context/REFERENCE_DATASET_V0_4.json`](evidence/reference_context/REFERENCE_DATASET_V0_4.json)
+- [`experiments/SCOBY-D0-CROSS-STUDY-INDEPENDENCE-PREANALYTIC-HARDENING-v0.6.3.json`](experiments/SCOBY-D0-CROSS-STUDY-INDEPENDENCE-PREANALYTIC-HARDENING-v0.6.3.json)
+- [`evidence/reference_context/REFERENCE_DATASET_V0_5.json`](evidence/reference_context/REFERENCE_DATASET_V0_5.json)
 - [`src/comparable_context.py`](src/comparable_context.py)
+- [`src/cross_study_hardening.py`](src/cross_study_hardening.py)
 - [`tests/test_comparable_context_v062.py`](tests/test_comparable_context_v062.py)
+- [`tests/test_cross_study_hardening_v063.py`](tests/test_cross_study_hardening_v063.py)
 
 ## Claim ceiling
 
@@ -146,8 +116,9 @@ REFERENCE_DATASET_V0_4 → comparability qualification: 0 exact multi-study buck
 SIMULATION_PASS != IN_VIVO_VALIDATION
 EXTRACTION_REPLAY_PASS != BIOLOGICAL_TRUTH
 INGESTION_AUTHORITY != HUMAN_REFERENCE_STANDARD
-MULTIPLE_OBSERVATIONS != BIOLOGICAL_REFERENCE_VECTOR
+DISTINCT_PUBLICATIONS != DISTINCT_COHORTS
 COMPARABLE_READY != POOLED_REFERENCE
+MULTIPLE_OBSERVATIONS != BIOLOGICAL_REFERENCE_VECTOR
 HASH != TRUTH
 ACETATE != COMPLETE_NUTRITION
 SIMULATION_OPTIMUM != SAFE_HUMAN_FORMULATION

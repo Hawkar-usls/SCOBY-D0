@@ -1,0 +1,52 @@
+{
+  "schema": "scoby-d0.reference-dataset.v0.5",
+  "status": "COHORT_AND_PREANALYTIC_HARDENING_ACTIVE_NO_READY_BUCKET",
+  "supersedes": "evidence/reference_context/REFERENCE_DATASET_V0_4.json",
+  "authoritative_observation_count": 10,
+  "primary_human_studies_with_ingestion_authority": 3,
+  "existing_context_buckets": 6,
+  "v0_6_2_exact_comparable_multi_study_buckets": 0,
+  "v0_6_3_hardened_ready_buckets": 0,
+  "expanded_comparability_fields": [
+    "population_health_class",
+    "specimen",
+    "route_or_exposure",
+    "fasting_duration",
+    "tracer_state",
+    "analyte",
+    "metric",
+    "units",
+    "uncertainty_semantics",
+    "preanalytic_handling",
+    "analytical_method_family"
+  ],
+  "cohort_independence_rule": "DISTINCT_PUBLICATION_IS_INSUFFICIENT; DISTINCT_COHORT_ESTABLISHED_IS_REQUIRED",
+  "measurement_context_rule": "BIOLOGICAL_CONTEXT_MATCH_IS_INSUFFICIENT_WHEN_PREANALYTIC_OR_ANALYTICAL_CONTEXT_DIFFERS_OR_IS_UNRESOLVED",
+  "cross_study_aggregation_allowed": false,
+  "pooled_reference_created": false,
+  "averaging_performed": false,
+  "human_reference_standard": "NOT_ESTABLISHED",
+  "external_review": "NOT_YET_ESTABLISHED",
+  "biological_reference_vector": "UNSET_PENDING_PRIMARY_DATA_AND_EXTERNAL_REVIEW",
+  "pareto_search": "BLOCKED_PENDING_HARDENED_MULTI_STUDY_BUCKET_AND_V0_7_PREREGISTRATION",
+  "evidence_motivators": [
+    {
+      "source": "Tollinger, Vreman & Weiner 1979",
+      "doi": "10.1093/clinchem/25.10.1787",
+      "reason": "Measured plasma acetate changed after defined storage, demonstrating that pre-analytic handling cannot be silently ignored."
+    },
+    {
+      "source": "Fernandes, Vogt & Wolever 2014",
+      "pmid": "25052228",
+      "pmcid": "PMC4500642",
+      "doi": "10.1038/ejcn.2014.136",
+      "reason": "Methods explicitly describe a series of acetate studies in the same participants, demonstrating that distinct publications do not automatically establish distinct cohorts."
+    }
+  ],
+  "interpretation_ceiling": [
+    "The hardening changes admission semantics and does not invalidate prior observations.",
+    "No cross-study human reference is pooled at v0.6.3.",
+    "No universal biological reference vector or Pareto optimum is established.",
+    "No clinical target, safety claim, food formulation or dosing recommendation is established."
+  ]
+}
