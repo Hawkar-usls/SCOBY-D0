@@ -50,6 +50,14 @@ class TestV06Artifacts(unittest.TestCase):
         self.assertEqual(ledger["gate_status"]["real_separate_extractor_B_records"], 1)
         self.assertEqual(ledger["gate_status"]["distinct_source_representations"], 2)
 
+    def test_reference_dataset_v02_preserves_v01_as_pre_admission_snapshot(self):
+        current = load("evidence/reference_context/REFERENCE_DATASET_V0_2.json")
+        old = load("evidence/reference_context/REFERENCE_DATASET_V0_1.json")
+        self.assertEqual(current["authoritative_observation_count"], 1)
+        self.assertEqual(old["authoritative_observations"], [])
+        self.assertIn("pre-v0.6", current["lineage_note"])
+        self.assertTrue(current["biological_reference_vector"].startswith("UNSET"))
+
     def test_boets_value_and_sd_are_normalized_by_same_exact_factor(self):
         obj = load("evidence/reference_context/AUTHORITATIVE_REFERENCE_OBSERVATIONS_V0_1.json")["observations"][0]
         factor = obj["normalization"]["exact_transform"]["factor"]
