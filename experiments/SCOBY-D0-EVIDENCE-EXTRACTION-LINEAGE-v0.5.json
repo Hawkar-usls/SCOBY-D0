@@ -51,8 +51,15 @@
     "source": "Boets et al. 2017, PMID 27510655, DOI 10.1113/JP272613",
     "observation": "colonic-derived acetate systemic availability",
     "reported": "36 ± 21%, mean ± SD, n=12",
+    "normalized": "0.36 ± 0.21 fraction",
     "method": "DIRECT_REPORTED_VALUE",
     "source_locator": "Results > Delivery of SCFAs into the colon of healthy subjects > paragraph immediately before Figure 2; Figure 2B",
+    "unit_conversion": {
+      "applied": true,
+      "source_unit": "percent",
+      "target_unit": "fraction",
+      "exact_transform": {"kind": "MULTIPLY_EXACT", "factor": 0.01}
+    },
     "extractor_A": "CAPTURED_AS_CANDIDATE",
     "extractor_B": "NOT_YET_ESTABLISHED",
     "admission": "BLOCKED"
@@ -65,5 +72,5 @@
     "A future v0.6 admission decision must remain context-specific and must not collapse observations into one universal biological vector."
   ],
   "next_gate": "v0.6 may consider authoritative reference-set admission only after at least one observation has complete source lineage, exact citation location, extraction replay, uncertainty semantics, and a genuinely separate second extraction with no unresolved conflict.",
-  "content_sha256": "8030bda5b96e3563326965040a33df27d93df7b791258b403690e43ba6509c99"
+  "content_sha256": "4078d3520ef7105b434dfc7b7c71e4c49182930af1923898b20329b8389c0ea0"
 }
