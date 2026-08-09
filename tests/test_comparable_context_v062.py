@@ -1,4 +1,5 @@
 import copy
+import hashlib
 import json
 import unittest
 from pathlib import Path
@@ -12,18 +13,38 @@ from comparable_context import (
 
 ROOT = Path(__file__).resolve().parents[1]
 GATE = ROOT / "experiments/SCOBY-D0-COMPARABLE-CONTEXT-BUCKET-QUALIFICATION-v0.6.2.json"
+MANIFEST = ROOT / "evidence/reference_context/REFERENCE_DATASET_V0_4.json"
 
 
 def load_gate():
     return json.loads(GATE.read_text(encoding="utf-8"))
 
 
+def load_manifest():
+    return json.loads(MANIFEST.read_text(encoding="utf-8"))
+
+
 class TestComparableContextV062(unittest.TestCase):
+    def test_gate_hash_recomputes(self):
+        obj = load_gate()
+        expected = obj.pop("content_sha256")
+        payload = json.dumps(obj, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode()
+        self.assertEqual(hashlib.sha256(payload).hexdigest(), expected)
+
     def test_current_real_candidates_produce_zero_ready_buckets(self):
         out = qualify_comparable_buckets(load_gate()["candidates"])
         self.assertEqual(out["comparable_ready_bucket_count"], 0)
         self.assertEqual(len(out["ready_buckets"]), 0)
         assert_no_pooling(out)
+
+    def test_reference_manifest_preserves_existing_authority_without_pooling(self):
+        m = load_manifest()
+        self.assertEqual(m["authoritative_observation_count"], 10)
+        self.assertEqual(m["exact_comparable_buckets_with_two_independent_primary_studies"], 0)
+        self.assertFalse(m["cross_study_aggregation_allowed"])
+        self.assertFalse(m["pooled_reference_created"])
+        self.assertFalse(m["averaging_performed"])
+        self.assertTrue(m["biological_reference_vector"].startswith("UNSET"))
 
     def test_tracer_exposure_mismatch_not_comparable(self):
         g = load_gate()
