@@ -1,0 +1,76 @@
+{
+  "schema": "scoby-d0.evidence-extraction-lineage.v0.5",
+  "artifact_id": "SCOBY-D0-EVIDENCE-EXTRACTION-LINEAGE-v0.5",
+  "status": "PREREGISTERED_EXTRACTION_INFRASTRUCTURE",
+  "created_at": "2026-08-09T10:07:00+03:00",
+  "parent_gate": {
+    "artifact": "experiments/SCOBY-D0-EVIDENCE-DERIVED-REFERENCE-CONTEXT-v0.4.json",
+    "sha256": "7455664adc08090b99b56417bb251da701098406d94076ee94a156cdc5d9b85c"
+  },
+  "biological_reference_vector": "UNSET_PENDING_PRIMARY_DATA_AND_EXTERNAL_REVIEW",
+  "authoritative_observations": 0,
+  "purpose": "Make every future evidence observation replayable from a source-reported observation through extraction, derivation, digitization and unit-normalization steps without promoting any current candidate to authoritative biological reference status.",
+  "core_invariants": [
+    "CITATION_LOCATOR_NE_EXTRACTION_PROVENANCE",
+    "DIRECT_REPORTED_VALUE_NE_DERIVED_VALUE_NE_FIGURE_DIGITIZATION",
+    "SD_NE_SE_NE_CI_NE_IQR_NE_RANGE",
+    "UNCERTAINTY_TYPE_REQUIRED",
+    "DERIVED_VALUE_IMPLIES_DERIVATION_REQUIRED",
+    "FIGURE_DIGITIZATION_IMPLIES_DIGITIZATION_METHOD_REQUIRED",
+    "FIGURE_DIGITIZATION_IMPLIES_EXTRACTION_ERROR_REQUIRED",
+    "UNIT_CONVERSION_IMPLIES_SOURCE_UNIT_REQUIRED",
+    "UNIT_CONVERSION_IMPLIES_TARGET_UNIT_REQUIRED",
+    "UNIT_CONVERSION_IMPLIES_EXACT_TRANSFORM_REQUIRED",
+    "NORMALIZED_VALUE_MUST_BE_REPLAYABLE_FROM_SOURCE_OBSERVATION",
+    "SAME_EXTRACTOR_NE_INDEPENDENT_EXTRACTION",
+    "EXTRACTION_CONFLICT_PRESERVED_TRUE",
+    "EXTRACTION_MATCH_NE_AUTHORITATIVE_ADMISSION",
+    "AUTHORITATIVE_OBSERVATIONS_STAY_ZERO_UNTIL_V0_6",
+    "BIOLOGICAL_REFERENCE_VECTOR_STILL_NOT_COLLAPSED"
+  ],
+  "extraction_methods": {
+    "DIRECT_REPORTED_VALUE": {
+      "meaning": "The numerical estimate and uncertainty are explicitly reported by the source; no numeric derivation or figure digitization is used."
+    },
+    "DERIVED_VALUE": {
+      "meaning": "The normalized estimate is mathematically derived from identified reported inputs.",
+      "requirements": ["operation", "inputs", "rounding_rule", "derivation_replayable"]
+    },
+    "FIGURE_DIGITIZATION": {
+      "meaning": "A numeric value is extracted from a figure rather than directly reported as a number.",
+      "requirements": ["digitization_method", "extraction_error"]
+    }
+  },
+  "double_extraction_policy": {
+    "goal": "Detect evidence-ingestion disagreement, not claim independent biological replication.",
+    "independence_requirement": "extractor_id values must differ and extraction processes must be separately performed; the repository does not claim independence merely by duplicating one extraction.",
+    "match_result": "EXTRACTION_MATCH; authoritative admission remains blocked until v0.6.",
+    "conflict_result": "EXTRACTION_CONFLICT_PRESERVED; do not average; authoritative admission blocked."
+  },
+  "current_real_source_replay": {
+    "source": "Boets et al. 2017, PMID 27510655, DOI 10.1113/JP272613",
+    "observation": "colonic-derived acetate systemic availability",
+    "reported": "36 ± 21%, mean ± SD, n=12",
+    "normalized": "0.36 ± 0.21 fraction",
+    "method": "DIRECT_REPORTED_VALUE",
+    "source_locator": "Results > Delivery of SCFAs into the colon of healthy subjects > paragraph immediately before Figure 2; Figure 2B",
+    "unit_conversion": {
+      "applied": true,
+      "source_unit": "percent",
+      "target_unit": "fraction",
+      "exact_transform": {"kind": "MULTIPLY_EXACT", "factor": 0.01}
+    },
+    "extractor_A": "CAPTURED_AS_CANDIDATE",
+    "extractor_B": "NOT_YET_ESTABLISHED",
+    "admission": "BLOCKED"
+  },
+  "claim_ceiling": [
+    "v0.5 validates extraction lineage and replayability mechanics only.",
+    "No current candidate becomes an authoritative human reference observation.",
+    "No human dose, formulation, safety, efficacy, clinical target or food recommendation is established.",
+    "A matching double extraction is not independent biological replication.",
+    "A future v0.6 admission decision must remain context-specific and must not collapse observations into one universal biological vector."
+  ],
+  "next_gate": "v0.6 may consider authoritative reference-set admission only after at least one observation has complete source lineage, exact citation location, extraction replay, uncertainty semantics, and a genuinely separate second extraction with no unresolved conflict.",
+  "content_sha256": "4078d3520ef7105b434dfc7b7c71e4c49182930af1923898b20329b8389c0ea0"
+}

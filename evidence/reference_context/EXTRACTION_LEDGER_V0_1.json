@@ -1,0 +1,72 @@
+{
+  "schema": "scoby-d0.extraction-ledger.v0.1",
+  "status": "CANDIDATE_EXTRACTION_LEDGER_NOT_AUTHORITATIVE_REFERENCE",
+  "authoritative_observations": [],
+  "biological_reference_vector": "UNSET_PENDING_PRIMARY_DATA_AND_EXTERNAL_REVIEW",
+  "records": [
+    {
+      "observation_id": "BOETS_2017_ACETATE_SYSTEMIC_AVAILABILITY",
+      "extractor_id": "EXTRACTOR_A_CURRENT_STRUCTURED_EXTRACTION",
+      "source_identity": {
+        "title": "Systemic availability and metabolism of colonic-derived short-chain fatty acids in healthy subjects: a stable isotope study",
+        "year": 2017,
+        "pmid": "27510655",
+        "doi": "10.1113/JP272613"
+      },
+      "citation_locator": {
+        "type": "RESULTS_TEXT_AND_FIGURE",
+        "locator": "Results > Delivery of SCFAs into the colon of healthy subjects > paragraph immediately before Figure 2; Figure 2B"
+      },
+      "reported_observation": {
+        "estimate": 36.0,
+        "uncertainty": {"type": "SD", "value": 21.0},
+        "units": "percent",
+        "source_rendering": "36 ± 21%",
+        "n": 12
+      },
+      "context": {
+        "route": "COLON_DELIVERY_CAPSULE",
+        "compartment": "PLASMA",
+        "physiological_state": "MIXED_PROTOCOL",
+        "time_window": "SOURCE_DEFINED_12_H_PLASMA_FOLLOWUP"
+      },
+      "extraction": {
+        "method": "DIRECT_REPORTED_VALUE",
+        "derived": false,
+        "digitized_from_figure": false,
+        "unit_conversion": {
+          "applied": true,
+          "source_unit": "percent",
+          "target_unit": "fraction",
+          "exact_transform": {"kind": "MULTIPLY_EXACT", "factor": 0.01}
+        },
+        "interpretation_note": "The estimate and SD are directly reported by the source. Only the explicit percent-to-fraction representation is normalized."
+      },
+      "normalized_observation": {
+        "estimate": 0.36,
+        "uncertainty": {"type": "SD", "value": 0.21},
+        "units": "fraction"
+      },
+      "replay_status": "PASS_CANDIDATE",
+      "independent_extraction": {
+        "extractor_B": "NOT_YET_ESTABLISHED",
+        "comparison_status": "BLOCKED_NO_SECOND_EXTRACTION"
+      },
+      "admission_status": "CANDIDATE_ONLY_V0_5",
+      "authoritative_admission": "BLOCKED_UNTIL_V0_6"
+    }
+  ],
+  "synthetic_double_extraction_fixture": {
+    "purpose": "Tests match/conflict semantics without claiming a real second human extraction.",
+    "matching_fixture_expected": "EXTRACTION_MATCH__STILL_BLOCKED_UNTIL_V0_6",
+    "conflict_fixture_expected": "EXTRACTION_CONFLICT_PRESERVED__ADMISSION_BLOCKED"
+  },
+  "gate_status": {
+    "real_extractor_A_records": 1,
+    "real_independent_extractor_B_records": 0,
+    "authoritative_observations": 0,
+    "extraction_conflicts": "NONE_EVALUABLE_WITHOUT_REAL_SECOND_EXTRACTION",
+    "biological_reference_vector": "STILL_NOT_COLLAPSED",
+    "v0_6_admission": "BLOCKED"
+  }
+}
