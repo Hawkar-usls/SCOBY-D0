@@ -18,9 +18,9 @@
         "locator": "Results > Delivery of SCFAs into the colon of healthy subjects > paragraph immediately before Figure 2; Figure 2B"
       },
       "reported_observation": {
-        "estimate": 0.36,
-        "uncertainty": {"type": "SD", "value": 0.21},
-        "units": "fraction",
+        "estimate": 36.0,
+        "uncertainty": {"type": "SD", "value": 21.0},
+        "units": "percent",
         "source_rendering": "36 ± 21%",
         "n": 12
       },
@@ -34,8 +34,13 @@
         "method": "DIRECT_REPORTED_VALUE",
         "derived": false,
         "digitized_from_figure": false,
-        "unit_conversion": {"applied": false},
-        "interpretation_note": "The source reports mean ± SD directly. Fraction representation preserves the same numerical proportion; no biological reinterpretation is made."
+        "unit_conversion": {
+          "applied": true,
+          "source_unit": "percent",
+          "target_unit": "fraction",
+          "exact_transform": {"kind": "MULTIPLY_EXACT", "factor": 0.01}
+        },
+        "interpretation_note": "The estimate and SD are directly reported by the source. Only the explicit percent-to-fraction representation is normalized."
       },
       "normalized_observation": {
         "estimate": 0.36,
