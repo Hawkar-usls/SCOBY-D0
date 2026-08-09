@@ -1,0 +1,94 @@
+{
+  "schema": "scoby-d0.skybu.c2_context_reconstruction.v0.3",
+  "artifact_id": "SKYBU-C2-CONTEXT-RECONSTRUCTION-v0.3",
+  "status": "PREREGISTERED_COMPUTATIONAL_SPEC_WITH_SYNTHETIC_SELF_TEST",
+  "created_at": "2026-08-09T08:19:00+03:00",
+  "research_question": "Can a provenance-blind optimizer reconstruct a target C2/SCFA context signature from controllable context variables while minimizing matrix complexity?",
+  "core_invariants": [
+    "GM_PRODUCER_NE_GM_ACETATE",
+    "SAME_MOLECULE_NE_SAME_PHYSIOLOGICAL_EVENT",
+    "METABOLIC_EQUIVALENCE_MUST_NOT_READ_PROVENANCE",
+    "PURIFIED_ACETATE_NE_FERMENTATION_BROTH",
+    "HASH_IS_INTEGRITY_NOT_TRUTH",
+    "SIMULATION_PASS_NE_IN_VIVO_VALIDATION"
+  ],
+  "objective": {
+    "symbolic": "M* = argmin_M D(Phi(acetate + M), Phi(reference_context)) + lambda * complexity(M)",
+    "implemented_self_test_distance": "weighted squared Euclidean distance on dimensionless synthetic proxies",
+    "complexity_penalty_lambda": 0.02,
+    "provenance_feature_present": false
+  },
+  "search_space": {
+    "acetate": "fixed canonical species; source lineage excluded from optimization features",
+    "dimensionless_context_features": [
+      "propionate_proxy",
+      "butyrate_proxy",
+      "ph_proxy",
+      "appearance_profile_proxy",
+      "microbiome_contact_proxy",
+      "organic_load_proxy"
+    ],
+    "grid": [0.0, 0.25, 0.5, 0.75, 1.0],
+    "human_doses": "NOT_ENCODED",
+    "clinical_targets": "NOT_ENCODED",
+    "biological_reference_vector": "UNSET_PENDING_PRIMARY_DATA_AND_EXTERNAL_REVIEW"
+  },
+  "synthetic_self_test": {
+    "purpose": "Verify optimizer mechanics and anti-bias invariants only; not a physiological result.",
+    "synthetic_reference": {
+      "propionate_proxy": 0.25,
+      "butyrate_proxy": 0.25,
+      "ph_proxy": 0.5,
+      "appearance_profile_proxy": 0.75,
+      "microbiome_contact_proxy": 1.0,
+      "organic_load_proxy": 0.5
+    },
+    "weights": {
+      "propionate_proxy": 1.0,
+      "butyrate_proxy": 1.0,
+      "ph_proxy": 0.5,
+      "appearance_profile_proxy": 0.75,
+      "microbiome_contact_proxy": 1.25,
+      "organic_load_proxy": 0.25
+    },
+    "best_matrix": {
+      "propionate_proxy": 0.25,
+      "butyrate_proxy": 0.25,
+      "ph_proxy": 0.5,
+      "appearance_profile_proxy": 0.75,
+      "microbiome_contact_proxy": 1.0,
+      "organic_load_proxy": 0.5
+    },
+    "best_score": 0.04,
+    "candidate_count": 15625,
+    "expected": "best candidate should reproduce the synthetic reference except where an explicit complexity penalty creates a declared tradeoff"
+  },
+  "evidence_bindings": [
+    {
+      "claim": "Engineering A. pasteurianus can change acetic-acid productivity without implying a new acetate molecular species.",
+      "identifier": "PMID:33174682",
+      "note": "adhA + pqqABCDE average productivity reported 32% above parental strain."
+    },
+    {
+      "claim": "Colonic-administered acetate has route/microbiota-dependent systemic and cross-feeding behavior.",
+      "identifier": "PMCID:PMC5233652",
+      "note": "12 healthy subjects; 36 ± 21% systemic availability; acetate->butyrate interconversion about 24%; special colon-delivery design."
+    },
+    {
+      "claim": "Kombucha fermentation composition is dynamic and requires microbial/process quality control.",
+      "identifier": "PMID:39234548",
+      "note": "2024 fermentation study reported dynamic metabolites including biogenic amines."
+    },
+    {
+      "claim": "Genetic programming of bacterial-cellulose-producing Komagataeibacter is experimentally established.",
+      "identifier": "PMCID:PMC4914174"
+    }
+  ],
+  "claim_ceiling": [
+    "No result here establishes a human feeding strategy, medical treatment, safety, efficacy or dosage.",
+    "No wet-lab genetic-engineering protocol is provided.",
+    "The synthetic target is not a healthy-human target and must never be interpreted as one.",
+    "Future biological parameterization requires primary data, explicit uncertainty and external review."
+  ],
+  "content_sha256": "0ca4a5f3f3384fcd4bef9efde2fccb2eb889b96ae0c73aac76da05ed84d4c5db"
+}
