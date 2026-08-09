@@ -84,14 +84,14 @@ Key blockers include:
 
 ```text
 TRACER_EXPOSURE_MISMATCH
-SPECIMEN_IDENTITY_AMBIGUITY
+SPECIMEN_IDENTITY_DIFFERENCE
 POPULATION_CLASS_DIFFERENCE
 FASTING_DURATION_UNRESOLVED
-UNCERTAINTY_SEMANTICS_DIFFERENCE
+UNCERTAINTY_SEMANTICS_DIFFERENCE_OR_UNRESOLVED
 SECOND_SOURCE_REPRESENTATION_MISSING
 ```
 
-For example, a 12-h fasting plasma acetate value obtained in a protocol after a low-dose isotope-tracer baseline is **not silently merged** with an untraced fasting plasma value. Likewise, serum and plasma are not treated as interchangeable without a predeclared supported equivalence rule.
+For example, a 12-h fasting plasma acetate value obtained after a low-dose isotope-tracer baseline is **not silently merged** with an untraced fasting plasma value. Serum and plasma remain distinct unless an equivalence rule is predeclared and independently supported. Missing fasting duration is preserved as unresolved rather than inferred.
 
 ## Fail-closed comparability invariants
 
@@ -103,7 +103,7 @@ TRACER != NO_TRACER
 UNKNOWN_FASTING_DURATION != 12_HOURS
 SD != SE != SEM != IQR != RANGE
 SAME_STUDY_MULTIPLE_COHORTS != TWO_INDEPENDENT_STUDIES
-UNRESOLVED_SPECIMEN => NOT_COMPARABLE
+UNRESOLVED_KEY_FIELD => NOT_COMPARABLE
 TWO_INDEPENDENT_PRIMARY_STUDIES_REQUIRED_FOR COMPARABLE_READY
 COMPARABLE_READY != POOLED_REFERENCE
 NO_AVERAGING_AT_V0_6_2
