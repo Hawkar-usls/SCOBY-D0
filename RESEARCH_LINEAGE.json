@@ -1,0 +1,17 @@
+{
+  "schema": "scoby-d0.research-lineage.v1",
+  "project": "SCOBY-D0",
+  "origin_date": "2026-08-09",
+  "parent_registry_objects": [
+    "https://github.com/Hawkar-usls/janus-meta-registry/blob/main/data/SKYBU-SKINGPT-CIRCULAR-BIOMANUFACTURING-CONCEPT-v1.0.json",
+    "https://github.com/Hawkar-usls/janus-meta-registry/blob/main/data/JANUS-C2-METABOLIC-DUPLEX-SIM-v0.1.json",
+    "https://github.com/Hawkar-usls/janus-meta-registry/blob/main/data/JANUS-GENESIS-ACETATE-SOURCE-EQUIVALENCE-v0.2.json"
+  ],
+  "runtime_references": {
+    "janus_genesis_exact_commit": "98699273bc4dfc08d4eda795869b4bcfe1134b72",
+    "esp32_twai_can_exact_commit": "5781b0644209b8aa26fcb8a50ccc29e8cf67a828"
+  },
+  "frozen_v0_2_source_object_sha256": "ec5401e32a959b5513031a84b9e73b50d28ffba5311bd289117b4d5c3aace0a0",
+  "rule": "The SHA-256 identifies a specific object version for integrity and lineage; it is not a hash of truth.",
+  "next_gate": "BIOLOGICAL_REFERENCE_PARAMETERIZATION_REQUIRES_PRIMARY_DATA_UNCERTAINTY_AND_EXTERNAL_REVIEW"
+}
