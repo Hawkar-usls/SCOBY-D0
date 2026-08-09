@@ -1,0 +1,93 @@
+{
+  "schema": "scoby-d0.hardened-candidate-ledger.v0.6.6",
+  "artifact_id": "SCOBY-D0-HARDENED-CANDIDATE-LEDGER-v0.6.6",
+  "status": "DISCOVERY_LEDGER_NOT_ADMISSION",
+  "created_at": "2026-08-09T13:43:23+03:00",
+  "parent_state": {
+    "merge_commit": "1f9aa3c466469d21aab59684d85be59a055a6ad5",
+    "reference_manifest": "evidence/reference_context/REFERENCE_DATASET_V0_6_5.json",
+    "oslo_boundary_sha256": "c943fdabdfc849b40431c3e84352f3b217ea16f34267f3de45d783877ad83247"
+  },
+  "purpose": "Represent promising human plasma-SCFA studies in the exact eleven-field v0.6.3 hardened comparison surface without granting evidence authority, cohort independence, pooling, or a reference vector.",
+  "hardened_key_fields": [
+    "population_health_class",
+    "specimen",
+    "route_or_exposure",
+    "fasting_duration",
+    "tracer_state",
+    "analyte",
+    "metric",
+    "units",
+    "uncertainty_semantics",
+    "preanalytic_handling",
+    "analytical_method_family"
+  ],
+  "candidates": [
+    {
+      "candidate_id": "MASLD_2024_HEALTHY_CONTROL_ACETATE",
+      "candidate_class": "MEASUREMENT_KEY_FULLY_BOUND_SINGLE",
+      "source": {"type":"PRIMARY_ARTICLE","pmid":"38262952","pmcid":"PMC10804800","doi":"10.1186/s12876-024-03129-7","cohort_label":"HEALTHY_CONTROLS_N50"},
+      "measurement_key": {"population_health_class":"HEALTHY","specimen":"EDTA_PLASMA","route_or_exposure":"FASTING_BASELINE","fasting_duration":"AT_LEAST_4_HOURS","tracer_state":"NO_TRACER","analyte":"ACETATE","metric":"CONCENTRATION","units":"umol/L","uncertainty_semantics":"SD","preanalytic_handling":"EDTA_IMMEDIATE_ICE_CENTRIFUGE_WITHIN_2_HOURS_STORE_MINUS80C","analytical_method_family":"BEVITAL_ISOTOPE_LABELED_GC_MS_MS_AUTOMATED_WORKUP"},
+      "numeric_observation": {"estimate":57.6,"uncertainty":25.6,"uncertainty_semantics":"SD","units":"umol/L","n":50,"reported_form":"MEAN_SD"},
+      "cohort_independence_status": "PARTICIPANT_OVERLAP_UNRESOLVED_FOR_CROSS_STUDY_PAIRING",
+      "blockers": ["NO_SECOND_EXACT_ELEVEN_FIELD_MATCH_CURRENTLY_BOUND","DISTINCT_COHORT_ESTABLISHED_REQUIRES_PAIR_SPECIFIC_EVIDENCE"],
+      "authority_effect": "NONE"
+    },
+    {
+      "candidate_id": "USDA_NPS_2024_HEALTHY_ACETATE",
+      "candidate_class": "MEASUREMENT_KEY_FULLY_BOUND_SINGLE",
+      "source": {"type":"PRIMARY_ARTICLE","pmid":"39173973","pmcid":"PMC11600052","doi":"10.1016/j.tjnut.2024.08.012","trial_id":"NCT02367287","cohort_label":"USDA_NUTRITIONAL_PHENOTYPING_PLASMA_N315"},
+      "measurement_key": {"population_health_class":"HEALTHY","specimen":"EDTA_PLASMA","route_or_exposure":"FASTING_BASELINE","fasting_duration":"12_HOURS_WATER_ONLY","tracer_state":"NO_TRACER","analyte":"ACETATE","metric":"CONCENTRATION","units":"umol/L","uncertainty_semantics":"SD","preanalytic_handling":"EDTA_REFRIGERATED_CENTRIFUGE_4C_1300G_10MIN_STORE_MINUS80C","analytical_method_family":"COLUMBIA_3NPH_UPLC_MS_MS_XEVO_TQS_POSITIVE_ESI_MRM"},
+      "numeric_observation": {"source_estimate":0.08,"source_uncertainty":0.08,"source_units":"nmol/uL","normalization":"1_NMOL_PER_UL_EQUALS_1000_UMOL_PER_L","estimate":80.0,"uncertainty":80.0,"uncertainty_semantics":"SD","units":"umol/L","n":315,"reported_form":"MEAN_SD"},
+      "cohort_independence_status": "PARTICIPANT_OVERLAP_UNRESOLVED_FOR_CROSS_STUDY_PAIRING",
+      "blockers": ["NO_SECOND_EXACT_ELEVEN_FIELD_MATCH_CURRENTLY_BOUND","DISTINCT_COHORT_ESTABLISHED_REQUIRES_PAIR_SPECIFIC_EVIDENCE"],
+      "authority_effect": "NONE"
+    },
+    {
+      "candidate_id": "RYEWEIGHT2_2026_BASELINE_ACETATE",
+      "candidate_class": "NEAR_FULLY_BOUND_SINGLE",
+      "source": {"type":"PRIMARY_ARTICLE_PLUS_TRIAL_REGISTRY","pmid":"41861447","doi":"10.1016/j.clnu.2026.106618","trial_id":"NCT04203758","cohort_label":"RYEWEIGHT2"},
+      "measurement_key": {"population_health_class":"OVERWEIGHT_OR_OBESE","specimen":"HEPARIN_PLASMA","route_or_exposure":"BASELINE_PRE_INTERVENTION","fasting_duration":"UNRESOLVED_FOR_SCFA_BASELINE_IN_CURRENT_BINDING","tracer_state":"NO_TRACER","analyte":"ACETATE","metric":"CONCENTRATION","units":"umol/L","uncertainty_semantics":"CI95","preanalytic_handling":"UNRESOLVED_FOR_SCFA_BASELINE_IN_CURRENT_BINDING","analytical_method_family":"CHALMERS_FRISTEDT_2024_CIRCULATING_SCFA_METHOD"},
+      "numeric_observation": {"rye_arm_baseline":{"estimate":60.6,"ci95_low":53.2,"ci95_high":68.0,"units":"umol/L","n":113},"wheat_arm_baseline":{"estimate":66.5,"ci95_low":59.3,"ci95_high":73.7,"units":"umol/L","n":116},"reported_form":"GEOMETRIC_MEAN_CI95"},
+      "cohort_independence_status": "PARTICIPANT_OVERLAP_UNRESOLVED_FOR_CROSS_STUDY_PAIRING",
+      "blockers": ["FASTING_DURATION_UNRESOLVED_FOR_SCFA_BASELINE","SCFA_BASELINE_PREANALYTIC_HANDLING_UNRESOLVED","NO_SECOND_EXACT_ELEVEN_FIELD_MATCH_CURRENTLY_BOUND"],
+      "authority_effect": "NONE"
+    },
+    {
+      "candidate_id": "BAIN_2022_HEALTHY_BLOOD_COLLECTION_METHOD_CONTEXT",
+      "candidate_class": "METHOD_CONTEXT_ONLY",
+      "source": {"type":"PRIMARY_METHOD_ARTICLE","pmid":"35875358","pmcid":"PMC9304766","doi":"10.1016/j.jmsacl.2022.07.002","cohort_label":"HEALTHY_TUBE_COMPARISON_N51"},
+      "measurement_key": {"population_health_class":"HEALTHY","specimen":"LITHIUM_HEPARIN_PLASMA","route_or_exposure":"UNRESOLVED","fasting_duration":"UNRESOLVED","tracer_state":"NO_TRACER","analyte":"ACETATE","metric":"CONCENTRATION","units":"ng/mL","uncertainty_semantics":"UNRESOLVED_FOR_LIHEP_GROUP","preanalytic_handling":"IMMEDIATE_CENTRIFUGE_2500G_4C_20MIN_STORE_MINUS80C","analytical_method_family":"BAIN_2022_WAX_COLUMN_GC_MS_NO_DERIVATIZATION"},
+      "numeric_observation": null,
+      "cohort_independence_status": "NOT_EVALUATED_FOR_PAIRING",
+      "blockers": ["FASTING_STATE_UNRESOLVED","DIRECT_LITHIUM_HEPARIN_ACETATE_GROUP_ESTIMATE_WITH_UNCERTAINTY_NOT_BOUND","UNITS_NOT_NORMALIZED_TO_UMOL_L"],
+      "authority_effect": "NONE"
+    },
+    {
+      "candidate_id": "DRB_2025_HEALTHY_PLASMA_ORGANIC_ACIDS",
+      "candidate_class": "PROTOCOL_METHOD_BOUND_NUMERIC_UNBOUND",
+      "source": {"type":"PRIMARY_RESULTS_PLUS_PREREGISTERED_PROTOCOL","pmid":"40127766","doi":"10.1016/j.clnesp.2025.03.045","trial_id":"ACTRN12622000884707","protocol_doi":"10.2196/59227","cohort_label":"DEFATTED_RICE_BRAN_CROSSOVER_N56"},
+      "measurement_key": {"population_health_class":"HEALTHY","specimen":"LITHIUM_HEPARIN_PLASMA","route_or_exposure":"BASELINE_PRE_INTERVENTION","fasting_duration":"UNRESOLVED_FOR_PLASMA_ORGANIC_ACID_BASELINE","tracer_state":"NO_TRACER","analyte":"ACETATE","metric":"CONCENTRATION","units":"UNRESOLVED_IN_CURRENT_NUMERIC_BINDING","uncertainty_semantics":"UNRESOLVED_IN_CURRENT_NUMERIC_BINDING","preanalytic_handling":"LITHIUM_HEPARIN_ICE_PROCESS_WITHIN_1H_CENTRIFUGE_4C_2000G_5MIN_STORE_MINUS80C","analytical_method_family":"PLANT_AND_FOOD_TARGETED_LCMS_STABLE_ISOTOPE_ORGANIC_ACID_METHOD"},
+      "numeric_observation": null,
+      "cohort_independence_status": "NOT_EVALUATED_FOR_PAIRING",
+      "blockers": ["FASTING_DURATION_UNRESOLVED_FOR_PLASMA_ORGANIC_ACID_BASELINE","DIRECT_BASELINE_ACETATE_ESTIMATE_AND_UNCERTAINTY_NOT_BOUND","CURRENT_RESULTS_ABSTRACT_DOES_NOT_SUPPLY_NUMERIC_BASELINE"],
+      "authority_effect": "NONE"
+    },
+    {
+      "candidate_id": "FRISTEDT_2024_HUMAN_PLASMA_METHOD_AUTHORITY",
+      "candidate_class": "METHOD_AUTHORITY_ONLY",
+      "source": {"type":"PRIMARY_METHOD_VALIDATION_ARTICLE","pmid":"38382298","doi":"10.1016/j.talanta.2024.125743","cohort_label":"AGGREGATED_HUMAN_PLASMA_METHOD_VALIDATION"},
+      "measurement_key": {"population_health_class":"UNRESOLVED_AS_SINGLE_COHORT","specimen":"PLASMA","route_or_exposure":"UNRESOLVED_AS_SINGLE_COHORT","fasting_duration":"UNRESOLVED_AS_SINGLE_COHORT","tracer_state":"UNRESOLVED_AS_SINGLE_COHORT","analyte":"ACETATE","metric":"CONCENTRATION","units":"umol/L","uncertainty_semantics":"IQR_METHOD_AGGREGATE_NOT_COHORT_REFERENCE","preanalytic_handling":"UNRESOLVED_AS_SINGLE_COHORT","analytical_method_family":"CHALMERS_FRISTEDT_2024_CIRCULATING_SCFA_METHOD"},
+      "numeric_observation": {"reported_human_plasma_typical_value":64,"reported_semantics":"METHOD_PAPER_HUMAN_PLASMA_IQR_CONTEXT_NOT_SINGLE_COHORT_REFERENCE","units":"umol/L"},
+      "cohort_independence_status": "NOT_A_SINGLE_COHORT",
+      "blockers": ["METHOD_VALIDATION_AGGREGATE_NOT_DISTINCT_BIOLOGICAL_COHORT","FASTING_AND_COHORT_PROVENANCE_NOT_BOUND_AS_SINGLE_COHORT","CANNOT_SUPPLY_SECOND_ARM_BY_METHOD_IDENTITY_ALONE"],
+      "authority_effect": "NONE"
+    }
+  ],
+  "dry_run_state": {"candidate_count":6,"measurement_key_fully_bound_singles":2,"near_fully_bound_singles":1,"method_context_only":1,"protocol_method_bound_numeric_unbound":1,"method_authority_only":1,"exact_eleven_field_matching_pairs":0,"real_hardened_ready_pairs":0,"new_authoritative_observations":0,"admission_mutations":0,"pooled_reference_created":false,"averaging_performed":false,"biological_reference_vector":"UNSET_PENDING_PRIMARY_DATA_AND_EXTERNAL_REVIEW","pareto_search":"BLOCKED"},
+  "explicit_nonmatches": [{"pair":["MASLD_2024_HEALTHY_CONTROL_ACETATE","USDA_NPS_2024_HEALTHY_ACETATE"],"differing_fields":["fasting_duration","preanalytic_handling","analytical_method_family"],"verdict":"NOT_EXACT_HARDENED_KEY_MATCH"}],
+  "invariants": ["CANDIDATE_LEDGER_NE_EVIDENCE_AUTHORITY","SINGLE_FULLY_BOUND_NE_COMPARABLE_READY","METHOD_AUTHORITY_ONLY_NE_BIOLOGICAL_COHORT","PROTOCOL_NE_NUMERIC_OBSERVATION","LITERAL_ELEVEN_FIELD_KEY_REQUIRED","SEMANTIC_HARMONIZATION_MUST_NOT_ERASE_REAL_PREANALYTIC_DIFFERENCES","AT_LEAST_4_HOURS_NE_12_HOURS_WATER_ONLY","EDTA_PLASMA_NE_HEPARIN_PLASMA","SD_NE_CI95","RANKING_NE_ADMISSION","DISTINCT_COHORT_ESTABLISHED_REQUIRES_PAIR_SPECIFIC_EVIDENCE","BIOLOGICAL_REFERENCE_VECTOR_STAYS_UNSET","PARETO_SEARCH_REMAINS_BLOCKED","HASH_IS_INTEGRITY_NOT_TRUTH"],
+  "claim_ceiling": ["The ledger identifies promising measurement contexts for further primary-evidence resolution; it creates no evidence authority.","Two candidate records have complete eleven-field measurement keys, but no two candidates have an identical hardened key.","No candidate is promoted to DISTINCT_COHORT_ESTABLISHED merely because publications, institutions, countries or trial registrations differ.","Method validation, protocol specification and biological cohort evidence remain distinct evidence classes.","No real hardened comparable pair, pooled human reference, universal biological reference vector, clinical target, food formulation or human dosing guidance is established."],
+  "next_action": "SEARCH_FOR_A_SECOND_PRIMARY_HUMAN_COHORT_MATCHING_ONE_COMPLETE_ELEVEN_FIELD_KEY_EXACTLY_AND_RESOLVE_PAIR_SPECIFIC_COHORT_INDEPENDENCE; DO_NOT_RELAX_KEY_FIELDS_TO_CREATE_A_MATCH",
+  "content_sha256": "d28cdcbac1e9cf401e3eb2074a4fb7cb6e85387207e867901f37d2cc528a292d"
+}

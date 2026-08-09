@@ -1,0 +1,37 @@
+{
+  "schema": "scoby-d0.reference-dataset.v0.6.6",
+  "status": "HARDENED_CANDIDATE_LEDGER_DISCOVERY_ONLY_NO_ADMISSION_CHANGE",
+  "supersedes": "evidence/reference_context/REFERENCE_DATASET_V0_6_5.json",
+  "authoritative_observation_count": 10,
+  "existing_context_buckets": 6,
+  "candidate_ledger": "evidence/reference_context/HARDENED_CANDIDATE_LEDGER_V0_6_6.json",
+  "candidate_count": 6,
+  "measurement_key_fully_bound_singles": 2,
+  "near_fully_bound_singles": 1,
+  "method_context_only": 1,
+  "protocol_method_bound_numeric_unbound": 1,
+  "method_authority_only": 1,
+  "exact_eleven_field_matching_pairs": 0,
+  "real_hardened_ready_pairs": 0,
+  "cohort_independence_resolved_pairs": 0,
+  "new_authoritative_observations": 0,
+  "cross_study_aggregation_allowed": false,
+  "pooled_reference_created": false,
+  "averaging_performed": false,
+  "human_reference_standard": "NOT_ESTABLISHED",
+  "external_review": "NOT_YET_ESTABLISHED",
+  "biological_reference_vector": "UNSET_PENDING_PRIMARY_DATA_AND_EXTERNAL_REVIEW",
+  "pareto_search": "BLOCKED_PENDING_REAL_HARDENED_PAIR_AND_SEPARATE_V0_7_PREREGISTRATION",
+  "candidate_search_targets": [
+    "SECOND_PRIMARY_HUMAN_COHORT_MATCHING_MASLD_2024_ELEVEN_FIELD_KEY_EXACTLY",
+    "SECOND_PRIMARY_HUMAN_COHORT_MATCHING_USDA_NPS_2024_ELEVEN_FIELD_KEY_EXACTLY",
+    "RESOLVE_RYEWEIGHT2_SCFA_FASTING_DURATION_AND_PREANALYTIC_HANDLING_BEFORE_PAIR_SEARCH"
+  ],
+  "interpretation_ceiling": [
+    "Candidate-ledger membership is discovery metadata and not evidence authority.",
+    "MASLD 2024 healthy controls and USDA NPS 2024 are fully bound single measurement contexts, not an exact pair.",
+    "Their hardened keys differ in fasting duration, preanalytic handling and analytical method family.",
+    "Method papers and protocols cannot substitute for a distinct biological cohort with a bound numeric observation.",
+    "No admission, pooling, biological reference vector, clinical target, food formulation or human dosing guidance is established."
+  ]
+}
