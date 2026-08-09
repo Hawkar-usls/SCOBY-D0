@@ -32,9 +32,11 @@ v0.6.3 COHORT + PREANALYTIC HARDENING
   ↓
 v0.6.4 HARDENED PAIR SEARCH FRONTIER
   ↓
-v0.6.5 COHORT + METHOD RESOLUTION FRONTIER      ← current
+v0.6.5 COHORT + METHOD RESOLUTION FRONTIER
   ↓
-v0.7   UNCERTAINTY-AWARE PARETO SEARCH         🔒 BLOCKED
+v0.6.5.1 FIRST CONCRETE BLOCKER RESOLUTION       ← current
+  ↓
+v0.7   UNCERTAINTY-AWARE PARETO SEARCH          🔒 BLOCKED
 ```
 
 ## Current state
@@ -42,78 +44,79 @@ v0.7   UNCERTAINTY-AWARE PARETO SEARCH         🔒 BLOCKED
 ```text
 AUTHORITATIVE_OBSERVATIONS = 10
 EXISTING_CONTEXT_BUCKETS = 6
-V0_6_5_RESOLUTION_NEAR_PAIRS = 3
+RESOLUTION_NEAR_PAIRS = 3
 REAL_HARDENED_READY_PAIRS = 0
 COHORT_INDEPENDENCE_RESOLVED_PAIRS = 0
-METHOD_IDENTITY_RESOLVED_PAIRS = 0
-NEW_AUTHORITY_FROM_RESOLUTION_FRONTIER = 0
+MEASUREMENT_CONTEXT_RESOLUTION_RECEIPTS = 1
+NEW_AUTHORITATIVE_OBSERVATIONS = 0
 POOLED_REFERENCE = NOT_CREATED
 BIOLOGICAL_REFERENCE_VECTOR = UNSET
 PARETO_SEARCH = BLOCKED
 ```
 
-v0.6.5 is deliberately **not** a new admission mechanism. It records what must be resolved before a near-pair may be replayed through the existing hardened admission kernel.
+## v0.6.5.1 — first blocker actually resolved
+
+The Maastricht near-pair
 
 ```text
-DISTINCT_TRIAL_ID != DISTINCT_COHORT_ESTABLISHED
-NONOVERLAPPING_RECRUITMENT_WINDOWS != NO_PARTICIPANT_REUSE_PROOF
-SAME_LAB != SAME_ANALYTICAL_METHOD
-SIMILAR_PREANALYTICS != EXACT_MEASUREMENT_CONTEXT
-RESOLUTION_PRIORITY != ADMISSION_PRIORITY
+NCT01826162 ↔ NCT01983046
 ```
 
-## Priority resolution targets
+was revisited using the 2019 primary combined baseline analysis. That paper explicitly includes both trial IDs, states that sample collection in all included studies occurred after an overnight fast and measurements followed the same standard operating procedures, and specifies the circulating-SCFA workflow used for the combined baseline analysis.
 
-### Maastricht: NCT01826162 ↔ NCT01983046
+The resolved dimension is therefore narrowly stated as:
 
-Both registrations describe overweight/obese men aged 20–50 without diabetes at Maastricht, and their reported trial windows are sequential rather than overlapping. The later registry explicitly identifies the earlier protocol as the pilot study. Those facts improve provenance but do **not** establish participant independence.
+```text
+PER_TRIAL_PREANALYTIC_AND_ANALYTICAL_CONTEXT_NOT_YET_BOUND_AS_EXACT_IDENTICAL
+→
+RESOLVED_FOR_BASELINE_SAMPLES_IN_2019_COMBINED_ANALYSIS_SCOPE
+```
 
-Current blockers include:
+This does **not** make the pair comparable-ready.
+
+Remaining blockers:
 
 ```text
 PARTICIPANT_REUSE_BETWEEN_PILOT_AND_FOLLOWUP_TRIAL_UNRESOLVED
-PER_TRIAL_BASELINE_SCFA_OBSERVATIONS_NOT_SEPARATELY_EXTRACTION_BOUND
-PER_TRIAL_PREANALYTIC_AND_ANALYTICAL_CONTEXT_NOT_YET_BOUND_AS_EXACT_IDENTICAL
+DISTINCT_TRIAL_ID_DOES_NOT_ESTABLISH_DISTINCT_COHORT
+PER_TRIAL_BASELINE_SCFA_OBSERVATIONS_NOT_YET_SEPARATELY_EXTRACTION_BOUND
 ```
+
+Hence:
+
+```text
+COMMON_REPORTED_SOP != DISTINCT_COHORT_PROOF
+COMBINED_DATASET != PER_TRIAL_REFERENCE_DISTRIBUTION
+ONE_RESOLVED_BLOCKER != PAIR_ADMISSION
+```
+
+The resolution receipt is machine-readable and hash-bound:
+
+- [`evidence/reference_context/MAASTRICHT_SOP_RESOLUTION_RECEIPT_V0_6_5_1.json`](evidence/reference_context/MAASTRICHT_SOP_RESOLUTION_RECEIPT_V0_6_5_1.json)
+- [`evidence/reference_context/REFERENCE_DATASET_V0_6_2.json`](evidence/reference_context/REFERENCE_DATASET_V0_6_2.json)
+- [`tests/test_maastricht_resolution_v0651.py`](tests/test_maastricht_resolution_v0651.py)
+
+## Other active near-pairs
 
 ### OsloMet: NCT03293693 ↔ NCT03658681
 
-This is a close measurement-context near-pair:
+The surface measurement context remains close: healthy normal-weight adults, ≥12 h fast, EDTA plasma, rapid cold processing, −80 °C storage and Vitas Analytical Service. However, the NCT03293693 primary paper does not explicitly identify the SCFA analytical method family, while NCT03658681 explicitly binds its SCFA analysis to LC-MS/MS. Therefore `SAME_LAB != SAME_METHOD`, and participant reuse is also unresolved.
 
-```text
-healthy normal-weight adults
-≥12 h fast
-EDTA plasma
-immediate ice
-centrifuge within 10 min at 1500 g / 4 °C / 10 min
-−80 °C storage
-Vitas Analytical Service
-```
+### Oslo method contrast: NCT01034436 NW ↔ NCT03658681
 
-But the NCT03293693 primary article does not explicitly identify its SCFA analytical method, while the NCT03658681 primary article binds SCFA measurement to an LC–MS/MS QTRAP5500 / Kinetex Biphenyl negative-MRM workflow. Therefore:
-
-```text
-SAME_LAB != SAME_METHOD
-```
-
-Participant reuse between the two OsloMet studies is also not explicitly excluded, so the pair remains blocked.
-
-### Oslo method-contrast: NCT01034436 NW ↔ NCT03658681
-
-The 2020 NCT01034436 report includes a healthy normal-weight subgroup with 12-h fasting EDTA plasma, immediate-ice/rapid-cold-centrifugation handling, −80 °C storage and Vitas analysis. Its SCFA method is explicitly GC-MS. NCT03658681 uses LC-MS/MS. This pair is retained as a useful **method contrast**, not as exact comparability.
+Both reports involve fasted EDTA plasma and Vitas, but one explicitly uses GC-MS and the other LC-MS/MS. It is retained as a method contrast rather than exact comparability.
 
 ## Resolution frontier cannot admit
 
-Executable v0.6.5 code enforces:
+Executable v0.6.5 code still enforces:
 
 ```text
 pair_can_admit_from_resolution_frontier(...) = FALSE
-
 distinct_trial_ids_establish_independent_cohorts(...) = FALSE
 same_lab_establishes_same_method(...) = FALSE
 ```
 
-Even if all blockers on a frontier record were manually removed, v0.6.5 still has no authority to create an admitted observation or a comparable-ready bucket. The pair must return to the established v0.5/v0.6/v0.6.3 replay path.
+v0.6.5.1 adds a resolution receipt, not a new admission path. Any future fully resolved pair must return through the established extraction and hardened-comparability kernels.
 
 ## Historical reference manifests
 
@@ -125,18 +128,8 @@ REFERENCE_DATASET_V0_4   → 0 exact comparable multi-study buckets
 REFERENCE_DATASET_V0_5   → cohort/preanalytic hardening, 0 ready buckets
 REFERENCE_DATASET_V0_6   → hardened-pair search frontier, 0 ready pairs
 REFERENCE_DATASET_V0_6_1 → cohort/method resolution frontier, 0 ready pairs
+REFERENCE_DATASET_V0_6_2 → one measurement-context blocker resolved; pair still blocked
 ```
-
-## Current objects
-
-- [`experiments/SCOBY-D0-CROSS-STUDY-INDEPENDENCE-PREANALYTIC-HARDENING-v0.6.3.json`](experiments/SCOBY-D0-CROSS-STUDY-INDEPENDENCE-PREANALYTIC-HARDENING-v0.6.3.json)
-- [`experiments/SCOBY-D0-HARDENED-PAIR-SEARCH-FRONTIER-v0.6.4.json`](experiments/SCOBY-D0-HARDENED-PAIR-SEARCH-FRONTIER-v0.6.4.json)
-- [`experiments/SCOBY-D0-COHORT-METHOD-RESOLUTION-FRONTIER-v0.6.5.json`](experiments/SCOBY-D0-COHORT-METHOD-RESOLUTION-FRONTIER-v0.6.5.json)
-- [`evidence/reference_context/REFERENCE_DATASET_V0_6_1.json`](evidence/reference_context/REFERENCE_DATASET_V0_6_1.json)
-- [`src/cross_study_hardening.py`](src/cross_study_hardening.py)
-- [`src/pair_search_frontier.py`](src/pair_search_frontier.py)
-- [`src/resolution_frontier.py`](src/resolution_frontier.py)
-- [`tests/test_resolution_frontier_v065.py`](tests/test_resolution_frontier_v065.py)
 
 ## Claim ceiling
 
@@ -145,8 +138,9 @@ SIMULATION_PASS != IN_VIVO_VALIDATION
 INGESTION_AUTHORITY != HUMAN_REFERENCE_STANDARD
 DISTINCT_PUBLICATIONS != DISTINCT_COHORTS
 DISTINCT_TRIAL_IDS != DISTINCT_COHORTS
+COMMON_REPORTED_SOP != DISTINCT_COHORT_PROOF
+COMBINED_DATASET != PER_TRIAL_REFERENCE_DISTRIBUTION
 SAME_LAB != SAME_METHOD
-PROTOCOL_SIMILARITY != COMPARABILITY
 SEARCH_OR_RESOLUTION_FRONTIER != EVIDENCE_AUTHORITY
 COMPARABLE_READY != POOLED_REFERENCE
 MULTIPLE_OBSERVATIONS != BIOLOGICAL_REFERENCE_VECTOR
