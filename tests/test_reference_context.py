@@ -14,6 +14,7 @@ def obs(**overrides):
     base = {
         "source_type":"PRIMARY_HUMAN",
         "source_lineage":{"title":"Primary study","year":2025,"pmid":"123","doi":"10.1/x"},
+        "study_design":"randomized crossover",
         "cohort":"healthy adults",
         "sample_size":12,
         "route":"ORAL_FOOD",
@@ -25,6 +26,7 @@ def obs(**overrides):
         "estimate":100.0,
         "units":"umol/L",
         "uncertainty":{"kind":"SD","value":20.0},
+        "citation_locator":"Results, Table 2, acetate row",
         "exclusions":"explicit source-bound exclusions",
     }
     base.update(overrides)
@@ -38,6 +40,11 @@ class TestEvidenceReferenceV04(unittest.TestCase):
 
     def test_mean_without_variance_is_not_admissible(self):
         x = obs(uncertainty={"kind":"SD","value":None})
+        self.assertFalse(is_admissible(x))
+
+    def test_missing_citation_locator_fails_closed(self):
+        x = obs(citation_locator="")
+        self.assertIn("MISSING_CITATION_LOCATOR", validate_observation(x))
         self.assertFalse(is_admissible(x))
 
     def test_unit_conversion_is_explicit(self):
@@ -75,11 +82,17 @@ class TestEvidenceReferenceV04(unittest.TestCase):
         out = preserve_conflicts([a,b])
         self.assertEqual([x["estimate"] for x in out], [80.0,140.0])
 
-    def test_evidence_provenance_is_required(self):
+    def test_evidence_provenance_requires_stable_identifier(self):
         x = obs(source_lineage={"title":"A","year":2020,"pmid":"","doi":""})
-        errors = validate_observation(x)
-        self.assertIn("MISSING_LINEAGE_PMID", errors)
-        self.assertIn("MISSING_LINEAGE_DOI", errors)
+        self.assertIn("MISSING_STABLE_SOURCE_IDENTIFIER", validate_observation(x))
+
+    def test_pmid_only_is_accepted(self):
+        x = obs(source_lineage={"title":"A","year":2020,"pmid":"12345","doi":None})
+        self.assertTrue(is_admissible(x))
+
+    def test_doi_only_is_accepted(self):
+        x = obs(source_lineage={"title":"A","year":2020,"pmid":None,"doi":"10.1/a"})
+        self.assertTrue(is_admissible(x))
 
     def test_producer_provenance_is_not_an_observation_field_requirement(self):
         self.assertTrue(is_admissible(obs()))
