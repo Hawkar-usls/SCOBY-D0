@@ -1,0 +1,38 @@
+{
+  "schema_id": "hawkar.project-status.v1",
+  "project": "SCOBY-D0",
+  "repository": "https://github.com/Hawkar-usls/SCOBY-D0",
+  "last_reviewed": "2026-08-09",
+  "portfolio_class": "early_research_computational_biomanufacturing",
+  "maturity": "EARLY_RESEARCH",
+  "completion_status": "ACTIVE_HYPOTHESIS_AND_SIMULATION",
+  "summary": "Source-blind C2 context-engineering and bacterial-cellulose research workspace. Current executable work is synthetic/dimensionless and does not establish human nutrition, medical efficacy, food safety, or a validated engineered organism.",
+  "core_invariants": [
+    "GM_PRODUCER_NE_GM_ACETATE",
+    "SAME_MOLECULE_NE_SAME_PHYSIOLOGICAL_EVENT",
+    "METABOLIC_EQUIVALENCE_MUST_NOT_READ_PROVENANCE",
+    "PURIFIED_ACETATE_NE_FERMENTATION_BROTH",
+    "HASH_IS_INTEGRITY_NOT_TRUTH",
+    "SIMULATION_PASS_NE_IN_VIVO_VALIDATION"
+  ],
+  "implemented_scope": [
+    "machine-readable source-equivalence evidence object",
+    "preregistered C2-context-reconstruction objective",
+    "synthetic provenance-blind optimizer self-test",
+    "anti-bias unit tests"
+  ],
+  "not_claimed": [
+    "complete replacement of human nutrition",
+    "clinical safety or efficacy",
+    "food safety or regulatory compliance",
+    "validated human physiological equivalence",
+    "validated GMO strain",
+    "wet-lab genetic engineering protocol",
+    "ballistic armor performance"
+  ],
+  "related": {
+    "genesis": "https://github.com/Hawkar-usls/Janus_Genesis",
+    "twai": "https://github.com/Hawkar-usls/ESP32-TWAI-CAN",
+    "registry": "https://github.com/Hawkar-usls/janus-meta-registry"
+  }
+}
