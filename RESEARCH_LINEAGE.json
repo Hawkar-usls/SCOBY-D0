@@ -15,6 +15,15 @@
   "v0_4_evidence_gate": "experiments/SCOBY-D0-EVIDENCE-DERIVED-REFERENCE-CONTEXT-v0.4.json",
   "v0_4_evidence_gate_sha256": "7455664adc08090b99b56417bb251da701098406d94076ee94a156cdc5d9b85c",
   "candidate_reference_ledger": "evidence/reference_context/REFERENCE_DATASET_V0_1.json",
+  "v0_5_extraction_gate": "experiments/SCOBY-D0-EVIDENCE-EXTRACTION-LINEAGE-v0.5.json",
+  "v0_5_extraction_gate_sha256": "8030bda5b96e3563326965040a33df27d93df7b791258b403690e43ba6509c99",
+  "extraction_ledger": "evidence/reference_context/EXTRACTION_LEDGER_V0_1.json",
   "rule": "Artifact hashes identify specific object versions for integrity and lineage; they are not hashes of truth.",
-  "next_gate": "ADMIT_MULTIPLE_COMPARABLE_PRIMARY_HUMAN_OBSERVATIONS_WITH_COMPLETE_UNCERTAINTY_AND_EXACT_CITATION_LOCATORS_WITHOUT_COLLAPSING_BIOLOGICAL_REFERENCE_VECTOR"
+  "current_reference_state": {
+    "authoritative_observations": 0,
+    "biological_reference_vector": "UNSET_PENDING_PRIMARY_DATA_AND_EXTERNAL_REVIEW",
+    "real_extractor_A_records": 1,
+    "real_independent_extractor_B_records": 0
+  },
+  "next_gate": "V0_6_AUTHORITATIVE_REFERENCE_ADMISSION_REQUIRES_COMPLETE_REPLAYABLE_EXTRACTION_LINEAGE_AND_GENUINELY_SEPARATE_SECOND_EXTRACTION_WITHOUT_UNRESOLVED_CONFLICT"
 }
