@@ -1,0 +1,112 @@
+{
+  "schema": "scoby-d0.public-evidence-boundary.v0.6.5.2",
+  "artifact_id": "SCOBY-D0-MAASTRICHT-PUBLIC-EVIDENCE-BOUNDARY-v0.6.5.2",
+  "status": "PUBLIC_EVIDENCE_EXHAUSTED_FOR_CURRENT_BLOCKERS_NO_ADMISSION_CHANGE",
+  "created_at": "2026-08-09T12:31:00+03:00",
+  "parent_resolution_receipt": {
+    "artifact": "evidence/reference_context/MAASTRICHT_SOP_RESOLUTION_RECEIPT_V0_6_5_1.json",
+    "sha256": "70cad644fbd76c430d8e97379f08a94c8a2bea0f5749e81143f547217415fcc3",
+    "merge_commit": "a3a7af81fcb96bd3505f6048ae6dcbb6e47640be"
+  },
+  "pair_id": "NCT01826162__NCT01983046",
+  "public_sources_checked": [
+    {
+      "source_type": "TRIAL_REGISTRY",
+      "identifier": "NCT01826162",
+      "findings": [
+        "PILOT_STUDY_MEC_11_3_079",
+        "STUDY_START_2013_04",
+        "PRIMARY_COMPLETION_2013_06",
+        "ACTUAL_ENROLLMENT_10",
+        "OVERWEIGHT_OBESE_MEN_20_TO_50",
+        "NO_PUBLIC_PARTICIPANT_REUSE_FIELD"
+      ]
+    },
+    {
+      "source_type": "PRIMARY_PUBLICATION",
+      "identifier": "PMID_27439969_DOI_10.1042_CS20160263",
+      "findings": [
+        "SIX_OVERWEIGHT_OBESE_MEN_REPORTED_IN_PUBLISHED_TRIAL",
+        "PLASMA_ACETATE_EFFECT_REPORTED_WITHOUT_DIRECT_BASELINE_NUMERIC_DISTRIBUTION_IN_ABSTRACT",
+        "NO_EXPLICIT_PUBLIC_STATEMENT_OF_PARTICIPANT_NONREUSE_IN_FOLLOWUP_TRIAL"
+      ]
+    },
+    {
+      "source_type": "TRIAL_REGISTRY",
+      "identifier": "NCT01983046",
+      "findings": [
+        "FOLLOWUP_PROTOCOL_REFERENCES_PRECEDING_PILOT_MEC_11_3_079",
+        "STUDY_START_2013_09",
+        "PRIMARY_COMPLETION_2014_02",
+        "ACTUAL_ENROLLMENT_12",
+        "OVERWEIGHT_OBESE_MEN_20_TO_50",
+        "NO_PUBLIC_PARTICIPANT_REUSE_FIELD"
+      ]
+    },
+    {
+      "source_type": "PRIMARY_PUBLICATION",
+      "identifier": "PMID_28539646_PMCID_PMC5443817_DOI_10.1038_s41598_017_02546_x",
+      "findings": [
+        "THIRTEEN_RECRUITED_TWELVE_COMPLETED",
+        "RECRUITMENT_AUG_2013_TO_JAN_2014",
+        "FIGURE_2_REPORTS_PLASMA_SCFA_CURVES_AS_MEAN_PLUS_MINUS_SEM",
+        "DIRECT_TEXT_DOES_NOT_PRINT_SEPARATE_BASELINE_ACETATE_ESTIMATE_AND_SEM",
+        "NO_EXPLICIT_PUBLIC_STATEMENT_OF_PARTICIPANT_NONREUSE_FROM_PILOT"
+      ]
+    },
+    {
+      "source_type": "PRIMARY_COMBINED_ANALYSIS",
+      "identifier": "PMID_31467327_PMCID_PMC6715624_DOI_10.1038_s41598_019_48775_0",
+      "findings": [
+        "BOTH_TRIAL_IDS_EXPLICITLY_INCLUDED",
+        "COMMON_BASELINE_SOP_ALREADY_RESOLVED_IN_V0_6_5_1",
+        "INTERVENTION_STUDY_DATA_NOT_PUBLICLY_DEPOSITED_DUE_ETHICAL_AND_PRIVACY_RESTRICTIONS",
+        "CONTROLLED_DATA_ACCESS_AVAILABLE_TO_QUALIFIED_RESEARCHERS_BY_REQUEST",
+        "NO_PUBLIC_PER_TRIAL_BASELINE_SCFA_DISTRIBUTIONS",
+        "NO_PUBLIC_PARTICIPANT_OVERLAP_MATRIX"
+      ]
+    }
+  ],
+  "resolution_attempt_result": {
+    "participant_overlap_or_nonoverlap": "UNRESOLVED_FROM_PUBLIC_PRIMARY_EVIDENCE",
+    "separate_per_trial_direct_reported_baseline_scfa_distributions": "NOT_ESTABLISHED_FROM_PUBLIC_PRIMARY_EVIDENCE",
+    "figure_digitization_performed": false,
+    "reason_figure_digitization_not_promoted": "Direct reported per-trial numeric observations were preferred. Any future figure digitization must use the existing v0.5 FIGURE_DIGITIZATION lineage with explicit digitization method and extraction error, and would still not resolve cohort independence.",
+    "external_controlled_data_request_sent": false,
+    "author_contact_or_private_dataset_evidence": "NOT_ACCESSED",
+    "pair_comparable_ready": false,
+    "admission_mutation": false,
+    "new_authoritative_observations": 0,
+    "pooled_reference_created": false,
+    "averaging_performed": false,
+    "biological_reference_vector": "UNSET_PENDING_PRIMARY_DATA_AND_EXTERNAL_REVIEW",
+    "pareto_search": "BLOCKED"
+  },
+  "remaining_blockers": [
+    "PARTICIPANT_REUSE_BETWEEN_PILOT_AND_FOLLOWUP_TRIAL_UNRESOLVED",
+    "DISTINCT_TRIAL_ID_DOES_NOT_ESTABLISH_DISTINCT_COHORT",
+    "PER_TRIAL_BASELINE_SCFA_OBSERVATIONS_NOT_YET_SEPARATELY_EXTRACTION_BOUND"
+  ],
+  "external_evidence_needed": [
+    "AUTHOR_LEVEL_OR_CONTROLLED_DATA_CONFIRMATION_OF_PARTICIPANT_OVERLAP_OR_NONOVERLAP",
+    "SEPARATE_PER_TRIAL_BASELINE_SCFA_NUMERIC_OBSERVATIONS_WITH_UNCERTAINTY_OR_SOURCE_DATA",
+    "IF_ONLY_FIGURES_ARE_AVAILABLE_THEN_REPLAYABLE_DIGITIZATION_WITH_EXTRACTION_ERROR_UNDER_V0_5"
+  ],
+  "invariants": [
+    "PUBLIC_SEARCH_EXHAUSTION_NE_NEGATIVE_PROOF_OF_OVERLAP",
+    "ABSENCE_OF_OVERLAP_STATEMENT_NE_DISTINCT_COHORT_PROOF",
+    "RESTRICTED_DATA_NE_PERMISSION_TO_INFER_MISSING_VALUES",
+    "FIGURE_VISIBILITY_NE_DIRECT_REPORTED_NUMERIC_VALUE",
+    "NEGATIVE_RESOLUTION_RECEIPT_NE_ADMISSION",
+    "BIOLOGICAL_REFERENCE_VECTOR_STAYS_UNSET",
+    "PARETO_SEARCH_REMAINS_BLOCKED"
+  ],
+  "claim_ceiling": [
+    "Public primary evidence is insufficient to resolve participant independence for this pair.",
+    "Public primary evidence is insufficient to bind separate direct-reported per-trial baseline SCFA distributions.",
+    "This does not prove that participant overlap occurred, nor that separate data do not exist under controlled access.",
+    "No admission, pooling, clinical claim, formulation target or human dosing guidance is created."
+  ],
+  "next_action": "OBTAIN_CONTROLLED_OR_AUTHOR_LEVEL_EVIDENCE_FOR_COHORT_OVERLAP_AND_PER_TRIAL_BASELINE_SCFA_DATA_OR_PIVOT_TO_ANOTHER_NEAR_PAIR; DO_NOT_INFER MISSING EVIDENCE",
+  "content_sha256": "f40a5b470df00271aa91b1fb71357f0d6e112f271ea35eb9b01e447839d6fcaf"
+}

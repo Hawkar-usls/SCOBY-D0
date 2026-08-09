@@ -1,0 +1,42 @@
+{
+  "schema": "scoby-d0.reference-dataset.v0.6.3",
+  "status": "PUBLIC_PRIMARY_EVIDENCE_BOUNDARY_REACHED_PAIR_STILL_BLOCKED",
+  "supersedes": "evidence/reference_context/REFERENCE_DATASET_V0_6_2.json",
+  "authoritative_observation_count": 10,
+  "existing_context_buckets": 6,
+  "resolution_near_pairs": 3,
+  "real_hardened_ready_pairs": 0,
+  "cohort_independence_resolved_pairs": 0,
+  "measurement_context_resolution_receipts": 1,
+  "public_evidence_boundary_receipts": 1,
+  "current_boundary_receipt": "evidence/reference_context/MAASTRICHT_PUBLIC_EVIDENCE_BOUNDARY_V0_6_5_2.json",
+  "pair": "NCT01826162__NCT01983046",
+  "public_resolution_state": {
+    "measurement_context": "PASS_IN_DEFINED_2019_COMBINED_ANALYSIS_SCOPE",
+    "participant_overlap_or_nonoverlap": "UNRESOLVED_FROM_PUBLIC_PRIMARY_EVIDENCE",
+    "separate_per_trial_direct_reported_baseline_scfa_distributions": "NOT_ESTABLISHED_FROM_PUBLIC_PRIMARY_EVIDENCE",
+    "figure_digitization_performed": false,
+    "controlled_data_access": "AVAILABLE_BY_REQUEST_NOT_ACCESSED",
+    "external_request_sent": false
+  },
+  "remaining_pair_blockers": [
+    "PARTICIPANT_REUSE_BETWEEN_PILOT_AND_FOLLOWUP_TRIAL_UNRESOLVED",
+    "DISTINCT_TRIAL_ID_DOES_NOT_ESTABLISH_DISTINCT_COHORT",
+    "PER_TRIAL_BASELINE_SCFA_OBSERVATIONS_NOT_YET_SEPARATELY_EXTRACTION_BOUND"
+  ],
+  "new_authoritative_observations": 0,
+  "cross_study_aggregation_allowed": false,
+  "pooled_reference_created": false,
+  "averaging_performed": false,
+  "human_reference_standard": "NOT_ESTABLISHED",
+  "external_review": "NOT_YET_ESTABLISHED",
+  "biological_reference_vector": "UNSET_PENDING_PRIMARY_DATA_AND_EXTERNAL_REVIEW",
+  "pareto_search": "BLOCKED_PENDING_REAL_HARDENED_PAIR_AND_SEPARATE_V0_7_PREREGISTRATION",
+  "interpretation_ceiling": [
+    "The public primary-evidence search did not resolve participant independence for the Maastricht pair.",
+    "The public primary-evidence search did not establish separate direct-reported per-trial baseline SCFA distributions.",
+    "This is an evidence-availability boundary, not evidence that overlap occurred or that underlying per-trial data do not exist.",
+    "Controlled study data may be available to qualified researchers by request; no such private evidence is represented here.",
+    "No admission, pooling, biological vector, clinical target or formulation guidance is established."
+  ]
+}

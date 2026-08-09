@@ -34,7 +34,9 @@ v0.6.4 HARDENED PAIR SEARCH FRONTIER
   ↓
 v0.6.5 COHORT + METHOD RESOLUTION FRONTIER
   ↓
-v0.6.5.1 FIRST CONCRETE BLOCKER RESOLUTION       ← current
+v0.6.5.1 FIRST CONCRETE BLOCKER RESOLUTION
+  ↓
+v0.6.5.2 PUBLIC PRIMARY-EVIDENCE BOUNDARY        ← current
   ↓
 v0.7   UNCERTAINTY-AWARE PARETO SEARCH          🔒 BLOCKED
 ```
@@ -44,37 +46,69 @@ v0.7   UNCERTAINTY-AWARE PARETO SEARCH          🔒 BLOCKED
 ```text
 AUTHORITATIVE_OBSERVATIONS = 10
 EXISTING_CONTEXT_BUCKETS = 6
-RESOLUTION_NEAR_PAIRS = 3
 REAL_HARDENED_READY_PAIRS = 0
 COHORT_INDEPENDENCE_RESOLVED_PAIRS = 0
 MEASUREMENT_CONTEXT_RESOLUTION_RECEIPTS = 1
+PUBLIC_EVIDENCE_BOUNDARY_RECEIPTS = 1
 NEW_AUTHORITATIVE_OBSERVATIONS = 0
 POOLED_REFERENCE = NOT_CREATED
 BIOLOGICAL_REFERENCE_VECTOR = UNSET
 PARETO_SEARCH = BLOCKED
 ```
 
-## v0.6.5.1 — first blocker actually resolved
+## Maastricht pair: what is resolved
 
-The Maastricht near-pair
-
-```text
-NCT01826162 ↔ NCT01983046
-```
-
-was revisited using the 2019 primary combined baseline analysis. That paper explicitly includes both trial IDs, states that sample collection in all included studies occurred after an overnight fast and measurements followed the same standard operating procedures, and specifies the circulating-SCFA workflow used for the combined baseline analysis.
-
-The resolved dimension is therefore narrowly stated as:
+For `NCT01826162 ↔ NCT01983046`, v0.6.5.1 established from the 2019 combined baseline analysis that the contributing studies used a common reported baseline sample-collection/measurement SOP and a specified circulating-SCFA workflow in that analysis scope.
 
 ```text
-PER_TRIAL_PREANALYTIC_AND_ANALYTICAL_CONTEXT_NOT_YET_BOUND_AS_EXACT_IDENTICAL
-→
-RESOLVED_FOR_BASELINE_SAMPLES_IN_2019_COMBINED_ANALYSIS_SCOPE
+MEASUREMENT_CONTEXT
+= PASS_IN_DEFINED_2019_COMBINED_ANALYSIS_SCOPE
 ```
 
-This does **not** make the pair comparable-ready.
+This did not establish cohort independence or separate per-trial reference distributions.
 
-Remaining blockers:
+## v0.6.5.2 — public evidence boundary
+
+A further primary-source pass checked both trial registrations, the individual primary publications, and the 2019 combined analysis.
+
+Publicly established:
+
+```text
+NCT01826162 = pilot protocol MEC 11-3-079
+NCT01983046 = later follow-up protocol that explicitly references the pilot
+trial windows are sequential
+published participant counts differ
+NCT01983046 Figure 2 exposes plasma-SCFA curves as mean ± SEM
+2019 combined analysis includes both trials and uses a common baseline SOP
+```
+
+Still **not** publicly established:
+
+```text
+PARTICIPANT_OVERLAP_OR_NONOVERLAP
+SEPARATE_DIRECT_REPORTED_PER_TRIAL_BASELINE_SCFA_DISTRIBUTIONS
+```
+
+The 2019 paper states that underlying intervention-study data are not suitable for public deposition because of ethical/privacy restrictions and may be available to qualified researchers through controlled request. SCOBY-D0 has not accessed those private data and does not infer missing values from their existence.
+
+Therefore:
+
+```text
+PUBLIC_SEARCH_EXHAUSTION != NEGATIVE_PROOF_OF_OVERLAP
+ABSENCE_OF_OVERLAP_STATEMENT != DISTINCT_COHORT_PROOF
+RESTRICTED_DATA != PERMISSION_TO_INFER_MISSING_VALUES
+FIGURE_VISIBILITY != DIRECT_REPORTED_NUMERIC_VALUE
+```
+
+No figure digitization was promoted in v0.6.5.2. If digitization is ever used, it must return through the existing v0.5 `FIGURE_DIGITIZATION` lineage with an explicit method and extraction error; it still would not solve cohort independence.
+
+The boundary receipt is machine-readable:
+
+- [`evidence/reference_context/MAASTRICHT_PUBLIC_EVIDENCE_BOUNDARY_V0_6_5_2.json`](evidence/reference_context/MAASTRICHT_PUBLIC_EVIDENCE_BOUNDARY_V0_6_5_2.json)
+- [`evidence/reference_context/REFERENCE_DATASET_V0_6_3.json`](evidence/reference_context/REFERENCE_DATASET_V0_6_3.json)
+- [`tests/test_public_evidence_boundary_v0652.py`](tests/test_public_evidence_boundary_v0652.py)
+
+## Remaining Maastricht blockers
 
 ```text
 PARTICIPANT_REUSE_BETWEEN_PILOT_AND_FOLLOWUP_TRIAL_UNRESOLVED
@@ -82,41 +116,17 @@ DISTINCT_TRIAL_ID_DOES_NOT_ESTABLISH_DISTINCT_COHORT
 PER_TRIAL_BASELINE_SCFA_OBSERVATIONS_NOT_YET_SEPARATELY_EXTRACTION_BOUND
 ```
 
-Hence:
-
-```text
-COMMON_REPORTED_SOP != DISTINCT_COHORT_PROOF
-COMBINED_DATASET != PER_TRIAL_REFERENCE_DISTRIBUTION
-ONE_RESOLVED_BLOCKER != PAIR_ADMISSION
-```
-
-The resolution receipt is machine-readable and hash-bound:
-
-- [`evidence/reference_context/MAASTRICHT_SOP_RESOLUTION_RECEIPT_V0_6_5_1.json`](evidence/reference_context/MAASTRICHT_SOP_RESOLUTION_RECEIPT_V0_6_5_1.json)
-- [`evidence/reference_context/REFERENCE_DATASET_V0_6_2.json`](evidence/reference_context/REFERENCE_DATASET_V0_6_2.json)
-- [`tests/test_maastricht_resolution_v0651.py`](tests/test_maastricht_resolution_v0651.py)
+At this point the honest next evidence is either controlled/author-level evidence for participant identity and per-trial baseline SCFA, or a pivot to another near-pair. Internet similarity is no longer sufficient.
 
 ## Other active near-pairs
 
 ### OsloMet: NCT03293693 ↔ NCT03658681
 
-The surface measurement context remains close: healthy normal-weight adults, ≥12 h fast, EDTA plasma, rapid cold processing, −80 °C storage and Vitas Analytical Service. However, the NCT03293693 primary paper does not explicitly identify the SCFA analytical method family, while NCT03658681 explicitly binds its SCFA analysis to LC-MS/MS. Therefore `SAME_LAB != SAME_METHOD`, and participant reuse is also unresolved.
+The measurement surface remains close: healthy normal-weight adults, ≥12 h fast, EDTA plasma, rapid cold processing, −80 °C storage and Vitas Analytical Service. The NCT03293693 primary paper still does not identify the SCFA analytical method family, while NCT03658681 explicitly uses LC-MS/MS. `SAME_LAB != SAME_METHOD`; participant reuse also remains unresolved.
 
 ### Oslo method contrast: NCT01034436 NW ↔ NCT03658681
 
-Both reports involve fasted EDTA plasma and Vitas, but one explicitly uses GC-MS and the other LC-MS/MS. It is retained as a method contrast rather than exact comparability.
-
-## Resolution frontier cannot admit
-
-Executable v0.6.5 code still enforces:
-
-```text
-pair_can_admit_from_resolution_frontier(...) = FALSE
-distinct_trial_ids_establish_independent_cohorts(...) = FALSE
-same_lab_establishes_same_method(...) = FALSE
-```
-
-v0.6.5.1 adds a resolution receipt, not a new admission path. Any future fully resolved pair must return through the established extraction and hardened-comparability kernels.
+Both use fasted EDTA plasma and Vitas, but the primary reports bind SCFA measurement to GC-MS versus LC-MS/MS. The pair remains a method contrast, not exact comparability.
 
 ## Historical reference manifests
 
@@ -128,7 +138,8 @@ REFERENCE_DATASET_V0_4   → 0 exact comparable multi-study buckets
 REFERENCE_DATASET_V0_5   → cohort/preanalytic hardening, 0 ready buckets
 REFERENCE_DATASET_V0_6   → hardened-pair search frontier, 0 ready pairs
 REFERENCE_DATASET_V0_6_1 → cohort/method resolution frontier, 0 ready pairs
-REFERENCE_DATASET_V0_6_2 → one measurement-context blocker resolved; pair still blocked
+REFERENCE_DATASET_V0_6_2 → one Maastricht measurement-context blocker resolved
+REFERENCE_DATASET_V0_6_3 → public evidence boundary reached; pair still blocked
 ```
 
 ## Claim ceiling
@@ -139,9 +150,10 @@ INGESTION_AUTHORITY != HUMAN_REFERENCE_STANDARD
 DISTINCT_PUBLICATIONS != DISTINCT_COHORTS
 DISTINCT_TRIAL_IDS != DISTINCT_COHORTS
 COMMON_REPORTED_SOP != DISTINCT_COHORT_PROOF
-COMBINED_DATASET != PER_TRIAL_REFERENCE_DISTRIBUTION
-SAME_LAB != SAME_METHOD
-SEARCH_OR_RESOLUTION_FRONTIER != EVIDENCE_AUTHORITY
+PUBLIC_SEARCH_EXHAUSTION != NEGATIVE_PROOF
+RESTRICTED_DATA != INFERRED_DATA
+FIGURE_VISIBILITY != DIRECT_REPORTED_VALUE
+SEARCH_OR_RESOLUTION_RECEIPT != EVIDENCE_AUTHORITY
 COMPARABLE_READY != POOLED_REFERENCE
 MULTIPLE_OBSERVATIONS != BIOLOGICAL_REFERENCE_VECTOR
 HASH != TRUTH
