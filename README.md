@@ -81,7 +81,7 @@ DERIVED_VALUE
 FIGURE_DIGITIZATION
 ```
 
-Fail-closed invariants include:
+Fail-closed v0.5 invariants include:
 
 ```text
 SD != SE != CI95 != IQR != RANGE
@@ -94,6 +94,23 @@ NORMALIZED_VALUE MUST_BE_REPLAYABLE_FROM SOURCE_OBSERVATION
 SAME_EXTRACTOR != INDEPENDENT_EXTRACTION
 EXTRACTION_CONFLICT = PRESERVED
 EXTRACTION_MATCH != AUTHORITATIVE_ADMISSION
+```
+
+### v0.4 invariants remain active
+
+v0.5 extends the admission gate; it does not replace it.
+
+```text
+EXACT_CITATION_LOCATOR_REQUIRED_FOR_AUTHORITATIVE_OBSERVATION
+MISSING_UNCERTAINTY => NOT_AUTHORITATIVE
+UNIT_CONVERSION => EXPLICIT_AND_TESTED
+PLASMA_VALUE != LUMINAL_VALUE
+COLONIC_DELIVERY != ORAL_INTAKE
+FASTED != POSTPRANDIAL
+SINGLE_STUDY != HUMAN_REFERENCE_STANDARD
+MEAN_WITHOUT_VARIANCE != REFERENCE_DISTRIBUTION
+CONFLICTS_PRESERVED = TRUE
+BIOLOGICAL_REFERENCE_VECTOR = STILL_NOT_COLLAPSED
 ```
 
 ## Double extraction
@@ -121,7 +138,15 @@ AUTHORITATIVE_ADMISSION = BLOCKED_UNTIL_V0_6
 
 For Boets et al. 2017 (PMID `27510655`, DOI `10.1113/JP272613`), the source directly reports colonic-derived acetate systemic availability as `36 ± 21%`, mean ± SD, in 12 healthy subjects. The record is bound to the Results passage immediately before Figure 2 and Figure 2B and is classified as `DIRECT_REPORTED_VALUE`, not figure digitization.
 
-This remains a **candidate extraction record**, not a universal postprandial reference value.
+The normalization step is explicit:
+
+```text
+36 ± 21 percent
+× 0.01
+→ 0.36 ± 0.21 fraction
+```
+
+The exact transform is applied to both the estimate and its SD. This remains a **candidate extraction record**, not a universal postprandial reference value.
 
 ## Current objects
 
