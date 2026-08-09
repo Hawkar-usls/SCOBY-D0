@@ -2,11 +2,6 @@
   "schema": "scoby-d0.research-lineage.v1",
   "project": "SCOBY-D0",
   "origin_date": "2026-08-09",
-  "parent_registry_objects": [
-    "https://github.com/Hawkar-usls/janus-meta-registry/blob/main/data/SKYBU-SKINGPT-CIRCULAR-BIOMANUFACTURING-CONCEPT-v1.0.json",
-    "https://github.com/Hawkar-usls/janus-meta-registry/blob/main/data/JANUS-C2-METABOLIC-DUPLEX-SIM-v0.1.json",
-    "https://github.com/Hawkar-usls/janus-meta-registry/blob/main/data/JANUS-GENESIS-ACETATE-SOURCE-EQUIVALENCE-v0.2.json"
-  ],
   "runtime_references": {
     "janus_genesis_exact_commit": "98699273bc4dfc08d4eda795869b4bcfe1134b72",
     "esp32_twai_can_exact_commit": "5781b0644209b8aa26fcb8a50ccc29e8cf67a828"
@@ -20,37 +15,19 @@
   "v0_6_5_1_resolution_receipt_sha256": "70cad644fbd76c430d8e97379f08a94c8a2bea0f5749e81143f547217415fcc3",
   "v0_6_5_2_public_evidence_boundary_sha256": "f40a5b470df00271aa91b1fb71357f0d6e112f271ea35eb9b01e447839d6fcaf",
   "v0_6_5_3_oslo_provenance_correction_sha256": "820e108f587cd281ff0941836c04c0b89ad8c2eefbf4cd493b54603667490fb8",
-  "v0_6_5_4_oslo_public_boundary": "evidence/reference_context/OSLO_PUBLIC_METHOD_COHORT_EVIDENCE_BOUNDARY_V0_6_5_4.json",
   "v0_6_5_4_oslo_public_boundary_sha256": "c943fdabdfc849b40431c3e84352f3b217ea16f34267f3de45d783877ad83247",
-  "preserved_reference_snapshots": [
-    "evidence/reference_context/REFERENCE_DATASET_V0_1.json",
-    "evidence/reference_context/REFERENCE_DATASET_V0_2.json",
-    "evidence/reference_context/REFERENCE_DATASET_V0_3.json",
-    "evidence/reference_context/REFERENCE_DATASET_V0_4.json",
-    "evidence/reference_context/REFERENCE_DATASET_V0_5.json",
-    "evidence/reference_context/REFERENCE_DATASET_V0_6.json",
-    "evidence/reference_context/REFERENCE_DATASET_V0_6_1.json",
-    "evidence/reference_context/REFERENCE_DATASET_V0_6_2.json",
-    "evidence/reference_context/REFERENCE_DATASET_V0_6_3.json",
-    "evidence/reference_context/REFERENCE_DATASET_V0_6_4.json"
-  ],
-  "current_reference_manifest": "evidence/reference_context/REFERENCE_DATASET_V0_6_5.json",
+  "v0_6_6_candidate_ledger": "evidence/reference_context/HARDENED_CANDIDATE_LEDGER_V0_6_6.json",
+  "v0_6_6_candidate_ledger_sha256": "d28cdcbac1e9cf401e3eb2074a4fb7cb6e85387207e867901f37d2cc528a292d",
+  "current_reference_manifest": "evidence/reference_context/REFERENCE_DATASET_V0_6_6.json",
   "rule": "Artifact hashes identify specific object versions for integrity and lineage; they are not hashes of truth.",
   "current_reference_state": {
     "authoritative_observations": 10,
     "existing_context_buckets": 6,
+    "candidate_count": 6,
+    "measurement_key_fully_bound_singles": 2,
+    "exact_eleven_field_matching_pairs": 0,
     "real_hardened_ready_pairs": 0,
     "cohort_independence_resolved_pairs": 0,
-    "measurement_context_resolution_receipts": 1,
-    "public_evidence_boundary_receipts": 2,
-    "provenance_correction_receipts": 1,
-    "oslo_NCT03293693_scfa_method": "UNRESOLVED_FROM_CHECKED_PUBLIC_PRIMARY_EVIDENCE",
-    "oslo_NCT03658681_scfa_method": "UNRESOLVED_FROM_CHECKED_PUBLIC_PRIMARY_EVIDENCE",
-    "oslo_method_identity": "NOT_ESTABLISHED",
-    "oslo_participant_overlap_or_nonoverlap": "UNRESOLVED_FROM_CHECKED_PUBLIC_PRIMARY_EVIDENCE",
-    "oslo_same_commercial_lab": "VITAS_ANALYTICAL_SERVICE",
-    "oslo_study_periods_nonoverlapping": true,
-    "oslo_ethics_approvals_distinct": true,
     "new_authoritative_observations": 0,
     "cross_study_aggregation_allowed": false,
     "pooled_reference_created": false,
@@ -60,29 +37,38 @@
     "biological_reference_vector": "UNSET_PENDING_PRIMARY_DATA_AND_EXTERNAL_REVIEW",
     "pareto_search": "BLOCKED_PENDING_REAL_HARDENED_PAIR_AND_SEPARATE_V0_7_PREREGISTRATION"
   },
-  "v0_6_5_4_public_boundary": {
-    "pair": "NCT03293693__NCT03658681",
-    "method_identity": "NOT_ESTABLISHED",
-    "participant_overlap_or_nonoverlap": "UNRESOLVED_FROM_CHECKED_PUBLIC_PRIMARY_EVIDENCE",
-    "positive_provenance": [
-      "SAME_OSLOMET_SPONSOR",
-      "SAME_VITAS_COMMERCIAL_LAB",
-      "NONOVERLAPPING_REPORTED_STUDY_PERIODS",
-      "DISTINCT_ETHICS_APPROVALS",
-      "FASTED_EDTA_PLASMA_SCFA_SURFACE_CONTEXT"
+  "v0_6_6_discovery_state": {
+    "fully_bound_singles": [
+      "MASLD_2024_HEALTHY_CONTROL_ACETATE",
+      "USDA_NPS_2024_HEALTHY_ACETATE"
     ],
-    "inference_ceiling": "None of these provenance similarities establishes analytical-method identity or cohort independence."
+    "explicit_nonmatch": {
+      "pair": "MASLD_2024_HEALTHY_CONTROL_ACETATE__USDA_NPS_2024_HEALTHY_ACETATE",
+      "differing_fields": [
+        "fasting_duration",
+        "preanalytic_handling",
+        "analytical_method_family"
+      ]
+    },
+    "near_candidates": [
+      "RYEWEIGHT2_2026_BASELINE_ACETATE",
+      "BAIN_2022_HEALTHY_BLOOD_COLLECTION_METHOD_CONTEXT",
+      "DRB_2025_HEALTHY_PLASMA_ORGANIC_ACIDS",
+      "FRISTEDT_2024_HUMAN_PLASMA_METHOD_AUTHORITY"
+    ],
+    "admission_effect": "NONE"
   },
   "new_invariants": [
-    "PUBLIC_PRIMARY_SEARCH_NE_METHOD_IDENTITY",
-    "SAME_LAB_NE_SAME_METHOD",
-    "TWO_UNRESOLVED_METHODS_NE_METHOD_IDENTITY",
-    "UNKNOWN_A_AND_UNKNOWN_B_NE_ESTABLISHED_EQUALITY",
-    "NONOVERLAPPING_STUDY_PERIODS_NE_NO_PARTICIPANT_REUSE_PROOF",
-    "DISTINCT_ETHICS_APPROVALS_NE_DISTINCT_COHORT_PROOF",
-    "ABSENCE_OF_OVERLAP_STATEMENT_NE_COHORT_INDEPENDENCE",
-    "ADJACENT_BILE_ACID_METHOD_NE_SCFA_METHOD",
-    "PUBLIC_EVIDENCE_BOUNDARY_NE_ADMISSION"
+    "CANDIDATE_LEDGER_NE_EVIDENCE_AUTHORITY",
+    "SINGLE_FULLY_BOUND_NE_COMPARABLE_READY",
+    "METHOD_AUTHORITY_ONLY_NE_BIOLOGICAL_COHORT",
+    "PROTOCOL_NE_NUMERIC_OBSERVATION",
+    "LITERAL_ELEVEN_FIELD_KEY_REQUIRED",
+    "AT_LEAST_4_HOURS_NE_12_HOURS_WATER_ONLY",
+    "EDTA_PLASMA_NE_HEPARIN_PLASMA",
+    "SD_NE_CI95",
+    "RANKING_NE_ADMISSION",
+    "DISTINCT_COHORT_ESTABLISHED_REQUIRES_PAIR_SPECIFIC_EVIDENCE"
   ],
-  "next_gate": "OBTAIN_STUDY_BOUND_SCFA_METHOD_PROVENANCE_AND_COHORT_IDENTITY_EVIDENCE_FOR_OSLOMET_PAIR_OR_PIVOT_TO_ANOTHER_NEAR_PAIR; DO_NOT_MATCH_UNKNOWN_METHODS_BY_DEFAULT; ANY_FUTURE_NUMERIC_EXTRACTION_MUST_REPLAY_EXISTING_V0_5_AND_V0_6_3_KERNELS; BIOLOGICAL_REFERENCE_VECTOR_REMAINS_UNSET; PARETO_REMAINS_BLOCKED"
+  "next_gate": "FIND_A_SECOND_PRIMARY_HUMAN_COHORT_MATCHING_ONE_COMPLETE_ELEVEN_FIELD_KEY_EXACTLY; THEN_RESOLVE_PAIR_SPECIFIC_COHORT_INDEPENDENCE_AND_REPLAY_EXISTING_V0_5_AND_V0_6_3_KERNELS; DO_NOT_RELAX_KEY_FIELDS; BIOLOGICAL_REFERENCE_VECTOR_REMAINS_UNSET; PARETO_REMAINS_BLOCKED"
 }
