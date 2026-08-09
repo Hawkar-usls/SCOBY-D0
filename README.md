@@ -36,11 +36,13 @@ v0.6.5 COHORT + METHOD RESOLUTION FRONTIER
   ↓
 v0.6.5.1 FIRST CONCRETE BLOCKER RESOLUTION
   ↓
-v0.6.5.2 PUBLIC PRIMARY-EVIDENCE BOUNDARY
+v0.6.5.2 MAASTRICHT PUBLIC PRIMARY-EVIDENCE BOUNDARY
   ↓
-v0.6.5.3 OSLO SCFA METHOD PROVENANCE CORRECTION   ← current
+v0.6.5.3 OSLO SCFA METHOD PROVENANCE CORRECTION
   ↓
-v0.7   UNCERTAINTY-AWARE PARETO SEARCH            🔒 BLOCKED
+v0.6.5.4 OSLO PUBLIC METHOD + COHORT EVIDENCE BOUNDARY ← current
+  ↓
+v0.7   UNCERTAINTY-AWARE PARETO SEARCH                 🔒 BLOCKED
 ```
 
 ## Current state
@@ -50,6 +52,7 @@ AUTHORITATIVE_OBSERVATIONS = 10
 EXISTING_CONTEXT_BUCKETS = 6
 REAL_HARDENED_READY_PAIRS = 0
 COHORT_INDEPENDENCE_RESOLVED_PAIRS = 0
+PUBLIC_EVIDENCE_BOUNDARY_RECEIPTS = 2
 PROVENANCE_CORRECTION_RECEIPTS = 1
 NEW_AUTHORITATIVE_OBSERVATIONS = 0
 POOLED_REFERENCE = NOT_CREATED
@@ -57,30 +60,46 @@ BIOLOGICAL_REFERENCE_VECTOR = UNSET
 PARETO_SEARCH = BLOCKED
 ```
 
-## v0.6.5.3 — Oslo SCFA method correction
+## v0.6.5.4 — Oslo public evidence boundary
 
-The historical v0.6.5 resolution frontier is preserved unchanged. A later primary-source re-audit found that one analytical-method binding in that historical object was incorrect.
-
-For `NCT03658681`, the primary Methods text says that acetate, propionate and butyrate were measured in EDTA plasma at Vitas Analytical Service. The nearby `LC-MS/MS / QTRAP5500 / Kinetex Biphenyl` method is introduced for **nine bile acids**, not for SCFA.
-
-Therefore the corrected binding is:
+The corrected Oslo near-pair is:
 
 ```text
-NCT03658681 SCFA method
-LC_MS_MS_QTRAP5500_KINETEX_BIPHENYL_NEGATIVE_MRM
-→ UNRESOLVED_IN_PRIMARY_ARTICLE
-
-NCT03658681 bile-acid method
-= LC_MS_MS_QTRAP5500_KINETEX_BIPHENYL_NEGATIVE_MRM
+NCT03293693 ↔ NCT03658681
 ```
 
-For `NCT03293693`, the primary article reports fasting EDTA-plasma SCFA, immediate ice handling, rapid cold centrifugation, −80 °C storage and shipment to Vitas, but does not name the SCFA analytical-method family. It therefore remains:
+The checked primary record establishes a close surface measurement context. Both studies were sponsored by Oslo Metropolitan University and concern healthy adults. The NCT03293693 primary article reports ≥12 h fasting, EDTA plasma, immediate ice handling, centrifugation within 10 min at 1500 g / 4 °C / 10 min, −80 °C storage, and shipment to Vitas Analytical Service. The NCT03658681 primary article reports ≥12 h fasting and acetate/propionate/butyrate measured in EDTA plasma at Vitas.
+
+But neither checked primary article names the **SCFA analytical-method family**.
 
 ```text
-NCT03293693 SCFA method = UNRESOLVED_IN_PRIMARY_ARTICLE
+NCT03293693 SCFA method = UNRESOLVED_FROM_CHECKED_PUBLIC_PRIMARY_EVIDENCE
+NCT03658681 SCFA method = UNRESOLVED_FROM_CHECKED_PUBLIC_PRIMARY_EVIDENCE
+METHOD_IDENTITY = NOT_ESTABLISHED
 ```
 
-This produces a new anti-bias boundary:
+The nearby NCT03658681 `LC-MS/MS / QTRAP5500 / Kinetex Biphenyl` workflow remains explicitly bound to **bile acids**, not SCFA.
+
+## Cohort independence also remains unresolved
+
+The trial registrations establish different reported study periods and the primary papers use distinct ethics approvals. Those are useful provenance facts, but they do not explicitly state that participants were never reused between studies.
+
+```text
+NONOVERLAPPING_STUDY_PERIODS != NO_PARTICIPANT_REUSE_PROOF
+DISTINCT_ETHICS_APPROVALS != DISTINCT_COHORT_PROOF
+ABSENCE_OF_OVERLAP_STATEMENT != COHORT_INDEPENDENCE
+```
+
+Therefore:
+
+```text
+PARTICIPANT_OVERLAP_OR_NONOVERLAP
+= UNRESOLVED_FROM_CHECKED_PUBLIC_PRIMARY_EVIDENCE
+```
+
+## Unknown + unknown is not a match
+
+This boundary explicitly forbids a subtle false-positive route:
 
 ```text
 TWO_UNRESOLVED_METHODS != METHOD_IDENTITY
@@ -88,51 +107,23 @@ UNKNOWN_A == UNKNOWN_B != ESTABLISHED_EQUALITY
 SAME_LAB != SAME_METHOD
 ```
 
-The older Oslo method-contrast record is corrected too. The `NCT01034436` primary report explicitly binds fasting EDTA-plasma SCFA to **GC-MS** at Vitas, but `NCT03658681` is now unresolved rather than LC-MS/MS:
+A method may become comparable only after study-bound method provenance is established for both observations. Shared Vitas provenance cannot substitute for that evidence.
 
-```text
-historical: GC_MS vs LC_MS_MS
-corrected:  GC_MS vs UNRESOLVED
-verdict:    METHOD_IDENTITY_UNRESOLVED_NOT_CONFIRMED_METHOD_CONTRAST
-```
+## Current boundary objects
 
-## Why the historical object is not rewritten
+- [`evidence/reference_context/OSLO_SCFA_METHOD_PROVENANCE_CORRECTION_V0_6_5_3.json`](evidence/reference_context/OSLO_SCFA_METHOD_PROVENANCE_CORRECTION_V0_6_5_3.json)
+- [`evidence/reference_context/OSLO_PUBLIC_METHOD_COHORT_EVIDENCE_BOUNDARY_V0_6_5_4.json`](evidence/reference_context/OSLO_PUBLIC_METHOD_COHORT_EVIDENCE_BOUNDARY_V0_6_5_4.json)
+- [`evidence/reference_context/REFERENCE_DATASET_V0_6_5.json`](evidence/reference_context/REFERENCE_DATASET_V0_6_5.json)
+- [`tests/test_oslo_public_evidence_boundary_v0654.py`](tests/test_oslo_public_evidence_boundary_v0654.py)
+
+## Historical state is preserved
+
+The historical v0.6.5 object that contained the later-corrected NCT03658681 method binding is not rewritten. v0.6.5.3 carries the correction; v0.6.5.4 records the remaining public-evidence boundary.
 
 ```text
 HISTORICAL_OBJECT_NOT_REWRITTEN
 CORRECTION_RECEIPT != ADMISSION
-CORRECTION_OF_PROVENANCE != CHANGE_IN_BIOLOGICAL_TRUTH
-```
-
-The v0.6.5 object remains an auditable historical state. The correction is a separate machine-readable receipt:
-
-- [`evidence/reference_context/OSLO_SCFA_METHOD_PROVENANCE_CORRECTION_V0_6_5_3.json`](evidence/reference_context/OSLO_SCFA_METHOD_PROVENANCE_CORRECTION_V0_6_5_3.json)
-- [`evidence/reference_context/REFERENCE_DATASET_V0_6_4.json`](evidence/reference_context/REFERENCE_DATASET_V0_6_4.json)
-- [`tests/test_oslo_method_provenance_correction_v0653.py`](tests/test_oslo_method_provenance_correction_v0653.py)
-
-## Maastricht state remains unchanged
-
-The Maastricht pair `NCT01826162 ↔ NCT01983046` still has one measurement-context blocker resolved in the defined 2019 combined-analysis scope, while participant independence and separate direct-reported per-trial baseline SCFA distributions remain unresolved from public primary evidence.
-
-```text
-PUBLIC_SEARCH_EXHAUSTION != NEGATIVE_PROOF_OF_OVERLAP
-RESTRICTED_DATA != PERMISSION_TO_INFER_MISSING_VALUES
-FIGURE_VISIBILITY != DIRECT_REPORTED_NUMERIC_VALUE
-```
-
-## Historical reference manifests
-
-```text
-REFERENCE_DATASET_V0_1   → 0 authoritative observations
-REFERENCE_DATASET_V0_2   → 1 authoritative observation
-REFERENCE_DATASET_V0_3   → 10 context-separated authoritative observations
-REFERENCE_DATASET_V0_4   → 0 exact comparable multi-study buckets
-REFERENCE_DATASET_V0_5   → cohort/preanalytic hardening, 0 ready buckets
-REFERENCE_DATASET_V0_6   → hardened-pair search frontier, 0 ready pairs
-REFERENCE_DATASET_V0_6_1 → cohort/method resolution frontier, 0 ready pairs
-REFERENCE_DATASET_V0_6_2 → one Maastricht measurement-context blocker resolved
-REFERENCE_DATASET_V0_6_3 → Maastricht public evidence boundary
-REFERENCE_DATASET_V0_6_4 → Oslo method-provenance correction, no admission change
+PUBLIC_EVIDENCE_BOUNDARY != ADMISSION
 ```
 
 ## Claim ceiling
@@ -144,8 +135,9 @@ ADJACENT_METHOD_TEXT != ANALYTE_METHOD_BINDING
 SCFA_MEASUREMENT != BILE_ACID_MEASUREMENT
 TWO_UNRESOLVED_METHODS != METHOD_IDENTITY
 DISTINCT_TRIAL_IDS != DISTINCT_COHORTS
+NONOVERLAPPING_STUDY_PERIODS != COHORT_INDEPENDENCE
+DISTINCT_ETHICS_APPROVALS != COHORT_INDEPENDENCE
 SAME_LAB != SAME_METHOD
-CORRECTION_RECEIPT != EVIDENCE_AUTHORITY
 COMPARABLE_READY != POOLED_REFERENCE
 MULTIPLE_OBSERVATIONS != BIOLOGICAL_REFERENCE_VECTOR
 HASH != TRUTH

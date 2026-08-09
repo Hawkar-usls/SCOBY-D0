@@ -1,0 +1,143 @@
+{
+  "schema": "scoby-d0.oslo-public-method-cohort-evidence-boundary.v0.6.5.4",
+  "artifact_id": "SCOBY-D0-OSLO-PUBLIC-METHOD-COHORT-EVIDENCE-BOUNDARY-v0.6.5.4",
+  "status": "PUBLIC_PRIMARY_EVIDENCE_INSUFFICIENT_FOR_METHOD_IDENTITY_AND_COHORT_INDEPENDENCE_NO_ADMISSION_CHANGE",
+  "created_at": "2026-08-09T12:52:00+03:00",
+  "parent_correction": {
+    "artifact": "evidence/reference_context/OSLO_SCFA_METHOD_PROVENANCE_CORRECTION_V0_6_5_3.json",
+    "sha256": "820e108f587cd281ff0941836c04c0b89ad8c2eefbf4cd493b54603667490fb8",
+    "merge_commit": "0da00812b8cadb1f513fac61ad9b6827b8fdd130"
+  },
+  "pair_id": "NCT03293693__NCT03658681",
+  "checked_public_primary_evidence": [
+    {
+      "trial_id": "NCT03293693",
+      "source_type": "TRIAL_REGISTRY",
+      "source_identity": "ClinicalTrials.gov NCT03293693",
+      "established": [
+        "OSLO_METROPOLITAN_UNIVERSITY_SPONSOR",
+        "STUDY_START_2016_10",
+        "PRIMARY_COMPLETION_2017_06",
+        "ACTUAL_ENROLLMENT_14",
+        "HEALTHY_HUMAN_INTERVENTION"
+      ],
+      "not_established": [
+        "PARTICIPANT_NONREUSE_WITH_NCT03658681",
+        "SCFA_ANALYTICAL_METHOD_FAMILY"
+      ]
+    },
+    {
+      "trial_id": "NCT03293693",
+      "source_type": "PRIMARY_ARTICLE",
+      "source_identity": "Telle-Hansen et al. 2022 Frontiers in Nutrition DOI 10.3389/fnut.2022.796362 PMCID PMC9106798",
+      "locator": "Materials and Methods / Short Chain Fatty Acids Analysis",
+      "established": [
+        "FASTING_AT_LEAST_12_HOURS",
+        "SCFA_MEASURED_FASTED_IN_EDTA_PLASMA",
+        "EDTA_TUBES_IMMEDIATELY_ON_ICE",
+        "CENTRIFUGE_WITHIN_10_MIN_1500G_4C_10MIN",
+        "PLASMA_STORED_MINUS80C",
+        "SHIPPED_TO_VITAS_ANALYTICAL_SERVICE"
+      ],
+      "not_established": [
+        "SCFA_ANALYTICAL_METHOD_FAMILY",
+        "PARTICIPANT_NONREUSE_WITH_NCT03658681"
+      ]
+    },
+    {
+      "trial_id": "NCT03658681",
+      "source_type": "TRIAL_REGISTRY",
+      "source_identity": "ClinicalTrials.gov NCT03658681",
+      "established": [
+        "OSLO_METROPOLITAN_UNIVERSITY_SPONSOR",
+        "STUDY_START_2018_03_13",
+        "PRIMARY_COMPLETION_2019_01_31",
+        "ACTUAL_ENROLLMENT_20",
+        "HEALTHY_HUMAN_INTERVENTION"
+      ],
+      "not_established": [
+        "PARTICIPANT_NONREUSE_WITH_NCT03293693",
+        "SCFA_ANALYTICAL_METHOD_FAMILY"
+      ]
+    },
+    {
+      "trial_id": "NCT03658681",
+      "source_type": "PRIMARY_ARTICLE",
+      "source_identity": "Telle-Hansen et al. 2022 Lipids in Health and Disease PMID 36163070 PMCID PMC9511723 DOI 10.1186/s12944-022-01702-1",
+      "locator": "Methods / Blood sampling and laboratory analyses",
+      "established": [
+        "OVERNIGHT_FAST_AT_LEAST_12_HOURS",
+        "ACETATE_PROPIONATE_BUTYRATE_MEASURED_IN_EDTA_PLASMA_AT_VITAS_ANALYTICAL_SERVICE",
+        "LC_MS_MS_QTRAP5500_KINETEX_BIPHENYL_METHOD_EXPLICITLY_BOUND_TO_NINE_BILE_ACIDS"
+      ],
+      "not_established": [
+        "SCFA_ANALYTICAL_METHOD_FAMILY",
+        "PARTICIPANT_NONREUSE_WITH_NCT03293693"
+      ]
+    }
+  ],
+  "public_search_result": {
+    "NCT03293693_scfa_method": "UNRESOLVED_FROM_CHECKED_PUBLIC_PRIMARY_EVIDENCE",
+    "NCT03658681_scfa_method": "UNRESOLVED_FROM_CHECKED_PUBLIC_PRIMARY_EVIDENCE",
+    "method_identity": "NOT_ESTABLISHED",
+    "participant_overlap_or_nonoverlap": "UNRESOLVED_FROM_CHECKED_PUBLIC_PRIMARY_EVIDENCE",
+    "same_commercial_lab": "VITAS_ANALYTICAL_SERVICE",
+    "study_periods_nonoverlapping": true,
+    "ethics_approvals_distinct": true,
+    "inference_prohibited": [
+      "SAME_LAB_IMPLIES_SAME_METHOD",
+      "TWO_UNRESOLVED_METHODS_IMPLY_METHOD_MATCH",
+      "NONOVERLAPPING_STUDY_PERIODS_IMPLY_NO_PARTICIPANT_REUSE",
+      "DISTINCT_ETHICS_APPROVALS_IMPLY_DISTINCT_COHORTS"
+    ]
+  },
+  "remaining_blockers": [
+    "SCFA_ANALYTICAL_METHOD_UNRESOLVED_FOR_NCT03293693",
+    "SCFA_ANALYTICAL_METHOD_UNRESOLVED_FOR_NCT03658681",
+    "METHOD_IDENTITY_NOT_ESTABLISHED",
+    "PARTICIPANT_OVERLAP_OR_NONOVERLAP_UNRESOLVED",
+    "BASELINE_ACETATE_NUMERIC_OBSERVATIONS_NOT_YET_DUAL_EXTRACTION_BOUND_FOR_PAIR"
+  ],
+  "external_evidence_needed": [
+    "STUDY_BOUND_SCFA_ANALYTICAL_METHOD_REFERENCE_OR_SUPPLEMENT_FOR_NCT03293693",
+    "STUDY_BOUND_SCFA_ANALYTICAL_METHOD_REFERENCE_OR_SUPPLEMENT_FOR_NCT03658681",
+    "AUTHOR_LEVEL_OR_PARTICIPANT_LEVEL_CONFIRMATION_OF_COHORT_NONOVERLAP_OR_OVERLAP",
+    "DUAL_EXTRACTION_BOUND_BASELINE_ACETATE_NUMERIC_OBSERVATIONS_WITH_UNCERTAINTY"
+  ],
+  "state_after_boundary": {
+    "authoritative_observations": 10,
+    "real_hardened_ready_pairs": 0,
+    "cohort_independence_resolved_pairs": 0,
+    "oslo_method_identity_resolved_pairs": 0,
+    "new_authoritative_observations": 0,
+    "admission_mutation": false,
+    "pooled_reference_created": false,
+    "averaging_performed": false,
+    "human_reference_standard": "NOT_ESTABLISHED",
+    "biological_reference_vector": "UNSET_PENDING_PRIMARY_DATA_AND_EXTERNAL_REVIEW",
+    "pareto_search": "BLOCKED"
+  },
+  "invariants": [
+    "PUBLIC_PRIMARY_SEARCH_NE_METHOD_IDENTITY",
+    "SAME_LAB_NE_SAME_METHOD",
+    "TWO_UNRESOLVED_METHODS_NE_METHOD_IDENTITY",
+    "UNKNOWN_A_AND_UNKNOWN_B_NE_ESTABLISHED_EQUALITY",
+    "NONOVERLAPPING_STUDY_PERIODS_NE_NO_PARTICIPANT_REUSE_PROOF",
+    "DISTINCT_ETHICS_APPROVALS_NE_DISTINCT_COHORT_PROOF",
+    "ABSENCE_OF_OVERLAP_STATEMENT_NE_COHORT_INDEPENDENCE",
+    "ADJACENT_BILE_ACID_METHOD_NE_SCFA_METHOD",
+    "PUBLIC_EVIDENCE_BOUNDARY_NE_ADMISSION",
+    "BIOLOGICAL_REFERENCE_VECTOR_STAYS_UNSET",
+    "PARETO_SEARCH_REMAINS_BLOCKED"
+  ],
+  "claim_ceiling": [
+    "The checked public primary evidence does not establish the SCFA analytical-method family for NCT03293693 or NCT03658681.",
+    "The checked public primary evidence does not establish participant overlap or non-overlap between the two trials.",
+    "Different study periods and ethics approvals are provenance facts, not proof of cohort independence.",
+    "A shared Vitas laboratory is provenance, not proof of analytical-method identity.",
+    "This boundary does not prove the two studies used different SCFA methods; it only preserves method identity as unresolved.",
+    "No real hardened comparable pair, new authoritative observation, pooled reference, clinical target, formulation target or human dosing guidance is established."
+  ],
+  "next_action": "OBTAIN_STUDY_BOUND_SCFA_METHOD_PROVENANCE_AND_COHORT_IDENTITY_EVIDENCE_FOR_OSLOMET_PAIR_OR_PIVOT_TO_ANOTHER_NEAR_PAIR; DO_NOT_MATCH_UNKNOWN_METHODS_BY_DEFAULT; ANY_FUTURE_NUMERIC_EXTRACTION_MUST_REPLAY_EXISTING_V0_5_AND_V0_6_3_KERNELS",
+  "content_sha256": "c943fdabdfc849b40431c3e84352f3b217ea16f34267f3de45d783877ad83247"
+}
