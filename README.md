@@ -33,7 +33,7 @@ MUST_PRESERVE
 EVIDENCE_PROVENANCE
 ```
 
-Producer lineage is excluded from the molecular score when chemistry is matched. Evidence lineage is the opposite: DOI/PMID, cohort, route, compartment, physiological state, sampling window, analytical method, units, uncertainty, sample size and exclusions are admission-critical metadata.
+Producer lineage is excluded from the molecular score when chemistry is matched. Evidence lineage is the opposite: DOI/PMID, study design, cohort, route, compartment, physiological state, sampling window, analytical method, units, uncertainty, sample size, exclusions and the exact citation location are admission-critical metadata.
 
 ## Research line
 
@@ -93,6 +93,9 @@ UNSET_PENDING_PRIMARY_DATA_AND_EXTERNAL_REVIEW
 ## Fail-closed evidence invariants
 
 ```text
+PRODUCER_PROVENANCE_MUST_NOT_AFFECT_SCORE
+EVIDENCE_PROVENANCE_MUST_BE_PRESERVED
+EXACT_CITATION_LOCATOR_REQUIRED_FOR_AUTHORITATIVE_OBSERVATION
 MISSING_UNCERTAINTY => NOT_AUTHORITATIVE
 UNIT_CONVERSION => EXPLICIT_AND_TESTED
 PLASMA_VALUE != LUMINAL_VALUE
@@ -105,6 +108,8 @@ SIMULATION_OPTIMUM != SAFE_HUMAN_FORMULATION
 ```
 
 A comparable evidence bucket currently requires at least two independent complete primary-human sources. This is an engineering admission threshold, **not** a claim that two studies define universal physiology. Cross-study collapse remains forbidden in v0.4.
+
+A numeric observation cannot become authoritative merely because its number is present in a paper: the observation must retain a source-stable identifier (`PMID` or `DOI`) and an exact source locator such as a figure, table, results subsection, or other auditable location.
 
 ## Candidate human evidence ledger
 
