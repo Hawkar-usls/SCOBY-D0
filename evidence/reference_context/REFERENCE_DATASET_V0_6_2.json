@@ -1,0 +1,34 @@
+{
+  "schema": "scoby-d0.reference-dataset.v0.6.2",
+  "status": "ONE_NEAR_PAIR_MEASUREMENT_CONTEXT_BLOCKER_RESOLVED_PAIR_STILL_BLOCKED",
+  "supersedes": "evidence/reference_context/REFERENCE_DATASET_V0_6_1.json",
+  "authoritative_observation_count": 10,
+  "existing_context_buckets": 6,
+  "resolution_near_pairs": 3,
+  "real_hardened_ready_pairs": 0,
+  "cohort_independence_resolved_pairs": 0,
+  "measurement_context_resolution_receipts": 1,
+  "resolved_receipt": "evidence/reference_context/MAASTRICHT_SOP_RESOLUTION_RECEIPT_V0_6_5_1.json",
+  "resolved_pair": "NCT01826162__NCT01983046",
+  "resolved_dimension": "BASELINE_SAMPLE_COLLECTION_AND_CIRCULATING_SCFA_ANALYTICAL_WORKFLOW_AS_REPORTED_IN_2019_COMBINED_ANALYSIS",
+  "resolution_status": "PASS_IN_DEFINED_2019_COMBINED_ANALYSIS_SCOPE",
+  "remaining_pair_blockers": [
+    "PARTICIPANT_REUSE_BETWEEN_PILOT_AND_FOLLOWUP_TRIAL_UNRESOLVED",
+    "DISTINCT_TRIAL_ID_DOES_NOT_ESTABLISH_DISTINCT_COHORT",
+    "PER_TRIAL_BASELINE_SCFA_OBSERVATIONS_NOT_YET_SEPARATELY_EXTRACTION_BOUND"
+  ],
+  "new_authoritative_observations": 0,
+  "cross_study_aggregation_allowed": false,
+  "pooled_reference_created": false,
+  "averaging_performed": false,
+  "human_reference_standard": "NOT_ESTABLISHED",
+  "external_review": "NOT_YET_ESTABLISHED",
+  "biological_reference_vector": "UNSET_PENDING_PRIMARY_DATA_AND_EXTERNAL_REVIEW",
+  "pareto_search": "BLOCKED_PENDING_REAL_HARDENED_PAIR_AND_SEPARATE_V0_7_PREREGISTRATION",
+  "interpretation_ceiling": [
+    "One concrete measurement-context blocker has been resolved for the Maastricht near-pair within the explicit scope of the 2019 combined baseline analysis.",
+    "The pair is still not comparable-ready because cohort independence and separate per-trial numeric reference observations remain unresolved.",
+    "A common reported SOP is not proof of distinct participant cohorts.",
+    "No authoritative-observation count changed and no pooled reference was created."
+  ]
+}
