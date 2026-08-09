@@ -1,0 +1,182 @@
+{
+  "schema": "scoby-d0.comparable-context-bucket-qualification.v0.6.2",
+  "artifact_id": "SCOBY-D0-COMPARABLE-CONTEXT-BUCKET-QUALIFICATION-v0.6.2",
+  "status": "EXECUTABLE_FAIL_CLOSED_QUALIFICATION_GATE",
+  "created_at": "2026-08-09T11:28:00+03:00",
+  "parent_state": {
+    "merge_commit": "e90240fd93374b21c6c41318dbbf21f55614a42e",
+    "reference_manifest": "evidence/reference_context/REFERENCE_DATASET_V0_3.json",
+    "authoritative_observations": 10,
+    "context_buckets": 6
+  },
+  "purpose": "Determine whether at least two independent primary-human studies support observations with an exactly matching comparability key before any cross-study aggregation or v0.7 Pareto preregistration.",
+  "comparability_key_fields": [
+    "population_health_class",
+    "specimen",
+    "route_or_exposure",
+    "fasting_duration",
+    "tracer_state",
+    "analyte",
+    "metric",
+    "units",
+    "uncertainty_semantics"
+  ],
+  "qualification_rules": [
+    "TWO_OR_MORE_INDEPENDENT_PRIMARY_STUDIES_REQUIRED",
+    "ALL_COMPARABILITY_KEY_FIELDS_MUST_BE_RESOLVED",
+    "EXACT_KEY_MATCH_REQUIRED",
+    "SAME_STUDY_MULTIPLE_COHORTS_DO_NOT_COUNT_AS_INDEPENDENT_STUDIES",
+    "TRACER_EXPOSURE_MISMATCH_IS_NOT_COMPARABLE",
+    "SERUM_NE_PLASMA_UNLESS_EQUIVALENCE_IS_PREDECLARED_AND_SUPPORTED",
+    "UNKNOWN_FASTING_DURATION_IS_NOT_EXACT_MATCH",
+    "UNRESOLVED_SPECIMEN_FAILS_CLOSED",
+    "MISSING_SECOND_SOURCE_REPRESENTATION_BLOCKS_INGESTION_AUTHORITY",
+    "COMPARABLE_READY_NE_POOLED_REFERENCE",
+    "NO_AVERAGING_AT_V0_6_2",
+    "BIOLOGICAL_REFERENCE_VECTOR_STAYS_UNSET",
+    "PARETO_SEARCH_REMAINS_BLOCKED"
+  ],
+  "target_family": "HEALTHY_FASTING_PERIPHERAL_ACETATE_CONCENTRATION",
+  "candidates": [
+    {
+      "candidate_id": "SCHEPPACH_1991_FASTING_PLASMA_ACETATE",
+      "source": {
+        "title": "The contribution of the large intestine to blood acetate in man",
+        "year": 1991,
+        "pmid": "1848171",
+        "doi": "10.1042/cs0800177"
+      },
+      "observation": {
+        "estimate": 48.0,
+        "uncertainty_value": 4.2,
+        "uncertainty_semantics": "UNRESOLVED_IN_PRIMARY_ABSTRACT",
+        "units": "umol/L",
+        "n": 21
+      },
+      "comparability_key": {
+        "population_health_class": "HEALTHY_CONTROLS",
+        "specimen": "VENOUS_PLASMA",
+        "route_or_exposure": "NO_EXOGENOUS_ACETATE_TRACER_REPORTED_FOR_FASTING_VALUE",
+        "fasting_duration": "12_HOURS",
+        "tracer_state": "NO_TRACER_REPORTED_FOR_FASTING_VALUE",
+        "analyte": "ACETATE",
+        "metric": "CONCENTRATION",
+        "units": "umol/L",
+        "uncertainty_semantics": "UNRESOLVED"
+      },
+      "ingestion_status": "CANDIDATE_BLOCKED",
+      "blockers": [
+        "SECOND_FULL_SOURCE_REPRESENTATION_NOT_ESTABLISHED",
+        "UNCERTAINTY_SEMANTICS_NOT_EXPLICIT_IN_PRIMARY_ABSTRACT"
+      ]
+    },
+    {
+      "candidate_id": "PETERSEN_2019_LEAN_FASTED_TRACER_BASELINE_PLASMA_ACETATE",
+      "source": {
+        "title": "The effects of increased acetate turnover on glucose-induced insulin secretion in lean and obese humans",
+        "year": 2019,
+        "pmid": "31404159",
+        "pmcid": "PMC6676497",
+        "doi": "10.1017/cts.2018.342"
+      },
+      "observation": {
+        "estimate": 26.0,
+        "uncertainty_value": 3.0,
+        "uncertainty_semantics": "SEM",
+        "units": "umol/L",
+        "n": 6
+      },
+      "comparability_key": {
+        "population_health_class": "HEALTHY_LEAN",
+        "specimen": "ARTERIALIZED_VENOUS_PLASMA",
+        "route_or_exposure": "IV_LOW_DOSE_13C_ACETATE_TRACER_BASELINE",
+        "fasting_duration": "12_HOURS",
+        "tracer_state": "AFTER_2_HOUR_LOW_DOSE_TRACER_INFUSION",
+        "analyte": "ACETATE",
+        "metric": "CONCENTRATION",
+        "units": "umol/L",
+        "uncertainty_semantics": "SEM"
+      },
+      "ingestion_status": "ELIGIBLE_AS_OWN_CONTEXT_CANDIDATE",
+      "blockers": [
+        "NO_SECOND_INDEPENDENT_PRIMARY_STUDY_WITH_EXACT_MATCHING_TRACER_CONTEXT"
+      ]
+    },
+    {
+      "candidate_id": "MCDOUGAL_2018_12H_FAST_ACETATE",
+      "source": {
+        "title": "Glial acetate metabolism is increased following a 72-h fast in metabolically healthy men and correlates with susceptibility to hypoglycemia",
+        "year": 2018,
+        "pmid": "29931424",
+        "pmcid": "PMC6153507",
+        "doi": "10.1007/s00592-018-1180-5"
+      },
+      "observation": {
+        "estimate": 152.0,
+        "uncertainty_value": 6.1,
+        "uncertainty_semantics": "SE",
+        "units": "umol/L",
+        "n": 6
+      },
+      "comparability_key": {
+        "population_health_class": "METABOLICALLY_HEALTHY_MEN",
+        "specimen": "UNRESOLVED_SERUM_OR_PLASMA_FOR_12C_ACETATE_TABLE_VALUE",
+        "route_or_exposure": "PRE_13C_MRS_INFUSION_BASELINE_CONTEXT",
+        "fasting_duration": "12_HOURS",
+        "tracer_state": "BASELINE_BEFORE_13C_MRS_INFUSION_FOR_DAY0_TABLE_VALUE",
+        "analyte": "ACETATE_12C",
+        "metric": "CONCENTRATION",
+        "units": "umol/L",
+        "uncertainty_semantics": "SE"
+      },
+      "ingestion_status": "CANDIDATE_BLOCKED",
+      "blockers": [
+        "SPECIMEN_TYPE_AMBIGUOUS_FOR_ACETATE_TABLE_VALUE"
+      ]
+    },
+    {
+      "candidate_id": "AKANJI_1991_FASTING_PLASMA_ACETATE",
+      "source": {
+        "title": "Breath hydrogen excretion or plasma acetate levels during the lactulose tolerance test?",
+        "year": 1991,
+        "pmid": "1908618"
+      },
+      "observation": {
+        "estimate": 0.11,
+        "uncertainty_value": 0.06,
+        "uncertainty_semantics": "SD",
+        "units": "mmol/L",
+        "normalized_estimate_umol_L": 110.0,
+        "normalized_uncertainty_umol_L": 60.0,
+        "n": 9
+      },
+      "comparability_key": {
+        "population_health_class": "MIXED_LACTULOSE_TEST_SUBJECTS",
+        "specimen": "PLASMA",
+        "route_or_exposure": "PRE_LACTULOSE_FASTING_BASELINE",
+        "fasting_duration": "UNRESOLVED",
+        "tracer_state": "NO_TRACER_REPORTED",
+        "analyte": "ACETATE",
+        "metric": "CONCENTRATION",
+        "units": "umol/L",
+        "uncertainty_semantics": "SD"
+      },
+      "ingestion_status": "CANDIDATE_BLOCKED",
+      "blockers": [
+        "FASTING_DURATION_UNRESOLVED",
+        "HEALTHY_POPULATION_CLASS_NOT_CLEANLY_ESTABLISHED_FOR_ALL_SUBJECTS"
+      ]
+    }
+  ],
+  "qualification_result": {
+    "candidate_primary_studies": 4,
+    "exact_comparable_buckets_with_two_independent_primary_studies": 0,
+    "comparable_ready": false,
+    "cross_study_aggregation_allowed": false,
+    "pooled_reference_created": false,
+    "biological_reference_vector": "UNSET_PENDING_PRIMARY_DATA_AND_EXTERNAL_REVIEW",
+    "pareto_search": "BLOCKED"
+  },
+  "interpretation": "The negative qualification result is informative: superficially similar fasting acetate measurements cannot yet be pooled because their tracer exposure, specimen identity, population definition, fasting duration, or ingestion provenance differ or remain unresolved.",
+  "content_sha256": "f1803c22fb8dd44c28bc824676add36d312e1c8d1d1440ccbcd7059bb78bc366"
+}
