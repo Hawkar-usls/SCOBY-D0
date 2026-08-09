@@ -1,0 +1,24 @@
+{
+  "schema": "scoby-d0.reference-dataset.v0.3",
+  "status": "TEN_INGESTION_AUTHORITATIVE_OBSERVATIONS_CONTEXT_SEPARATED",
+  "supersedes": "evidence/reference_context/REFERENCE_DATASET_V0_2.json",
+  "previous_authoritative_count": 1,
+  "new_authoritative_count": 9,
+  "authoritative_observation_count": 10,
+  "primary_human_study_count": 3,
+  "authoritative_set": "evidence/reference_context/AUTHORITATIVE_REFERENCE_OBSERVATIONS_V0_2.json",
+  "multicontext_extraction_ledger": "evidence/reference_context/MULTICONTEXT_EXTRACTION_LEDGER_V0_1.json",
+  "context_buckets": {
+    "COLON_DELIVERY_PLASMA_SYSTEMIC_AVAILABILITY": 1,
+    "ORAL_INULIN_TRACER_SYSTEMIC_RATE_OF_APPEARANCE": 3,
+    "HIGH_SCFA_DIET_21D_FECAL": 1,
+    "LOW_SCFA_DIET_21D_FECAL": 1,
+    "HIGH_SCFA_DIET_21D_PLASMA": 2,
+    "LOW_SCFA_DIET_21D_PLASMA": 2
+  },
+  "cross_context_collapse_allowed": false,
+  "human_reference_standard": "NOT_ESTABLISHED",
+  "external_review": "NOT_YET_ESTABLISHED",
+  "biological_reference_vector": "UNSET_PENDING_PRIMARY_DATA_AND_EXTERNAL_REVIEW",
+  "pareto_search": "BLOCKED_PENDING_COMPARABLE_CONTEXT_BUCKETS_AND_V0_7_PREREGISTRATION"
+}

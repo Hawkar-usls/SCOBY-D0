@@ -1,0 +1,45 @@
+{
+  "schema": "scoby-d0.multicontext-reference-expansion.v0.6.1",
+  "artifact_id": "SCOBY-D0-MULTICONTEXT-REFERENCE-EXPANSION-v0.6.1",
+  "status": "PREREGISTERED_EXECUTABLE_INGESTION_EXPANSION",
+  "parent_gate": {
+    "artifact": "experiments/SCOBY-D0-AUTHORITATIVE-REFERENCE-ADMISSION-v0.6.json",
+    "sha256": "fe19d736ca676e4c6ed488a40016b006275e615574081ec0bd0e0b728dbbc719"
+  },
+  "goal": "Add multiple context-specific ingestion-authoritative observations without collapsing incompatible human contexts or opening Pareto optimization.",
+  "new_primary_human_studies": 2,
+  "new_candidate_observations": 9,
+  "target_total_authoritative_observations_if_all_replay": 10,
+  "context_families": [
+    "ORAL_INULIN_STANDARD_BREAKFAST_WITH_IV_STABLE_ISOTOPE_TRACER__SYSTEMIC_RATE_OF_APPEARANCE",
+    "ORAL_HIGH_SCFA_DIET_21D__FECAL",
+    "ORAL_LOW_SCFA_DIET_21D__FECAL",
+    "ORAL_HIGH_SCFA_DIET_21D__PLASMA",
+    "ORAL_LOW_SCFA_DIET_21D__PLASMA"
+  ],
+  "invariants": [
+    "CONTEXT_SPECIFIC_AUTHORITY_ONLY",
+    "PLASMA_NE_FECAL",
+    "RATE_OF_APPEARANCE_NE_CONCENTRATION",
+    "HIGH_SCFA_DIET_NE_LOW_SCFA_DIET",
+    "SD_NE_IQR",
+    "NO_CROSS_CONTEXT_AVERAGING",
+    "NO_CROSS_STUDY_COLLAPSE",
+    "AUTHORITATIVE_DATASET_OBSERVATION_NE_HUMAN_REFERENCE_STANDARD",
+    "MULTIPLE_AUTHORITATIVE_OBSERVATIONS_NE_BIOLOGICAL_REFERENCE_VECTOR",
+    "PARETO_SEARCH_REMAINS_BLOCKED"
+  ],
+  "reference_state_after_success": {
+    "human_reference_standard": "NOT_ESTABLISHED",
+    "external_review": "NOT_YET_ESTABLISHED",
+    "biological_reference_vector": "UNSET_PENDING_PRIMARY_DATA_AND_EXTERNAL_REVIEW",
+    "pareto_search": "BLOCKED_PENDING_COMPARABLE_CONTEXT_BUCKETS_AND_V0_7_PREREGISTRATION"
+  },
+  "claim_ceiling": [
+    "No observation is a universal healthy-human target.",
+    "No human dose or formulation recommendation is encoded.",
+    "No cross-representation match is biological replication.",
+    "Different metrics, compartments, interventions and uncertainty types remain separate."
+  ],
+  "content_sha256": "8a34ab7e69b7442e0c219d5b38686b4f2bf496efdb0e4b72d1eeec5c4da63432"
+}

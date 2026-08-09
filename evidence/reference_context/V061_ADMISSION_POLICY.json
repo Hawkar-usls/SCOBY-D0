@@ -1,0 +1,26 @@
+{
+  "schema": "scoby-d0.v061-admission-policy.v1",
+  "authority_scope": "SCOBY_D0_EVIDENCE_INGESTION_ONLY",
+  "required_pair_properties": [
+    "same primary source identity",
+    "distinct representation ids",
+    "distinct extraction process families",
+    "replayable reported and normalized values",
+    "matching uncertainty semantics",
+    "matching route, compartment, state, arm, analyte and metric"
+  ],
+  "context_noncollapse_rules": [
+    "PLASMA_NE_FECAL",
+    "RATE_OF_APPEARANCE_NE_CONCENTRATION",
+    "HIGH_SCFA_DIET_NE_LOW_SCFA_DIET",
+    "SD_NE_IQR",
+    "NO_CROSS_STUDY_AVERAGING"
+  ],
+  "blocked_outputs": [
+    "universal human reference standard",
+    "biological reference vector",
+    "safe human formulation",
+    "clinical recommendation",
+    "v0.7 Pareto optimization without separate preregistration"
+  ]
+}

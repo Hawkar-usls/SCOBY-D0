@@ -12,38 +12,36 @@
     "esp32_twai_can_exact_commit": "5781b0644209b8aa26fcb8a50ccc29e8cf67a828"
   },
   "frozen_v0_2_source_object_sha256": "ec5401e32a959b5513031a84b9e73b50d28ffba5311bd289117b4d5c3aace0a0",
-  "v0_4_evidence_gate": "experiments/SCOBY-D0-EVIDENCE-DERIVED-REFERENCE-CONTEXT-v0.4.json",
   "v0_4_evidence_gate_sha256": "7455664adc08090b99b56417bb251da701098406d94076ee94a156cdc5d9b85c",
-  "v0_5_extraction_gate": "experiments/SCOBY-D0-EVIDENCE-EXTRACTION-LINEAGE-v0.5.json",
   "v0_5_extraction_gate_sha256": "4078d3520ef7105b434dfc7b7c71e4c49182930af1923898b20329b8389c0ea0",
-  "v0_6_admission_gate": "experiments/SCOBY-D0-AUTHORITATIVE-REFERENCE-ADMISSION-v0.6.json",
   "v0_6_admission_gate_sha256": "fe19d736ca676e4c6ed488a40016b006275e615574081ec0bd0e0b728dbbc719",
-  "candidate_reference_snapshot": "evidence/reference_context/REFERENCE_DATASET_V0_1.json",
-  "current_reference_manifest": "evidence/reference_context/REFERENCE_DATASET_V0_2.json",
-  "extraction_ledger": "evidence/reference_context/EXTRACTION_LEDGER_V0_1.json",
-  "authoritative_observation_set": "evidence/reference_context/AUTHORITATIVE_REFERENCE_OBSERVATIONS_V0_1.json",
+  "v0_6_1_multicontext_gate": "experiments/SCOBY-D0-MULTICONTEXT-REFERENCE-EXPANSION-v0.6.1.json",
+  "v0_6_1_multicontext_gate_sha256": "8a34ab7e69b7442e0c219d5b38686b4f2bf496efdb0e4b72d1eeec5c4da63432",
+  "preserved_reference_snapshots": [
+    "evidence/reference_context/REFERENCE_DATASET_V0_1.json",
+    "evidence/reference_context/REFERENCE_DATASET_V0_2.json"
+  ],
+  "current_reference_manifest": "evidence/reference_context/REFERENCE_DATASET_V0_3.json",
+  "current_authoritative_set": "evidence/reference_context/AUTHORITATIVE_REFERENCE_OBSERVATIONS_V0_2.json",
+  "multicontext_extraction_ledger": "evidence/reference_context/MULTICONTEXT_EXTRACTION_LEDGER_V0_1.json",
   "rule": "Artifact hashes identify specific object versions for integrity and lineage; they are not hashes of truth.",
   "current_reference_state": {
-    "candidate_primary_human_sources": 4,
-    "real_extractor_A_records": 1,
-    "real_separate_extractor_B_records": 1,
-    "distinct_source_representations": 2,
-    "authoritative_observations": 1,
+    "primary_human_studies_with_ingestion_authority": 3,
+    "authoritative_observations": 10,
+    "context_buckets": 6,
     "authority_scope": "SCOBY_D0_EVIDENCE_INGESTION_ONLY",
     "human_reference_standard": "NOT_ESTABLISHED",
     "external_review": "NOT_YET_ESTABLISHED",
     "biological_reference_vector": "UNSET_PENDING_PRIMARY_DATA_AND_EXTERNAL_REVIEW",
-    "pareto_search": "BLOCKED"
+    "pareto_search": "BLOCKED_PENDING_COMPARABLE_CONTEXT_BUCKETS_AND_V0_7_PREREGISTRATION"
   },
-  "first_authoritative_observation": {
-    "observation_id": "BOETS_2017_ACETATE_SYSTEMIC_AVAILABILITY",
-    "source": "PMID:27510655 / DOI:10.1113/JP272613",
-    "reported": "36 ± 21 percent, mean ± SD, n=12",
-    "normalized": "0.36 ± 0.21 fraction",
-    "representation_A": "PMC_PUBLISHED_FULL_TEXT_HTML",
-    "representation_B": "UNIVERSITY_GLASGOW_ACCEPTED_MANUSCRIPT_PDF_TEXT",
-    "cross_representation_match": "PASS",
-    "authority_scope": "SCOBY_D0_EVIDENCE_INGESTION_ONLY"
-  },
-  "next_gate": "V0_7_UNCERTAINTY_AWARE_PARETO_SEARCH_REMAINS_BLOCKED_UNTIL_MULTIPLE_CONTEXT_SPECIFIC_AUTHORITATIVE_OBSERVATIONS_EXIST_WITHOUT_COLLAPSING_THE_BIOLOGICAL_REFERENCE_VECTOR"
+  "context_separation": [
+    "COLON_DELIVERY_PLASMA_SYSTEMIC_AVAILABILITY",
+    "ORAL_INULIN_TRACER_SYSTEMIC_RATE_OF_APPEARANCE",
+    "HIGH_SCFA_DIET_21D_FECAL",
+    "LOW_SCFA_DIET_21D_FECAL",
+    "HIGH_SCFA_DIET_21D_PLASMA",
+    "LOW_SCFA_DIET_21D_PLASMA"
+  ],
+  "next_gate": "BUILD_COMPARABLE_WITHIN_CONTEXT_BUCKETS_WITH_MULTIPLE_PRIMARY_STUDIES_AND_EXPLICIT_UNCERTAINTY_BEFORE_V0_7_PARETO_PREREGISTRATION; BIOLOGICAL_REFERENCE_VECTOR_REMAINS_UNSET"
 }
