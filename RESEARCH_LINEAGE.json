@@ -19,7 +19,7 @@
   "v0_6_5_resolution_frontier_sha256": "fa219ea4fe41c47e8321bc43a15229e8c21921ccb1fc6be5950b7f4a8fd111e1",
   "v0_6_5_1_resolution_receipt_sha256": "70cad644fbd76c430d8e97379f08a94c8a2bea0f5749e81143f547217415fcc3",
   "v0_6_5_2_public_evidence_boundary": "evidence/reference_context/MAASTRICHT_PUBLIC_EVIDENCE_BOUNDARY_V0_6_5_2.json",
-  "v0_6_5_2_public_evidence_boundary_sha256": "fa4872d3b82985a65ee23abb426854a5ae2d3b7efe70e5a2370065743b711a04",
+  "v0_6_5_2_public_evidence_boundary_sha256": "f40a5b470df00271aa91b1fb71357f0d6e112f271ea35eb9b01e447839d6fcaf",
   "preserved_reference_snapshots": [
     "evidence/reference_context/REFERENCE_DATASET_V0_1.json",
     "evidence/reference_context/REFERENCE_DATASET_V0_2.json",
