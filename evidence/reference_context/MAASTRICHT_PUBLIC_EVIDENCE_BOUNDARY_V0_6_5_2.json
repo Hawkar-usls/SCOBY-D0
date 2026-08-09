@@ -107,6 +107,6 @@
     "This does not prove that participant overlap occurred, nor that separate data do not exist under controlled access.",
     "No admission, pooling, clinical claim, formulation target or human dosing guidance is created."
   ],
-  "next_action": "OBTAIN_CONTROLLED_OR_AUTHOR_LEVEL_EVIDENCE_FOR_COHORT_OVERLAP_AND_PER_TRIAL_BASELINE_SCFA_DATA_OR_PIVOT_TO_ANOTHER_NEAR_PAIR; DO_NOT_INFER_MISSING_EVIDENCE",
-  "content_sha256": "f40a5b470df00271aa91b1fb71357f0d6e112f271ea35eb9b01e447839d6fcaf"
+  "next_action": "OBTAIN_CONTROLLED_OR_AUTHOR_LEVEL_EVIDENCE_FOR_COHORT_OVERLAP_AND_PER_TRIAL_BASELINE_SCFA_DATA_OR_PIVOT_TO_ANOTHER_NEAR_PAIR; DO_NOT_INFER MISSING EVIDENCE",
+  "content_sha256": "fa4872d3b82985a65ee23abb426854a5ae2d3b7efe70e5a2370065743b711a04"
 }
