@@ -8,11 +8,28 @@ from __future__ import annotations
 from copy import deepcopy
 from typing import Any
 
-from extraction_lineage import normalized_matches_replay, stable_source_id, validate_extraction_record
+from extraction_lineage import normalized_matches_replay, validate_extraction_record
 
 
 def _missing(v: Any) -> bool:
     return v is None or v == "" or v == [] or v == {}
+
+
+def _norm(v: Any) -> str:
+    return str(v or "").strip().lower()
+
+
+def source_identity_matches(a: dict[str, Any], b: dict[str, Any]) -> bool:
+    """Same primary source if a stable identifier overlaps.
+
+    PMID-only and DOI-only records are both allowed by earlier gates, so two
+    representations need not carry the exact same identifier set.
+    """
+    apmid, bpmid = _norm(a.get("pmid")), _norm(b.get("pmid"))
+    adoi, bdoi = _norm(a.get("doi")), _norm(b.get("doi"))
+    pmid_match = bool(apmid and bpmid and apmid == bpmid)
+    doi_match = bool(adoi and bdoi and adoi == bdoi)
+    return pmid_match or doi_match
 
 
 def validate_representation_provenance(record: dict[str, Any]) -> list[str]:
@@ -26,9 +43,12 @@ def validate_representation_provenance(record: dict[str, Any]) -> list[str]:
 
 
 def semantic_observation_payload(record: dict[str, Any]) -> dict[str, Any]:
-    """Representation-independent semantics used for A/B comparison."""
+    """Representation-independent observation semantics.
+
+    Source identity is checked separately through identifier overlap because
+    one representation may carry PMID while another carries DOI.
+    """
     return {
-        "stable_source_id": stable_source_id(record["source_identity"]),
         "observation_id": record["observation_id"],
         "reported_observation": deepcopy(record["reported_observation"]),
         "context": deepcopy(record["context"]),
@@ -51,7 +71,7 @@ def compare_cross_representation_extractions(a: dict[str, Any], b: dict[str, Any
         return {"status": "NOT_DISTINCT_SOURCE_REPRESENTATIONS", "authoritative_admission": "BLOCKED"}
     if pa["process_family"] == pb["process_family"]:
         return {"status": "NOT_DISTINCT_PROCESS_FAMILIES", "authoritative_admission": "BLOCKED"}
-    if stable_source_id(a["source_identity"]) != stable_source_id(b["source_identity"]):
+    if not source_identity_matches(a["source_identity"], b["source_identity"]):
         return {"status": "PRIMARY_SOURCE_IDENTITY_MISMATCH", "authoritative_admission": "BLOCKED"}
 
     left = semantic_observation_payload(a)
@@ -71,6 +91,8 @@ def compare_cross_representation_extractions(a: dict[str, Any], b: dict[str, Any
         "representation_B": pb["representation_id"],
         "process_family_A": pa["process_family"],
         "process_family_B": pb["process_family"],
+        "source_identity_A": deepcopy(a["source_identity"]),
+        "source_identity_B": deepcopy(b["source_identity"]),
         "semantic_observation": left,
     }
 
@@ -90,6 +112,8 @@ def admit_dataset_observation(a: dict[str, Any], b: dict[str, Any]) -> dict[str,
         "authority_scope": "SCOBY_D0_EVIDENCE_INGESTION_ONLY",
         "authoritative_observation": True,
         "observation": comparison["semantic_observation"],
+        "source_identity_A": comparison["source_identity_A"],
+        "source_identity_B": comparison["source_identity_B"],
         "cross_representation_receipt": {
             "representation_A": comparison["representation_A"],
             "representation_B": comparison["representation_B"],
