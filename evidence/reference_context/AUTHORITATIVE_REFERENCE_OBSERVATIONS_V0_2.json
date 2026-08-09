@@ -1,0 +1,28 @@
+{
+  "schema": "scoby-d0.authoritative-reference-observations.v0.2",
+  "status": "MULTICONTEXT_INGESTION_AUTHORITY_NOT_HUMAN_REFERENCE_STANDARD",
+  "supersedes": "evidence/reference_context/AUTHORITATIVE_REFERENCE_OBSERVATIONS_V0_1.json",
+  "inherits_authoritative_observation_ids": [
+    "BOETS_2017_ACETATE_SYSTEMIC_AVAILABILITY"
+  ],
+  "new_authoritative_observation_ids": [
+    "BOETS2015_ACETATE_ENDOGENOUS_ROA",
+    "BOETS2015_PROPIONATE_ENDOGENOUS_ROA",
+    "BOETS2015_BUTYRATE_ENDOGENOUS_ROA",
+    "GILL2022_HIGH_FECAL_TOTAL_SCFA",
+    "GILL2022_LOW_FECAL_TOTAL_SCFA",
+    "GILL2022_HIGH_PLASMA_PROPIONATE",
+    "GILL2022_LOW_PLASMA_PROPIONATE",
+    "GILL2022_HIGH_PLASMA_BUTYRATE",
+    "GILL2022_LOW_PLASMA_BUTYRATE"
+  ],
+  "authoritative_observation_count": 10,
+  "primary_human_study_count": 3,
+  "context_policy": "OBSERVATIONS_REMAIN_IN_CONTEXT_BUCKETS; NO_CROSS_CONTEXT_COLLAPSE",
+  "human_reference_standard": "NOT_ESTABLISHED",
+  "external_review": "NOT_YET_ESTABLISHED",
+  "biological_reference_vector": "UNSET_PENDING_PRIMARY_DATA_AND_EXTERNAL_REVIEW",
+  "pareto_search": "BLOCKED_PENDING_COMPARABLE_CONTEXT_BUCKETS_AND_V0_7_PREREGISTRATION",
+  "source_ledger": "evidence/reference_context/MULTICONTEXT_EXTRACTION_LEDGER_V0_1.json",
+  "authority_scope": "SCOBY_D0_EVIDENCE_INGESTION_ONLY"
+}
