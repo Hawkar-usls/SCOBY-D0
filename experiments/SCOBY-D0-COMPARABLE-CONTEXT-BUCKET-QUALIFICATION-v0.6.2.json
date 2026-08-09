@@ -57,7 +57,7 @@
         "population_health_class": "HEALTHY_CONTROLS",
         "specimen": "VENOUS_PLASMA",
         "route_or_exposure": "NO_EXOGENOUS_ACETATE_TRACER_REPORTED_FOR_FASTING_VALUE",
-        "fasting_duration": "12_HOURS",
+        "fasting_duration": "UNRESOLVED_IN_PRIMARY_ABSTRACT_FOR_21_CONTROLS",
         "tracer_state": "NO_TRACER_REPORTED_FOR_FASTING_VALUE",
         "analyte": "ACETATE",
         "metric": "CONCENTRATION",
@@ -67,7 +67,8 @@
       "ingestion_status": "CANDIDATE_BLOCKED",
       "blockers": [
         "SECOND_FULL_SOURCE_REPRESENTATION_NOT_ESTABLISHED",
-        "UNCERTAINTY_SEMANTICS_NOT_EXPLICIT_IN_PRIMARY_ABSTRACT"
+        "UNCERTAINTY_SEMANTICS_NOT_EXPLICIT_IN_PRIMARY_ABSTRACT",
+        "FASTING_DURATION_NOT_EXPLICIT_IN_PRIMARY_ABSTRACT_FOR_21_CONTROLS"
       ]
     },
     {
@@ -120,18 +121,18 @@
       },
       "comparability_key": {
         "population_health_class": "METABOLICALLY_HEALTHY_MEN",
-        "specimen": "UNRESOLVED_SERUM_OR_PLASMA_FOR_12C_ACETATE_TABLE_VALUE",
-        "route_or_exposure": "PRE_13C_MRS_INFUSION_BASELINE_CONTEXT",
+        "specimen": "SERUM",
+        "route_or_exposure": "PRE_13C_MRS_INFUSION_BASELINE",
         "fasting_duration": "12_HOURS",
-        "tracer_state": "BASELINE_BEFORE_13C_MRS_INFUSION_FOR_DAY0_TABLE_VALUE",
+        "tracer_state": "BEFORE_13C_ACETATE_INFUSION_FOR_BASELINE_12C_VALUE",
         "analyte": "ACETATE_12C",
         "metric": "CONCENTRATION",
         "units": "umol/L",
         "uncertainty_semantics": "SE"
       },
-      "ingestion_status": "CANDIDATE_BLOCKED",
+      "ingestion_status": "ELIGIBLE_AS_OWN_CONTEXT_CANDIDATE",
       "blockers": [
-        "SPECIMEN_TYPE_AMBIGUOUS_FOR_ACETATE_TABLE_VALUE"
+        "NO_SECOND_INDEPENDENT_PRIMARY_STUDY_WITH_EXACT_MATCHING_SERUM_CONTEXT"
       ]
     },
     {
@@ -177,6 +178,6 @@
     "biological_reference_vector": "UNSET_PENDING_PRIMARY_DATA_AND_EXTERNAL_REVIEW",
     "pareto_search": "BLOCKED"
   },
-  "interpretation": "The negative qualification result is informative: superficially similar fasting acetate measurements cannot yet be pooled because their tracer exposure, specimen identity, population definition, fasting duration, or ingestion provenance differ or remain unresolved.",
-  "content_sha256": "f1803c22fb8dd44c28bc824676add36d312e1c8d1d1440ccbcd7059bb78bc366"
+  "interpretation": "The negative qualification result is informative: superficially similar fasting acetate measurements cannot yet be pooled because tracer exposure, specimen identity, population definition, fasting duration, uncertainty semantics, or ingestion provenance differ or remain unresolved.",
+  "content_sha256": "8efdf5966c60eb7c7f98941426df510109da62e33523406db63e9a8bb98d4069"
 }
