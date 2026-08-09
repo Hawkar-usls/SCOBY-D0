@@ -1,0 +1,180 @@
+{
+  "schema": "scoby-d0.cohort-method-resolution-frontier.v0.6.5",
+  "artifact_id": "SCOBY-D0-COHORT-METHOD-RESOLUTION-FRONTIER-v0.6.5",
+  "status": "RESOLUTION_FRONTIER_NOT_ADMISSION",
+  "created_at": "2026-08-09T12:04:00+03:00",
+  "parent_frontier": {
+    "artifact": "experiments/SCOBY-D0-HARDENED-PAIR-SEARCH-FRONTIER-v0.6.4.json",
+    "sha256": "6335af70d49d86139acce91f7d72d85da18c2474e162682460283ac749bb1581",
+    "merge_commit": "a864b0aa835e30fd3d2bb0d11187692c0808cbed"
+  },
+  "purpose": "Track concrete evidence-resolution tasks for near-pairs that are close to hardened comparability while preventing trial identity, shared laboratory, recruitment-window separation, or protocol similarity from being promoted into cohort or method equivalence.",
+  "new_separations": [
+    "DISTINCT_TRIAL_ID_NE_DISTINCT_COHORT_ESTABLISHED",
+    "NONOVERLAPPING_RECRUITMENT_WINDOWS_NE_NO_PARTICIPANT_REUSE_PROOF",
+    "SAME_LAB_NE_SAME_ANALYTICAL_METHOD",
+    "SIMILAR_PREANALYTICS_NE_EXACT_MEASUREMENT_CONTEXT",
+    "RESOLUTION_PRIORITY_NE_ADMISSION_PRIORITY"
+  ],
+  "resolution_rules": [
+    "FRONTIER_CAN_RECORD_POSITIVE_MATCH_EVIDENCE_AND_BLOCKERS",
+    "UNRESOLVED_COHORT_REUSE_FAILS_CLOSED",
+    "UNRESOLVED_ANALYTICAL_METHOD_FAILS_CLOSED",
+    "TRIAL_REGISTRATION_IS_PROVENANCE_NOT_COHORT_INDEPENDENCE_PROOF",
+    "COMMERCIAL_LAB_IDENTITY_IS_PROVENANCE_NOT_METHOD_IDENTITY_PROOF",
+    "ONLY_EXISTING_V0_6_3_HARDENED_ADMISSION_KERNEL_CAN_DECLARE_COMPARABLE_READY",
+    "V0_6_5_CANNOT_CREATE_AUTHORITATIVE_OBSERVATIONS",
+    "V0_6_5_CANNOT_POOL_OR_AVERAGE",
+    "BIOLOGICAL_REFERENCE_VECTOR_STAYS_UNSET",
+    "PARETO_SEARCH_REMAINS_BLOCKED"
+  ],
+  "near_pairs": [
+    {
+      "pair_id": "NCT01826162__NCT01983046",
+      "cluster": "MAASTRICHT_OVERWEIGHT_MALE_FASTED_PLASMA_SCFA_BASELINE",
+      "source_A": {
+        "trial_id": "NCT01826162",
+        "other_study_id": "MEC 11-3-079",
+        "study_start": "2013-04",
+        "primary_completion": "2013-06",
+        "enrollment": 10,
+        "site": "Maastricht University",
+        "population": "OVERWEIGHT_OR_OBESE_MEN_20_TO_50_WITHOUT_DIABETES"
+      },
+      "source_B": {
+        "trial_id": "NCT01983046",
+        "other_study_id": "NL44507.068",
+        "study_start": "2013-09",
+        "primary_completion": "2014-02",
+        "enrollment": 12,
+        "site": "Maastricht University",
+        "population": "OVERWEIGHT_OR_OBESE_MEN_20_TO_50_WITHOUT_DIABETES",
+        "lineage_note": "Trial registry explicitly describes NCT01826162/METC 11-3-079 as the preceding pilot study."
+      },
+      "positive_resolution_evidence": [
+        "DISTINCT_TRIAL_REGISTRATIONS",
+        "NONOVERLAPPING_REPORTED_TRIAL_WINDOWS",
+        "SAME_SITE_AND_SPONSOR",
+        "MATCHING_REPORTED_ELIGIBILITY_SURFACE",
+        "2019_COMBINED_BASELINE_ANALYSIS_REPORTS_OVERNIGHT_FAST_GT_10H_AND_COMMON_SOP"
+      ],
+      "blockers": [
+        "PARTICIPANT_REUSE_BETWEEN_PILOT_AND_FOLLOWUP_TRIAL_UNRESOLVED",
+        "DISTINCT_TRIAL_ID_DOES_NOT_ESTABLISH_DISTINCT_COHORT",
+        "PER_TRIAL_BASELINE_SCFA_OBSERVATIONS_NOT_YET_SEPARATELY_EXTRACTION_BOUND",
+        "PER_TRIAL_PREANALYTIC_AND_ANALYTICAL_CONTEXT_NOT_YET_BOUND_AS_EXACT_IDENTICAL"
+      ],
+      "next_resolution_actions": [
+        "BIND_PRIMARY_PUBLICATION_OR_SUPPLEMENT_FOR_EACH_TRIAL",
+        "RESOLVE_PARTICIPANT_OVERLAP_OR_NONOVERLAP_FROM_PRIMARY_METHODS_OR_AUTHOR_DATA",
+        "EXTRACT_PER_TRIAL_BASELINE_SCFA_OBSERVATION_WITH_UNCERTAINTY",
+        "BIND_PER_TRIAL_PREANALYTICS_AND_ANALYTICAL_METHOD"
+      ],
+      "verdict": "NEAR_PAIR_BLOCKED_COHORT_AND_PER_TRIAL_BINDING"
+    },
+    {
+      "pair_id": "NCT03293693__NCT03658681",
+      "cluster": "OSLOMET_HEALTHY_12H_FAST_EDTA_PLASMA_SCFA_VITAS",
+      "source_A": {
+        "trial_id": "NCT03293693",
+        "study_period": "2016-09_TO_2017-03",
+        "completed_n": 14,
+        "site": "Oslo Metropolitan University",
+        "population": "HEALTHY_NORMAL_WEIGHT_ADULTS",
+        "fasting": "AT_LEAST_12_HOURS",
+        "preanalytic": "EDTA_IMMEDIATE_ICE_CENTRIFUGE_WITHIN_10_MIN_1500G_4C_10MIN_STORE_MINUS80C",
+        "lab": "VITAS_ANALYTICAL_SERVICE",
+        "analytical_method_family": "UNRESOLVED_IN_PRIMARY_ARTICLE"
+      },
+      "source_B": {
+        "trial_id": "NCT03658681",
+        "study_period": "2018-03_TO_2019-01_PRIMARY",
+        "completed_n": 17,
+        "site": "Oslo Metropolitan University",
+        "population": "HEALTHY_NORMAL_WEIGHT_ADULTS",
+        "fasting": "AT_LEAST_12_HOURS",
+        "specimen": "EDTA_PLASMA",
+        "lab": "VITAS_ANALYTICAL_SERVICE",
+        "analytical_method_family": "LC_MS_MS_QTRAP5500_KINETEX_BIPHENYL_NEGATIVE_MRM"
+      },
+      "positive_resolution_evidence": [
+        "DISTINCT_TRIAL_REGISTRATIONS",
+        "NONOVERLAPPING_REPORTED_STUDY_PERIODS",
+        "SAME_INSTITUTION",
+        "MATCHING_HEALTHY_BMI_SURFACE",
+        "MATCHING_AT_LEAST_12H_FAST",
+        "MATCHING_EDTA_PLASMA_PREANALYTIC_PIPELINE",
+        "SAME_COMMERCIAL_LAB"
+      ],
+      "blockers": [
+        "PARTICIPANT_REUSE_NOT_EXPLICITLY_EXCLUDED",
+        "SCFA_ANALYTICAL_METHOD_UNRESOLVED_FOR_NCT03293693",
+        "SAME_LAB_DOES_NOT_ESTABLISH_SAME_METHOD",
+        "BASELINE_ACETATE_NUMERIC_OBSERVATIONS_NOT_YET_DUAL_EXTRACTION_BOUND_FOR_PAIR"
+      ],
+      "next_resolution_actions": [
+        "RESOLVE_NCT03293693_SCFA_METHOD_FROM_PRIMARY_SUPPLEMENT_OR_LAB_METHOD_REFERENCE",
+        "RESOLVE_PARTICIPANT_OVERLAP_OR_NONOVERLAP",
+        "EXTRACT_BASELINE_ACETATE_VALUES_WITH_UNCERTAINTY_AND_EXACT_LOCATORS",
+        "REPLAY_BOTH_THROUGH_V0_5_EXTRACTION_LINEAGE_THEN_V0_6_3_HARDENED_COMPARABILITY"
+      ],
+      "verdict": "NEAR_PAIR_BLOCKED_METHOD_AND_COHORT_INDEPENDENCE"
+    },
+    {
+      "pair_id": "NCT01034436_NW__NCT03658681",
+      "cluster": "OSLO_12H_FAST_EDTA_PLASMA_SCFA_COMMERCIAL_LAB",
+      "source_A": {
+        "trial_id": "NCT01034436",
+        "reported_study_start": "2009-02",
+        "normal_weight_subgroup_n": 11,
+        "fasting": "12_HOURS",
+        "specimen": "EDTA_PLASMA",
+        "preanalytic": "IMMEDIATE_ICE_CENTRIFUGE_WITHIN_10_MIN_1500G_4C_10MIN_STORE_MINUS80C",
+        "lab": "VITAS_ANALYTICAL_SERVICE",
+        "analytical_method_family": "GC_MS",
+        "population_note": "The 2020 paper includes a healthy normal-weight subgroup although the registered FO-study targeted overweight participants."
+      },
+      "source_B": {
+        "trial_id": "NCT03658681",
+        "reported_study_start": "2018-03",
+        "completed_n": 17,
+        "fasting": "AT_LEAST_12_HOURS",
+        "specimen": "EDTA_PLASMA",
+        "lab": "VITAS_ANALYTICAL_SERVICE",
+        "analytical_method_family": "LC_MS_MS"
+      },
+      "positive_resolution_evidence": [
+        "LONG_SEPARATION_IN_REPORTED_STUDY_PERIODS",
+        "HEALTHY_NORMAL_WEIGHT_SUBGROUPS_PRESENT",
+        "MATCHING_FASTED_EDTA_PLASMA_SURFACE",
+        "SAME_COMMERCIAL_LAB"
+      ],
+      "blockers": [
+        "ANALYTICAL_METHOD_FAMILY_GC_MS_VS_LC_MS_MS",
+        "NORMAL_WEIGHT_SUBGROUP_COHORT_LINEAGE_NOT_FULLY_RESOLVED_FROM_TRIAL_REGISTRATION",
+        "PARTICIPANT_INDEPENDENCE_NOT_EXPLICITLY_BOUND",
+        "UNITS_AND_OUTPUT_SEMANTICS_NOT_YET_ALIGNED"
+      ],
+      "verdict": "NOT_EXACT_METHOD_COMPARABLE_BUT_USEFUL_METHOD_CONTRAST"
+    }
+  ],
+  "frontier_state": {
+    "near_pair_count": 3,
+    "real_hardened_ready_pairs": 0,
+    "cohort_independence_resolved_pairs": 0,
+    "method_identity_resolved_pairs": 0,
+    "admission_mutations": 0,
+    "new_authoritative_observations": 0,
+    "pooled_reference_created": false,
+    "averaging_performed": false,
+    "biological_reference_vector": "UNSET_PENDING_PRIMARY_DATA_AND_EXTERNAL_REVIEW",
+    "pareto_search": "BLOCKED"
+  },
+  "claim_ceiling": [
+    "Resolution evidence can reduce a blocker count but cannot itself establish admission.",
+    "Distinct trial registration and nonoverlapping recruitment windows do not prove no participant reuse.",
+    "A shared commercial laboratory does not prove an identical analytical method.",
+    "No real hardened comparable pair, pooled reference, human reference standard, biological reference vector, Pareto optimum, clinical target, food formulation, or dosing recommendation is established."
+  ],
+  "content_sha256": "fa219ea4fe41c47e8321bc43a15229e8c21921ccb1fc6be5950b7f4a8fd111e1"
+}
