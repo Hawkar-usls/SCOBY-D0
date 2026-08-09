@@ -32,17 +32,11 @@ v0.6.3 COHORT + PREANALYTIC HARDENING
   ↓
 v0.6.4 HARDENED PAIR SEARCH FRONTIER
   ↓
-v0.6.5 COHORT + METHOD RESOLUTION FRONTIER
+v0.6.5–v0.6.5.4 BLOCKER RESOLUTION + EVIDENCE BOUNDARIES
   ↓
-v0.6.5.1 FIRST CONCRETE BLOCKER RESOLUTION
+v0.6.6 HARDENED CANDIDATE LEDGER                    ← current
   ↓
-v0.6.5.2 MAASTRICHT PUBLIC PRIMARY-EVIDENCE BOUNDARY
-  ↓
-v0.6.5.3 OSLO SCFA METHOD PROVENANCE CORRECTION
-  ↓
-v0.6.5.4 OSLO PUBLIC METHOD + COHORT EVIDENCE BOUNDARY ← current
-  ↓
-v0.7   UNCERTAINTY-AWARE PARETO SEARCH                 🔒 BLOCKED
+v0.7   UNCERTAINTY-AWARE PARETO SEARCH              🔒 BLOCKED
 ```
 
 ## Current state
@@ -50,80 +44,132 @@ v0.7   UNCERTAINTY-AWARE PARETO SEARCH                 🔒 BLOCKED
 ```text
 AUTHORITATIVE_OBSERVATIONS = 10
 EXISTING_CONTEXT_BUCKETS = 6
+LITERATURE_CANDIDATES = 6
+MEASUREMENT_KEY_FULLY_BOUND_SINGLES = 2
+EXACT_ELEVEN_FIELD_MATCHING_PAIRS = 0
 REAL_HARDENED_READY_PAIRS = 0
-COHORT_INDEPENDENCE_RESOLVED_PAIRS = 0
-PUBLIC_EVIDENCE_BOUNDARY_RECEIPTS = 2
-PROVENANCE_CORRECTION_RECEIPTS = 1
 NEW_AUTHORITATIVE_OBSERVATIONS = 0
 POOLED_REFERENCE = NOT_CREATED
 BIOLOGICAL_REFERENCE_VECTOR = UNSET
 PARETO_SEARCH = BLOCKED
 ```
 
-## v0.6.5.4 — Oslo public evidence boundary
+## v0.6.6 — exact-key candidate ledger
 
-The corrected Oslo near-pair is:
+The ledger uses the same literal 11-field surface as the existing v0.6.3 admission kernel:
 
 ```text
-NCT03293693 ↔ NCT03658681
+population_health_class
+specimen
+route_or_exposure
+fasting_duration
+tracer_state
+analyte
+metric
+units
+uncertainty_semantics
+preanalytic_handling
+analytical_method_family
 ```
 
-The checked primary record establishes a close surface measurement context. Both studies were sponsored by Oslo Metropolitan University and concern healthy adults. The NCT03293693 primary article reports ≥12 h fasting, EDTA plasma, immediate ice handling, centrifugation within 10 min at 1500 g / 4 °C / 10 min, −80 °C storage, and shipment to Vitas Analytical Service. The NCT03658681 primary article reports ≥12 h fasting and acetate/propionate/butyrate measured in EDTA plasma at Vitas.
-
-But neither checked primary article names the **SCFA analytical-method family**.
+It is a **discovery object, not an admission path**. Ranking a candidate pair can only tell us where to search next.
 
 ```text
-NCT03293693 SCFA method = UNRESOLVED_FROM_CHECKED_PUBLIC_PRIMARY_EVIDENCE
-NCT03658681 SCFA method = UNRESOLVED_FROM_CHECKED_PUBLIC_PRIMARY_EVIDENCE
-METHOD_IDENTITY = NOT_ESTABLISHED
+CANDIDATE_LEDGER != EVIDENCE_AUTHORITY
+SINGLE_FULLY_BOUND != COMPARABLE_READY
+RANKING != ADMISSION
 ```
 
-The nearby NCT03658681 `LC-MS/MS / QTRAP5500 / Kinetex Biphenyl` workflow remains explicitly bound to **bile acids**, not SCFA.
+### Fully bound single #1 — MASLD 2024 healthy controls
 
-## Cohort independence also remains unresolved
-
-The trial registrations establish different reported study periods and the primary papers use distinct ethics approvals. Those are useful provenance facts, but they do not explicitly state that participants were never reused between studies.
+For the healthy-control arm of PMID `38262952` / PMCID `PMC10804800`:
 
 ```text
-NONOVERLAPPING_STUDY_PERIODS != NO_PARTICIPANT_REUSE_PROOF
-DISTINCT_ETHICS_APPROVALS != DISTINCT_COHORT_PROOF
-ABSENCE_OF_OVERLAP_STATEMENT != COHORT_INDEPENDENCE
+HEALTHY
+EDTA_PLASMA
+FASTING_BASELINE
+AT_LEAST_4_HOURS
+NO_TRACER
+ACETATE
+CONCENTRATION
+umol/L
+SD
+EDTA_IMMEDIATE_ICE_CENTRIFUGE_WITHIN_2_HOURS_STORE_MINUS80C
+BEVITAL_ISOTOPE_LABELED_GC_MS_MS_AUTOMATED_WORKUP
+
+acetate = 57.6 ± 25.6 µmol/L
+n = 50
 ```
 
-Therefore:
+### Fully bound single #2 — USDA Nutritional Phenotyping Study 2024
+
+For PMID `39173973` / PMCID `PMC11600052` / `NCT02367287`:
 
 ```text
-PARTICIPANT_OVERLAP_OR_NONOVERLAP
-= UNRESOLVED_FROM_CHECKED_PUBLIC_PRIMARY_EVIDENCE
+HEALTHY
+EDTA_PLASMA
+FASTING_BASELINE
+12_HOURS_WATER_ONLY
+NO_TRACER
+ACETATE
+CONCENTRATION
+umol/L
+SD
+EDTA_REFRIGERATED_CENTRIFUGE_4C_1300G_10MIN_STORE_MINUS80C
+COLUMBIA_3NPH_UPLC_MS_MS_XEVO_TQS_POSITIVE_ESI_MRM
+
+reported acetate = 0.08 ± 0.08 nmol/µL
+normalized acetate = 80 ± 80 µmol/L
+n = 315
 ```
 
-## Unknown + unknown is not a match
-
-This boundary explicitly forbids a subtle false-positive route:
+These are both strong **single measurement contexts**, but they are not a hardened pair:
 
 ```text
-TWO_UNRESOLVED_METHODS != METHOD_IDENTITY
-UNKNOWN_A == UNKNOWN_B != ESTABLISHED_EQUALITY
-SAME_LAB != SAME_METHOD
+AT_LEAST_4_HOURS != 12_HOURS_WATER_ONLY
+MASLD_PREANALYTICS != USDA_PREANALYTICS
+BEVITAL_GC_MS_MS != COLUMBIA_3NPH_UPLC_MS_MS
 ```
 
-A method may become comparable only after study-bound method provenance is established for both observations. Shared Vitas provenance cannot substitute for that evidence.
+No averaging or method-family collapsing is allowed to erase those differences.
 
-## Current boundary objects
+## Other ledger candidates
 
-- [`evidence/reference_context/OSLO_SCFA_METHOD_PROVENANCE_CORRECTION_V0_6_5_3.json`](evidence/reference_context/OSLO_SCFA_METHOD_PROVENANCE_CORRECTION_V0_6_5_3.json)
-- [`evidence/reference_context/OSLO_PUBLIC_METHOD_COHORT_EVIDENCE_BOUNDARY_V0_6_5_4.json`](evidence/reference_context/OSLO_PUBLIC_METHOD_COHORT_EVIDENCE_BOUNDARY_V0_6_5_4.json)
-- [`evidence/reference_context/REFERENCE_DATASET_V0_6_5.json`](evidence/reference_context/REFERENCE_DATASET_V0_6_5.json)
-- [`tests/test_oslo_public_evidence_boundary_v0654.py`](tests/test_oslo_public_evidence_boundary_v0654.py)
-
-## Historical state is preserved
-
-The historical v0.6.5 object that contained the later-corrected NCT03658681 method binding is not rewritten. v0.6.5.3 carries the correction; v0.6.5.4 records the remaining public-evidence boundary.
+- **RyeWeight2 / NCT04203758** — heparin plasma and Fristedt-2024 method are study-bound; baseline acetate is reported as geometric mean + 95% CI, but exact SCFA fasting duration and preanalytics remain unresolved in the current binding.
+- **Bain 2022** — useful GC-MS / tube-comparison method context, but fasting and a clean lithium-heparin group estimate with uncertainty are not bound.
+- **Defatted-rice-bran crossover** — protocol binds lithium-heparin plasma and a targeted stable-isotope LCMS organic-acid workflow, but baseline fasting and direct acetate estimate/uncertainty remain unbound.
+- **Fristedt 2024** — method authority only; an aggregate method-validation plasma set is not a distinct biological cohort.
 
 ```text
-HISTORICAL_OBJECT_NOT_REWRITTEN
-CORRECTION_RECEIPT != ADMISSION
-PUBLIC_EVIDENCE_BOUNDARY != ADMISSION
+METHOD_AUTHORITY_ONLY != BIOLOGICAL_COHORT
+PROTOCOL != NUMERIC_OBSERVATION
+SD != CI95
+EDTA_PLASMA != HEPARIN_PLASMA
+```
+
+## Machine-readable objects
+
+- [`evidence/reference_context/HARDENED_CANDIDATE_LEDGER_V0_6_6.json`](evidence/reference_context/HARDENED_CANDIDATE_LEDGER_V0_6_6.json)
+- [`evidence/reference_context/REFERENCE_DATASET_V0_6_6.json`](evidence/reference_context/REFERENCE_DATASET_V0_6_6.json)
+- [`src/candidate_ledger.py`](src/candidate_ledger.py)
+- [`tests/test_candidate_ledger_v066.py`](tests/test_candidate_ledger_v066.py)
+
+Ledger content SHA-256:
+
+```text
+d28cdcbac1e9cf401e3eb2074a4fb7cb6e85387207e867901f37d2cc528a292d
+```
+
+The hash identifies this object version; it does not establish biological truth.
+
+## Next gate
+
+Find a second primary human cohort matching **one complete 11-field key literally**, then separately establish pair-specific cohort independence and replay both records through the existing v0.5 extraction lineage and v0.6.3 hardened kernel.
+
+```text
+DO_NOT_RELAX_KEY_FIELDS_TO_CREATE_A_MATCH
+DISTINCT_PUBLICATION != DISTINCT_COHORT_ESTABLISHED
+COMPARABLE_READY != POOLED_REFERENCE
 ```
 
 ## Claim ceiling
@@ -131,14 +177,10 @@ PUBLIC_EVIDENCE_BOUNDARY != ADMISSION
 ```text
 SIMULATION_PASS != IN_VIVO_VALIDATION
 INGESTION_AUTHORITY != HUMAN_REFERENCE_STANDARD
-ADJACENT_METHOD_TEXT != ANALYTE_METHOD_BINDING
-SCFA_MEASUREMENT != BILE_ACID_MEASUREMENT
-TWO_UNRESOLVED_METHODS != METHOD_IDENTITY
-DISTINCT_TRIAL_IDS != DISTINCT_COHORTS
-NONOVERLAPPING_STUDY_PERIODS != COHORT_INDEPENDENCE
-DISTINCT_ETHICS_APPROVALS != COHORT_INDEPENDENCE
-SAME_LAB != SAME_METHOD
-COMPARABLE_READY != POOLED_REFERENCE
+CANDIDATE_LEDGER != EVIDENCE_AUTHORITY
+SINGLE_FULLY_BOUND != COMPARABLE_READY
+METHOD_AUTHORITY != BIOLOGICAL_COHORT
+PROTOCOL != NUMERIC_OBSERVATION
 MULTIPLE_OBSERVATIONS != BIOLOGICAL_REFERENCE_VECTOR
 HASH != TRUTH
 ACETATE != COMPLETE_NUTRITION
