@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Hawkar-usls/SCOBY-D0/schemas/reference_observation_v0.4.schema.json",
+  "title": "SCOBY-D0 evidence-derived reference observation v0.4",
+  "type": "object",
+  "required": [
+    "observation_id",
+    "source_type",
+    "source_lineage",
+    "study_design",
+    "cohort",
+    "sample_size",
+    "route",
+    "compartment",
+    "physiological_state",
+    "sampling_times_or_window",
+    "analytical_method",
+    "analyte",
+    "estimate",
+    "units",
+    "uncertainty",
+    "citation_locator",
+    "exclusions",
+    "admission_status"
+  ],
+  "properties": {
+    "observation_id": {"type": "string", "minLength": 1},
+    "source_type": {"const": "PRIMARY_HUMAN"},
+    "source_lineage": {
+      "type": "object",
+      "required": ["title", "year"],
+      "anyOf": [
+        {"required": ["pmid"]},
+        {"required": ["doi"]}
+      ],
+      "properties": {
+        "title": {"type": "string", "minLength": 1},
+        "year": {"type": "integer", "minimum": 1900},
+        "pmid": {"type": ["string", "null"], "pattern": "^[0-9]+$"},
+        "pmcid": {"type": ["string", "null"]},
+        "doi": {"type": ["string", "null"], "minLength": 1}
+      },
+      "additionalProperties": true
+    },
+    "study_design": {"type": "string", "minLength": 1},
+    "cohort": {"type": "string", "minLength": 1},
+    "sample_size": {"type": "integer", "minimum": 1},
+    "route": {"enum": ["ORAL_FOOD", "ORAL_BEVERAGE", "ORAL_CAPSULE", "COLON_DELIVERY_CAPSULE", "RECTAL_COLONIC_INFUSION", "INTRAVENOUS_TRACER", "OTHER_EXPLICIT"]},
+    "compartment": {"enum": ["PLASMA", "SERUM", "COLON_LUMEN", "FECES", "URINE", "BREATH", "OTHER_EXPLICIT"]},
+    "physiological_state": {"enum": ["FASTED", "POSTPRANDIAL", "MIXED_PROTOCOL", "OTHER_EXPLICIT"]},
+    "sampling_times_or_window": {"type": "object", "minProperties": 1},
+    "analytical_method": {"type": "string", "minLength": 2},
+    "analyte": {"enum": ["ACETATE", "PROPIONATE", "BUTYRATE", "SCFA_CROSS_FEEDING", "OTHER_EXPLICIT"]},
+    "estimate": {"type": ["number", "object"]},
+    "units": {"type": "string", "minLength": 1},
+    "uncertainty": {
+      "type": "object",
+      "required": ["kind", "value"],
+      "properties": {
+        "kind": {"enum": ["SD", "SE", "CI95", "IQR", "RANGE", "RAW_DISTRIBUTION", "OTHER_EXPLICIT"]},
+        "value": {}
+      },
+      "additionalProperties": true
+    },
+    "citation_locator": {"type": "string", "minLength": 1},
+    "exclusions": {"type": ["string", "array"]},
+    "unit_conversion": {"type": ["object", "null"]},
+    "admission_status": {"enum": ["CANDIDATE_INCOMPLETE", "ADMISSIBLE_OBSERVATION", "EXCLUDED_WITH_REASON"]},
+    "admission_notes": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": true
+}
