@@ -1,0 +1,45 @@
+{
+  "schema": "scoby-d0.reference-dataset.v0.6.4",
+  "status": "OSLO_SCFA_METHOD_PROVENANCE_CORRECTED_NO_ADMISSION_CHANGE",
+  "supersedes": "evidence/reference_context/REFERENCE_DATASET_V0_6_3.json",
+  "authoritative_observation_count": 10,
+  "existing_context_buckets": 6,
+  "real_hardened_ready_pairs": 0,
+  "cohort_independence_resolved_pairs": 0,
+  "measurement_context_resolution_receipts": 1,
+  "public_evidence_boundary_receipts": 1,
+  "provenance_correction_receipts": 1,
+  "current_correction_receipt": "evidence/reference_context/OSLO_SCFA_METHOD_PROVENANCE_CORRECTION_V0_6_5_3.json",
+  "oslo_method_state": {
+    "NCT03293693_scfa_method": "UNRESOLVED_IN_PRIMARY_ARTICLE",
+    "NCT03658681_scfa_method": "UNRESOLVED_IN_PRIMARY_ARTICLE",
+    "NCT03658681_bile_acid_method": "LC_MS_MS_QTRAP5500_KINETEX_BIPHENYL_NEGATIVE_MRM",
+    "NCT01034436_scfa_method": "GC_MS",
+    "oslo_method_identity_resolved_pairs": 0
+  },
+  "historical_frontier_rewritten": false,
+  "new_authoritative_observations": 0,
+  "cross_study_aggregation_allowed": false,
+  "pooled_reference_created": false,
+  "averaging_performed": false,
+  "human_reference_standard": "NOT_ESTABLISHED",
+  "external_review": "NOT_YET_ESTABLISHED",
+  "biological_reference_vector": "UNSET_PENDING_PRIMARY_DATA_AND_EXTERNAL_REVIEW",
+  "pareto_search": "BLOCKED_PENDING_REAL_HARDENED_PAIR_AND_SEPARATE_V0_7_PREREGISTRATION",
+  "correction_invariants": [
+    "ADJACENT_METHOD_TEXT_NE_ANALYTE_METHOD_BINDING",
+    "SCFA_MEASUREMENT_NE_BILE_ACID_MEASUREMENT",
+    "TWO_UNRESOLVED_METHODS_NE_METHOD_IDENTITY",
+    "UNKNOWN_A_AND_UNKNOWN_B_NE_ESTABLISHED_EQUALITY",
+    "SAME_LAB_NE_SAME_METHOD",
+    "HISTORICAL_OBJECT_NOT_REWRITTEN"
+  ],
+  "interpretation_ceiling": [
+    "The historical v0.6.5 frontier contained an analyte-to-method provenance misbinding for NCT03658681 and is preserved as historical state rather than rewritten.",
+    "The checked NCT03658681 primary article does not establish an SCFA LC-MS/MS method; its QTRAP5500/Kinetex method is explicitly associated with bile acids.",
+    "Both NCT03293693 and NCT03658681 SCFA method families remain unresolved in the checked primary articles.",
+    "Two unresolved methods do not establish method identity.",
+    "NCT01034436 remains explicitly bound to GC-MS for fasting EDTA-plasma SCFA in its primary report.",
+    "No admission, pooling, biological reference vector, clinical target or human dosing guidance is established."
+  ]
+}

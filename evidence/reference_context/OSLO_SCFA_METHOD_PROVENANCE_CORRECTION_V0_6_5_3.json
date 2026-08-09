@@ -1,0 +1,125 @@
+{
+  "schema": "scoby-d0.provenance-correction.v0.6.5.3",
+  "artifact_id": "SCOBY-D0-OSLO-SCFA-METHOD-PROVENANCE-CORRECTION-v0.6.5.3",
+  "status": "PROVENANCE_MISBINDING_CORRECTED_NO_ADMISSION_CHANGE",
+  "created_at": "2026-08-09T12:40:00+03:00",
+  "parent_state": {
+    "main_merge_commit": "e28f5867b7eecbd42df34640e257c4dbc7bfccbe",
+    "historical_frontier": "experiments/SCOBY-D0-COHORT-METHOD-RESOLUTION-FRONTIER-v0.6.5.json",
+    "historical_frontier_sha256": "fa219ea4fe41c47e8321bc43a15229e8c21921ccb1fc6be5950b7f4a8fd111e1",
+    "historical_object_rewritten": false
+  },
+  "affected_records": [
+    {
+      "pair_id": "NCT03293693__NCT03658681",
+      "historical_binding": {
+        "NCT03293693_scfa_method": "UNRESOLVED_IN_PRIMARY_ARTICLE",
+        "NCT03658681_scfa_method": "LC_MS_MS_QTRAP5500_KINETEX_BIPHENYL_NEGATIVE_MRM"
+      },
+      "corrected_binding": {
+        "NCT03293693_scfa_method": "UNRESOLVED_IN_PRIMARY_ARTICLE",
+        "NCT03658681_scfa_method": "UNRESOLVED_IN_PRIMARY_ARTICLE",
+        "NCT03658681_bile_acid_method": "LC_MS_MS_QTRAP5500_KINETEX_BIPHENYL_NEGATIVE_MRM"
+      },
+      "correction_reason": "In the NCT03658681 primary Methods text, SCFA are stated to be measured in EDTA plasma at Vitas, while the subsequent QTRAP5500/Kinetex Biphenyl LC-MS/MS method is explicitly introduced for nine bile acids. The adjacent bile-acid method must not be rebound to SCFA.",
+      "corrected_blockers": [
+        "PARTICIPANT_REUSE_NOT_EXPLICITLY_EXCLUDED",
+        "SCFA_ANALYTICAL_METHOD_UNRESOLVED_FOR_NCT03293693",
+        "SCFA_ANALYTICAL_METHOD_UNRESOLVED_FOR_NCT03658681",
+        "TWO_UNRESOLVED_METHODS_DO_NOT_ESTABLISH_METHOD_IDENTITY",
+        "SAME_LAB_DOES_NOT_ESTABLISH_SAME_METHOD",
+        "BASELINE_ACETATE_NUMERIC_OBSERVATIONS_NOT_YET_DUAL_EXTRACTION_BOUND_FOR_PAIR"
+      ],
+      "corrected_verdict": "NEAR_PAIR_BLOCKED_BOTH_SCFA_METHODS_AND_COHORT_INDEPENDENCE"
+    },
+    {
+      "pair_id": "NCT01034436_NW__NCT03658681",
+      "historical_binding": {
+        "NCT01034436_scfa_method": "GC_MS",
+        "NCT03658681_scfa_method": "LC_MS_MS"
+      },
+      "corrected_binding": {
+        "NCT01034436_scfa_method": "GC_MS",
+        "NCT03658681_scfa_method": "UNRESOLVED_IN_PRIMARY_ARTICLE"
+      },
+      "correction_reason": "The NCT01034436 2020 primary report explicitly binds fasting EDTA-plasma SCFA measurement to GC-MS at Vitas. NCT03658681 does not explicitly bind its SCFA measurement to LC-MS/MS; its reported LC-MS/MS QTRAP/Kinetex method belongs to bile acids.",
+      "corrected_blockers": [
+        "ANALYTICAL_METHOD_FAMILY_GC_MS_VS_UNRESOLVED",
+        "NORMAL_WEIGHT_SUBGROUP_COHORT_LINEAGE_NOT_FULLY_RESOLVED_FROM_TRIAL_REGISTRATION",
+        "PARTICIPANT_INDEPENDENCE_NOT_EXPLICITLY_BOUND",
+        "UNITS_AND_OUTPUT_SEMANTICS_NOT_YET_ALIGNED"
+      ],
+      "corrected_verdict": "METHOD_IDENTITY_UNRESOLVED_NOT_CONFIRMED_METHOD_CONTRAST"
+    }
+  ],
+  "primary_source_bindings": [
+    {
+      "trial_id": "NCT03293693",
+      "primary_source": "Telle-Hansen et al. 2022, Frontiers in Nutrition, DOI 10.3389/fnut.2022.796362",
+      "locator": "Methods / Short Chain Fatty Acids Analysis",
+      "established": [
+        "SCFA measured fasting in EDTA plasma",
+        "EDTA tubes immediately placed on ice",
+        "centrifuged within 10 min at 1500 g, 4 C, 10 min",
+        "plasma stored at -80 C",
+        "samples shipped to Vitas Analytical Service"
+      ],
+      "not_established": [
+        "SCFA analytical method family"
+      ]
+    },
+    {
+      "trial_id": "NCT03658681",
+      "primary_source": "Telle-Hansen et al. 2022, Lipids in Health and Disease, PMID 36163070, PMCID PMC9511723, DOI 10.1186/s12944-022-01702-1",
+      "locator": "Methods / Blood sampling and laboratory analyses",
+      "established": [
+        "acetate, propionate and butyrate measured in EDTA plasma at Vitas Analytical Service",
+        "LC-MS/MS QTRAP5500/Kinetex Biphenyl method explicitly belongs to nine bile acids"
+      ],
+      "not_established": [
+        "SCFA analytical method family"
+      ]
+    },
+    {
+      "trial_id": "NCT01034436",
+      "primary_source": "Telle-Hansen et al. 2020, Lipids in Health and Disease, PMID 32386512, PMCID PMC7211343, DOI 10.1186/s12944-020-01273-z",
+      "locator": "Methods / Plasma fatty acid profile and short chain fatty acids",
+      "established": [
+        "fasting EDTA-plasma SCFA measured by GC-MS",
+        "analysis performed by Vitas Analytical Service"
+      ]
+    }
+  ],
+  "new_invariants": [
+    "ADJACENT_METHOD_TEXT_NE_ANALYTE_METHOD_BINDING",
+    "SCFA_MEASUREMENT_NE_BILE_ACID_MEASUREMENT",
+    "TWO_UNRESOLVED_METHODS_NE_METHOD_IDENTITY",
+    "UNKNOWN_A_AND_UNKNOWN_B_NE_ESTABLISHED_EQUALITY",
+    "SAME_LAB_NE_SAME_METHOD",
+    "CORRECTION_RECEIPT_NE_ADMISSION",
+    "HISTORICAL_OBJECT_NOT_REWRITTEN",
+    "CORRECTION_OF_PROVENANCE_NE_CHANGE_IN_BIOLOGICAL_TRUTH"
+  ],
+  "state_after_correction": {
+    "authoritative_observations": 10,
+    "real_hardened_ready_pairs": 0,
+    "cohort_independence_resolved_pairs": 0,
+    "oslo_method_identity_resolved_pairs": 0,
+    "new_authoritative_observations": 0,
+    "admission_mutation": false,
+    "pooled_reference_created": false,
+    "averaging_performed": false,
+    "human_reference_standard": "NOT_ESTABLISHED",
+    "biological_reference_vector": "UNSET_PENDING_PRIMARY_DATA_AND_EXTERNAL_REVIEW",
+    "pareto_search": "BLOCKED"
+  },
+  "claim_ceiling": [
+    "This correction fixes analyte-to-method provenance binding; it does not establish the true SCFA method for NCT03658681.",
+    "Both NCT03293693 and NCT03658681 SCFA method families remain unresolved in the checked primary articles.",
+    "Two unresolved method labels do not establish method identity or comparability.",
+    "The NCT01034436 SCFA GC-MS binding remains supported by its primary report.",
+    "No real hardened comparable pair, new authoritative observation, pooled reference, clinical target or human dosing guidance is established."
+  ],
+  "next_action": "SEARCH_PRIMARY_SUPPLEMENTS_OR_METHOD_REFERENCES_FOR_NCT03293693_AND_NCT03658681_SCFA_METHODS_AND_RESOLVE_PARTICIPANT_REUSE; DO_NOT_INFER_METHOD_IDENTITY_FROM_SHARED_VITAS_LAB",
+  "content_sha256": "820e108f587cd281ff0941836c04c0b89ad8c2eefbf4cd493b54603667490fb8"
+}
