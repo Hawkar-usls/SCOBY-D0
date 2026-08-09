@@ -12,56 +12,47 @@
     "esp32_twai_can_exact_commit": "5781b0644209b8aa26fcb8a50ccc29e8cf67a828"
   },
   "frozen_v0_2_source_object_sha256": "ec5401e32a959b5513031a84b9e73b50d28ffba5311bd289117b4d5c3aace0a0",
-  "v0_4_evidence_gate_sha256": "7455664adc08090b99b56417bb251da701098406d94076ee94a156cdc5d9b85c",
-  "v0_5_extraction_gate_sha256": "4078d3520ef7105b434dfc7b7c71e4c49182930af1923898b20329b8389c0ea0",
-  "v0_6_admission_gate_sha256": "fe19d736ca676e4c6ed488a40016b006275e615574081ec0bd0e0b728dbbc719",
   "v0_6_1_multicontext_gate_sha256": "8a34ab7e69b7442e0c219d5b38686b4f2bf496efdb0e4b72d1eeec5c4da63432",
   "v0_6_2_comparable_gate_sha256": "8efdf5966c60eb7c7f98941426df510109da62e33523406db63e9a8bb98d4069",
-  "v0_6_3_hardening_gate": "experiments/SCOBY-D0-CROSS-STUDY-INDEPENDENCE-PREANALYTIC-HARDENING-v0.6.3.json",
   "v0_6_3_hardening_gate_sha256": "1832de82793c150cfdb2ea8aa6caa06ad7f59f4780eab14d3402973e94fd3649",
+  "v0_6_4_frontier": "experiments/SCOBY-D0-HARDENED-PAIR-SEARCH-FRONTIER-v0.6.4.json",
+  "v0_6_4_frontier_sha256": "6335af70d49d86139acce91f7d72d85da18c2474e162682460283ac749bb1581",
   "preserved_reference_snapshots": [
     "evidence/reference_context/REFERENCE_DATASET_V0_1.json",
     "evidence/reference_context/REFERENCE_DATASET_V0_2.json",
     "evidence/reference_context/REFERENCE_DATASET_V0_3.json",
-    "evidence/reference_context/REFERENCE_DATASET_V0_4.json"
+    "evidence/reference_context/REFERENCE_DATASET_V0_4.json",
+    "evidence/reference_context/REFERENCE_DATASET_V0_5.json"
   ],
-  "current_reference_manifest": "evidence/reference_context/REFERENCE_DATASET_V0_5.json",
+  "current_reference_manifest": "evidence/reference_context/REFERENCE_DATASET_V0_6.json",
   "rule": "Artifact hashes identify specific object versions for integrity and lineage; they are not hashes of truth.",
   "current_reference_state": {
-    "primary_human_studies_with_ingestion_authority": 3,
     "authoritative_observations": 10,
     "existing_context_buckets": 6,
-    "v0_6_2_exact_comparable_multi_study_buckets": 0,
     "v0_6_3_hardened_ready_buckets": 0,
+    "v0_6_4_frontier_pairs": 3,
+    "v0_6_4_real_hardened_ready_pairs": 0,
+    "frontier_admission_mutations": 0,
+    "new_authoritative_observations_from_frontier": 0,
     "cross_study_aggregation_allowed": false,
     "pooled_reference_created": false,
     "averaging_performed": false,
     "human_reference_standard": "NOT_ESTABLISHED",
     "external_review": "NOT_YET_ESTABLISHED",
     "biological_reference_vector": "UNSET_PENDING_PRIMARY_DATA_AND_EXTERNAL_REVIEW",
-    "pareto_search": "BLOCKED_PENDING_HARDENED_MULTI_STUDY_BUCKET_AND_V0_7_PREREGISTRATION"
+    "pareto_search": "BLOCKED_PENDING_REAL_HARDENED_PAIR_AND_SEPARATE_V0_7_PREREGISTRATION"
   },
-  "v0_6_3_new_boundaries": [
-    "DIFFERENT_PUBLICATION_NE_INDEPENDENT_COHORT",
-    "CONFIRMED_PARTICIPANT_OVERLAP_BLOCKS_INDEPENDENT_STUDY_COUNT",
-    "UNRESOLVED_PARTICIPANT_OVERLAP_NE_DISTINCT_COHORT_ESTABLISHED",
-    "PREANALYTIC_HANDLING_REQUIRED_FOR_EXACT_COMPARABILITY",
-    "ANALYTICAL_METHOD_FAMILY_REQUIRED_FOR_EXACT_COMPARABILITY",
-    "FRESH_SPECIMEN_NE_STORED_SPECIMEN_UNLESS_VALIDATED_TRANSFORM_EXISTS"
-  ],
-  "evidence_motivators": [
-    {
-      "source": "Tollinger, Vreman & Weiner 1979",
-      "doi": "10.1093/clinchem/25.10.1787",
-      "reason": "Primary abstract reports a material acetate measurement change after defined plasma storage."
-    },
-    {
-      "source": "Fernandes, Vogt & Wolever 2014",
-      "pmid": "25052228",
-      "pmcid": "PMC4500642",
-      "doi": "10.1038/ejcn.2014.136",
-      "reason": "Methods identify a series of acetate studies in the same participants, so different publications cannot be treated automatically as independent cohorts."
-    }
-  ],
-  "next_gate": "FIND_TWO_PRIMARY_HUMAN_OBSERVATIONS_WITH_COMPLETE_HARDENED_CONTEXT_KEYS_AND_DISTINCT_COHORT_ESTABLISHED; THEN_ONLY_MARK_COMPARABLE_READY_NOT_POOLED; BIOLOGICAL_REFERENCE_VECTOR_REMAINS_UNSET; PARETO_REMAINS_BLOCKED"
+  "frontier_pairs": {
+    "POMARE_1985__AKANJI_1991": "NOT_HARDENED_COMPARABLE",
+    "POUTEAU_1998__GALUPPO_2021": "NOT_HARDENED_COMPARABLE",
+    "GALUPPO_2021__GALUPPO_2023": "PROTOCOL_MATCH_BUT_INDEPENDENCE_FAIL"
+  },
+  "adversarial_case": {
+    "pair": "GALUPPO_2021__GALUPPO_2023",
+    "protocol_match": "HIGH",
+    "publication_identity": "DISTINCT",
+    "cohort_independence": "FAIL_CONFIRMED_OVERLAP",
+    "rule": "PUBLICATION_AND_PROTOCOL_SIMILARITY_CANNOT_OVERRIDE_COHORT_OVERLAP"
+  },
+  "next_gate": "CONTINUE_FRONTIER_SEARCH_UNTIL_ONE_REAL_PAIR_HAS_COMPLETE_MATCHING_HARDENED_KEYS_AND_DISTINCT_COHORT_ESTABLISHED; FRONTIER_RANKING_CANNOT_ADMIT; BIOLOGICAL_REFERENCE_VECTOR_REMAINS_UNSET; PARETO_REMAINS_BLOCKED"
 }
