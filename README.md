@@ -28,9 +28,11 @@ v0.6.1 MULTICONTEXT AUTHORITATIVE EXPANSION
   ↓
 v0.6.2 EXACT COMPARABLE-CONTEXT QUALIFICATION
   ↓
-v0.6.3 COHORT + PREANALYTIC HARDENING          ← current
+v0.6.3 COHORT + PREANALYTIC HARDENING
   ↓
-v0.7   UNCERTAINTY-AWARE PARETO SEARCH         🔒 BLOCKED
+v0.6.4 HARDENED PAIR SEARCH FRONTIER          ← current
+  ↓
+v0.7   UNCERTAINTY-AWARE PARETO SEARCH        🔒 BLOCKED
 ```
 
 ## Current state
@@ -38,85 +40,84 @@ v0.7   UNCERTAINTY-AWARE PARETO SEARCH         🔒 BLOCKED
 ```text
 AUTHORITATIVE_OBSERVATIONS = 10
 EXISTING_CONTEXT_BUCKETS = 6
-V0_6_2_EXACT_MULTI_STUDY_BUCKETS = 0
 V0_6_3_HARDENED_READY_BUCKETS = 0
+V0_6_4_FRONTIER_PAIRS = 3
+REAL_HARDENED_READY_PAIRS = 0
+NEW_AUTHORITY_FROM_FRONTIER = 0
 POOLED_REFERENCE = NOT_CREATED
 BIOLOGICAL_REFERENCE_VECTOR = UNSET
 PARETO_SEARCH = BLOCKED
 ```
 
-v0.6.3 closes two additional routes to false comparability:
+v0.6.4 makes literature discovery itself claim-bounded:
 
 ```text
-DIFFERENT_PUBLICATION != INDEPENDENT_COHORT
-SAME_BIOLOGICAL_CONTEXT != SAME_MEASUREMENT_CONTEXT
+PROTOCOL_SIMILARITY != COMPARABILITY
+DISTINCT_PUBLICATION != DISTINCT_COHORT
+FRONTIER_RANK != ADMISSION_PRIORITY
+FRONTIER_OBJECT != ADMISSION_CHANNEL
 ```
 
-A multi-study bucket now requires established distinct cohorts, not merely distinct PMID/DOI values. Confirmed participant overlap blocks the independent-study count; unresolved overlap does not count as established cohort independence.
+The frontier currently preserves three tempting pairings and their exact blockers:
 
-The exact measurement-context key now also contains:
+1. **Pomare 1985 ↔ Akanji 1991** — both use oral 20 g lactulose and peripheral acetate measurements, but fasting duration, specimen semantics, uncertainty semantics, peak timing, population class and measurement context do not match exactly.
+2. **Pouteau 1998 ↔ Galuppo 2021** — both use 20 g lactulose plus continuous IV acetate tracer, but adult/youth populations, tracer isotope, tracer duration/dose and measurement context differ.
+3. **Galuppo 2021 ↔ Galuppo 2023** — very high surface protocol similarity, but participant overlap is confirmed. Distinct papers therefore do **not** provide independent human cohorts.
+
+The third pair is retained as a real-world adversarial case:
 
 ```text
-preanalytic_handling
-analytical_method_family
+PROTOCOL_MATCH = HIGH
+PUBLICATION_IDENTITY = DISTINCT
+COHORT_INDEPENDENCE = FAIL_CONFIRMED_OVERLAP
+VERDICT = PROTOCOL_MATCH_BUT_INDEPENDENCE_FAIL
 ```
 
-This is necessary because measured acetate can depend materially on sample handling. A primary 1979 Clinical Chemistry study reported a change in measured plasma acetate after defined frozen storage, so fresh and stored specimens are not silently treated as the same measurement context.
-
-## Hardened invariants
+## Hardened comparability still applies
 
 ```text
 CONFIRMED_PARTICIPANT_OVERLAP => NOT_INDEPENDENT
 UNRESOLVED_PARTICIPANT_OVERLAP != DISTINCT_COHORT_ESTABLISHED
-FRESH_SPECIMEN != STORED_SPECIMEN unless a validated transform is predeclared
+FRESH_SPECIMEN != STORED_SPECIMEN unless validated equivalence exists
 UNKNOWN_PREANALYTIC_HANDLING => NOT_COMPARABLE
 UNKNOWN_ANALYTICAL_METHOD => NOT_COMPARABLE
 SERUM != PLASMA unless equivalence is predeclared + supported
 TRACER != NO_TRACER
-UNKNOWN_FASTING_DURATION != 12_HOURS
 SD != SE != SEM != IQR != RANGE
 COMPARABLE_READY != POOLED_REFERENCE
-NO_AVERAGING_AT_V0_6_3
 ```
 
-A synthetic positive fixture may become `COMPARABLE_READY_NOT_POOLED` only when two primary sources have distinct established cohort IDs and an identical complete hardened key. v0.6.3 itself never averages those observations.
+A frontier ranking may prioritize what to inspect next, but executable code forbids it from changing admission status, authoritative-observation counts, pooled-reference state, biological vector state, or Pareto state.
 
-## Evidence state remains bounded
-
-```text
-HUMAN_REFERENCE_STANDARD = NOT_ESTABLISHED
-EXTERNAL_REVIEW = NOT_YET_ESTABLISHED
-BIOLOGICAL_REFERENCE_VECTOR = UNSET_PENDING_PRIMARY_DATA_AND_EXTERNAL_REVIEW
-PARETO_SEARCH = BLOCKED
-```
-
-Historical manifests remain preserved:
+## Historical reference manifests
 
 ```text
 REFERENCE_DATASET_V0_1 → 0 authoritative observations
 REFERENCE_DATASET_V0_2 → 1 authoritative observation
 REFERENCE_DATASET_V0_3 → 10 context-separated authoritative observations
 REFERENCE_DATASET_V0_4 → 0 exact comparable multi-study buckets
-REFERENCE_DATASET_V0_5 → cohort/preanalytic hardening active, still 0 ready buckets
+REFERENCE_DATASET_V0_5 → cohort/preanalytic hardening, 0 ready buckets
+REFERENCE_DATASET_V0_6 → hardened-pair search frontier, 0 ready pairs
 ```
 
 ## Current objects
 
-- [`experiments/SCOBY-D0-COMPARABLE-CONTEXT-BUCKET-QUALIFICATION-v0.6.2.json`](experiments/SCOBY-D0-COMPARABLE-CONTEXT-BUCKET-QUALIFICATION-v0.6.2.json)
 - [`experiments/SCOBY-D0-CROSS-STUDY-INDEPENDENCE-PREANALYTIC-HARDENING-v0.6.3.json`](experiments/SCOBY-D0-CROSS-STUDY-INDEPENDENCE-PREANALYTIC-HARDENING-v0.6.3.json)
-- [`evidence/reference_context/REFERENCE_DATASET_V0_5.json`](evidence/reference_context/REFERENCE_DATASET_V0_5.json)
-- [`src/comparable_context.py`](src/comparable_context.py)
+- [`experiments/SCOBY-D0-HARDENED-PAIR-SEARCH-FRONTIER-v0.6.4.json`](experiments/SCOBY-D0-HARDENED-PAIR-SEARCH-FRONTIER-v0.6.4.json)
+- [`evidence/reference_context/REFERENCE_DATASET_V0_6.json`](evidence/reference_context/REFERENCE_DATASET_V0_6.json)
 - [`src/cross_study_hardening.py`](src/cross_study_hardening.py)
-- [`tests/test_comparable_context_v062.py`](tests/test_comparable_context_v062.py)
+- [`src/pair_search_frontier.py`](src/pair_search_frontier.py)
 - [`tests/test_cross_study_hardening_v063.py`](tests/test_cross_study_hardening_v063.py)
+- [`tests/test_pair_search_frontier_v064.py`](tests/test_pair_search_frontier_v064.py)
 
 ## Claim ceiling
 
 ```text
 SIMULATION_PASS != IN_VIVO_VALIDATION
-EXTRACTION_REPLAY_PASS != BIOLOGICAL_TRUTH
 INGESTION_AUTHORITY != HUMAN_REFERENCE_STANDARD
 DISTINCT_PUBLICATIONS != DISTINCT_COHORTS
+PROTOCOL_SIMILARITY != COMPARABILITY
+SEARCH_FRONTIER != EVIDENCE_AUTHORITY
 COMPARABLE_READY != POOLED_REFERENCE
 MULTIPLE_OBSERVATIONS != BIOLOGICAL_REFERENCE_VECTOR
 HASH != TRUTH
