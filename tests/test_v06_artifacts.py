@@ -3,6 +3,8 @@ import json
 import unittest
 from pathlib import Path
 
+from reference_admission import admit_dataset_observation, compare_cross_representation_extractions
+
 ROOT = Path(__file__).resolve().parents[1]
 
 
@@ -49,6 +51,23 @@ class TestV06Artifacts(unittest.TestCase):
         self.assertEqual(ledger["gate_status"]["authoritative_observations"], refset["authoritative_observation_count"])
         self.assertEqual(ledger["gate_status"]["real_separate_extractor_B_records"], 1)
         self.assertEqual(ledger["gate_status"]["distinct_source_representations"], 2)
+
+    def test_real_ledger_pair_replays_to_cross_representation_match(self):
+        ledger = load("evidence/reference_context/EXTRACTION_LEDGER_V0_1.json")
+        a, b = ledger["records"]
+        out = compare_cross_representation_extractions(a, b)
+        self.assertEqual(out["status"], "CROSS_REPRESENTATION_EXTRACTION_MATCH")
+        self.assertEqual(out["authoritative_admission"], "ELIGIBLE_FOR_V0_6_INGESTION_AUTHORITY")
+
+    def test_real_ledger_pair_admits_only_ingestion_authority(self):
+        ledger = load("evidence/reference_context/EXTRACTION_LEDGER_V0_1.json")
+        a, b = ledger["records"]
+        out = admit_dataset_observation(a, b)
+        self.assertEqual(out["status"], "AUTHORITATIVE_DATASET_OBSERVATION_ADMITTED")
+        self.assertEqual(out["authority_scope"], "SCOBY_D0_EVIDENCE_INGESTION_ONLY")
+        self.assertEqual(out["biological_reference_standard"], "NOT_ESTABLISHED")
+        self.assertTrue(out["biological_reference_vector"].startswith("UNSET"))
+        self.assertTrue(out["pareto_search"].startswith("BLOCKED"))
 
     def test_reference_dataset_v02_preserves_v01_as_pre_admission_snapshot(self):
         current = load("evidence/reference_context/REFERENCE_DATASET_V0_2.json")
