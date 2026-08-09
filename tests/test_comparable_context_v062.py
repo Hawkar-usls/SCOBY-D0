@@ -52,7 +52,9 @@ class TestComparableContextV062(unittest.TestCase):
         b = copy.deepcopy(a)
         a["ingestion_status"] = b["ingestion_status"] = "ELIGIBLE"
         a["blockers"] = b["blockers"] = []
+        a["comparability_key"]["fasting_duration"] = "12_HOURS"
         a["comparability_key"]["uncertainty_semantics"] = "SEM"
+        b["comparability_key"]["fasting_duration"] = "12_HOURS"
         b["comparability_key"]["uncertainty_semantics"] = "SEM"
         b["source"]["pmid"] = "DIFFERENT_STUDY"
         b["comparability_key"]["tracer_state"] = "AFTER_2_HOUR_LOW_DOSE_TRACER_INFUSION"
@@ -66,15 +68,22 @@ class TestComparableContextV062(unittest.TestCase):
         b["comparability_key"]["specimen"] = "SERUM"
         self.assertNotEqual(exact_comparability_key(a), exact_comparability_key(b))
 
-    def test_unknown_fasting_duration_blocks_candidate(self):
+    def test_scheppach_fasting_duration_is_fail_closed_on_primary_abstract(self):
+        c = load_gate()["candidates"][0]
+        self.assertFalse(candidate_is_qualifiable(c))
+        self.assertTrue(c["comparability_key"]["fasting_duration"].startswith("UNRESOLVED"))
+        self.assertIn("FASTING_DURATION_NOT_EXPLICIT_IN_PRIMARY_ABSTRACT_FOR_21_CONTROLS", c["blockers"])
+
+    def test_unknown_fasting_duration_blocks_akanji_candidate(self):
         c = load_gate()["candidates"][3]
         self.assertFalse(candidate_is_qualifiable(c))
         self.assertEqual(c["comparability_key"]["fasting_duration"], "UNRESOLVED")
 
-    def test_ambiguous_specimen_blocks_candidate(self):
+    def test_mcdougal_is_serum_context_not_plasma(self):
         c = load_gate()["candidates"][2]
+        self.assertEqual(c["comparability_key"]["specimen"], "SERUM")
+        self.assertIn("NO_SECOND_INDEPENDENT_PRIMARY_STUDY_WITH_EXACT_MATCHING_SERUM_CONTEXT", c["blockers"])
         self.assertFalse(candidate_is_qualifiable(c))
-        self.assertIn("SPECIMEN_TYPE_AMBIGUOUS_FOR_ACETATE_TABLE_VALUE", c["blockers"])
 
     def test_missing_second_representation_can_block_ingestion_candidate(self):
         c = load_gate()["candidates"][0]
