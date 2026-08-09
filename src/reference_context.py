@@ -7,9 +7,9 @@ from __future__ import annotations
 from typing import Any
 
 REQUIRED = (
-    "source_type","source_lineage","cohort","sample_size","route","compartment",
+    "source_type","source_lineage","study_design","cohort","sample_size","route","compartment",
     "physiological_state","sampling_times_or_window","analytical_method",
-    "analyte","estimate","units","uncertainty","exclusions"
+    "analyte","estimate","units","uncertainty","citation_locator","exclusions"
 )
 
 ROUTES = {
@@ -25,6 +25,13 @@ class ReferenceCollapseForbidden(RuntimeError):
 def context_key(obs: dict[str, Any]) -> tuple[str, str, str, str]:
     return (obs["analyte"], obs["route"], obs["compartment"], obs["physiological_state"])
 
+def _stable_source_id(lineage: dict[str, Any]) -> tuple[str, str]:
+    pmid = str(lineage.get("pmid") or "").strip()
+    doi = str(lineage.get("doi") or "").strip()
+    if not pmid and not doi:
+        raise ValueError("MISSING_STABLE_SOURCE_IDENTIFIER")
+    return pmid, doi
+
 def validate_observation(obs: dict[str, Any]) -> list[str]:
     errors = []
     for key in REQUIRED:
@@ -39,9 +46,11 @@ def validate_observation(obs: dict[str, Any]) -> list[str]:
     if obs.get("physiological_state") not in STATES:
         errors.append("PHYSIOLOGICAL_STATE_NOT_EXPLICIT")
     lineage = obs.get("source_lineage") or {}
-    for key in ("title","year","pmid","doi"):
+    for key in ("title","year"):
         if not lineage.get(key):
             errors.append(f"MISSING_LINEAGE_{key.upper()}")
+    if not str(lineage.get("pmid") or "").strip() and not str(lineage.get("doi") or "").strip():
+        errors.append("MISSING_STABLE_SOURCE_IDENTIFIER")
     uncertainty = obs.get("uncertainty")
     if not isinstance(uncertainty, dict) or uncertainty.get("value") is None or not uncertainty.get("kind"):
         errors.append("MISSING_UNCERTAINTY")
@@ -80,7 +89,7 @@ def comparable(obs_a: dict[str, Any], obs_b: dict[str, Any]) -> bool:
     return context_key(obs_a) == context_key(obs_b)
 
 def independent_source_count(observations: list[dict[str, Any]]) -> int:
-    return len({(o["source_lineage"]["pmid"], o["source_lineage"]["doi"]) for o in observations})
+    return len({_stable_source_id(o["source_lineage"]) for o in observations})
 
 def bucket_can_be_evidence_bound(observations: list[dict[str, Any]], minimum_sources: int = 2) -> bool:
     if not observations or any(not is_admissible(o) for o in observations):
