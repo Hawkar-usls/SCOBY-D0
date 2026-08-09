@@ -9,7 +9,7 @@
 
 ## Status
 
-**Early research / computational hypothesis.** SCOBY-D0 separates production science from context science. The repository does **not** establish a human feeding system, clinical effect, food safety, a universal human SCFA reference vector, or a validated engineered organism.
+**Early research / computational hypothesis.** SCOBY-D0 separates production science from context science. It does not establish a human feeding system, clinical effect, food safety, a universal human SCFA reference vector, or a validated engineered organism.
 
 ## Core boundaries
 
@@ -18,79 +18,115 @@ GM_PRODUCER != GM_ACETATE
 SAME_MOLECULE != SAME_PHYSIOLOGICAL_EVENT
 ACETATE_PRODUCER_PROVENANCE != EVIDENCE_PROVENANCE
 CITATION_LOCATOR != EXTRACTION_PROVENANCE
-METABOLIC_EQUIVALENCE MUST_NOT_READ PRODUCER_PROVENANCE
-REFERENCE_ADMISSION MUST_PRESERVE EVIDENCE_PROVENANCE
 ```
 
 ## Research ladder
 
 ```text
-v0.2  SOURCE INVARIANCE
+v0.2   SOURCE INVARIANCE
   ↓
-v0.3  SYNTHETIC CONTEXT SEARCH
+v0.3   SYNTHETIC CONTEXT SEARCH
   ↓
-v0.4  EVIDENCE ADMISSION
+v0.4   EVIDENCE ADMISSION
   ↓
-v0.5  EXTRACTION LINEAGE
+v0.5   EXTRACTION LINEAGE
   ↓
-v0.6  FIRST INGESTION-AUTHORITATIVE OBSERVATION
+v0.6   FIRST INGESTION-AUTHORITATIVE OBSERVATION
   ↓
-v0.6.1 MULTICONTEXT AUTHORITATIVE EXPANSION   ← current
+v0.6.1 MULTICONTEXT AUTHORITATIVE EXPANSION
   ↓
-v0.7  UNCERTAINTY-AWARE PARETO SEARCH        🔒 BLOCKED
+v0.6.2 COMPARABLE-CONTEXT QUALIFICATION        ← current
+  ↓
+v0.7   UNCERTAINTY-AWARE PARETO SEARCH         🔒 BLOCKED
 ```
 
-## v0.6.1 — context-specific authority
+## Current evidence state
 
-The current dataset contains **10 ingestion-authoritative observations from 3 primary human studies**, preserved in **6 distinct context buckets**.
-
-New context families include:
+v0.6.1 established **10 ingestion-authoritative observations from 3 primary human studies**, retained in **6 context buckets**. v0.6.2 asks a stricter question: do at least two independent primary studies support observations with an **exactly matching context key**?
 
 ```text
-ORAL_INULIN + STANDARD_BREAKFAST + IV STABLE-ISOTOPE TRACER
-→ systemic SCFA rate-of-appearance observations
+AUTHORITATIVE_OBSERVATIONS = 10
+PRIMARY_HUMAN_STUDIES_WITH_INGESTION_AUTHORITY = 3
+EXISTING_CONTEXT_BUCKETS = 6
 
-21-D HIGH-SCFA DIET
-→ fecal total-SCFA concentration
-→ plasma propionate concentration
-→ plasma butyrate concentration
-
-21-D LOW-SCFA DIET
-→ separate fecal/plasma observations
+COMPARABLE_CANDIDATE_STUDIES_EXAMINED = 4
+EXACT_MULTI_STUDY_COMPARABLE_BUCKETS = 0
+CROSS_STUDY_AGGREGATION = BLOCKED
 ```
 
-The project explicitly forbids treating these as interchangeable:
+The exact comparability key contains:
+
+```text
+population_health_class
+specimen
+route_or_exposure
+fasting_duration
+tracer_state
+analyte
+metric
+units
+uncertainty_semantics
+```
+
+A bucket becomes `COMPARABLE_READY_NOT_POOLED` only when at least two independent primary studies have complete, exactly matching keys.
+
+## v0.6.2 — negative result is preserved
+
+The first target family was superficially simple:
+
+```text
+HEALTHY_FASTING_PERIPHERAL_ACETATE_CONCENTRATION
+```
+
+Four primary-study candidates were examined, but no exact multi-study bucket qualified.
+
+Key blockers include:
+
+```text
+TRACER_EXPOSURE_MISMATCH
+SPECIMEN_IDENTITY_AMBIGUITY
+POPULATION_CLASS_DIFFERENCE
+FASTING_DURATION_UNRESOLVED
+UNCERTAINTY_SEMANTICS_DIFFERENCE
+SECOND_SOURCE_REPRESENTATION_MISSING
+```
+
+For example, a 12-h fasting plasma acetate value obtained in a protocol after a low-dose isotope-tracer baseline is **not silently merged** with an untraced fasting plasma value. Likewise, serum and plasma are not treated as interchangeable without a predeclared supported equivalence rule.
+
+## Fail-closed comparability invariants
 
 ```text
 PLASMA != FECAL
+SERUM != PLASMA            unless equivalence is predeclared + supported
 RATE_OF_APPEARANCE != CONCENTRATION
-HIGH_SCFA_DIET != LOW_SCFA_DIET
-SD != IQR
-NO_CROSS_CONTEXT_AVERAGING
-NO_CROSS_STUDY_COLLAPSE
+TRACER != NO_TRACER
+UNKNOWN_FASTING_DURATION != 12_HOURS
+SD != SE != SEM != IQR != RANGE
+SAME_STUDY_MULTIPLE_COHORTS != TWO_INDEPENDENT_STUDIES
+UNRESOLVED_SPECIMEN => NOT_COMPARABLE
+TWO_INDEPENDENT_PRIMARY_STUDIES_REQUIRED_FOR COMPARABLE_READY
+COMPARABLE_READY != POOLED_REFERENCE
+NO_AVERAGING_AT_V0_6_2
 ```
 
-Every new v0.6.1 observation is replayed through two source representations/process families and the existing v0.6 admission kernel. Cross-representation agreement establishes **SCOBY-D0 evidence-ingestion authority only**; it is not biological replication or external review.
+This negative qualification does not invalidate any study and does not remove any of the 10 existing ingestion-authoritative observations. It only prevents an unjustified cross-study collapse.
 
 ## Current reference state
 
 ```text
-AUTHORITATIVE_OBSERVATIONS = 10
-PRIMARY_HUMAN_STUDIES       = 3
-CONTEXT_BUCKETS              = 6
-AUTHORITY_SCOPE              = SCOBY_D0_EVIDENCE_INGESTION_ONLY
-HUMAN_REFERENCE_STANDARD    = NOT_ESTABLISHED
-EXTERNAL_REVIEW              = NOT_YET_ESTABLISHED
+HUMAN_REFERENCE_STANDARD = NOT_ESTABLISHED
+EXTERNAL_REVIEW = NOT_YET_ESTABLISHED
 BIOLOGICAL_REFERENCE_VECTOR = UNSET_PENDING_PRIMARY_DATA_AND_EXTERNAL_REVIEW
-PARETO_SEARCH                = BLOCKED
+PARETO_SEARCH = BLOCKED
 ```
 
-The old manifests are preserved rather than rewritten:
+Historical manifests remain preserved:
 
 ```text
-REFERENCE_DATASET_V0_1 → pre-v0.6 snapshot, 0 authoritative observations
-REFERENCE_DATASET_V0_2 → first admission, 1 authoritative observation
-REFERENCE_DATASET_V0_3 → multicontext state, 10 authoritative observations
+REFERENCE_DATASET_V0_1 → 0 authoritative observations
+REFERENCE_DATASET_V0_2 → 1 authoritative observation
+REFERENCE_DATASET_V0_3 → 10 context-separated authoritative observations
+REFERENCE_DATASET_V0_4 → comparability qualification: 0 exact multi-study buckets
 ```
 
 ## Current objects
@@ -99,26 +135,25 @@ REFERENCE_DATASET_V0_3 → multicontext state, 10 authoritative observations
 - [`experiments/SCOBY-D0-EVIDENCE-EXTRACTION-LINEAGE-v0.5.json`](experiments/SCOBY-D0-EVIDENCE-EXTRACTION-LINEAGE-v0.5.json)
 - [`experiments/SCOBY-D0-AUTHORITATIVE-REFERENCE-ADMISSION-v0.6.json`](experiments/SCOBY-D0-AUTHORITATIVE-REFERENCE-ADMISSION-v0.6.json)
 - [`experiments/SCOBY-D0-MULTICONTEXT-REFERENCE-EXPANSION-v0.6.1.json`](experiments/SCOBY-D0-MULTICONTEXT-REFERENCE-EXPANSION-v0.6.1.json)
-- [`evidence/reference_context/MULTICONTEXT_EXTRACTION_LEDGER_V0_1.json`](evidence/reference_context/MULTICONTEXT_EXTRACTION_LEDGER_V0_1.json)
-- [`evidence/reference_context/AUTHORITATIVE_REFERENCE_OBSERVATIONS_V0_2.json`](evidence/reference_context/AUTHORITATIVE_REFERENCE_OBSERVATIONS_V0_2.json)
-- [`evidence/reference_context/REFERENCE_DATASET_V0_3.json`](evidence/reference_context/REFERENCE_DATASET_V0_3.json)
-- [`src/reference_admission.py`](src/reference_admission.py)
-- [`src/multicontext_admission.py`](src/multicontext_admission.py)
-- [`tests/test_multicontext_v061.py`](tests/test_multicontext_v061.py)
+- [`experiments/SCOBY-D0-COMPARABLE-CONTEXT-BUCKET-QUALIFICATION-v0.6.2.json`](experiments/SCOBY-D0-COMPARABLE-CONTEXT-BUCKET-QUALIFICATION-v0.6.2.json)
+- [`evidence/reference_context/REFERENCE_DATASET_V0_4.json`](evidence/reference_context/REFERENCE_DATASET_V0_4.json)
+- [`src/comparable_context.py`](src/comparable_context.py)
+- [`tests/test_comparable_context_v062.py`](tests/test_comparable_context_v062.py)
 
 ## Claim ceiling
 
 ```text
 SIMULATION_PASS != IN_VIVO_VALIDATION
 EXTRACTION_REPLAY_PASS != BIOLOGICAL_TRUTH
-CROSS_REPRESENTATION_MATCH != BIOLOGICAL_REPLICATION
 INGESTION_AUTHORITY != HUMAN_REFERENCE_STANDARD
 MULTIPLE_OBSERVATIONS != BIOLOGICAL_REFERENCE_VECTOR
+COMPARABLE_READY != POOLED_REFERENCE
+HASH != TRUTH
 ACETATE != COMPLETE_NUTRITION
 SIMULATION_OPTIMUM != SAFE_HUMAN_FORMULATION
 ```
 
-No wet-lab genetic-engineering procedure, human dose, infusion rate, medical-device control or clinical recommendation belongs in the current scope.
+No wet-lab genetic-engineering procedure, human dose, infusion rate, medical-device control, or clinical recommendation belongs in the current scope.
 
 ## Related repositories
 
@@ -128,4 +163,4 @@ No wet-lab genetic-engineering procedure, human dose, infusion rate, medical-dev
 
 ## License
 
-Apache License 2.0. External papers, upstream code and third-party material remain under their respective terms.
+Apache License 2.0. External papers, upstream code, and third-party material remain under their respective terms.
