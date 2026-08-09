@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Hawkar-usls/SCOBY-D0/schemas/authoritative_reference_observation_v0.6.schema.json",
+  "title": "SCOBY-D0 v0.6 ingestion-authoritative observation",
+  "type": "object",
+  "required": [
+    "observation_id",
+    "source_identity",
+    "study_context",
+    "reported_observation",
+    "normalization",
+    "normalized_observation",
+    "extraction_A",
+    "extraction_B",
+    "cross_representation_comparison",
+    "admission"
+  ],
+  "properties": {
+    "observation_id": {"type": "string", "minLength": 1},
+    "source_identity": {
+      "type": "object",
+      "required": ["title", "year"],
+      "anyOf": [
+        {"required": ["pmid"]},
+        {"required": ["doi"]}
+      ]
+    },
+    "study_context": {
+      "type": "object",
+      "required": ["study_design", "sample_size", "route", "compartment", "physiological_state", "time_window"]
+    },
+    "reported_observation": {
+      "type": "object",
+      "required": ["estimate", "uncertainty", "units", "n"]
+    },
+    "normalization": {
+      "type": "object",
+      "required": ["source_unit", "target_unit", "exact_transform", "applied_to"]
+    },
+    "normalized_observation": {
+      "type": "object",
+      "required": ["estimate", "uncertainty", "units"]
+    },
+    "extraction_A": {"$ref": "#/$defs/extractionRepresentation"},
+    "extraction_B": {"$ref": "#/$defs/extractionRepresentation"},
+    "cross_representation_comparison": {
+      "type": "object",
+      "required": ["status", "reported_value_match", "uncertainty_type_match", "uncertainty_value_match", "sample_size_match", "context_match", "normalized_value_match", "unresolved_conflict"]
+    },
+    "admission": {
+      "type": "object",
+      "required": ["status", "authority_scope", "not_a_human_reference_standard", "not_biological_replication", "not_clinical_validation"]
+    }
+  },
+  "$defs": {
+    "extractionRepresentation": {
+      "type": "object",
+      "required": ["extractor_id", "representation_id", "representation_role", "provider", "format", "stable_locator", "citation_locator", "process_family", "process_id", "replay_status"]
+    }
+  },
+  "additionalProperties": true
+}

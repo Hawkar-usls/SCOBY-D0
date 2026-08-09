@@ -1,0 +1,64 @@
+{
+  "schema": "scoby-d0.authoritative-reference-admission.v0.6",
+  "artifact_id": "SCOBY-D0-AUTHORITATIVE-REFERENCE-ADMISSION-v0.6",
+  "status": "PREREGISTERED_AND_EXECUTABLE_ADMISSION_GATE",
+  "created_at": "2026-08-09T11:02:00+03:00",
+  "parent_gate": {
+    "artifact": "experiments/SCOBY-D0-EVIDENCE-EXTRACTION-LINEAGE-v0.5.json",
+    "sha256": "4078d3520ef7105b434dfc7b7c71e4c49182930af1923898b20329b8389c0ea0"
+  },
+  "authority_semantics": {
+    "authoritative_observation_meaning": "Evidence-ingestion lineage and normalization are sufficiently replayable for inclusion in the SCOBY-D0 internal reference-observation set.",
+    "does_not_mean": [
+      "universal human reference standard",
+      "clinical truth",
+      "safe human formulation",
+      "independent biological replication",
+      "external peer replication"
+    ]
+  },
+  "admission_requirements": [
+    "SAME_PRIMARY_SOURCE_IDENTITY",
+    "TWO_DISTINCT_SOURCE_REPRESENTATIONS",
+    "TWO_DISTINCT_EXTRACTION_PROCESS_FAMILIES",
+    "DISTINCT_EXTRACTOR_IDS",
+    "EACH_EXTRACTION_REPLAY_PASS",
+    "SAME_REPORTED_ESTIMATE_UNCERTAINTY_TYPE_AND_SAMPLE_SIZE",
+    "SAME_CONTEXT_TAGS",
+    "SAME_NORMALIZED_OBSERVATION",
+    "NO_UNRESOLVED_EXTRACTION_CONFLICT"
+  ],
+  "current_admission": {
+    "observation_id": "BOETS_2017_ACETATE_SYSTEMIC_AVAILABILITY",
+    "extractor_A": {
+      "representation": "PMC_PUBLISHED_FULL_TEXT_HTML",
+      "process_family": "STRUCTURED_HTML_SOURCE_BINDING"
+    },
+    "extractor_B": {
+      "representation": "UNIVERSITY_GLASGOW_ACCEPTED_MANUSCRIPT_PDF_TEXT",
+      "process_family": "PDF_TEXT_LAYER_NUMERIC_EXTRACTION"
+    },
+    "cross_representation_match": "PASS",
+    "reported": "36 ± 21 percent; mean ± SD; n=12",
+    "normalized": "0.36 ± 0.21 fraction",
+    "exact_transform": "MULTIPLY_EXACT 0.01 applied to estimate and SD",
+    "authority_scope": "SCOBY_D0_EVIDENCE_INGESTION_ONLY",
+    "admission_status": "AUTHORITATIVE_DATASET_OBSERVATION_ADMITTED"
+  },
+  "reference_state": {
+    "authoritative_observations": 1,
+    "human_reference_standard": "NOT_ESTABLISHED",
+    "external_review": "NOT_YET_ESTABLISHED",
+    "biological_reference_vector": "UNSET_PENDING_PRIMARY_DATA_AND_EXTERNAL_REVIEW",
+    "evidence_bound_pareto_search": "BLOCKED_UNTIL_V0_7_AND_MULTIPLE_CONTEXT_OBSERVATIONS"
+  },
+  "core_invariants": [
+    "AUTHORITATIVE_DATASET_OBSERVATION_NE_HUMAN_REFERENCE_STANDARD",
+    "CROSS_REPRESENTATION_EXTRACTION_MATCH_NE_BIOLOGICAL_REPLICATION",
+    "ONE_AUTHORITATIVE_OBSERVATION_NE_REFERENCE_DISTRIBUTION",
+    "BIOLOGICAL_REFERENCE_VECTOR_STILL_NOT_COLLAPSED",
+    "EXTRACTION_CONFLICT_PRESERVED_TRUE",
+    "PARETO_SEARCH_REMAINS_BLOCKED"
+  ],
+  "content_sha256": "fe19d736ca676e4c6ed488a40016b006275e615574081ec0bd0e0b728dbbc719"
+}

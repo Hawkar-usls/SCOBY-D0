@@ -1,0 +1,29 @@
+{
+  "schema": "scoby-d0.reference-dataset.v0.2",
+  "status": "ONE_INGESTION_AUTHORITATIVE_OBSERVATION_NOT_HUMAN_REFERENCE_STANDARD",
+  "supersedes_current_state_of": "evidence/reference_context/REFERENCE_DATASET_V0_1.json",
+  "lineage_note": "v0.1 is preserved unchanged as the pre-v0.6 candidate-ledger snapshot with zero authoritative observations.",
+  "candidate_ledger": "evidence/reference_context/REFERENCE_DATASET_V0_1.json",
+  "extraction_ledger": "evidence/reference_context/EXTRACTION_LEDGER_V0_1.json",
+  "authoritative_observation_set": "evidence/reference_context/AUTHORITATIVE_REFERENCE_OBSERVATIONS_V0_1.json",
+  "candidate_primary_human_sources": 4,
+  "authoritative_observation_count": 1,
+  "authoritative_observation_ids": [
+    "BOETS_2017_ACETATE_SYSTEMIC_AVAILABILITY"
+  ],
+  "authority_scope": "SCOBY_D0_EVIDENCE_INGESTION_ONLY",
+  "human_reference_standard": "NOT_ESTABLISHED",
+  "external_review": "NOT_YET_ESTABLISHED",
+  "biological_reference_vector": "UNSET_PENDING_PRIMARY_DATA_AND_EXTERNAL_REVIEW",
+  "conflicts_preserved": true,
+  "cross_study_collapse_allowed": false,
+  "pareto_search": "BLOCKED_UNTIL_V0_7_AND_MULTIPLE_CONTEXT_OBSERVATIONS",
+  "interpretation_ceiling": [
+    "The admitted Boets observation is authoritative only as a replayed SCOBY-D0 dataset observation.",
+    "It is not a universal postprandial acetate value.",
+    "It is not a human reference standard.",
+    "It is not a safe formulation target.",
+    "It is not independent biological replication.",
+    "The remaining candidate claims in v0.1 remain candidate/incomplete unless separately admitted."
+  ]
+}

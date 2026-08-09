@@ -9,7 +9,7 @@
 
 ## Status
 
-**Early research / computational hypothesis.** SCOBY-D0 separates two problems:
+**Early research / computational hypothesis.** SCOBY-D0 separates:
 
 1. **production science** — programmable bacterial cellulose and acetate/C₂ production;
 2. **context science** — human SCFA evidence with route, compartment, time, uncertainty and extraction lineage kept explicit.
@@ -38,128 +38,111 @@ v0.3  SYNTHETIC CONTEXT SEARCH
   ↓
 v0.4  EVIDENCE ADMISSION
   ↓
-v0.5  EXTRACTION LINEAGE        ← current
+v0.5  EXTRACTION LINEAGE
   ↓
-v0.6  AUTHORITATIVE REFERENCE SET
+v0.6  AUTHORITATIVE REFERENCE OBSERVATION   ← current
   ↓
 v0.7  UNCERTAINTY-AWARE PARETO SEARCH
 ```
 
-`v0.5` intentionally keeps:
+## v0.6 — what became authoritative
+
+For the first time, one observation is admitted as **authoritative inside the SCOBY-D0 evidence-ingestion layer**:
 
 ```text
-AUTHORITATIVE_OBSERVATIONS = 0
+BOETS_2017_ACETATE_SYSTEMIC_AVAILABILITY
+reported   = 36 ± 21 percent, mean ± SD, n=12
+normalized = 0.36 ± 0.21 fraction
+route      = COLON_DELIVERY_CAPSULE
+compartment= PLASMA
+```
+
+This does **not** mean a universal human reference value. It means that the repository can replay and cross-check how this source observation entered the dataset.
+
+Two distinct representations and extraction processes are retained:
+
+```text
+A: published PMC full-text HTML
+   → STRUCTURED_HTML_SOURCE_BINDING
+
+B: University of Glasgow accepted-manuscript PDF text layer
+   → PDF_TEXT_LAYER_NUMERIC_EXTRACTION
+
+A == B on reported value, SD, n, context and normalized value
+```
+
+The accepted manuscript reports that results are means ± SD and gives the same `36 ± 21%` acetate systemic-availability result for the 12-subject colon-delivery study. The PDF route is not treated as independent biological replication; it is an independent evidence-ingestion path for the same primary study.
+
+## Authority semantics
+
+```text
+AUTHORITATIVE_DATASET_OBSERVATION
+!=
+HUMAN_REFERENCE_STANDARD
+
+CROSS_REPRESENTATION_EXTRACTION_MATCH
+!=
+INDEPENDENT_BIOLOGICAL_REPLICATION
+
+ONE_AUTHORITATIVE_OBSERVATION
+!=
+REFERENCE_DISTRIBUTION
+```
+
+Current state:
+
+```text
+AUTHORITATIVE_OBSERVATIONS = 1
+HUMAN_REFERENCE_STANDARD   = NOT_ESTABLISHED
+EXTERNAL_REVIEW             = NOT_YET_ESTABLISHED
 BIOLOGICAL_REFERENCE_VECTOR = UNSET_PENDING_PRIMARY_DATA_AND_EXTERNAL_REVIEW
-V0_6_ADMISSION = BLOCKED
+PARETO_SEARCH               = BLOCKED
 ```
 
-## v0.5 — extraction lineage
+## v0.4/v0.5 invariants remain active
 
-A citation locator answers **where a number came from**. v0.5 additionally records **how that source value became a dataset value**.
-
-```text
-paper
-  ↓
-source-reported observation
-  ↓
-extraction method
-  ↓
-derivation / digitization / exact unit transform
-  ↓
-normalized observation
-  ↓
-replay check
-```
-
-Three methods are kept distinct:
+v0.6 extends the earlier gates; it does not replace them.
 
 ```text
-DIRECT_REPORTED_VALUE
-!=
-DERIVED_VALUE
-!=
-FIGURE_DIGITIZATION
-```
-
-Fail-closed v0.5 invariants include:
-
-```text
-SD != SE != CI95 != IQR != RANGE
-UNCERTAINTY_TYPE_REQUIRED
-DERIVED_VALUE => DERIVATION_REQUIRED
-FIGURE_DIGITIZATION => DIGITIZATION_METHOD_REQUIRED
-FIGURE_DIGITIZATION => EXTRACTION_ERROR_REQUIRED
-UNIT_CONVERSION => SOURCE_UNIT + TARGET_UNIT + EXACT_TRANSFORM
-NORMALIZED_VALUE MUST_BE_REPLAYABLE_FROM SOURCE_OBSERVATION
-SAME_EXTRACTOR != INDEPENDENT_EXTRACTION
-EXTRACTION_CONFLICT = PRESERVED
-EXTRACTION_MATCH != AUTHORITATIVE_ADMISSION
-```
-
-### v0.4 invariants remain active
-
-v0.5 extends the admission gate; it does not replace it.
-
-```text
-EXACT_CITATION_LOCATOR_REQUIRED_FOR_AUTHORITATIVE_OBSERVATION
-MISSING_UNCERTAINTY => NOT_AUTHORITATIVE
-UNIT_CONVERSION => EXPLICIT_AND_TESTED
 PLASMA_VALUE != LUMINAL_VALUE
 COLONIC_DELIVERY != ORAL_INTAKE
 FASTED != POSTPRANDIAL
 SINGLE_STUDY != HUMAN_REFERENCE_STANDARD
 MEAN_WITHOUT_VARIANCE != REFERENCE_DISTRIBUTION
-CONFLICTS_PRESERVED = TRUE
+SD != SE != CI95 != IQR != RANGE
+DIRECT_REPORTED_VALUE != DERIVED_VALUE != FIGURE_DIGITIZATION
+NORMALIZED_VALUE MUST_BE_REPLAYABLE_FROM SOURCE_OBSERVATION
+EXTRACTION_CONFLICT = PRESERVED
 BIOLOGICAL_REFERENCE_VECTOR = STILL_NOT_COLLAPSED
 ```
 
-## Double extraction
+## Dataset lineage
 
-v0.5 supports comparison of two separately performed extractions of the same observation.
+`REFERENCE_DATASET_V0_1.json` is intentionally preserved unchanged as the pre-v0.6 candidate-ledger snapshot with zero authoritative observations.
 
-```text
-EXTRACTOR_A → observation_A
-EXTRACTOR_B → observation_B
-                 ↓
-          canonical comparison
-```
+`REFERENCE_DATASET_V0_2.json` is the current manifest and links:
 
-If they match, status becomes `EXTRACTION_MATCH`, but admission remains blocked until v0.6. If they disagree, the conflict is retained verbatim and **must not be averaged away**.
+- the preserved v0.1 candidate ledger;
+- the extraction ledger;
+- the first ingestion-authoritative observation set.
 
-The repository does not pretend that duplicating one agent's extraction creates independence. The first real Boets record therefore has:
-
-```text
-EXTRACTOR_A = CAPTURED_AS_CANDIDATE
-EXTRACTOR_B = NOT_YET_ESTABLISHED
-AUTHORITATIVE_ADMISSION = BLOCKED_UNTIL_V0_6
-```
-
-## Current evidence object
-
-For Boets et al. 2017 (PMID `27510655`, DOI `10.1113/JP272613`), the source directly reports colonic-derived acetate systemic availability as `36 ± 21%`, mean ± SD, in 12 healthy subjects. The record is bound to the Results passage immediately before Figure 2 and Figure 2B and is classified as `DIRECT_REPORTED_VALUE`, not figure digitization.
-
-The normalization step is explicit:
-
-```text
-36 ± 21 percent
-× 0.01
-→ 0.36 ± 0.21 fraction
-```
-
-The exact transform is applied to both the estimate and its SD. This remains a **candidate extraction record**, not a universal postprandial reference value.
+This makes the transition from `0 → 1` authoritative observations auditable instead of rewriting history.
 
 ## Current objects
 
 - [`evidence/ACETATE-SOURCE-EQUIVALENCE-v0.2.json`](evidence/ACETATE-SOURCE-EQUIVALENCE-v0.2.json)
 - [`experiments/SKYBU-C2-CONTEXT-RECONSTRUCTION-v0.3.json`](experiments/SKYBU-C2-CONTEXT-RECONSTRUCTION-v0.3.json)
 - [`experiments/SCOBY-D0-EVIDENCE-DERIVED-REFERENCE-CONTEXT-v0.4.json`](experiments/SCOBY-D0-EVIDENCE-DERIVED-REFERENCE-CONTEXT-v0.4.json)
-- [`evidence/reference_context/REFERENCE_DATASET_V0_1.json`](evidence/reference_context/REFERENCE_DATASET_V0_1.json)
 - [`experiments/SCOBY-D0-EVIDENCE-EXTRACTION-LINEAGE-v0.5.json`](experiments/SCOBY-D0-EVIDENCE-EXTRACTION-LINEAGE-v0.5.json)
+- [`experiments/SCOBY-D0-AUTHORITATIVE-REFERENCE-ADMISSION-v0.6.json`](experiments/SCOBY-D0-AUTHORITATIVE-REFERENCE-ADMISSION-v0.6.json)
+- [`evidence/reference_context/REFERENCE_DATASET_V0_1.json`](evidence/reference_context/REFERENCE_DATASET_V0_1.json)
+- [`evidence/reference_context/REFERENCE_DATASET_V0_2.json`](evidence/reference_context/REFERENCE_DATASET_V0_2.json)
 - [`evidence/reference_context/EXTRACTION_LEDGER_V0_1.json`](evidence/reference_context/EXTRACTION_LEDGER_V0_1.json)
-- [`schemas/extraction_record_v0.5.schema.json`](schemas/extraction_record_v0.5.schema.json)
+- [`evidence/reference_context/AUTHORITATIVE_REFERENCE_OBSERVATIONS_V0_1.json`](evidence/reference_context/AUTHORITATIVE_REFERENCE_OBSERVATIONS_V0_1.json)
 - [`src/extraction_lineage.py`](src/extraction_lineage.py)
-- [`tests/test_extraction_lineage.py`](tests/test_extraction_lineage.py)
-- [`PROJECT_STATUS.json`](PROJECT_STATUS.json)
+- [`src/reference_admission.py`](src/reference_admission.py)
+- [`tests/test_reference_admission.py`](tests/test_reference_admission.py)
+- [`tests/test_v06_artifacts.py`](tests/test_v06_artifacts.py)
 
 ## Claim ceiling
 
@@ -167,6 +150,7 @@ The exact transform is applied to both the estimate and its SD. This remains a *
 SIMULATION_PASS != IN_VIVO_VALIDATION
 EXTRACTION_REPLAY_PASS != BIOLOGICAL_TRUTH
 EXTRACTION_MATCH != INDEPENDENT_BIOLOGICAL_REPLICATION
+INGESTION_AUTHORITY != HUMAN_REFERENCE_STANDARD
 HASH != TRUTH
 ACETATE != COMPLETE_NUTRITION
 SIMULATION_OPTIMUM != SAFE_HUMAN_FORMULATION

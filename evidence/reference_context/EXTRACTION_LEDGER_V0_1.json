@@ -1,12 +1,16 @@
 {
   "schema": "scoby-d0.extraction-ledger.v0.1",
-  "status": "CANDIDATE_EXTRACTION_LEDGER_NOT_AUTHORITATIVE_REFERENCE",
-  "authoritative_observations": [],
+  "status": "DUAL_EXTRACTION_COMPLETE_ONE_INGESTION_AUTHORITATIVE_OBSERVATION",
+  "authoritative_observations": [
+    "BOETS_2017_ACETATE_SYSTEMIC_AVAILABILITY"
+  ],
+  "authoritative_reference_set": "evidence/reference_context/AUTHORITATIVE_REFERENCE_OBSERVATIONS_V0_1.json",
+  "authority_scope": "SCOBY_D0_EVIDENCE_INGESTION_ONLY",
   "biological_reference_vector": "UNSET_PENDING_PRIMARY_DATA_AND_EXTERNAL_REVIEW",
   "records": [
     {
       "observation_id": "BOETS_2017_ACETATE_SYSTEMIC_AVAILABILITY",
-      "extractor_id": "EXTRACTOR_A_CURRENT_STRUCTURED_EXTRACTION",
+      "extractor_id": "EXTRACTOR_A_PMC_PUBLISHED_HTML",
       "source_identity": {
         "title": "Systemic availability and metabolism of colonic-derived short-chain fatty acids in healthy subjects: a stable isotope study",
         "year": 2017,
@@ -15,13 +19,12 @@
       },
       "citation_locator": {
         "type": "RESULTS_TEXT_AND_FIGURE",
-        "locator": "Results > Delivery of SCFAs into the colon of healthy subjects > paragraph immediately before Figure 2; Figure 2B"
+        "locator": "Results > Systemic availabilities of colonic acetate, propionate and butyrate; Figure 2B"
       },
       "reported_observation": {
         "estimate": 36.0,
         "uncertainty": {"type": "SD", "value": 21.0},
         "units": "percent",
-        "source_rendering": "36 ± 21%",
         "n": 12
       },
       "context": {
@@ -39,34 +42,100 @@
           "source_unit": "percent",
           "target_unit": "fraction",
           "exact_transform": {"kind": "MULTIPLY_EXACT", "factor": 0.01}
-        },
-        "interpretation_note": "The estimate and SD are directly reported by the source. Only the explicit percent-to-fraction representation is normalized."
+        }
       },
       "normalized_observation": {
         "estimate": 0.36,
         "uncertainty": {"type": "SD", "value": 0.21},
         "units": "fraction"
       },
-      "replay_status": "PASS_CANDIDATE",
-      "independent_extraction": {
-        "extractor_B": "NOT_YET_ESTABLISHED",
-        "comparison_status": "BLOCKED_NO_SECOND_EXTRACTION"
+      "extraction_provenance": {
+        "representation_id": "PMC_PUBLISHED_FULL_TEXT_HTML",
+        "representation_role": "PUBLISHED_VERSION",
+        "provider": "NCBI_PMC",
+        "format": "HTML",
+        "stable_locator": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5233652/",
+        "process_family": "STRUCTURED_HTML_SOURCE_BINDING",
+        "process_id": "PMC_STRUCTURED_BINDING_V1"
       },
-      "admission_status": "CANDIDATE_ONLY_V0_5",
-      "authoritative_admission": "BLOCKED_UNTIL_V0_6"
+      "replay_status": "PASS"
+    },
+    {
+      "observation_id": "BOETS_2017_ACETATE_SYSTEMIC_AVAILABILITY",
+      "extractor_id": "EXTRACTOR_B_GLASGOW_ACCEPTED_PDF_TEXT",
+      "source_identity": {
+        "title": "Systemic availability and metabolism of colonic-derived short-chain fatty acids in healthy subjects: a stable isotope study",
+        "year": 2017,
+        "pmid": "27510655",
+        "doi": "10.1113/JP272613"
+      },
+      "citation_locator": {
+        "type": "ACCEPTED_MANUSCRIPT_RESULTS_TEXT_AND_FIGURE",
+        "locator": "Accepted manuscript p.11, Results > Systemic availabilities of colonic acetate, propionate and butyrate; Figure 2B caption"
+      },
+      "reported_observation": {
+        "estimate": 36.0,
+        "uncertainty": {"type": "SD", "value": 21.0},
+        "units": "percent",
+        "n": 12
+      },
+      "context": {
+        "route": "COLON_DELIVERY_CAPSULE",
+        "compartment": "PLASMA",
+        "physiological_state": "MIXED_PROTOCOL",
+        "time_window": "SOURCE_DEFINED_12_H_PLASMA_FOLLOWUP"
+      },
+      "extraction": {
+        "method": "DIRECT_REPORTED_VALUE",
+        "derived": false,
+        "digitized_from_figure": false,
+        "unit_conversion": {
+          "applied": true,
+          "source_unit": "percent",
+          "target_unit": "fraction",
+          "exact_transform": {"kind": "MULTIPLY_EXACT", "factor": 0.01}
+        }
+      },
+      "normalized_observation": {
+        "estimate": 0.36,
+        "uncertainty": {"type": "SD", "value": 0.21},
+        "units": "fraction"
+      },
+      "extraction_provenance": {
+        "representation_id": "UNIVERSITY_GLASGOW_ACCEPTED_MANUSCRIPT_PDF_TEXT",
+        "representation_role": "ACCEPTED_MANUSCRIPT",
+        "provider": "UNIVERSITY_OF_GLASGOW_ENLIGHTEN",
+        "format": "PDF_TEXT_LAYER",
+        "stable_locator": "https://eprints.gla.ac.uk/128777/1/128777.pdf",
+        "process_family": "PDF_TEXT_LAYER_NUMERIC_EXTRACTION",
+        "process_id": "GLASGOW_PDF_TEXT_REGEX_V1",
+        "source_fragment_sha256": "ecc0f9c6d5889e1a5f8c1e7ab436970c770b8f283b0092706c6279e7a406a30b"
+      },
+      "replay_status": "PASS"
     }
   ],
-  "synthetic_double_extraction_fixture": {
-    "purpose": "Tests match/conflict semantics without claiming a real second human extraction.",
-    "matching_fixture_expected": "EXTRACTION_MATCH__STILL_BLOCKED_UNTIL_V0_6",
-    "conflict_fixture_expected": "EXTRACTION_CONFLICT_PRESERVED__ADMISSION_BLOCKED"
+  "cross_representation_comparison": {
+    "status": "CROSS_REPRESENTATION_EXTRACTION_MATCH",
+    "reported_value_match": true,
+    "uncertainty_type_match": true,
+    "uncertainty_value_match": true,
+    "sample_size_match": true,
+    "context_match": true,
+    "normalized_value_match": true,
+    "unresolved_conflict": false,
+    "biological_replication_claim": false
   },
   "gate_status": {
     "real_extractor_A_records": 1,
-    "real_independent_extractor_B_records": 0,
-    "authoritative_observations": 0,
-    "extraction_conflicts": "NONE_EVALUABLE_WITHOUT_REAL_SECOND_EXTRACTION",
+    "real_separate_extractor_B_records": 1,
+    "distinct_source_representations": 2,
+    "distinct_process_families": 2,
+    "authoritative_observations": 1,
+    "authority_scope": "SCOBY_D0_EVIDENCE_INGESTION_ONLY",
+    "human_reference_standard": "NOT_ESTABLISHED",
+    "external_review": "NOT_YET_ESTABLISHED",
     "biological_reference_vector": "STILL_NOT_COLLAPSED",
-    "v0_6_admission": "BLOCKED"
+    "v0_6_admission": "PASS_INGESTION_SCOPE",
+    "v0_7_pareto_search": "BLOCKED"
   }
 }

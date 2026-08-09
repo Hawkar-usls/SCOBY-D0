@@ -5,8 +5,8 @@
   "last_reviewed": "2026-08-09",
   "portfolio_class": "early_research_computational_biomanufacturing",
   "maturity": "EARLY_RESEARCH",
-  "completion_status": "ACTIVE_EXTRACTION_LINEAGE_INFRASTRUCTURE",
-  "summary": "Source-blind C2 production/context research workspace with fail-closed evidence admission plus replayable extraction lineage. v0.5 extends rather than replaces all v0.4 route, compartment, uncertainty and anti-collapse boundaries.",
+  "completion_status": "ACTIVE_AUTHORITATIVE_EVIDENCE_INGESTION",
+  "summary": "Source-blind C2 production/context research workspace with fail-closed evidence admission, replayable extraction lineage and one cross-representation ingestion-authoritative human observation. No universal human reference vector, clinical validation or Pareto formulation is established.",
   "core_invariants": [
     "GM_PRODUCER_NE_GM_ACETATE",
     "SAME_MOLECULE_NE_SAME_PHYSIOLOGICAL_EVENT",
@@ -35,8 +35,9 @@
     "NORMALIZED_VALUE_MUST_BE_REPLAYABLE_FROM_SOURCE_OBSERVATION",
     "SAME_EXTRACTOR_NE_INDEPENDENT_EXTRACTION",
     "EXTRACTION_CONFLICT_PRESERVED_TRUE",
-    "EXTRACTION_MATCH_NE_AUTHORITATIVE_ADMISSION",
-    "AUTHORITATIVE_OBSERVATIONS_STAY_ZERO_UNTIL_V0_6",
+    "AUTHORITATIVE_DATASET_OBSERVATION_NE_HUMAN_REFERENCE_STANDARD",
+    "CROSS_REPRESENTATION_EXTRACTION_MATCH_NE_BIOLOGICAL_REPLICATION",
+    "ONE_AUTHORITATIVE_OBSERVATION_NE_REFERENCE_DISTRIBUTION",
     "BIOLOGICAL_REFERENCE_VECTOR_STILL_NOT_COLLAPSED",
     "SIMULATION_OPTIMUM_NE_SAFE_HUMAN_FORMULATION",
     "HASH_IS_INTEGRITY_NOT_TRUTH"
@@ -45,25 +46,25 @@
     "v0.2 source-equivalence evidence object",
     "v0.3 synthetic provenance-blind C2 context optimizer",
     "v0.4 evidence-derived reference admission gate",
-    "primary-human candidate evidence ledger",
     "v0.4 route/compartment/state separation and reference-collapse prohibition",
-    "v0.5 extraction-record JSON schema",
+    "v0.5 replayable evidence-extraction lineage",
     "direct/derived/figure-digitization method separation",
-    "replayable normalization and exact unit-transform checks",
-    "uncertainty-type preservation",
-    "independent-extraction comparison semantics",
-    "conflict preservation without averaging",
-    "real Boets 2017 candidate extraction-A record with extractor-B deliberately unset"
+    "explicit uncertainty semantics and exact normalization transforms",
+    "v0.6 cross-representation extraction comparison",
+    "distinct source-representation and process-family admission checks",
+    "one Boets 2017 ingestion-authoritative observation"
   ],
   "reference_state": {
     "candidate_primary_human_sources": 4,
     "real_extraction_A_records": 1,
-    "real_independent_extraction_B_records": 0,
-    "authoritative_observations": 0,
+    "real_separate_extraction_B_records": 1,
+    "distinct_source_representations": 2,
+    "authoritative_observations": 1,
+    "authority_scope": "SCOBY_D0_EVIDENCE_INGESTION_ONLY",
+    "human_reference_standard": "NOT_ESTABLISHED",
     "external_review": "NOT_YET_ESTABLISHED",
     "biological_reference_vector": "UNSET_PENDING_PRIMARY_DATA_AND_EXTERNAL_REVIEW",
-    "evidence_bound_pareto_search": "BLOCKED",
-    "v0_6_authoritative_admission": "BLOCKED_UNTIL_GENUINELY_SEPARATE_SECOND_EXTRACTION_AND_COMPLETE_LINEAGE"
+    "evidence_bound_pareto_search": "BLOCKED_UNTIL_V0_7_AND_MULTIPLE_CONTEXT_OBSERVATIONS"
   },
   "not_claimed": [
     "complete replacement of human nutrition",
@@ -73,6 +74,7 @@
     "universal healthy-human SCFA reference vector",
     "safe human formulation from a simulation optimum",
     "independent biological replication from extraction agreement",
+    "external scientific replication",
     "validated GMO strain",
     "wet-lab genetic engineering protocol",
     "ballistic armor performance"
