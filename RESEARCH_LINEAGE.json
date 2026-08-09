@@ -19,8 +19,9 @@
   "v0_6_5_resolution_frontier_sha256": "fa219ea4fe41c47e8321bc43a15229e8c21921ccb1fc6be5950b7f4a8fd111e1",
   "v0_6_5_1_resolution_receipt_sha256": "70cad644fbd76c430d8e97379f08a94c8a2bea0f5749e81143f547217415fcc3",
   "v0_6_5_2_public_evidence_boundary_sha256": "f40a5b470df00271aa91b1fb71357f0d6e112f271ea35eb9b01e447839d6fcaf",
-  "v0_6_5_3_oslo_provenance_correction": "evidence/reference_context/OSLO_SCFA_METHOD_PROVENANCE_CORRECTION_V0_6_5_3.json",
   "v0_6_5_3_oslo_provenance_correction_sha256": "820e108f587cd281ff0941836c04c0b89ad8c2eefbf4cd493b54603667490fb8",
+  "v0_6_5_4_oslo_public_boundary": "evidence/reference_context/OSLO_PUBLIC_METHOD_COHORT_EVIDENCE_BOUNDARY_V0_6_5_4.json",
+  "v0_6_5_4_oslo_public_boundary_sha256": "c943fdabdfc849b40431c3e84352f3b217ea16f34267f3de45d783877ad83247",
   "preserved_reference_snapshots": [
     "evidence/reference_context/REFERENCE_DATASET_V0_1.json",
     "evidence/reference_context/REFERENCE_DATASET_V0_2.json",
@@ -30,9 +31,10 @@
     "evidence/reference_context/REFERENCE_DATASET_V0_6.json",
     "evidence/reference_context/REFERENCE_DATASET_V0_6_1.json",
     "evidence/reference_context/REFERENCE_DATASET_V0_6_2.json",
-    "evidence/reference_context/REFERENCE_DATASET_V0_6_3.json"
+    "evidence/reference_context/REFERENCE_DATASET_V0_6_3.json",
+    "evidence/reference_context/REFERENCE_DATASET_V0_6_4.json"
   ],
-  "current_reference_manifest": "evidence/reference_context/REFERENCE_DATASET_V0_6_4.json",
+  "current_reference_manifest": "evidence/reference_context/REFERENCE_DATASET_V0_6_5.json",
   "rule": "Artifact hashes identify specific object versions for integrity and lineage; they are not hashes of truth.",
   "current_reference_state": {
     "authoritative_observations": 10,
@@ -40,13 +42,15 @@
     "real_hardened_ready_pairs": 0,
     "cohort_independence_resolved_pairs": 0,
     "measurement_context_resolution_receipts": 1,
-    "public_evidence_boundary_receipts": 1,
+    "public_evidence_boundary_receipts": 2,
     "provenance_correction_receipts": 1,
-    "oslo_NCT03293693_scfa_method": "UNRESOLVED_IN_PRIMARY_ARTICLE",
-    "oslo_NCT03658681_scfa_method": "UNRESOLVED_IN_PRIMARY_ARTICLE",
-    "oslo_NCT03658681_bile_acid_method": "LC_MS_MS_QTRAP5500_KINETEX_BIPHENYL_NEGATIVE_MRM",
-    "oslo_NCT01034436_scfa_method": "GC_MS",
-    "oslo_method_identity_resolved_pairs": 0,
+    "oslo_NCT03293693_scfa_method": "UNRESOLVED_FROM_CHECKED_PUBLIC_PRIMARY_EVIDENCE",
+    "oslo_NCT03658681_scfa_method": "UNRESOLVED_FROM_CHECKED_PUBLIC_PRIMARY_EVIDENCE",
+    "oslo_method_identity": "NOT_ESTABLISHED",
+    "oslo_participant_overlap_or_nonoverlap": "UNRESOLVED_FROM_CHECKED_PUBLIC_PRIMARY_EVIDENCE",
+    "oslo_same_commercial_lab": "VITAS_ANALYTICAL_SERVICE",
+    "oslo_study_periods_nonoverlapping": true,
+    "oslo_ethics_approvals_distinct": true,
     "new_authoritative_observations": 0,
     "cross_study_aggregation_allowed": false,
     "pooled_reference_created": false,
@@ -56,24 +60,29 @@
     "biological_reference_vector": "UNSET_PENDING_PRIMARY_DATA_AND_EXTERNAL_REVIEW",
     "pareto_search": "BLOCKED_PENDING_REAL_HARDENED_PAIR_AND_SEPARATE_V0_7_PREREGISTRATION"
   },
-  "v0_6_5_3_correction": {
-    "affected_pairs": [
-      "NCT03293693__NCT03658681",
-      "NCT01034436_NW__NCT03658681"
+  "v0_6_5_4_public_boundary": {
+    "pair": "NCT03293693__NCT03658681",
+    "method_identity": "NOT_ESTABLISHED",
+    "participant_overlap_or_nonoverlap": "UNRESOLVED_FROM_CHECKED_PUBLIC_PRIMARY_EVIDENCE",
+    "positive_provenance": [
+      "SAME_OSLOMET_SPONSOR",
+      "SAME_VITAS_COMMERCIAL_LAB",
+      "NONOVERLAPPING_REPORTED_STUDY_PERIODS",
+      "DISTINCT_ETHICS_APPROVALS",
+      "FASTED_EDTA_PLASMA_SCFA_SURFACE_CONTEXT"
     ],
-    "historical_error": "NCT03658681 SCFA was incorrectly bound to an LC-MS/MS QTRAP5500/Kinetex Biphenyl method that the primary paper explicitly uses for bile-acid analysis.",
-    "corrected_state": "NCT03658681 SCFA method family is unresolved in the checked primary article; the QTRAP5500/Kinetex method remains bound to bile acids.",
-    "historical_object_rewritten": false,
-    "claim_limit": "This is a provenance correction, not a biological-result change and not evidence admission."
+    "inference_ceiling": "None of these provenance similarities establishes analytical-method identity or cohort independence."
   },
   "new_invariants": [
-    "ADJACENT_METHOD_TEXT_NE_ANALYTE_METHOD_BINDING",
-    "SCFA_MEASUREMENT_NE_BILE_ACID_MEASUREMENT",
+    "PUBLIC_PRIMARY_SEARCH_NE_METHOD_IDENTITY",
+    "SAME_LAB_NE_SAME_METHOD",
     "TWO_UNRESOLVED_METHODS_NE_METHOD_IDENTITY",
     "UNKNOWN_A_AND_UNKNOWN_B_NE_ESTABLISHED_EQUALITY",
-    "SAME_LAB_NE_SAME_METHOD",
-    "CORRECTION_RECEIPT_NE_ADMISSION",
-    "HISTORICAL_OBJECT_NOT_REWRITTEN"
+    "NONOVERLAPPING_STUDY_PERIODS_NE_NO_PARTICIPANT_REUSE_PROOF",
+    "DISTINCT_ETHICS_APPROVALS_NE_DISTINCT_COHORT_PROOF",
+    "ABSENCE_OF_OVERLAP_STATEMENT_NE_COHORT_INDEPENDENCE",
+    "ADJACENT_BILE_ACID_METHOD_NE_SCFA_METHOD",
+    "PUBLIC_EVIDENCE_BOUNDARY_NE_ADMISSION"
   ],
-  "next_gate": "SEARCH_PRIMARY_SUPPLEMENTS_OR_METHOD_REFERENCES_FOR_NCT03293693_AND_NCT03658681_SCFA_METHODS_AND_RESOLVE_PARTICIPANT_REUSE; DO_NOT_INFER_METHOD_IDENTITY_FROM_SHARED_VITAS_LAB; THEN_REPLAY_EXISTING_HARDENED_KERNEL; BIOLOGICAL_REFERENCE_VECTOR_REMAINS_UNSET; PARETO_REMAINS_BLOCKED"
+  "next_gate": "OBTAIN_STUDY_BOUND_SCFA_METHOD_PROVENANCE_AND_COHORT_IDENTITY_EVIDENCE_FOR_OSLOMET_PAIR_OR_PIVOT_TO_ANOTHER_NEAR_PAIR; DO_NOT_MATCH_UNKNOWN_METHODS_BY_DEFAULT; ANY_FUTURE_NUMERIC_EXTRACTION_MUST_REPLAY_EXISTING_V0_5_AND_V0_6_3_KERNELS; BIOLOGICAL_REFERENCE_VECTOR_REMAINS_UNSET; PARETO_REMAINS_BLOCKED"
 }
