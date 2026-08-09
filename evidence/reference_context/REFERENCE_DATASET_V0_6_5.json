@@ -1,0 +1,44 @@
+{
+  "schema": "scoby-d0.reference-dataset.v0.6.5",
+  "status": "OSLO_PUBLIC_METHOD_COHORT_EVIDENCE_BOUNDARY_NO_ADMISSION_CHANGE",
+  "supersedes": "evidence/reference_context/REFERENCE_DATASET_V0_6_4.json",
+  "authoritative_observation_count": 10,
+  "existing_context_buckets": 6,
+  "real_hardened_ready_pairs": 0,
+  "cohort_independence_resolved_pairs": 0,
+  "measurement_context_resolution_receipts": 1,
+  "public_evidence_boundary_receipts": 2,
+  "provenance_correction_receipts": 1,
+  "current_boundary_receipt": "evidence/reference_context/OSLO_PUBLIC_METHOD_COHORT_EVIDENCE_BOUNDARY_V0_6_5_4.json",
+  "oslo_public_state": {
+    "NCT03293693_scfa_method": "UNRESOLVED_FROM_CHECKED_PUBLIC_PRIMARY_EVIDENCE",
+    "NCT03658681_scfa_method": "UNRESOLVED_FROM_CHECKED_PUBLIC_PRIMARY_EVIDENCE",
+    "method_identity": "NOT_ESTABLISHED",
+    "participant_overlap_or_nonoverlap": "UNRESOLVED_FROM_CHECKED_PUBLIC_PRIMARY_EVIDENCE",
+    "same_commercial_lab": "VITAS_ANALYTICAL_SERVICE",
+    "study_periods_nonoverlapping": true,
+    "ethics_approvals_distinct": true
+  },
+  "remaining_oslo_blockers": [
+    "SCFA_ANALYTICAL_METHOD_UNRESOLVED_FOR_NCT03293693",
+    "SCFA_ANALYTICAL_METHOD_UNRESOLVED_FOR_NCT03658681",
+    "METHOD_IDENTITY_NOT_ESTABLISHED",
+    "PARTICIPANT_OVERLAP_OR_NONOVERLAP_UNRESOLVED",
+    "BASELINE_ACETATE_NUMERIC_OBSERVATIONS_NOT_YET_DUAL_EXTRACTION_BOUND_FOR_PAIR"
+  ],
+  "new_authoritative_observations": 0,
+  "cross_study_aggregation_allowed": false,
+  "pooled_reference_created": false,
+  "averaging_performed": false,
+  "human_reference_standard": "NOT_ESTABLISHED",
+  "external_review": "NOT_YET_ESTABLISHED",
+  "biological_reference_vector": "UNSET_PENDING_PRIMARY_DATA_AND_EXTERNAL_REVIEW",
+  "pareto_search": "BLOCKED_PENDING_REAL_HARDENED_PAIR_AND_SEPARATE_V0_7_PREREGISTRATION",
+  "interpretation_ceiling": [
+    "The checked public primary evidence is insufficient to establish SCFA analytical-method identity for NCT03293693 and NCT03658681.",
+    "The checked public primary evidence is insufficient to establish participant overlap or non-overlap between those trials.",
+    "Nonoverlapping study periods and distinct ethics approvals are provenance facts rather than proof of cohort independence.",
+    "A shared Vitas laboratory and two unresolved method labels do not establish a matching analytical method.",
+    "No admission, pooling, biological reference vector, clinical target or dosing guidance is established."
+  ]
+}
