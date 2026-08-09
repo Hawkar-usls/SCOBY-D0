@@ -13,8 +13,8 @@
   },
   "frozen_v0_2_source_object_sha256": "ec5401e32a959b5513031a84b9e73b50d28ffba5311bd289117b4d5c3aace0a0",
   "v0_4_evidence_gate": "experiments/SCOBY-D0-EVIDENCE-DERIVED-REFERENCE-CONTEXT-v0.4.json",
-  "v0_4_evidence_gate_sha256": "e0f1eebe2b0d79bf2de270afdcf3865b999bba667a8434bd8835eca668db4564",
+  "v0_4_evidence_gate_sha256": "7455664adc08090b99b56417bb251da701098406d94076ee94a156cdc5d9b85c",
   "candidate_reference_ledger": "evidence/reference_context/REFERENCE_DATASET_V0_1.json",
   "rule": "Artifact hashes identify specific object versions for integrity and lineage; they are not hashes of truth.",
-  "next_gate": "ADMIT_MULTIPLE_COMPARABLE_PRIMARY_HUMAN_OBSERVATIONS_WITH_COMPLETE_UNCERTAINTY_WITHOUT_COLLAPSING_BIOLOGICAL_REFERENCE_VECTOR"
+  "next_gate": "ADMIT_MULTIPLE_COMPARABLE_PRIMARY_HUMAN_OBSERVATIONS_WITH_COMPLETE_UNCERTAINTY_AND_EXACT_CITATION_LOCATORS_WITHOUT_COLLAPSING_BIOLOGICAL_REFERENCE_VECTOR"
 }
