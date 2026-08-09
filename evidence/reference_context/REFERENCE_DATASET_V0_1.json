@@ -15,6 +15,7 @@
         "pmcid": "PMC5233652",
         "doi": "10.1113/JP272613"
       },
+      "study_design": "randomized crossover stable-isotope colon-delivery study",
       "cohort": "12 healthy subjects; randomized crossover; study reports 7 female and 5 male, age 26±6 y, BMI 22±3 kg/m².",
       "sample_size": 12,
       "route": "COLON_DELIVERY_CAPSULE",
@@ -23,10 +24,38 @@
       "sampling_times_or_window": {"plasma_followup_hours": 12},
       "analytical_method": "Stable-isotope SCFA workflow using GC-MS / isotope-ratio methods as reported in full text; exact assay mapping per analyte must remain bound to source extraction.",
       "candidate_claims": [
-        {"analyte": "ACETATE", "metric": "systemic_availability_fraction", "estimate": 0.36, "units": "fraction", "uncertainty": {"kind": "SD", "value": 0.21}},
-        {"analyte": "PROPIONATE", "metric": "systemic_availability_fraction", "estimate": 0.092, "units": "fraction", "uncertainty": {"kind": "SD", "value": 0.059}},
-        {"analyte": "BUTYRATE", "metric": "systemic_availability_fraction", "estimate": 0.024, "units": "fraction", "uncertainty": {"kind": "SD", "value": 0.019}},
-        {"analyte": "SCFA_CROSS_FEEDING", "metric": "acetate_to_butyrate_fraction", "estimate": 0.24, "units": "fraction", "uncertainty": null}
+        {
+          "analyte": "ACETATE",
+          "metric": "systemic_availability_fraction",
+          "estimate": 0.36,
+          "units": "fraction",
+          "uncertainty": {"kind": "SD", "value": 0.21},
+          "citation_locator": "Results > Systemic availabilities of colonic acetate, propionate and butyrate > Figure 2B"
+        },
+        {
+          "analyte": "PROPIONATE",
+          "metric": "systemic_availability_fraction",
+          "estimate": 0.092,
+          "units": "fraction",
+          "uncertainty": {"kind": "SD", "value": 0.059},
+          "citation_locator": "Results > Systemic availabilities of colonic acetate, propionate and butyrate > Figure 2B"
+        },
+        {
+          "analyte": "BUTYRATE",
+          "metric": "systemic_availability_fraction",
+          "estimate": 0.024,
+          "units": "fraction",
+          "uncertainty": {"kind": "SD", "value": 0.019},
+          "citation_locator": "Results > Systemic availabilities of colonic acetate, propionate and butyrate > Figure 2B"
+        },
+        {
+          "analyte": "SCFA_CROSS_FEEDING",
+          "metric": "acetate_to_butyrate_fraction",
+          "estimate": 0.24,
+          "units": "fraction",
+          "uncertainty": null,
+          "citation_locator": "Results > SCFAs are interconverted by gut microbiota > Figure 3A"
+        }
       ],
       "exclusions": "Study-specific exclusion criteria preserved in source; full structured transcription required before claim-level admission.",
       "admission_status": "CANDIDATE_INCOMPLETE",
@@ -46,6 +75,7 @@
         "pmcid": null,
         "doi": "10.1007/s00394-025-03741-7"
       },
+      "study_design": "randomized controlled crossover acute cereal-fiber study",
       "cohort": "20 overweight/obese individuals aged 30-75 y; randomized controlled crossover.",
       "sample_size": 20,
       "route": "ORAL_FOOD",
@@ -54,8 +84,22 @@
       "sampling_times_or_window": {"fasting": true, "post_breakfast_hours": 8, "next_morning": true},
       "analytical_method": "LC-MS/MS",
       "candidate_claims": [
-        {"analyte": "ACETATE", "metric": "peak_time", "estimate": {"min": 300, "max": 360}, "units": "min", "uncertainty": null},
-        {"analyte": "OTHER_EXPLICIT", "metric": "response_variability", "estimate": "very high inter- and intra-subject variability reported", "units": "qualitative", "uncertainty": null}
+        {
+          "analyte": "ACETATE",
+          "metric": "peak_time",
+          "estimate": {"min": 300, "max": 360},
+          "units": "min",
+          "uncertainty": null,
+          "citation_locator": "Abstract > Results"
+        },
+        {
+          "analyte": "OTHER_EXPLICIT",
+          "metric": "response_variability",
+          "estimate": "very high inter- and intra-subject variability reported",
+          "units": "qualitative",
+          "uncertainty": null,
+          "citation_locator": "Abstract > Results"
+        }
       ],
       "exclusions": "Full protocol exclusions require full-text structured extraction.",
       "admission_status": "CANDIDATE_INCOMPLETE",
@@ -74,6 +118,7 @@
         "pmcid": null,
         "doi": "10.1038/ejcn.2010.92"
       },
+      "study_design": "crossover stable-isotope meal study",
       "cohort": "5 healthy volunteers; crossover study comparing intact barley kernels and barley porridge.",
       "sample_size": 5,
       "route": "ORAL_FOOD",
@@ -82,7 +127,14 @@
       "sampling_times_or_window": {"plasma_hours": 14, "urine_hours": 24, "orocecal_transit_hours_reported": 6},
       "analytical_method": "13C stable-isotope SCFA profiling; exact analytical platform must be transcribed from full text before admission.",
       "candidate_claims": [
-        {"analyte": "ACETATE", "metric": "appearance_timing", "estimate": "increase observed before 6 h", "units": "qualitative_time_relation", "uncertainty": null}
+        {
+          "analyte": "ACETATE",
+          "metric": "appearance_timing",
+          "estimate": "increase observed before 6 h",
+          "units": "qualitative_time_relation",
+          "uncertainty": null,
+          "citation_locator": "Abstract > Results"
+        }
       ],
       "exclusions": "Full structured exclusions not yet transcribed.",
       "admission_status": "CANDIDATE_INCOMPLETE",
@@ -101,6 +153,7 @@
         "pmcid": null,
         "doi": "10.1002/mnfr.202000953"
       },
+      "study_design": "controlled acute oral pharmacokinetic study",
       "cohort": "10 participants in acute pharmacokinetic study.",
       "sample_size": 10,
       "route": "ORAL_BEVERAGE",
@@ -109,8 +162,22 @@
       "sampling_times_or_window": {"acute_sampling_hours": 2, "reported_increase_time_min": 60},
       "analytical_method": "Food/beverage SCFAs quantified by GC-FID; exact plasma assay method must be bound from full text before observation admission.",
       "candidate_claims": [
-        {"analyte": "ACETATE", "metric": "oral_input", "estimate": 25, "units": "mmol", "uncertainty": null},
-        {"analyte": "ACETATE", "metric": "plasma_response", "estimate": "significant increase at 60 min and increased AUC", "units": "qualitative", "uncertainty": null}
+        {
+          "analyte": "ACETATE",
+          "metric": "oral_input",
+          "estimate": 25,
+          "units": "mmol",
+          "uncertainty": null,
+          "citation_locator": "Abstract > Methods and Results"
+        },
+        {
+          "analyte": "ACETATE",
+          "metric": "plasma_response",
+          "estimate": "significant increase at 60 min and increased AUC",
+          "units": "qualitative",
+          "uncertainty": null,
+          "citation_locator": "Abstract > Results"
+        }
       ],
       "exclusions": "Full structured exclusions not yet transcribed.",
       "admission_status": "CANDIDATE_INCOMPLETE",
@@ -127,6 +194,7 @@
     "unit_normalization": "SUPPORTED_CONVERTER_TESTS_ONLY",
     "route_tagging": "PASS",
     "compartment_tagging": "PASS",
+    "citation_locator_capture": "PASS_FOR_CANDIDATE_CLAIMS",
     "uncertainty_capture": "FAIL_CLOSED_FOR_INCOMPLETE_CANDIDATES",
     "conflicts_preserved": true,
     "external_review": "NOT_YET_ESTABLISHED",
