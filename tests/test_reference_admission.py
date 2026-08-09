@@ -125,8 +125,16 @@ class TestReferenceAdmissionV06(unittest.TestCase):
         self.assertEqual(compare_cross_representation_extractions(a, b)["status"], "EXTRACTION_CONFLICT_PRESERVED")
 
     def test_source_identity_mismatch_blocks(self):
-        a, b = pair(); b["source_identity"]["pmid"] = "99999999"
+        a, b = pair(); b["source_identity"]["pmid"] = "99999999"; b["source_identity"]["doi"] = "10.9999/not-the-paper"
         self.assertEqual(compare_cross_representation_extractions(a, b)["status"], "PRIMARY_SOURCE_IDENTITY_MISMATCH")
+
+    def test_pmid_match_allows_doi_missing_in_one_representation(self):
+        a, b = pair(); b["source_identity"]["doi"] = None
+        self.assertEqual(compare_cross_representation_extractions(a, b)["status"], "CROSS_REPRESENTATION_EXTRACTION_MATCH")
+
+    def test_doi_match_allows_pmid_missing_in_one_representation(self):
+        a, b = pair(); b["source_identity"]["pmid"] = None
+        self.assertEqual(compare_cross_representation_extractions(a, b)["status"], "CROSS_REPRESENTATION_EXTRACTION_MATCH")
 
     def test_external_review_not_invented(self):
         a, b = pair(); out = admit_dataset_observation(a, b)
