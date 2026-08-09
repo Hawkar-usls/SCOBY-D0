@@ -1,0 +1,73 @@
+{
+  "schema": "scoby-d0.evidence-derived-reference-context.v0.4",
+  "artifact_id": "SCOBY-D0-EVIDENCE-DERIVED-REFERENCE-CONTEXT-v0.4",
+  "status": "PREREGISTERED_EVIDENCE_INFRASTRUCTURE",
+  "created_at": "2026-08-09T08:48:00+03:00",
+  "biological_reference_vector": "UNSET_PENDING_PRIMARY_DATA_AND_EXTERNAL_REVIEW",
+  "principles": [
+    "ACETATE_PRODUCER_PROVENANCE_NE_EVIDENCE_PROVENANCE",
+    "PRODUCER_PROVENANCE_MUST_NOT_AFFECT_SCORE",
+    "EVIDENCE_PROVENANCE_MUST_BE_PRESERVED",
+    "MISSING_UNCERTAINTY_CANNOT_ENTER_AUTHORITATIVE_REFERENCE",
+    "UNIT_CONVERSION_MUST_BE_EXPLICIT_AND_TESTED",
+    "PLASMA_VALUE_NE_LUMINAL_VALUE",
+    "COLONIC_DELIVERY_NE_ORAL_INTAKE",
+    "FASTED_NE_POSTPRANDIAL",
+    "SINGLE_STUDY_NE_HUMAN_REFERENCE_STANDARD",
+    "MEAN_WITHOUT_VARIANCE_NE_REFERENCE_DISTRIBUTION",
+    "SIMULATION_OPTIMUM_NE_SAFE_HUMAN_FORMULATION",
+    "CONFLICTS_PRESERVED_TRUE",
+    "BIOLOGICAL_REFERENCE_VECTOR_STILL_NOT_COLLAPSED"
+  ],
+  "reference_model": {
+    "form": "R = {r_1, r_2, ..., r_n}",
+    "unit_of_reference": "study- and context-specific observation with uncertainty and evidence lineage",
+    "forbidden_operation": "collapse all admitted observations into one ideal human vector in v0.4",
+    "future_objective": "minimize expected context distance + matrix complexity + evidence-uncertainty penalty over admitted reference distributions",
+    "future_objective_symbolic": "M* = argmin_M [ E_{r~R} D(Phi(M),r) + lambda*C(M) + gamma*U(M) ]",
+    "pareto_policy": "Return Pareto-admissible candidates; no unique biological optimum may be asserted from model score alone."
+  },
+  "admission_policy": {
+    "required_source_type": "PRIMARY_HUMAN",
+    "required_fields": [
+      "doi_or_pmid",
+      "cohort",
+      "sample_size",
+      "route",
+      "compartment",
+      "physiological_state",
+      "sampling_times_or_window",
+      "analytical_method",
+      "analyte",
+      "estimate",
+      "units",
+      "uncertainty",
+      "exclusions",
+      "source_lineage"
+    ],
+    "minimum_independent_primary_human_sources_per_comparable_context_bucket": 2,
+    "minimum_rule_note": "This is a fail-closed engineering admission threshold, not a claim that two studies establish a universal human standard.",
+    "cross_study_collapse_allowed": false,
+    "external_review_required_for_reference_standard": true
+  },
+  "current_gate": {
+    "reference_dataset": "evidence/reference_context/REFERENCE_DATASET_V0_1.json",
+    "candidate_primary_human_sources": 4,
+    "authoritative_observations": 0,
+    "normalized_units": "PASS_FOR_SUPPORTED_CONVERTER_TESTS_ONLY",
+    "route_tagging": "PASS_SCHEMA",
+    "compartment_tagging": "PASS_SCHEMA",
+    "uncertainty_capture": "PASS_SCHEMA",
+    "conflicts_preserved": true,
+    "external_review": "NOT_YET_ESTABLISHED",
+    "biological_reference_vector": "STILL_NOT_COLLAPSED",
+    "evidence_bound_pareto_search": "BLOCKED_UNTIL_ADMISSION_GATE"
+  },
+  "claim_ceiling": [
+    "This object defines evidence handling and admission rules, not a physiological reference standard.",
+    "Candidate source metadata are not automatically authoritative observations.",
+    "No human dose, formulation, treatment, food recommendation, infusion protocol or clinical target is encoded.",
+    "A future Pareto optimum would describe model fit to admitted evidence contexts only, not safety or efficacy in humans."
+  ],
+  "content_sha256": "e0f1eebe2b0d79bf2de270afdcf3865b999bba667a8434bd8835eca668db4564"
+}
