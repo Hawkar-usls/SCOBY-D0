@@ -1,0 +1,91 @@
+{
+  "schema": "scoby-d0.multicontext-extraction-ledger.v0.1",
+  "status": "CROSS_REPRESENTATION_CANDIDATES_FOR_V061",
+  "study_bindings": {
+    "BOETS_2015_INULIN": {
+      "source_identity": {
+        "title": "Quantification of in Vivo Colonic Short Chain Fatty Acid Production from Inulin",
+        "year": 2015,
+        "pmid": "26516911",
+        "pmcid": "PMC4663568",
+        "doi": "10.3390/nu7115440"
+      },
+      "context": {
+        "route": "ORAL_INULIN_STANDARD_BREAKFAST_WITH_IV_STABLE_ISOTOPE_TRACER",
+        "physiological_state": "POSTPRANDIAL_TEST_DAY",
+        "time_window": "SOURCE_DEFINED_12_H",
+        "population": "12 healthy adults"
+      },
+      "A": {
+        "representation_id": "PMC4663568_PUBLISHED_FULL_TEXT_HTML",
+        "representation_role": "PUBLISHED_VERSION",
+        "provider": "NCBI_PMC",
+        "format": "HTML",
+        "stable_locator": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4663568/",
+        "process_family": "PMC_STRUCTURED_HTML_SOURCE_BINDING",
+        "process_id": "PMC_HTML_V061"
+      },
+      "B": {
+        "representation_id": "MDPI_NUTRIENTS_7_11_5440_PUBLISHER_HTML",
+        "representation_role": "PUBLISHER_FULL_TEXT",
+        "provider": "MDPI",
+        "format": "HTML",
+        "stable_locator": "https://www.mdpi.com/2072-6643/7/11/5440",
+        "process_family": "PUBLISHER_STRUCTURED_HTML_SOURCE_BINDING",
+        "process_id": "MDPI_HTML_V061"
+      }
+    },
+    "GILL_2022_DIET": {
+      "source_identity": {
+        "title": "A randomized dietary intervention to increase colonic and peripheral blood SCFAs modulates the blood B- and T-cell compartments in healthy humans",
+        "year": 2022,
+        "pmid": "36084000",
+        "pmcid": "PMC9630882",
+        "doi": "10.1093/ajcn/nqac246"
+      },
+      "context": {
+        "route": "ORAL_DIETARY_INTERVENTION",
+        "physiological_state": "END_OF_21_DAY_INTERVENTION",
+        "time_window": "21_DAYS",
+        "population": "20 healthy adults, randomized crossover"
+      },
+      "A": {
+        "representation_id": "PMC9630882_PUBLISHED_FULL_TEXT_HTML",
+        "representation_role": "PUBLISHED_VERSION",
+        "provider": "NCBI_PMC",
+        "format": "HTML",
+        "stable_locator": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9630882/",
+        "process_family": "PMC_STRUCTURED_HTML_SOURCE_BINDING",
+        "process_id": "PMC_HTML_V061"
+      },
+      "B": {
+        "representation_id": "PUBMED_36084000_STRUCTURED_ABSTRACT",
+        "representation_role": "INDEXED_PUBLISHED_ABSTRACT",
+        "provider": "NCBI_PUBMED",
+        "format": "STRUCTURED_ABSTRACT",
+        "stable_locator": "https://pubmed.ncbi.nlm.nih.gov/36084000/",
+        "process_family": "PUBMED_STRUCTURED_ABSTRACT_BINDING",
+        "process_id": "PUBMED_ABSTRACT_V061"
+      }
+    }
+  },
+  "observations": [
+    {"id":"BOETS2015_ACETATE_ENDOGENOUS_ROA","study":"BOETS_2015_INULIN","analyte":"ACETATE","metric":"endogenous_rate_of_appearance","compartment":"SYSTEMIC_RATE_OF_APPEARANCE_FROM_PLASMA_TRACER","estimate":13.3,"uncertainty":{"type":"SD","value":4.8},"units":"umol_per_kg_per_min","n":12,"locator":"Abstract > endogenous rate of appearance sentence"},
+    {"id":"BOETS2015_PROPIONATE_ENDOGENOUS_ROA","study":"BOETS_2015_INULIN","analyte":"PROPIONATE","metric":"endogenous_rate_of_appearance","compartment":"SYSTEMIC_RATE_OF_APPEARANCE_FROM_PLASMA_TRACER","estimate":0.27,"uncertainty":{"type":"SD","value":0.09},"units":"umol_per_kg_per_min","n":12,"locator":"Abstract > endogenous rate of appearance sentence"},
+    {"id":"BOETS2015_BUTYRATE_ENDOGENOUS_ROA","study":"BOETS_2015_INULIN","analyte":"BUTYRATE","metric":"endogenous_rate_of_appearance","compartment":"SYSTEMIC_RATE_OF_APPEARANCE_FROM_PLASMA_TRACER","estimate":0.28,"uncertainty":{"type":"SD","value":0.12},"units":"umol_per_kg_per_min","n":12,"locator":"Abstract > endogenous rate of appearance sentence"},
+    {"id":"GILL2022_HIGH_FECAL_TOTAL_SCFA","study":"GILL_2022_DIET","arm":"HIGH_SCFA_DIET","analyte":"TOTAL_SCFA","metric":"concentration","compartment":"FECAL","estimate":86.6,"uncertainty":{"type":"IQR","value":59.0},"units":"umol_per_g","n":20,"locator":"Abstract > Results > fecal SCFA concentration"},
+    {"id":"GILL2022_LOW_FECAL_TOTAL_SCFA","study":"GILL_2022_DIET","arm":"LOW_SCFA_DIET","analyte":"TOTAL_SCFA","metric":"concentration","compartment":"FECAL","estimate":75.4,"uncertainty":{"type":"IQR","value":56.2},"units":"umol_per_g","n":20,"locator":"Abstract > Results > fecal SCFA concentration"},
+    {"id":"GILL2022_HIGH_PLASMA_PROPIONATE","study":"GILL_2022_DIET","arm":"HIGH_SCFA_DIET","analyte":"PROPIONATE","metric":"concentration","compartment":"PLASMA","estimate":9.87,"uncertainty":{"type":"IQR","value":12.3},"units":"umol_per_L","n":20,"locator":"Abstract > Results > plasma propionate"},
+    {"id":"GILL2022_LOW_PLASMA_PROPIONATE","study":"GILL_2022_DIET","arm":"LOW_SCFA_DIET","analyte":"PROPIONATE","metric":"concentration","compartment":"PLASMA","estimate":4.72,"uncertainty":{"type":"IQR","value":7.6},"units":"umol_per_L","n":20,"locator":"Abstract > Results > plasma propionate"},
+    {"id":"GILL2022_HIGH_PLASMA_BUTYRATE","study":"GILL_2022_DIET","arm":"HIGH_SCFA_DIET","analyte":"BUTYRATE","metric":"concentration","compartment":"PLASMA","estimate":2.85,"uncertainty":{"type":"IQR","value":1.35},"units":"umol_per_L","n":20,"locator":"Abstract > Results > plasma butyrate"},
+    {"id":"GILL2022_LOW_PLASMA_BUTYRATE","study":"GILL_2022_DIET","arm":"LOW_SCFA_DIET","analyte":"BUTYRATE","metric":"concentration","compartment":"PLASMA","estimate":2.02,"uncertainty":{"type":"IQR","value":1.29},"units":"umol_per_L","n":20,"locator":"Abstract > Results > plasma butyrate"}
+  ],
+  "rules": [
+    "CONTEXT_KEYS_MUST_REMAIN_DISTINCT",
+    "METRIC_AND_UNITS_MUST_MATCH_WITHIN_A_B_PAIR",
+    "SD_NE_IQR",
+    "NO_CROSS_STUDY_AVERAGING",
+    "NO_CROSS_COMPARTMENT_COLLAPSE",
+    "ADMISSION_AUTHORITY_IS_INGESTION_ONLY"
+  ]
+}
