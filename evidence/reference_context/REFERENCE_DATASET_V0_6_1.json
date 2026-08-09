@@ -1,0 +1,42 @@
+{
+  "schema": "scoby-d0.reference-dataset.v0.6.1",
+  "status": "COHORT_METHOD_RESOLUTION_FRONTIER_ACTIVE_NO_READY_PAIR",
+  "supersedes": "evidence/reference_context/REFERENCE_DATASET_V0_6.json",
+  "authoritative_observation_count": 10,
+  "existing_context_buckets": 6,
+  "v0_6_3_hardened_ready_buckets": 0,
+  "v0_6_4_frontier_pairs": 3,
+  "v0_6_5_resolution_near_pairs": 3,
+  "v0_6_5_real_hardened_ready_pairs": 0,
+  "cohort_independence_resolved_pairs": 0,
+  "method_identity_resolved_pairs": 0,
+  "resolution_frontier": "experiments/SCOBY-D0-COHORT-METHOD-RESOLUTION-FRONTIER-v0.6.5.json",
+  "resolution_frontier_is_admission_channel": false,
+  "new_authoritative_observations_from_resolution_frontier": 0,
+  "cross_study_aggregation_allowed": false,
+  "pooled_reference_created": false,
+  "averaging_performed": false,
+  "human_reference_standard": "NOT_ESTABLISHED",
+  "external_review": "NOT_YET_ESTABLISHED",
+  "biological_reference_vector": "UNSET_PENDING_PRIMARY_DATA_AND_EXTERNAL_REVIEW",
+  "pareto_search": "BLOCKED_PENDING_REAL_HARDENED_PAIR_AND_SEPARATE_V0_7_PREREGISTRATION",
+  "new_boundaries": [
+    "DISTINCT_TRIAL_ID_NE_DISTINCT_COHORT_ESTABLISHED",
+    "NONOVERLAPPING_RECRUITMENT_WINDOWS_NE_NO_PARTICIPANT_REUSE_PROOF",
+    "SAME_LAB_NE_SAME_ANALYTICAL_METHOD",
+    "SIMILAR_PREANALYTICS_NE_EXACT_MEASUREMENT_CONTEXT",
+    "RESOLUTION_PRIORITY_NE_ADMISSION_PRIORITY"
+  ],
+  "priority_resolution_targets": [
+    "NCT01826162__NCT01983046",
+    "NCT03293693__NCT03658681",
+    "NCT01034436_NW__NCT03658681"
+  ],
+  "interpretation_ceiling": [
+    "v0.6.5 records what evidence is still needed; it grants no evidence authority.",
+    "Different trial registrations and nonoverlapping trial windows are not sufficient proof of participant independence.",
+    "A shared laboratory does not establish an identical analytical method.",
+    "Ten prior ingestion-authoritative observations remain unchanged and context-separated.",
+    "No pooled reference, universal biological reference vector, Pareto optimum, clinical target or dosing recommendation is established."
+  ]
+}
