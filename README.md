@@ -95,4 +95,4 @@ No wet-lab genetic-engineering procedure, human dose, infusion rate, medical-dev
 
 ## License
 
-MIT for repository code and original text unless a file states otherwise. External papers, upstream code and third-party material remain under their respective terms.
+Apache License 2.0, matching the repository's existing `LICENSE`. External papers, upstream code and third-party material remain under their respective terms.
