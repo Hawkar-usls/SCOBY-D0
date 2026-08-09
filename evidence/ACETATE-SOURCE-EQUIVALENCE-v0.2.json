@@ -1,0 +1,63 @@
+{
+  "schema": "scoby-d0.evidence.acetate_source_equivalence.v0.2",
+  "artifact_id": "SCOBY-D0-ACETATE-SOURCE-EQUIVALENCE-v0.2",
+  "status": "FROZEN_INTERPRETATION_OF_COMPUTATIONAL_RESULT",
+  "created_at": "2026-08-09T08:00:00+03:00",
+  "source_simulation_object_sha256": "ec5401e32a959b5513031a84b9e73b50d28ffba5311bd289117b4d5c3aace0a0",
+  "hash_semantics": "Integrity identifier for the specific v0.2 simulation object; not a truth claim.",
+  "established_in_model": [
+    "SOURCE_BLINDNESS: metabolic equivalence does not consume provenance.",
+    "CHEMICAL_IDENTITY: matched purified acetate remains the same modeled acetate independent of producer lineage.",
+    "CONTEXT_SEPARATION: equal molecular identity does not imply equal physiological-context identity.",
+    "MATRIX_SEPARATION: purified acetate is not equivalent to a fermentation broth.",
+    "CLAIM_CEILING: the simulation establishes internal consistency only, not in-vivo equivalence.",
+    "ENGINEERING_CONSEQUENCE: seek advantage in cost, renewable carbon, purity, controlled flux, separable co-products and downstream C2 utilization rather than biologically superior acetate."
+  ],
+  "anti_bias_invariant": {
+    "chemistry_frame": "0x310",
+    "matrix_context_frame": "0x311",
+    "provenance_frame": "0x312",
+    "microbiome_context_frame": "0x313",
+    "verdict_frame": "0x31F",
+    "rule": "METABOLIC_EQUIVALENCE_MUST_NOT_READ_0x312_PROVENANCE"
+  },
+  "external_evidence": [
+    {
+      "id": "E1",
+      "identifier": "PMID:33174682",
+      "claim_supported": "Engineering A. pasteurianus can change acetic-acid production efficiency; combined adhA and pqqABCDE expression reported average productivity 32% above the parental strain.",
+      "boundary": "This does not imply a distinct molecular species of acetate."
+    },
+    {
+      "id": "E2",
+      "identifier": "PMCID:PMC5233652",
+      "claim_supported": "In 12 healthy subjects, specially colon-delivered labelled acetate showed 36 ± 21% systemic availability and acetate-to-butyrate microbial interconversion of about 24%.",
+      "boundary": "COLONIC_DERIVED_ACETATE_MODEL; not a universal postprandial fraction after ordinary food."
+    },
+    {
+      "id": "E3",
+      "identifier": "PMID:39234548",
+      "claim_supported": "Kombucha fermentation showed dynamic microbial/metabolite composition including biogenic amines.",
+      "boundary": "Supports BROTH_NE_PURIFIED_ACETATE and process-quality-control requirements; does not establish a clinical effect."
+    },
+    {
+      "id": "E4",
+      "identifier": "PMCID:PMC4914174",
+      "claim_supported": "Genetic programming/toolkits for bacterial-cellulose-producing Komagataeibacter are experimentally established.",
+      "boundary": "Does not validate any specific SCOBY-D0 engineered strain or food use."
+    }
+  ],
+  "claim_ceiling": [
+    "No human dosing or clinical recommendation.",
+    "No wet-lab genetic-engineering protocol.",
+    "No claim that engineered provenance improves acetate metabolism.",
+    "No claim that acetate is complete nutrition.",
+    "No claim that unpurified engineered fermentation broth is safe for consumption."
+  ],
+  "lineage": {
+    "registry_object": "https://github.com/Hawkar-usls/janus-meta-registry/blob/main/data/JANUS-GENESIS-ACETATE-SOURCE-EQUIVALENCE-v0.2.json",
+    "genesis_exact_commit": "98699273bc4dfc08d4eda795869b4bcfe1134b72",
+    "twai_exact_commit": "5781b0644209b8aa26fcb8a50ccc29e8cf67a828"
+  },
+  "content_sha256": "e74066a8a02e558562884395bead47568bc78ddef8a75d3efb100acc350e394a"
+}
