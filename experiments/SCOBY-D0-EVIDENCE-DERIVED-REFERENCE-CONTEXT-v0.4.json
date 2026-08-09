@@ -8,6 +8,7 @@
     "ACETATE_PRODUCER_PROVENANCE_NE_EVIDENCE_PROVENANCE",
     "PRODUCER_PROVENANCE_MUST_NOT_AFFECT_SCORE",
     "EVIDENCE_PROVENANCE_MUST_BE_PRESERVED",
+    "EXACT_CITATION_LOCATOR_REQUIRED_FOR_AUTHORITATIVE_OBSERVATION",
     "MISSING_UNCERTAINTY_CANNOT_ENTER_AUTHORITATIVE_REFERENCE",
     "UNIT_CONVERSION_MUST_BE_EXPLICIT_AND_TESTED",
     "PLASMA_VALUE_NE_LUMINAL_VALUE",
@@ -43,7 +44,9 @@
       "units",
       "uncertainty",
       "exclusions",
-      "source_lineage"
+      "source_lineage",
+      "study_design",
+      "citation_locator"
     ],
     "minimum_independent_primary_human_sources_per_comparable_context_bucket": 2,
     "minimum_rule_note": "This is a fail-closed engineering admission threshold, not a claim that two studies establish a universal human standard.",
@@ -69,5 +72,5 @@
     "No human dose, formulation, treatment, food recommendation, infusion protocol or clinical target is encoded.",
     "A future Pareto optimum would describe model fit to admitted evidence contexts only, not safety or efficacy in humans."
   ],
-  "content_sha256": "e0f1eebe2b0d79bf2de270afdcf3865b999bba667a8434bd8835eca668db4564"
+  "content_sha256": "7455664adc08090b99b56417bb251da701098406d94076ee94a156cdc5d9b85c"
 }
