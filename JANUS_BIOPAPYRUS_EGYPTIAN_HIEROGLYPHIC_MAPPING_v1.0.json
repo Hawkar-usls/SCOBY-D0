@@ -1,0 +1,78 @@
+{
+  "artifact_uuid": "JANUS-BIOPAPYRUS-EGYPTIAN-HIEROGLYPHIC-MAPPING-v1.0",
+  "version": "v1.0",
+  "timestamp_local": "2026-08-19T22:21:00+03:00",
+  "repository": "Hawkar-usls/SCOBY-D0",
+  "source_artifact": "JANUS_BIOPAPYRUS_RECIPE_v1.0.json",
+  "translation_mode": "SEMANTIC_EGYPTIANIZATION_WITH_EVIDENCE_GATES",
+  "status": "RESEARCH_TRANSLATION_AND_CORPUS_MATCH",
+  "critical_boundary": {
+    "rule": "Ancient Egyptian lexemes are used only where an attested semantic equivalent exists. Modern concepts such as SCOBY, bacterial cellulose, pH, batch ID and controlled material testing are not presented as ancient Egyptian concepts.",
+    "scoBy_rendering": {
+      "latin": "SKBY",
+      "hieroglyphic_phonetic_approximation": "𓋴𓎡𓃀𓇌",
+      "status": "MODERN_PHONETIC_CONSTRUCT_NOT_AN_ANCIENT_EGYPTIAN_LEMMA"
+    },
+    "ancient_egyptian_kombucha_claim": "NOT_DEMONSTRATED",
+    "ancient_papyrus_equals_scoby_claim": "REJECTED_AS_UNSUPPORTED"
+  },
+  "attested_lexeme_map": {
+    "PAPYRUS_PLANT": {"transliteration":"wꜣḏ","hieroglyphs":"𓇅","meaning":"papyrus; also symbol of Lower Egypt","TLA_lemma_id":"43530","attestation_range_TLA":"2613 BCE–161 CE","status":"ATTESTED"},
+    "PAPYRUS_SHEET_OR_MATERIAL": {"transliteration":"ḏmꜥ","hieroglyphs_selected_spelling":"𓍑𓄿𓌳𓐙𓂝𓎅","meaning":"papyrus sheet; papyrus as material","TLA_lemma_id":"184040","attestation_range_TLA":"2375 BCE–30 BCE","status":"ATTESTED"},
+    "SELECT": {"transliteration":"stp","hieroglyphs_selected_spelling":"𓋴𓏏𓊪𓍉𓏛","meaning":"to pick out; to choose","TLA_lemma_id":"148070","status":"ATTESTED"},
+    "WASH": {"transliteration":"jꜥi̯","hieroglyphs":"𓇋𓂝𓈗","meaning":"to wash","TLA_lemma_id":"21550","attestation_range_TLA":"2494 BCE–324 CE","status":"ATTESTED"},
+    "FLATTEN_PRESS_FLAT": {"transliteration":"pds","hieroglyphs_selected_spelling":"𓊪𓂧𓋴𓂾𓂡","meaning":"to flatten; to press flat","TLA_lemma_id":"63120","attestation_range_TLA":"1580 BCE–30 BCE","status":"ATTESTED_BUT_NOT_SPECIFIC_TO_PAPYRUS_MANUFACTURE"},
+    "PRESS_HARD": {"transliteration":"mḏd","hieroglyphs_selected_attested_spelling":"𓅓𓆓𓂧𓐥","meaning":"to press hard on; to hit; to align","TLA_lemma_id":"78770","attestation_range_TLA":"2375 BCE–30 BCE","status":"ATTESTED_BUT_FUNCTIONAL_APPROXIMATION_FOR_RECIPE_PRESSING"},
+    "JOIN_LAYERS": {"transliteration":"ṯꜣz","hieroglyphs":"𓍿𓊃𓋭","meaning":"to tie; to join to; to attach","TLA_lemma_id":"176800","attestation_range_TLA":"2414 BCE–324 CE","status":"ATTESTED_FUNCTIONAL_APPROXIMATION_FOR_CROSS_LAMINATION"},
+    "DRY_STATE": {"transliteration":"šw","hieroglyphs":"𓆄𓅱𓇳","meaning":"dry; dried","TLA_lemma_id":"152730","attestation_range_TLA":"1580 BCE–30 BCE","status":"ATTESTED_RESULT_STATE"},
+    "BECOME_NEW_FRESH": {"transliteration":"mꜣwi̯","hieroglyphs":"𓌳𓄿𓅱𓏭𓏛","meaning":"to be new; to become new","TLA_lemma_id":"66940","attestation_range_TLA":"2375 BCE–138 CE","status":"ATTESTED"},
+    "WRITE": {"transliteration":"zẖꜣ","hieroglyphs":"𓊃𓈙𓏞","meaning":"to write; to paint; to work as a scribe","TLA_lemma_id":"600375","attestation_range_TLA":"2613 BCE–324 CE","status":"ATTESTED"},
+    "WRITING_RECORD": {"transliteration":"zẖꜣ.w","hieroglyphs":"𓏞𓏛","meaning":"writing; record; depiction","TLA_lemma_id":"450097","attestation_range_TLA":"2686 BCE–324 CE","status":"ATTESTED"}
+  },
+  "recipe_hieroglyphic_projection": [
+    {"step":1,"source":"SELECT","egyptian":"stp","hieroglyphs":"𓋴𓏏𓊪𓍉𓏛","confidence":"HIGH_LEXICAL"},
+    {"step":2,"source":"RINSE","egyptian":"jꜥi̯ m mw","hieroglyphic_core":"𓇋𓂝𓈗","literal_core":"wash","confidence":"HIGH_LEXICAL; FULL_PHRASE_IS_MODERN_COMPOSITION"},
+    {"step":3,"source":"FLATTEN","egyptian":"pds","hieroglyphs":"𓊪𓂧𓋴𓂾𓂡","confidence":"HIGH_LEXICAL"},
+    {"step":4,"source":"FORM_VARIANT / CROSS_LAMINATE","egyptian":"ṯꜣz","hieroglyphs":"𓍿𓊃𓋭","literal_core":"join; attach","confidence":"FUNCTIONAL_APPROXIMATION"},
+    {"step":5,"source":"PRE_DEWATER","egyptian":"pds / mḏd","hieroglyphic_core":"𓊪𓂧𓋴𓂾𓂡 / 𓅓𓆓𓂧𓐥","confidence":"FUNCTIONAL_APPROXIMATION; NO CLAIM OF ANCIENT PAPYRUS PROCESS TERM"},
+    {"step":6,"source":"PRESS","egyptian":"mḏd","hieroglyphs_selected_attested_spelling":"𓅓𓆓𓂧𓐥","literal_core":"press hard on","confidence":"HIGH_LEXICAL_FUNCTIONAL"},
+    {"step":7,"source":"DRY_FLAT","egyptian_result_state":"šw","hieroglyphs":"𓆄𓅱𓇳","literal_core":"dry; dried","confidence":"HIGH_FOR_RESULT_STATE; PROCEDURAL_GRAMMAR_MODERN"},
+    {"step":8,"source":"CONDITION","egyptian":null,"hieroglyphs":null,"confidence":"NO_SAFE_ONE_TO_ONE_ANCIENT_EQUIVALENT"},
+    {"step":9,"source":"WRITE_TEST","egyptian":"zẖꜣ ḥr ḏmꜥ","hieroglyphic_components":"𓊃𓈙𓏞 … 𓍑𓄿𓌳𓐙𓂝𓎅","literal_core":"write on a papyrus sheet","confidence":"VERY_HIGH; DIRECTLY_PARALLELED_IN_TLA_CORPUS"},
+    {"step":10,"source":"MECHANICAL_AND_WATER_TEST","egyptian":null,"hieroglyphs":null,"confidence":"MODERN_MATERIALS_TESTING_CONCEPT; NOT_BACK_TRANSLATED_AS_ANCIENT_METHOD"}
+  ],
+  "compact_ritualized_rendering": {
+    "note": "This is a modern Egyptianizing operational line assembled from attested lexemes. It is NOT an ancient quotation.",
+    "transliteration": "stp → jꜥi̯ → pds → ṯꜣz → mḏd → šw → zẖꜣ ḥr ḏmꜥ",
+    "hieroglyphic_sequence": "𓋴𓏏𓊪𓍉𓏛 → 𓇋𓂝𓈗 → 𓊪𓂧𓋴𓂾𓂡 → 𓍿𓊃𓋭 → 𓅓𓆓𓂧𓐥 → 𓆄𓅱𓇳 → 𓊃𓈙𓏞 … 𓍑𓄿𓌳𓐙𓂝𓎅",
+    "russian_gloss": "выбрать → вымыть → расплющить → соединить → прижать → высушить → писать на листе"
+  },
+  "corpus_parallel_search": {
+    "strongest_match": {
+      "corpus": "Thesaurus Linguae Aegyptiae",
+      "token_id": "IBcCVro4mmiWRUvfqZZunl5yiAk",
+      "text_class": "Scientific Texts > Magical Texts > Magical Papyri",
+      "date": "19th–20th Dynasty",
+      "transliteration_excerpt": "jri̯ ... m zẖꜣ[.w] ḥr ḏmꜥ n mꜣ(w)i̯.ṱ [j]ꜥi̯ m ḥ(n)q.t ...",
+      "semantic_summary": "An instruction orders the making of a figure with writing on a papyrus sheet described as freshly/newly washed with beer and other liquids.",
+      "shared_nodes_with_JANUS_BIOPAPYRUS": ["WRITING","PAPYRUS_SHEET","WASHING","PREPARATION_SEQUENCE"],
+      "not_shared_or_not_demonstrated": ["SCOBY","BACTERIAL_CELLULOSE","PAPYRUS_MANUFACTURE_FROM_RAW_STALKS","PRESSING_AND_DRYING_IN_THE_SAME_PASSAGE","KOMBUCHA"],
+      "match_status": "REAL_TEXTUAL_PROCESS_PARALLEL_NOT_MATERIAL_IDENTITY"
+    },
+    "ferment_lexeme_watch": {
+      "transliteration": "ḥnq (uncertain semantic class in relevant early passages)",
+      "TLA_commentary": "The lexeme occurring in Pyramid Texts 64c, 90a-b and 91a-b and Coffin Texts VI 356o has been translated by van der Molen as 'ferment (?)' and by Hannig as Gärstoff/Ferment, while other interpretations treat it as a liquid/juice; TLA explicitly preserves the uncertainty.",
+      "status": "WATCH_ONLY_TRANSLATION_UNCERTAIN",
+      "rule": "Do not use this lexeme as proof of kombucha, SCOBY, bacterial cellulose, vinegar culture or a specific fermentation technology."
+    },
+    "negative_result": "No ancient Egyptian text was identified in this pass that combines raw papyrus manufacture, washing, cross-layering, pressing, drying, writing, and fermentation into one attested production recipe.",
+    "interpretation": "The strongest overlap is procedural vocabulary and a directly attested sequence involving writing on a freshly washed papyrus sheet. Pressing/flattening, joining, drying and writing are individually attested lexemes, but combining them into the JANUS BIOPAPYRUS workflow is a modern reconstruction."
+  },
+  "search_verdict": {
+    "lexical_overlap": "STRONG",
+    "procedural_overlap": "PARTIAL_BUT_REAL",
+    "material_identity_overlap": "NOT_DEMONSTRATED",
+    "ancient_scoby_status": "UNCONFIRMED",
+    "next_gate": "Search TLA co-occurrences around ḏmꜥ, jꜥi̯, pds, mḏd, šw, ṯꜣz and zẖꜣ with restricted distance and text-class filters; separately inspect material-analysis literature for anomalous cellulose sheets lacking papyrus vascular anatomy."
+  }
+}
