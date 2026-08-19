@@ -1,0 +1,60 @@
+{
+  "artifact_uuid": "JANUS-SCOBY-EGYPTIAN-OIL-WRING-PROCESS-BRIDGE-2026-08-19-v1.0",
+  "version": "v1.0",
+  "timestamp_local": "2026-08-19T23:19:00+03:00",
+  "repository": "Hawkar-usls/SCOBY-D0",
+  "status": "EVIDENCE_GATED_EGYPTOLOGICAL_PROCESS_BRIDGE",
+  "mirror_of": "Hawkar-usls/janus-meta-registry@audit/goldprompt-handshake-logic-hardening-v1_1:data/JANUS-SCOBY-EGYPTIAN-OIL-WRING-PROCESS-BRIDGE-2026-08-19-v1.0.json",
+  "parent_artifacts": [
+    "JANUS_SCOBY_OIL_SPILL_SORBENT_SPONGE_2258_v1.1.json",
+    "JANUS_SCOBY_OIL_SPILL_HIEROGLYPHIC_GATE_2304_v1.0.json",
+    "JANUS_BIOPAPYRUS_OIL_BRIDGE_2222_v1.0.json",
+    "JANUS_SCOBY_MUMMY_OIL_SORPTION_DECAY_GATE_v1.0.json"
+  ],
+  "modern_process": {
+    "label": "SCOBY-D0 OIL SORBENT CORE",
+    "sequence": ["PAD", "OIL + WATER", "UPTAKE", "RETRIEVE", "WRING / PRESS", "RECOVER OIL"],
+    "diagram": "PAD -> OIL + WATER -> UPTAKE -> RETRIEVE -> WRING/PRESS -> RECOVER OIL"
+  },
+  "egyptian_operational_projection": {
+    "mnḫ.t": {"hieroglyphs":"𓏠𓈖𓐍𓏏𓋲","meaning":"cloth/textile; wrapping","mapping":"PAD / WRAPPING","status":"ATTESTED_MATERIAL_CLASS"},
+    "mw": {"hieroglyphs":"𓈗","meaning":"water","mapping":"WATER PHASE","status":"ATTESTED"},
+    "mrḥ.t": {"hieroglyphs":"𓌸𓂋𓎛𓏏𓏊𓏥","meaning":"fat; unguent; anointing oil","mapping":"OIL / LIPID PHASE","status":"ATTESTED"},
+    "sꜥrq": {"hieroglyphs":"𓋴𓂝𓂋𓈎𓏝","meaning":"wring/squeeze linen or cloth","mapping":"WRING / PRESS LIQUID-BEARING MATERIAL","status":"ATTESTED_OPERATOR"},
+    "nwdi̯": {"hieroglyphs":"𓍉𓏌𓏲𓏏𓏭𓊮","meaning":"press out oil","mapping":"RECOVER OIL BY PRESSING","status":"ATTESTED_OPERATOR"}
+  },
+  "requested_projection_block": {
+    "modern": "SCOBY-D0\n\nPAD\n ↓\nOIL + WATER\n ↓\nUPTAKE\n ↓\nRETRIEVE\n ↓\nWRING / PRESS\n ↓\nRECOVER OIL",
+    "egyptian": "mnḫ.t\n𓏠𓈖𓐍𓏏𓋲\nткань / обёртка\n       +\nmw\n𓈗\nвода\n       +\nmrḥ.t\n𓌸𓂋𓎛𓏏𓏊𓏥\nмасло\n       ↓\nsꜥrq\n𓋴𓂝𓂋𓈎𓏝\nВЫЖАТЬ ТКАНЬ\n\n        /\n\nnwdi̯\n𓍉𓏌𓏲𓏏𓏭𓊮\nВЫЖАТЬ МАСЛО"
+  },
+  "reverse_pattern_result": {
+    "core_operator": "LIQUID_BEARING_MATERIAL -> MECHANICAL_SQUEEZE -> LIQUID_OR_OIL_RECOVERY",
+    "lexical_overlap": "STRONG",
+    "procedural_overlap": "STRONG_AT_PRESS_RECOVERY_CORE",
+    "whole_recipe_match": "PARTIAL_COMPOSITE_MATCH",
+    "material_identity_match": "NOT_DEMONSTRATED",
+    "ancient_scoby_status": "NOT_DEMONSTRATED"
+  },
+  "full_gate_projection_summary": [
+    {"modern_stage":"GREEN vs BLACK","egyptian_parallel":"wꜣḏ / km","status":"COLOR_ONLY_LEXICAL_PARALLEL"},
+    {"modern_stage":"D0-D3 DRYING","egyptian_parallel":"šw = dry/dried","status":"DIRECT_RESULT_STATE_MATCH"},
+    {"modern_stage":"50x50 COUPON","egyptian_parallel":"ḥbs.wt = piece of cloth/covering/wrapping","status":"FUNCTIONAL_MATERIAL_PIECE_ANALOGY"},
+    {"modern_stage":"OIL/WATER TEST","egyptian_parallel":"mw + mrḥ.t","status":"DIRECT_LEXICAL_COMPONENT_MATCH"},
+    {"modern_stage":"UPTAKE / SOAK","egyptian_parallel":"sp = dip/soak/immerse candidate","status":"PARTIAL_OR_LATE_LEXICAL_PARALLEL"},
+    {"modern_stage":"PAD / WRAPPING","egyptian_parallel":"mnḫ.t","status":"STRONG_MATERIAL_CLASS_PARALLEL"},
+    {"modern_stage":"WRING / PRESS","egyptian_parallel":"sꜥrq","status":"STRONG_PROCESS_OPERATOR_MATCH"},
+    {"modern_stage":"RECOVER OIL","egyptian_parallel":"nwdi̯","status":"STRONG_PROCESS_OPERATOR_MATCH"},
+    {"modern_stage":"BIG SPONGE / OIL-SPILL MODULE","egyptian_parallel":null,"status":"NO_SAFE_DIRECT_ANCIENT_EQUIVALENT"}
+  ],
+  "interpretation": "The strongest independent overlap is a process analogy: textile/wrapping + water/oil + wringing a liquid-bearing material + pressing oil out. This does not establish SCOBY or bacterial cellulose in Ancient Egypt.",
+  "next_gate": {
+    "objective": "Find one attested Egyptian instruction or tightly local textual context that combines textile/wrapping or a material piece with oil/liquid plus soaking/impregnation and wringing/pressing/recovery.",
+    "search_nodes": ["mnḫ.t", "ḥbs.wt", "mw", "mrḥ.t", "bꜣq", "sꜥrq", "nwdi̯", "sp", "šw"]
+  },
+  "invariants": [
+    "LEXICAL_OVERLAP_NE_MATERIAL_IDENTITY",
+    "PROCEDURAL_OVERLAP_NE_HISTORICAL_USE",
+    "ANCIENT_EGYPTIAN_OIL_PRESSING_NE_ANCIENT_SCOBY",
+    "COMPOSITE_MATCH_MUST_NOT_BE_PRESENTED_AS_ANCIENT_QUOTATION"
+  ]
+}
