@@ -1,0 +1,196 @@
+{
+  "artifact_uuid": "JANUS-SCOBY-MARINE-DYNAMIC-SALTWATER-BOOM-GATE-0018-2026-08-20-v1.0",
+  "version": "v1.0",
+  "created_local": "2026-08-20T00:18:00+03:00",
+  "repository": "Hawkar-usls/SCOBY-D0",
+  "status": "PREREGISTERED_MARINE_DYNAMIC_VALIDATION_PROGRAM",
+  "mirrors_to": "Hawkar-usls/janus-meta-registry@audit/goldprompt-handshake-logic-hardening-v1_1:data/JANUS-SCOBY-MARINE-DYNAMIC-SALTWATER-BOOM-GATE-0018-2026-08-20-v1.0.json",
+  "parent_artifacts": [
+    "JANUS_SCOBY_OIL_SPILL_SORBENT_SPONGE_2258_v1.1.json",
+    "JANUS_SCOBY_EGYPTIAN_OIL_WRING_PROCESS_BRIDGE_v1.0.json",
+    "JANUS_SCOBY_EGYPTIAN_SINGLE_TEXT_CLOTH_OIL_MOISTEN_GATE_2332_v1.0.json"
+  ],
+  "program_name": "MARINE-DYNAMIC-GATE M1 -> BOOM-CARTRIDGE M2",
+  "goal": "Determine whether a low-cost bacterial-cellulose sorbent remains selective, buoyant, retrievable and mechanically recoverable under saltwater and controlled dynamic-water conditions before any petroleum or open-water field claim is considered.",
+  "claim_boundary": {
+    "supported": [
+      "Sorbent performance must be evaluated for oil-over-water selectivity, retention, buoyancy, retrieval and end-of-life handling.",
+      "Pads, sheets, pillows and booms are recognized oil-sorbent product architectures.",
+      "Mechanical squeezing/pressing is a valid recovery concept to test for oil-loaded oleophilic materials."
+    ],
+    "not_yet_supported": [
+      "SCOBY-D0 is ready for real marine oil spills.",
+      "Laboratory g/g values will survive waves, salinity, debris or viscous petroleum.",
+      "Any hydrophobic treatment is environmentally safe before leachate/ecotoxicity testing.",
+      "A 1 m boom cartridge is ready for deployment before pad-level gates pass."
+    ]
+  },
+  "stage_0_coupon_gate": {
+    "purpose": "Finish the already frozen GREEN vs BLACK -> D0-D3 -> 50x50 coupon screen before marine scale-up.",
+    "matrix": "2 tea feeds x D0-D3 x matched replicates",
+    "advance_rule": "Advance only the best one or two branches by joint dry BC yield, oil uptake, water uptake, selectivity, retention, integrity, reproducibility and estimated process cost. Tea identity alone cannot win.",
+    "safe_test_fluid": "FOOD_GRADE_VEGETABLE_OIL",
+    "petroleum_status": "BLOCKED"
+  },
+  "stage_1_marine_pad": {
+    "geometry_mm": [100, 100],
+    "architecture": "RETRIEVABLE_PAD; optional inert containment mesh permitted if it is weighed and tracked separately",
+    "phase_M1A_static_matrix": {
+      "objective": "Measure salinity penalty before adding motion.",
+      "water_conditions": [
+        "CLEAN_FRESH_WATER",
+        "ARTIFICIAL_SEAWATER_35_PLUS_MINUS_2_PSU"
+      ],
+      "oil_surrogate": "FOOD_GRADE_VEGETABLE_OIL",
+      "replicates_per_branch_condition": 3,
+      "commercial_control": "ONE_REFERENCE_COMMERCIAL_OIL_SORBENT_PAD_IF_AVAILABLE",
+      "measurements": [
+        "dry_mass_g",
+        "pad_dimensions_mm",
+        "oil_loaded_mass_after_standardized_drain_g",
+        "water_loaded_mass_after_standardized_drain_g",
+        "oil_uptake_g_g",
+        "water_uptake_g_g",
+        "oil_water_selectivity",
+        "buoyancy_behavior",
+        "fragment_loss_percent",
+        "retrieval_fraction",
+        "press_recovered_liquid_mass_g"
+      ]
+    },
+    "phase_M1B_dynamic_matrix": {
+      "objective": "Expose the winner to controlled motion and retrieval losses.",
+      "water_condition": "ARTIFICIAL_SEAWATER_35_PLUS_MINUS_2_PSU",
+      "motion": "CONTROLLED_REPEATABLE_LOW_ENERGY_ROCKING_OR_RECIRCULATION_IN_A_CONTAINED_TEST_VESSEL",
+      "rule": "Record motion settings and exposure time so every sample sees the same history.",
+      "replicates_per_lead_branch": 5,
+      "oil_surrogate": "FOOD_GRADE_VEGETABLE_OIL",
+      "forbidden": [
+        "open-water release",
+        "crude-oil or fuel testing outside an appropriately controlled laboratory",
+        "microwaving oil-loaded sorbent",
+        "open burning",
+        "discarding fragments into drains or the environment"
+      ]
+    }
+  },
+  "stage_1_metrics": {
+    "oil_uptake_g_g": "(oil_loaded_mass_after_standardized_drain_g - dry_mass_g) / dry_mass_g",
+    "water_uptake_g_g": "(water_loaded_mass_after_standardized_drain_g - dry_mass_g) / dry_mass_g",
+    "oil_water_selectivity": "oil_uptake_g_g / water_uptake_g_g",
+    "retention_fraction": "oil_remaining_after_standardized_retrieval_and_drain / initially_absorbed_oil",
+    "mechanical_recovery_fraction": "recovered_oil_or_oil_rich_liquid_after_press / initially_absorbed_oil",
+    "retrieval_fraction": "retrieved_dry_equivalent_sorbent_mass / initial_dry_sorbent_mass",
+    "salinity_penalty_fraction": "1 - marine_metric / matched_freshwater_metric",
+    "dynamic_penalty_fraction": "1 - dynamic_metric / matched_static_marine_metric",
+    "cost_per_kg_recovered_oil": "total_consumable_and_process_cost / measured_recovered_oil_kg",
+    "energy_per_kg_recovered_oil": "measured_or_estimated_process_energy_kWh / measured_recovered_oil_kg"
+  },
+  "stage_1_promotion_gates": {
+    "M1_G1_UPTAKE": "Median surrogate-oil uptake >= 10 g/g in artificial seawater.",
+    "M1_G2_SELECTIVITY": "Median oil/water uptake ratio >= 5 in artificial seawater.",
+    "M1_G3_RETENTION": "At least 85% of initially absorbed surrogate oil remains after standardized retrieval and passive drain.",
+    "M1_G4_RETRIEVAL": "At least 99% dry-equivalent sorbent mass is physically retrieved; no visible hazardous fragmentation.",
+    "M1_G5_PRESS_RECOVERY": "At least 60% of initially absorbed surrogate oil is recoverable by the standardized single press if closed-loop recovery is claimed.",
+    "M1_G6_SALINITY_ROBUSTNESS": "Lead branch retains at least 80% of matched freshwater oil-uptake/selectivity performance in artificial seawater.",
+    "M1_G7_DYNAMIC_ROBUSTNESS": "Lead branch retains at least 80% of matched static-marine performance under the frozen dynamic exposure.",
+    "M1_G8_REPLICATION": "Lead result reproduced in at least two independent BC production batches.",
+    "note": "These are internal engineering promotion thresholds, not regulatory standards."
+  },
+  "stage_2_boom_cartridge": {
+    "entry_condition": "M1_G1 through M1_G8 pass.",
+    "length_m": 1.0,
+    "architecture": "RETRIEVABLE_OUTER_MESH_OR_SLEEVE + MODULAR_BC_INSERTS + END_CLOSURES + RETRIEVAL_ROPE_OR_WEBBING",
+    "design_reason": "Containment sleeve prevents BC fragments from entering the water and turns the sorbent into a single recoverable object.",
+    "initial_module_logic": [
+      "Use multiple removable BC pads/segments rather than one monolithic meter-long sponge.",
+      "Track each insert by sample ID and dry mass.",
+      "Measure saturated mass so lifting load is known.",
+      "Retrieve the full cartridge before pressing; do not squeeze in open water.",
+      "Press in a contained station and collect the entire oil/water liquid fraction for phase separation."
+    ],
+    "M2_metrics": [
+      "oil_recovered_per_meter_g",
+      "dry_BC_mass_per_meter_g",
+      "saturated_mass_per_meter_g",
+      "retrieval_fraction",
+      "fragment_escape_count_or_mass",
+      "press_recovery_fraction",
+      "deployment_and_retrieval_time",
+      "cost_per_meter",
+      "cost_per_kg_recovered_oil"
+    ],
+    "M2_gate": "A 1 m cartridge may advance only if it remains positively buoyant, fully retrievable, contains its BC, preserves >=80% of pad-level g/g performance and has a measured cost-per-recovered-oil advantage worth pursuing against the reference control."
+  },
+  "cost_down_gate": {
+    "principle": "Optimize recovered oil per unit cost, not publication-grade maximum g/g.",
+    "branches_to_compare": [
+      "LOW_COMPACTION_AIR_DRY",
+      "FREEZE_DRY_UNMODIFIED",
+      "MINIMAL_ENVIRONMENTALLY_COMPATIBLE_HYDROPHOBIC_TREATMENT"
+    ],
+    "deprioritize_until_needed": [
+      "complex multi-step coatings",
+      "high-energy carbonization",
+      "CVD-like processing",
+      "microwave transformation"
+    ],
+    "winner_rule": "Select by measured marine performance, recovery, retrieval integrity, batch reproducibility, energy use and cost per kg recovered oil."
+  },
+  "janus_tranception": {
+    "schema": "JANUS-FORWARD-REVERSE-SEMANTIC-PASS-v1.0",
+    "mode": "BIDIRECTIONAL_REQUIRED",
+    "forward_pass": {
+      "chain": [
+        "BC_PRODUCTION",
+        "POROUS_PAD_FORMATION",
+        "MARINE_OIL_CONTACT",
+        "OIL_UPTAKE_OVER_WATER",
+        "DYNAMIC_EXPOSURE",
+        "RETRIEVAL",
+        "CONTAINED_PRESS",
+        "RECOVERED_OIL_FRACTION",
+        "CONTROLLED_SPENT_SORBENT"
+      ],
+      "status": "PREREGISTERED_NOT_YET_EXECUTED"
+    },
+    "reverse_pass": {
+      "chain": [
+        "RECOVERED_OIL_FRACTION",
+        "REQUIRES_CONTAINED_PRESS_OR_DRAIN",
+        "REQUIRES_FULL_RETRIEVAL_OF_OIL_BEARING_SORBENT",
+        "REQUIRES_SORBENT_TO_SURVIVE_DYNAMIC_MARINE_EXPOSURE",
+        "REQUIRES_OIL_OVER_WATER_SELECTIVITY",
+        "REQUIRES_POROUS_RETRIEVABLE_BC_ARCHITECTURE",
+        "REQUIRES_REPRODUCIBLE_BC_PRODUCTION"
+      ],
+      "status": "LOGICALLY_CLOSED_AS_TEST_DESIGN_NOT_EMPIRICALLY_VALIDATED"
+    },
+    "mirror_check": {
+      "same_critical_edges": true,
+      "empirical_closure": false,
+      "mirror_status": "DESIGN_LOOP_CLOSED_DATA_LOOP_OPEN",
+      "promotion_rule": "No field claim until the same critical edges pass in measured forward execution and reverse audit."
+    }
+  },
+  "regulatory_and_method_anchors": [
+    {
+      "authority": "ISO",
+      "standard": "ISO 20053:2017",
+      "status_note": "Current; confirmed in 2023",
+      "role": "marine sorbent design/selection criteria framework"
+    },
+    {
+      "authority": "US EPA",
+      "resource": "January 2026 NCP Sorbent Product List",
+      "role": "current U.S. sorbent-product regulatory context"
+    },
+    {
+      "authority": "US EPA",
+      "resource": "Application of Sorbents and Solidifiers for Oil Spills",
+      "updated": "2026-02-26",
+      "role": "current manufacturer/response guidance context"
+    }
+  ],
+  "next_action": "Execute Stage 0 coupon gate if not already complete. Then fabricate 100x100 mm pads from the top one or two branches and run M1A fresh-vs-artificial-seawater static tests with vegetable oil before any dynamic or petroleum work."
+}
