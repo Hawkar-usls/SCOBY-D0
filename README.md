@@ -1,200 +1,193 @@
 <div align="center">
 
 # SCOBY-D0
-### Provenance-blind C₂ context engineering · evidence lineage · computational biomanufacturing
+### Evidence-gated bacterial-cellulose research · marine oil-sorbent R&D · reversible JANUS audit
 
-`simulation-first` · `machine-readable` · `claim-bounded` · `no human dosing`
+![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)
+![Status](https://img.shields.io/badge/Status-Early%20R%26D-orange.svg)
+![Marine Gate](https://img.shields.io/badge/Marine%20Gate-M1A%20Pre--registered-0b7285.svg)
+
+`machine-readable` · `claim-bounded` · `forward ↔ reverse` · `retrieve what you deploy`
 
 </div>
 
-## Status
+## What this repository is
 
-**Early research / computational hypothesis.** SCOBY-D0 separates production science from context science. It does not establish a human feeding system, clinical effect, food safety, universal human SCFA reference vector, or validated engineered organism.
+SCOBY-D0 is an open research program built around **bacterial cellulose (BC)** produced by SCOBY-like fermentation systems. The current lead application is a low-cost, retrievable sorbent architecture for oil-on-water cleanup.
 
-## Research ladder
-
-```text
-v0.2   SOURCE INVARIANCE
-  ↓
-v0.3   SYNTHETIC CONTEXT SEARCH
-  ↓
-v0.4   EVIDENCE ADMISSION
-  ↓
-v0.5   EXTRACTION LINEAGE
-  ↓
-v0.6   FIRST INGESTION-AUTHORITATIVE OBSERVATION
-  ↓
-v0.6.1 MULTICONTEXT AUTHORITATIVE EXPANSION
-  ↓
-v0.6.2 EXACT COMPARABLE-CONTEXT QUALIFICATION
-  ↓
-v0.6.3 COHORT + PREANALYTIC HARDENING
-  ↓
-v0.6.4 HARDENED PAIR SEARCH FRONTIER
-  ↓
-v0.6.5–v0.6.5.4 BLOCKER RESOLUTION + EVIDENCE BOUNDARIES
-  ↓
-v0.6.6 HARDENED CANDIDATE LEDGER                    ← current
-  ↓
-v0.7   UNCERTAINTY-AWARE PARETO SEARCH              🔒 BLOCKED
-```
-
-## Current state
+The project deliberately separates three questions:
 
 ```text
-AUTHORITATIVE_OBSERVATIONS = 10
-EXISTING_CONTEXT_BUCKETS = 6
-LITERATURE_CANDIDATES = 6
-MEASUREMENT_KEY_FULLY_BOUND_SINGLES = 2
-EXACT_ELEVEN_FIELD_MATCHING_PAIRS = 0
-REAL_HARDENED_READY_PAIRS = 0
-NEW_AUTHORITATIVE_OBSERVATIONS = 0
-POOLED_REFERENCE = NOT_CREATED
-BIOLOGICAL_REFERENCE_VECTOR = UNSET
-PARETO_SEARCH = BLOCKED
+CAN BC BE PRODUCED REPRODUCIBLY?
+        ↓
+CAN THE MATERIAL SELECTIVELY TAKE UP OIL OVER WATER?
+        ↓
+CAN THE WHOLE SORBENT BE RETRIEVED, PRESSED AND ACCOUNTED FOR?
 ```
 
-## v0.6.6 — exact-key candidate ledger
+No field-readiness claim is made until those gates close empirically.
 
-The ledger uses the same literal 11-field surface as the existing v0.6.3 admission kernel:
+## Active lead track — marine oil-spill sorbent
+
+Current program:
 
 ```text
-population_health_class
-specimen
-route_or_exposure
-fasting_duration
-tracer_state
-analyte
-metric
-units
-uncertainty_semantics
-preanalytic_handling
-analytical_method_family
+GREEN vs BLACK FEEDSTOCK
+        ↓
+D0–D3 DRYING / STRUCTURE SCREEN
+        ↓
+50×50 mm COUPONS
+        ↓
+OIL / WATER SELECTIVITY
+        ↓
+PRESS RECOVERY
+        ↓
+100×100 mm M1A MARINE PADS
+        ↓
+FRESH WATER vs ARTIFICIAL SEAWATER
+        ↓
+M1B DYNAMIC SALTWATER
+        ↓
+1 m RETRIEVABLE BOOM CARTRIDGE
 ```
 
-It is a **discovery object, not an admission path**. Ranking a candidate pair can only tell us where to search next.
+### M1A finalists
+
+**Finalist A — performance lead**  
+`D3_FREEZE_DRY + MINIMAL_ENVIRONMENTALLY_COMPATIBLE_HYDROPHOBIC_SURFACE_ENGINEERING`
+
+Why it advances: porous BC aerogel architectures are the strongest literature-backed route for high oil uptake, compressibility and oil-over-water selectivity. Main risks are process cost, treatment complexity, leachables and ecotoxicity.
+
+**Finalist B — cost-down challenger**  
+`D1_LOW_COMPACTION_AIR_DRY`
+
+Why it advances: lowest-energy and simplest manufacturing path. Main risk is pore collapse/native hydrophilicity causing poor oil-over-water selectivity.
+
+These are **pre-registered finalists, not empirical winners**. Feedstock identity (green vs black tea) remains open until matched Stage-0 data exist.
+
+### Winner rule
+
+A branch becomes the marine winner only after passing the frozen gates for:
+
+- oil uptake in artificial seawater;
+- oil/water selectivity;
+- retention during retrieval;
+- ≥99% material retrieval without hazardous fragmentation;
+- contained mechanical oil recovery;
+- salinity robustness;
+- dynamic-water robustness;
+- replication across independent BC batches;
+- measured cost per kg of recovered oil.
+
+See [`JANUS_SCOBY_MARINE_DYNAMIC_SALTWATER_BOOM_GATE_0018_v1.0.json`](JANUS_SCOBY_MARINE_DYNAMIC_SALTWATER_BOOM_GATE_0018_v1.0.json) and [`JANUS_SCOBY_M1A_FINALISTS_EXTERNAL_VALIDATION_0036_v1.0.json`](JANUS_SCOBY_M1A_FINALISTS_EXTERNAL_VALIDATION_0036_v1.0.json).
+
+## Product architecture under test
+
+The preferred field concept is **not loose SCOBY pieces**. It is a recoverable boom cartridge:
 
 ```text
-CANDIDATE_LEDGER != EVIDENCE_AUTHORITY
-SINGLE_FULLY_BOUND != COMPARABLE_READY
-RANKING != ADMISSION
+┌──────────────────────────────────────────┐
+│ [BC] [BC] [BC] [BC] [BC] [BC] [BC]    │  removable inserts
+└──────────────────────────────────────────┘
+──────────── retrieval rope / webbing ─────
+      outer containment mesh / sleeve
 ```
 
-### Fully bound single #1 — MASLD 2024 healthy controls
-
-For the healthy-control arm of PMID `38262952` / PMCID `PMC10804800`:
+Workflow:
 
 ```text
-HEALTHY
-EDTA_PLASMA
-FASTING_BASELINE
-AT_LEAST_4_HOURS
-NO_TRACER
-ACETATE
-CONCENTRATION
-umol/L
-SD
-EDTA_IMMEDIATE_ICE_CENTRIFUGE_WITHIN_2_HOURS_STORE_MINUS80C
-BEVITAL_ISOTOPE_LABELED_GC_MS_MS_AUTOMATED_WORKUP
-
-acetate = 57.6 ± 25.6 µmol/L
-n = 50
+DEPLOY
+  → SORB
+  → RETRIEVE WHOLE
+  → CONTAINED DRAIN / PRESS
+  → COLLECT OIL + WATER
+  → PHASE SEPARATE
+  → CHARACTERIZE RECOVERED OIL
+  → CONTROLLED SPENT-BC ROUTE
 ```
 
-### Fully bound single #2 — USDA Nutritional Phenotyping Study 2024
+## JANUS method
 
-For PMID `39173973` / PMCID `PMC11600052` / `NCT02367287`:
+Every major research artifact is expected to carry both semantic directions:
 
 ```text
-HEALTHY
-EDTA_PLASMA
-FASTING_BASELINE
-12_HOURS_WATER_ONLY
-NO_TRACER
-ACETATE
-CONCENTRATION
-umol/L
-SD
-EDTA_REFRIGERATED_CENTRIFUGE_4C_1300G_10MIN_STORE_MINUS80C
-COLUMBIA_3NPH_UPLC_MS_MS_XEVO_TQS_POSITIVE_ESI_MRM
+FORWARD
+material → process → result
 
-reported acetate = 0.08 ± 0.08 nmol/µL
-normalized acetate = 80 ± 80 µmol/L
-n = 315
+REVERSE
+result → required process → required material
 ```
 
-These are both strong **single measurement contexts**, but they are not a hardened pair:
+A reverse pass may expose missing evidence. It may **not** manufacture it.
 
 ```text
-AT_LEAST_4_HOURS != 12_HOURS_WATER_ONLY
-MASLD_PREANALYTICS != USDA_PREANALYTICS
-BEVITAL_GC_MS_MS != COLUMBIA_3NPH_UPLC_MS_MS
+FORWARD_PASS != PROOF
+REVERSE_PASS != PROOF
+FORWARD + REVERSE + SAME_EDGES + EMPIRICAL_DATA = PROMOTION CANDIDATE
+HASH_IS_INTEGRITY_NOT_TRUTH
 ```
 
-No averaging or method-family collapsing is allowed to erase those differences.
+## Other research tracks
 
-## Other ledger candidates
+### BioPapyrus / bacterial-cellulose sheets
 
-- **RyeWeight2 / NCT04203758** — heparin plasma and Fristedt-2024 method are study-bound; baseline acetate is reported as geometric mean + 95% CI, but exact SCFA fasting duration and preanalytics remain unresolved in the current binding.
-- **Bain 2022** — useful GC-MS / tube-comparison method context, but fasting and a clean lithium-heparin group estimate with uncertainty are not bound.
-- **Defatted-rice-bran crossover** — protocol binds lithium-heparin plasma and a targeted stable-isotope LCMS organic-acid workflow, but baseline fasting and direct acetate estimate/uncertainty remain unbound.
-- **Fristedt 2024** — method authority only; an aggregate method-validation plasma set is not a distinct biological cohort.
+Experimental recipes and Egyptian lexical/process comparisons explore how BC can be converted into sheet-like material and how ancient process vocabulary overlaps with washing, pressing, drying, writing, cloth, oil and wringing. These are comparative research artifacts, **not claims that ancient Egyptian papyrus was SCOBY**.
+
+Key files include:
+
+- `JANUS_BIOPAPYRUS_RECIPE_v1.0.json`
+- `JANUS_BIOPAPYRUS_EGYPTIAN_HIEROGLYPHIC_MAPPING_v1.0.json`
+- `JANUS_SCOBY_EGYPTIAN_OIL_WRING_PROCESS_BRIDGE_v1.0.json`
+- `JANUS_SCOBY_EGYPTIAN_SINGLE_TEXT_CLOTH_OIL_MOISTEN_GATE_2332_v1.0.json`
+
+### Legacy C₂ evidence program
+
+The original SCOBY-D0 computational evidence line remains preserved under `evidence/`, `src/` and `tests/`. It contains the v0.2–v0.6.6 context/admission lineage and remains claim-bounded. The marine-material program does not overwrite or retroactively reinterpret that evidence authority.
+
+## Repository map
 
 ```text
-METHOD_AUTHORITY_ONLY != BIOLOGICAL_COHORT
-PROTOCOL != NUMERIC_OBSERVATION
-SD != CI95
-EDTA_PLASMA != HEPARIN_PLASMA
+.
+├── README.md
+├── LICENSE
+├── PROJECT_STATUS.json
+├── RESEARCH_LINEAGE.json
+├── CONTRIBUTING.md
+├── CITATION.cff
+├── docs/
+│   ├── MARINE_M1A_FINALISTS.md
+│   ├── ONE_METER_BOOM_COST_MODEL.md
+│   └── OUTREACH_EXTERNAL_VALIDATION.md
+├── evidence/                 legacy evidence-authority track
+├── experiments/              experiment artifacts
+├── schemas/                  machine-readable contracts
+├── src/                      computational tooling
+├── tests/                    reproducibility tests
+└── JANUS_*.json              frozen research receipts / gates
 ```
 
-## Machine-readable objects
+## Safety and environmental boundary
 
-- [`evidence/reference_context/HARDENED_CANDIDATE_LEDGER_V0_6_6.json`](evidence/reference_context/HARDENED_CANDIDATE_LEDGER_V0_6_6.json)
-- [`evidence/reference_context/REFERENCE_DATASET_V0_6_6.json`](evidence/reference_context/REFERENCE_DATASET_V0_6_6.json)
-- [`src/candidate_ledger.py`](src/candidate_ledger.py)
-- [`tests/test_candidate_ledger_v066.py`](tests/test_candidate_ledger_v066.py)
+First-pass material tests use contained systems and safe surrogate oil. Petroleum/crude-oil work belongs only in appropriately controlled facilities with chemical, fire, environmental and waste controls.
 
-Ledger content SHA-256:
+Never:
 
-```text
-d28cdcbac1e9cf401e3eb2074a4fb7cb6e85387207e867901f37d2cc528a292d
-```
+- release experimental sorbent into open water before the field gate;
+- microwave oil-loaded material;
+- open-burn contaminated sorbent;
+- compost petroleum-loaded sorbent;
+- abandon fragments in water or drains.
 
-The hash identifies this object version; it does not establish biological truth.
+## External validation
 
-## Next gate
-
-Find a second primary human cohort matching **one complete 11-field key literally**, then separately establish pair-specific cohort independence and replay both records through the existing v0.5 extraction lineage and v0.6.3 hardened kernel.
-
-```text
-DO_NOT_RELAX_KEY_FIELDS_TO_CREATE_A_MATCH
-DISTINCT_PUBLICATION != DISTINCT_COHORT_ESTABLISHED
-COMPARABLE_READY != POOLED_REFERENCE
-```
-
-## Claim ceiling
-
-```text
-SIMULATION_PASS != IN_VIVO_VALIDATION
-INGESTION_AUTHORITY != HUMAN_REFERENCE_STANDARD
-CANDIDATE_LEDGER != EVIDENCE_AUTHORITY
-SINGLE_FULLY_BOUND != COMPARABLE_READY
-METHOD_AUTHORITY != BIOLOGICAL_COHORT
-PROTOCOL != NUMERIC_OBSERVATION
-MULTIPLE_OBSERVATIONS != BIOLOGICAL_REFERENCE_VECTOR
-HASH != TRUTH
-ACETATE != COMPLETE_NUTRITION
-SIMULATION_OPTIMUM != SAFE_HUMAN_FORMULATION
-```
-
-No wet-lab genetic-engineering procedure, human dose, infusion rate, medical-device control, or clinical recommendation belongs in the current scope.
+The project is now prepared for external discussion around **independent sorbent testing**, especially salinity/current, retrieval, mechanical recovery and cost-per-recovered-oil. A concise outreach packet is in [`docs/OUTREACH_EXTERNAL_VALIDATION.md`](docs/OUTREACH_EXTERNAL_VALIDATION.md).
 
 ## Related repositories
 
+- [JANUS Meta Registry](https://github.com/Hawkar-usls/janus-meta-registry)
 - [Janus Genesis](https://github.com/Hawkar-usls/Janus_Genesis)
 - [ESP32-TWAI-CAN](https://github.com/Hawkar-usls/ESP32-TWAI-CAN)
-- [JANUS Meta Registry](https://github.com/Hawkar-usls/janus-meta-registry)
 
 ## License
 
-Apache License 2.0. External papers, upstream code, and third-party material remain under their respective terms.
+Code and original repository documentation are released under the **Apache License 2.0** unless a file states otherwise. External papers, datasets, images and upstream material remain under their own licenses and terms.
