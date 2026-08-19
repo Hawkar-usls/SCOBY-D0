@@ -1,0 +1,172 @@
+{
+  "artifact_uuid": "JANUS-BIOPAPYRUS-SCOBY-RECIPE-v1.0",
+  "timestamp_local": "2026-08-19T21:21:00+03:00",
+  "title": "JANUS BIOPAPYRUS — bacterial-cellulose papyrus-like sheet from SCOBY",
+  "version": "v1.0",
+  "repository": "Hawkar-usls/SCOBY-D0",
+  "status": "EXPERIMENTAL_RECIPE",
+  "purpose": "Produce a dry, writable papyrus-like sheet from a mature SCOBY pellicle using washing, flattening, pressing and controlled drying, then compare it against crossed-strip and plant-fiber hybrid variants.",
+  "scientific_boundary": {
+    "not_claimed": [
+      "This is not evidence that ancient Egyptian papyrus was SCOBY.",
+      "This is not evidence that ancient Egyptians made kombucha or bacterial-cellulose sheets.",
+      "The product should be described as a bacterial-cellulose sheet or SCOBY biopapyrus, not archaeological papyrus."
+    ],
+    "working_hypothesis": "A mature bacterial-cellulose pellicle can be converted into a thin pressed sheet whose macroscopic form and writing function can be compared with papyrus-like materials."
+  },
+  "materials": [
+    "mature SCOBY pellicle with no visible mold",
+    "clean potable water for repeated rinsing",
+    "flat non-porous boards, glass plates or other smooth pressing surfaces",
+    "clean absorbent cloth or paper used only as an external drying layer",
+    "weights or a flat press",
+    "ruler or calipers",
+    "kitchen scale with gram resolution if available",
+    "permanent sample labels",
+    "optional: clean plant fibers or thin papyrus-like strips for the hybrid control",
+    "optional: pH strips for documenting the wash endpoint"
+  ],
+  "food_safety_boundary": {
+    "rule": "Once a pellicle is assigned to the materials experiment, do not return it to a beverage culture or consume it.",
+    "reject_if": [
+      "visible fuzzy mold",
+      "putrid or otherwise abnormal odor inconsistent with an acidic fermentation",
+      "unknown chemical contamination",
+      "contact with dirty or non-food-safe surfaces before the materials experiment"
+    ],
+    "note": "This recipe is a materials experiment, not a food recipe."
+  },
+  "sample_matrix": {
+    "A_PURE_SCOBY_SHEET": "whole pellicle, flattened and pressed",
+    "B_CROSS_LAMINATED_SCOBY": "pellicle cut into strips and laid in two approximately perpendicular layers before pressing",
+    "C_PLANT_FIBER_SCOBY_HYBRID": "plant-fiber lattice combined with a thin SCOBY layer, then pressed and dried",
+    "recommended_control": "retain one untreated dried SCOBY piece from the same pellicle as a no-press comparison"
+  },
+  "recipe": [
+    {
+      "step": 1,
+      "name": "SELECT",
+      "action": "Choose an intact mature pellicle and photograph both surfaces. Record batch ID, starting mass, approximate thickness and dimensions.",
+      "gate": "No visible mold or obvious contamination."
+    },
+    {
+      "step": 2,
+      "name": "RINSE",
+      "action": "Rinse the pellicle repeatedly in clean cool water, gently changing the water between rinses until loose yeast, tea residue and excess acidic liquid are substantially removed.",
+      "measurement": "Record number of rinses; if pH strips are available, record final rinse-water pH rather than forcing a target value."
+    },
+    {
+      "step": 3,
+      "name": "FLATTEN",
+      "action": "Spread the wet pellicle on a smooth clean surface without stretching it enough to tear. Remove folds and trapped air by gentle hand pressure from the center outward."
+    },
+    {
+      "step": 4,
+      "name": "FORM_VARIANT",
+      "action": "For Variant A leave the pellicle whole. For Variant B cut comparable strips and place one layer in one direction and a second layer approximately perpendicular. For Variant C place a clean plant-fiber lattice against or between thin bacterial-cellulose layers.",
+      "rule": "Keep final sheet area and starting wet mass as similar as practical across variants."
+    },
+    {
+      "step": 5,
+      "name": "PRE_DEWATER",
+      "action": "Sandwich the sample between clean absorbent external layers and apply light, even pressure to remove free water. Replace saturated absorbent layers as needed. Do not wring or twist the sample."
+    },
+    {
+      "step": 6,
+      "name": "PRESS",
+      "action": "Transfer the sample between smooth flat surfaces and apply evenly distributed weight or press force. Keep the assembly ventilated enough that moisture can escape and inspect periodically for uneven drying or trapped liquid.",
+      "record": [
+        "pressing start time",
+        "approximate load or total weight if known",
+        "sheet dimensions",
+        "room temperature if available",
+        "relative humidity if available"
+      ]
+    },
+    {
+      "step": 7,
+      "name": "DRY_FLAT",
+      "action": "Continue drying under flat restraint until mass and feel are stable and the sheet no longer contains obvious internal moisture. Avoid high heat; room-temperature drying is the baseline condition for v1.0.",
+      "endpoint": "Record dry mass and final dimensions. If weighing is available, treat two similar consecutive mass measurements separated in time as a practical dry-endpoint check."
+    },
+    {
+      "step": 8,
+      "name": "CONDITION",
+      "action": "Remove the sheet from the press and let it equilibrate flat at room conditions before testing. Photograph both surfaces and edges."
+    },
+    {
+      "step": 9,
+      "name": "WRITE_TEST",
+      "action": "Test a small marked corner with pencil and several non-toxic ink types. Record feathering, bleed-through, surface abrasion and drying time before writing on the main sample."
+    },
+    {
+      "step": 10,
+      "name": "MECHANICAL_AND_WATER_TEST",
+      "action": "On sacrificial strips only, compare fold endurance, tear behavior and water response. Do not wet the archival master sheet during the first comparison pass."
+    }
+  ],
+  "measurement_schema": {
+    "required": [
+      "sample_id",
+      "source_batch_id",
+      "variant",
+      "wet_mass_g",
+      "dry_mass_g",
+      "initial_length_mm",
+      "initial_width_mm",
+      "final_length_mm",
+      "final_width_mm",
+      "final_thickness_mm_if_available",
+      "drying_time_h",
+      "press_load_or_unknown",
+      "visual_surface_description",
+      "writing_test_result"
+    ],
+    "derived": {
+      "mass_retention_fraction": "dry_mass_g / wet_mass_g",
+      "area_shrinkage_fraction": "1 - ((final_length_mm * final_width_mm) / (initial_length_mm * initial_width_mm))",
+      "areal_density_g_m2": "dry_mass_g / final_area_m2"
+    }
+  },
+  "comparison_gates": {
+    "G1_FLAT_SHEET": "Sample dries into a coherent freestanding sheet.",
+    "G2_WRITABLE": "At least one ordinary writing medium produces legible marks without catastrophic bleed-through or surface destruction.",
+    "G3_REPEATABLE": "Result reproduced with at least three independently prepared samples from separate pellicles or batches.",
+    "G4_VARIANT_COMPARISON": "A, B and C are compared using the same recorded measurements before declaring one superior.",
+    "G5_MATERIAL_IDENTITY": "Any claim about bacterial cellulose purity, crystallinity, porosity or composite bonding requires appropriate characterization rather than visual inference."
+  },
+  "expected_outcomes": {
+    "A_PURE_SCOBY_SHEET": "dense translucent-to-opaque bacterial-cellulose sheet; potentially smooth and paper/leather-like depending on thickness and drying history",
+    "B_CROSS_LAMINATED_SCOBY": "more visibly papyrus-inspired architecture; mechanical advantage is a hypothesis until measured",
+    "C_PLANT_FIBER_SCOBY_HYBRID": "natural-fiber/bacterial-cellulose composite candidate; bonding and durability must be measured"
+  },
+  "failure_modes": [
+    "warping or curling during asymmetric drying",
+    "surface cracking after overdrying",
+    "layer delamination in crossed-strip or hybrid variants",
+    "ink feathering or excessive absorption",
+    "persistent tackiness from incomplete washing or drying",
+    "microbial spoilage if stored wet"
+  ],
+  "storage": {
+    "baseline": "Store only after complete drying, flat, clean and protected from liquid water and excessive humidity.",
+    "archival_claim": "NOT_ESTABLISHED",
+    "rule": "Long-term stability, mold resistance and conservation behavior require separate aging tests."
+  },
+  "janus_bridge": {
+    "conceptual_chain": [
+      "FERMENTATION",
+      "BACTERIAL_CELLULOSE",
+      "SHEET_FORMATION",
+      "PRESSING",
+      "WRITING_SURFACE"
+    ],
+    "ancient_egypt_relation": "FUNCTIONAL_ANALOGY_ONLY",
+    "ancient_egypt_claim_status": "UNCONFIRMED"
+  },
+  "source_context": {
+    "conversation_checkpoint": "2026-08-19 21:21 local screenshot supplied by Hawkar",
+    "idea": "Repeat the structural logic of papyrus manufacture using a SCOBY bacterial-cellulose pellicle and compare whole-sheet, cross-laminated and plant-fiber hybrid variants."
+  },
+  "next_gate": "PREPARE A/B/C MATCHED SAMPLES, RECORD MASS-DIMENSION-DRYING DATA, RUN WRITING AND SACRIFICIAL MECHANICAL TESTS, THEN PROMOTE ONLY REPRODUCIBLE OBSERVATIONS."
+}
