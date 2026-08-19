@@ -1,0 +1,242 @@
+{
+  "artifact_uuid": "JANUS-SCOBY-OIL-SPILL-SORBENT-SPONGE-2258-2026-08-19-v1.1",
+  "version": "v1.1",
+  "timestamp_local": "2026-08-19T22:58:00+03:00",
+  "repository": "Hawkar-usls/SCOBY-D0",
+  "status": "EVIDENCE_GATED_ENVIRONMENTAL_REMEDIATION_R_AND_D_PROGRAM",
+  "supersedes": "JANUS_SCOBY_OIL_SPILL_SORBENT_SPONGE_2233_v1.0.json",
+  "parent_artifacts": [
+    "JANUS_SCOBY_OIL_SPILL_SORBENT_SPONGE_2233_v1.0.json",
+    "JANUS_BIOPAPYRUS_RECIPE_v1.0.json",
+    "JANUS_BIOPAPYRUS_OIL_BRIDGE_2222_v1.0.json",
+    "JANUS_SCOBY_MUMMY_OIL_SORPTION_DECAY_GATE_v1.0.json"
+  ],
+  "project_name": "SCOBY OIL-SPILL SORBENT SPONGE",
+  "core_hypothesis": "Bacterial-cellulose pellicles produced by kombucha/SCOBY can be converted into retrievable low-density porous sorbent pads or boom inserts for uptake of floating oil, followed by contained mechanical recovery of part of the oil fraction and controlled end-of-life processing of the spent sorbent.",
+  "claim_boundary": {
+    "supported": [
+      "Engineered bacterial-cellulose aerogels are a literature-supported oil-sorbent material class.",
+      "Pore-preserving drying and wettability control are key design variables.",
+      "Mechanical squeezing/pressing can be evaluated as an oil-recovery step."
+    ],
+    "not_yet_supported": [
+      "Raw wet SCOBY is an effective field oil-spill sorbent.",
+      "Green-tea-derived SCOBY necessarily absorbs more oil than black-tea-derived SCOBY.",
+      "Microwave-treated SCOBY is a safe or superior field sorbent.",
+      "Any SCOBY-D0 prototype is ready for real petroleum-spill deployment."
+    ]
+  },
+  "design_principle": {
+    "bio_papyrus_branch": "PRESS_AND_DENSIFY -> LOW_POROSITY_WRITING_SHEET",
+    "oil_sponge_branch": "PRESERVE_PORES -> LOW_DENSITY_SORBENT",
+    "shared_material": "BACTERIAL_CELLULOSE",
+    "key_inversion": "The BioPapyrus route intentionally collapses pores for a coherent sheet; the oil-sponge route attempts to preserve pore volume and improve oil-over-water selectivity."
+  },
+  "feedstock_screen": {
+    "primary_arms": [
+      {
+        "id": "T_GREEN",
+        "feed": "GREEN_TEA",
+        "role": "PRIMARY_PRODUCTION_CANDIDATE",
+        "reason": "Primary literature reports higher bacterial-cellulose yield than black tea for one tested Kombucha-associated strain; this is a yield hypothesis, not an oil-sorption result."
+      },
+      {
+        "id": "T_BLACK",
+        "feed": "BLACK_TEA",
+        "role": "MATCHED_CONTROL",
+        "reason": "Common kombucha substrate and direct comparator for the green-tea arm."
+      }
+    ],
+    "optional_later_arms": ["OOLONG_TEA", "MIXED_TEA", "NON_TEA_BC_FEEDSTOCK"],
+    "winner_rule": "Select feedstock by the joint outcome of dry BC yield, final dry density, porosity proxy, oil uptake, water uptake, oil/water selectivity, mechanical integrity, reproducibility and cost. Tea identity alone cannot define the winner."
+  },
+  "drying_structure_matrix": [
+    {
+      "id": "D0",
+      "name": "PRESSED_AIR_DRY",
+      "role": "DENSE_LOW_POROSITY_CONTROL",
+      "expected_tradeoff": "Strong sheet, likely lower uptake because of pore collapse."
+    },
+    {
+      "id": "D1",
+      "name": "AIR_DRY_LOW_COMPACTION",
+      "role": "LOW_COST_BASELINE",
+      "expected_tradeoff": "Simpler process but substantial shrinkage/densification may remain."
+    },
+    {
+      "id": "D2",
+      "name": "FREEZE_DRY_UNMODIFIED",
+      "role": "POROSITY_BASELINE",
+      "expected_tradeoff": "High pore volume candidate but native bacterial cellulose remains hydrophilic."
+    },
+    {
+      "id": "D3",
+      "name": "FREEZE_DRY_ENVIRONMENTALLY_COMPATIBLE_HYDROPHOBIC",
+      "role": "LEAD_OIL_WATER_SELECTIVITY_BRANCH",
+      "expected_tradeoff": "Closest conceptual match to high-performance BC oil sorbents; requires leachate/ecotoxicity validation before environmental use."
+    },
+    {
+      "id": "D4",
+      "name": "CONTROLLED_CARBONIZED_BC_AEROGEL",
+      "role": "ADVANCED_LAB_BRANCH",
+      "expected_tradeoff": "Potentially high oil uptake and hydrophobicity, but requires controlled thermal processing, atmosphere characterization and contaminant analysis."
+    },
+    {
+      "id": "D5",
+      "name": "MICROWAVE_TRANSFORMED_BC",
+      "role": "BLIND_MATERIAL_IDENTITY_BRANCH_ONLY",
+      "status": "BLOCKED_FOR_FIELD_PRODUCT",
+      "reason": "Uncontrolled microwave heating can cause nonuniform heating, steam generation, charring, arcing, ignition and chemically heterogeneous residues. Visual porosity is not proof of useful aerogel structure.",
+      "promotion_requires": [
+        "measured process history",
+        "mass balance",
+        "material identity",
+        "bulk density",
+        "porosity characterization",
+        "surface chemistry",
+        "oil uptake",
+        "water uptake",
+        "oil/water selectivity",
+        "mechanical integrity",
+        "leachables/contaminants"
+      ],
+      "absolute_rule": "NEVER_MICROWAVE_OIL_LOADED_OR_PETROLEUM_CONTAMINATED_SORBENT"
+    }
+  ],
+  "stage_1_geometry": {
+    "square_coupon": {
+      "dimensions_mm": [50, 50],
+      "area_cm2": 25,
+      "purpose": "Matched sorption screening"
+    },
+    "strip_coupon": {
+      "dimensions_mm": [25, 100],
+      "area_cm2": 25,
+      "purpose": "Matched area plus handling/retrieval/flex testing"
+    },
+    "replicates_per_cell": 5,
+    "primary_factorial_cells": "2 tea feeds x 4 non-carbonized drying branches x 5 replicates = 40 primary coupons before geometry duplicates",
+    "matching_rule": "Use the same consortium, sugar loading, fermentation age window, pellicle maturity definition, wash endpoint, starting wet-mass normalization, drying endpoint and test temperature across matched comparisons."
+  },
+  "stage_2_and_3_scaleup": {
+    "stage_2_pad": {
+      "dimensions_mm": [100, 100],
+      "gate": "Only fabricate after a stage-1 branch passes uptake, selectivity, retention and integrity gates."
+    },
+    "stage_3_module": {
+      "dimensions_mm": [300, 300, 20],
+      "volume_cm3": 1800,
+      "mass_formula": "dry_mass_g = volume_cm3 * density_g_cm3",
+      "oil_capacity_formula": "absorbed_oil_g = dry_mass_g * measured_oil_uptake_g_g",
+      "example_only": {
+        "reference_density_mg_cm3": 5.8,
+        "estimated_dry_mass_g": 10.44,
+        "at_10_g_g_oil_uptake_g": 104.4,
+        "at_42_g_g_oil_uptake_g": 438.48,
+        "at_80_g_g_oil_uptake_g": 835.2,
+        "at_100_g_g_oil_uptake_g": 1044.0
+      },
+      "boundary": "Examples are simple mass-balance illustrations. Field crude-oil capacity must be measured and may be substantially lower due to water competition, waves, suspended solids, viscosity, temperature and retrieval losses."
+    }
+  },
+  "safe_first_pass_test": {
+    "oil_surrogate": "FOOD_GRADE_VEGETABLE_OIL",
+    "water_phase": "CLEAN_WATER",
+    "reason": "Allows screening of structure, uptake, selectivity and squeeze recovery without immediately introducing petroleum hazards.",
+    "petroleum_transition_gate": "Only after safe-surrogate performance is replicated and appropriate chemical/fire/environmental/waste controls are available."
+  },
+  "measurement_schema": {
+    "required": [
+      "sample_id",
+      "tea_feed",
+      "scoby_batch_id",
+      "drying_branch",
+      "geometry",
+      "dry_mass_g",
+      "dimensions_mm",
+      "dry_density_if_known",
+      "oil_mass_after_standardized_drain_g",
+      "water_mass_after_standardized_drain_g",
+      "recovered_oil_mass_after_press_g",
+      "sorbent_mass_after_test_g",
+      "fragment_loss_percent",
+      "float_or_sink_behavior",
+      "visual_failure_mode"
+    ],
+    "derived": {
+      "oil_uptake_g_g": "(oil_loaded_mass_after_standardized_drain_g - dry_mass_g) / dry_mass_g",
+      "water_uptake_g_g": "(water_loaded_mass_after_standardized_drain_g - dry_mass_g) / dry_mass_g",
+      "oil_water_selectivity": "oil_uptake_g_g / water_uptake_g_g",
+      "oil_retention_fraction": "oil_mass_after_standardized_drain / initially_absorbed_oil_mass",
+      "mechanical_recovery_fraction": "recovered_oil_mass_after_press / initially_absorbed_oil_mass",
+      "sorbent_retrieval_fraction": "retrieved_dry_equivalent_sorbent_mass / initial_dry_sorbent_mass"
+    }
+  },
+  "promotion_gates": {
+    "G1_UPTAKE": "Median surrogate-oil uptake >= 10 g/g.",
+    "G2_SELECTIVITY": "Median oil/water uptake ratio >= 5.",
+    "G3_RETENTION": "At least 80% of absorbed surrogate oil remains after standardized passive draining.",
+    "G4_RETRIEVABILITY": "At least 95% dry-equivalent sorbent mass remains retrievable with no hazardous fragmentation.",
+    "G5_RECOVERY": "If the closed-loop route is claimed, pressing/draining recovers >= 50% of absorbed surrogate oil.",
+    "G6_BATCH_REPLICATION": "Lead branch reproduced in at least two independent SCOBY batches.",
+    "G7_SCALEUP": "100 x 100 mm pad preserves at least 80% of coupon-level g/g performance and remains retrievable.",
+    "G8_PETROLEUM_SIMULATION": "Only after G1-G7: controlled petroleum simulation with hydrocarbon analysis and waste plan.",
+    "G9_FIELD": "Field use requires ecological leachate testing, contaminant-specific performance, boom/pad retrieval validation, regulatory review and a complete spent-sorbent chain."
+  },
+  "field_product_architecture": {
+    "preferred": "RETRIEVABLE_PAD_OR_BOOM_INSERT",
+    "avoid": "LOOSE_POWDER_OR_SMALL_FRAGMENTS",
+    "features": [
+      "large retrievable module",
+      "positive buoyancy",
+      "mechanically robust containment mesh if needed",
+      "high oil-over-water selectivity",
+      "known saturated mass limit",
+      "visible retrieval marker",
+      "single-use tracking ID"
+    ]
+  },
+  "closed_loop_end_of_life": {
+    "chain": [
+      "RETRIEVE_SATURATED_SPONGE",
+      "TRANSFER_TO_CONTAINED_DRAINING_STATION",
+      "MECHANICALLY_DRAIN_OR_PRESS_WHERE_VALIDATED",
+      "COLLECT_OIL_WATER_LIQUID_FRACTION",
+      "SEPARATE_PHASES_IN_CONTROLLED_INDUSTRIAL_PROCESS",
+      "CHARACTERIZE_RECOVERED_HYDROCARBON_FRACTION",
+      "ROUTE_RECOVERABLE_OIL_TO_LICENSED_REPROCESSING_OR_ENERGY_RECOVERY",
+      "ROUTE_SPENT_BC_TO CONTROLLED_MATERIAL_RECOVERY_OR_HAZARDOUS_WASTE_BASED_ON_CONTAMINANT_ANALYSIS"
+    ],
+    "prohibited": [
+      "open burning",
+      "household microwave treatment",
+      "return to kombucha culture",
+      "composting petroleum-loaded sorbent",
+      "shredding or abandoning spent sorbent in the environment"
+    ]
+  },
+  "decision_logic": {
+    "1": "FIRST_OPTIMIZE_BC_PRODUCTION_YIELD_WITH_MATCHED_GREEN_VS_BLACK_TEA_DATA",
+    "2": "THEN_COMPARE_DRYING_ARCHITECTURES_WITH_FIXED_FEEDSTOCK_AND_BATCH",
+    "3": "THEN_COMPARE_OIL_AND_WATER_UPTAKE_UNDER_IDENTICAL_DRAINING_PROTOCOLS",
+    "4": "THEN_MEASURE_PRESS_RECOVERY_AND_MODULE_INTEGRITY",
+    "5": "ONLY_THEN_SCALE_FROM_COUPON_TO_PAD_TO_MODULE",
+    "6": "PETROLEUM_TESTING_REQUIRES_SEPARATE_CONTROLLED_GATE",
+    "7": "MICROWAVE_BRANCH_REMAINS_MATERIAL_IDENTITY_ONLY_UNTIL_CHARACTERIZED"
+  },
+  "source_anchors": [
+    {
+      "doi": "10.1007/s00284-008-9228-3",
+      "role": "green-vs-black tea bacterial-cellulose yield comparison"
+    },
+    {
+      "doi": "10.1016/j.colsurfa.2025.136294",
+      "role": "ultralight superhydrophobic bacterial-cellulose aerogel oil sorption and squeeze recyclability"
+    },
+    {
+      "doi": "10.1016/j.ijbiomac.2024.137650",
+      "role": "hydrophobic bacterial-cellulose composite aerogel oil/water separation"
+    }
+  ],
+  "next_gate": "EXECUTE A MATCHED GREEN_TEA VS BLACK_TEA PRODUCTION SCREEN, THEN D0-D3 DRYING SCREEN ON 50 x 50 mm COUPONS; RECORD DRY MASS, DENSITY, OIL UPTAKE, WATER UPTAKE, SELECTIVITY, RETENTION, PRESS RECOVERY AND RETRIEVABILITY; DO NOT PROMOTE MICROWAVE OR PETROLEUM FIELD CLAIMS BEFORE THEIR SEPARATE GATES PASS."
+}
