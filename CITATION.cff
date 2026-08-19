@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+title: "SCOBY-D0"
+message: "If you use SCOBY-D0 methods or artifacts, please cite the repository and the specific versioned JSON gate used."
+type: software
+authors:
+  - name: "Hawkar-usls contributors"
+repository-code: "https://github.com/Hawkar-usls/SCOBY-D0"
+url: "https://github.com/Hawkar-usls/SCOBY-D0"
+license: "Apache-2.0"
+version: "2026.08.20-marine-m1a"
+date-released: "2026-08-20"
+abstract: "Evidence-gated bacterial-cellulose research platform with an active marine oil-sorbent validation program, machine-readable experimental gates, and bidirectional JANUS forward/reverse audit rules."
+keywords:
+  - bacterial cellulose
+  - oil spill
+  - sorbent
+  - marine pollution
+  - oil-water separation
+  - reproducibility
+  - evidence gating
