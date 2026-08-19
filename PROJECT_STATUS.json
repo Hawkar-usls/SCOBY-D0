@@ -1,87 +1,70 @@
 {
-  "schema_id": "hawkar.project-status.v1",
+  "schema_id": "hawkar.project-status.v2",
   "project": "SCOBY-D0",
   "repository": "https://github.com/Hawkar-usls/SCOBY-D0",
-  "last_reviewed": "2026-08-09",
-  "portfolio_class": "early_research_computational_biomanufacturing",
-  "maturity": "EARLY_RESEARCH",
-  "completion_status": "ACTIVE_HARDENED_CANDIDATE_LEDGER_NO_ADMISSION_CHANGE",
-  "summary": "SCOBY-D0 has 10 context-separated ingestion-authoritative observations and a fail-closed v0.6.6 discovery ledger expressed on the exact 11-field v0.6.3 hardened comparison surface. Six literature candidates are tracked; two are fully bound single measurement contexts, but no two candidates share an exact hardened key and no pair has been admitted. Candidate ranking cannot mutate authority, pooling, the biological reference vector, or Pareto state.",
-  "core_invariants": [
-    "GM_PRODUCER_NE_GM_ACETATE",
-    "SAME_MOLECULE_NE_SAME_PHYSIOLOGICAL_EVENT",
-    "CANDIDATE_LEDGER_NE_EVIDENCE_AUTHORITY",
-    "SINGLE_FULLY_BOUND_NE_COMPARABLE_READY",
-    "METHOD_AUTHORITY_ONLY_NE_BIOLOGICAL_COHORT",
-    "PROTOCOL_NE_NUMERIC_OBSERVATION",
-    "LITERAL_ELEVEN_FIELD_KEY_REQUIRED",
-    "SEMANTIC_HARMONIZATION_MUST_NOT_ERASE_REAL_PREANALYTIC_DIFFERENCES",
-    "AT_LEAST_4_HOURS_NE_12_HOURS_WATER_ONLY",
-    "EDTA_PLASMA_NE_HEPARIN_PLASMA",
-    "SD_NE_CI95",
-    "RANKING_NE_ADMISSION",
-    "DISTINCT_COHORT_ESTABLISHED_REQUIRES_PAIR_SPECIFIC_EVIDENCE",
-    "COMPARABLE_READY_NE_POOLED_REFERENCE",
-    "BIOLOGICAL_REFERENCE_VECTOR_STILL_NOT_COLLAPSED",
-    "PARETO_SEARCH_REMAINS_BLOCKED",
+  "last_reviewed": "2026-08-20",
+  "portfolio_class": "evidence_gated_bacterial_cellulose_research_platform",
+  "maturity": "EARLY_R_AND_D",
+  "completion_status": "ACTIVE_MARINE_M1A_PREREGISTRATION_WITH_LEGACY_EVIDENCE_TRACK_PRESERVED",
+  "summary": "SCOBY-D0 now exposes a clear multi-track structure. The active lead application is a low-cost retrievable bacterial-cellulose sorbent for oil-on-water cleanup. Two processing finalists have been preregistered for M1A: D3 freeze-dried BC with minimal environmentally compatible hydrophobic surface engineering as the performance lead, and D1 low-compaction air-dried BC as the cost-down challenger. Neither is an empirical winner yet. The legacy C2 context/evidence program remains preserved and unchanged in authority.",
+  "active_tracks": {
+    "marine_oil_sorbent": {
+      "priority": 1,
+      "status": "M1A_FINALISTS_SELECTED_DESIGN_LOOP_CLOSED_DATA_LOOP_OPEN",
+      "lead_gate": "JANUS_SCOBY_MARINE_DYNAMIC_SALTWATER_BOOM_GATE_0018_v1.0.json",
+      "finalist_gate": "JANUS_SCOBY_M1A_FINALISTS_EXTERNAL_VALIDATION_0036_v1.0.json",
+      "finalists": [
+        "D3_FREEZE_DRY_PLUS_MINIMAL_ECO_HYDROPHOBIC_SURFACE_ENGINEERING",
+        "D1_LOW_COMPACTION_AIR_DRY"
+      ],
+      "winner": "NOT_YET",
+      "next_gate": "Finish matched Stage-0 feedstock/process screen; fabricate 100x100 mm finalists; run M1A fresh-water vs artificial-seawater static test with D2 and commercial controls."
+    },
+    "biopapyrus_and_material_process": {
+      "priority": 2,
+      "status": "EXPERIMENTAL_AND_COMPARATIVE",
+      "claim_boundary": "Modern BC sheet research and Egyptian lexical/process parallels do not demonstrate ancient SCOBY papyrus."
+    },
+    "legacy_c2_context_engine": {
+      "priority": 3,
+      "status": "PRESERVED_V0_6_6_HARDENED_CANDIDATE_LEDGER",
+      "authority_change": "NONE",
+      "human_reference_standard": "NOT_ESTABLISHED",
+      "pareto_search": "BLOCKED_PENDING_REAL_HARDENED_PAIR_AND_SEPARATE_PREREGISTRATION"
+    }
+  },
+  "marine_invariants": [
+    "FINALIST_NE_EMPIRICAL_WINNER",
+    "MAX_G_PER_G_NE_FIELD_SUCCESS",
+    "NATIVE_BC_HYDROPHILICITY_MUST_BE_MEASURED_NOT_ASSUMED_AWAY",
+    "DEPLOYED_MATERIAL_MUST_BE_RETRIEVABLE",
+    "PETROLEUM_FIELD_CLAIM_BLOCKED_BEFORE_CONTROLLED_LAB_GATE",
+    "COST_PER_KG_RECOVERED_OIL_IS_PRIMARY_SCALEUP_METRIC",
+    "EXTERNAL_INTEREST_NE_VALIDATION",
+    "FORWARD_PASS_REQUIRES_REVERSE_AUDIT",
     "HASH_IS_INTEGRITY_NOT_TRUTH"
   ],
-  "implemented_scope": [
-    "v0.2 source-equivalence",
-    "v0.3 synthetic context search",
-    "v0.4 evidence admission",
-    "v0.5 extraction lineage",
-    "v0.6 first ingestion-authoritative observation",
-    "v0.6.1 expansion to 10 observations / 6 context buckets",
-    "v0.6.2 exact comparable-context qualification",
-    "v0.6.3 cohort/preanalytic/analytical-method hardening",
-    "v0.6.4 hardened-pair search frontier",
-    "v0.6.5 cohort/method resolution frontier",
-    "v0.6.5.1 Maastricht blocker resolution",
-    "v0.6.5.2 Maastricht public evidence boundary",
-    "v0.6.5.3 Oslo method-provenance correction",
-    "v0.6.5.4 Oslo public method/cohort evidence boundary",
-    "v0.6.6 exact-key hardened candidate ledger"
+  "marine_promotion_gates": [
+    "M1_G1 oil uptake in artificial seawater",
+    "M1_G2 oil/water selectivity",
+    "M1_G3 retention after retrieval/drain",
+    "M1_G4 >=99 percent material retrieval with no hazardous fragmentation",
+    "M1_G5 single contained press recovery if claimed",
+    "M1_G6 salinity robustness",
+    "M1_G7 dynamic robustness",
+    "M1_G8 independent-batch replication"
   ],
-  "reference_state": {
-    "authoritative_observations": 10,
-    "existing_context_buckets": 6,
-    "candidate_count": 6,
-    "measurement_key_fully_bound_singles": 2,
-    "exact_eleven_field_matching_pairs": 0,
-    "real_hardened_ready_pairs": 0,
-    "cohort_independence_resolved_pairs": 0,
-    "new_authoritative_observations": 0,
-    "cross_study_aggregation_allowed": false,
-    "pooled_reference_created": false,
-    "averaging_performed": false,
-    "human_reference_standard": "NOT_ESTABLISHED",
-    "external_review": "NOT_YET_ESTABLISHED",
-    "biological_reference_vector": "UNSET_PENDING_PRIMARY_DATA_AND_EXTERNAL_REVIEW",
-    "evidence_bound_pareto_search": "BLOCKED_PENDING_REAL_HARDENED_PAIR_AND_SEPARATE_V0_7_PREREGISTRATION"
+  "external_validation": {
+    "status": "OUTREACH_READY_NOT_SENT",
+    "primary_target": "CEDRE",
+    "materials_science_target": "Wuhan Textile University / Bo Yang",
+    "ukraine_characterization_target": "Chuiko Institute of Surface Chemistry, NAS of Ukraine",
+    "packet": "docs/OUTREACH_EXTERNAL_VALIDATION.md"
   },
-  "current_reference_manifest": "evidence/reference_context/REFERENCE_DATASET_V0_6_6.json",
-  "current_candidate_ledger": "evidence/reference_context/HARDENED_CANDIDATE_LEDGER_V0_6_6.json",
-  "candidate_ledger_sha256": "d28cdcbac1e9cf401e3eb2074a4fb7cb6e85387207e867901f37d2cc528a292d",
-  "fully_bound_singles": [
-    "MASLD_2024_HEALTHY_CONTROL_ACETATE",
-    "USDA_NPS_2024_HEALTHY_ACETATE"
-  ],
-  "not_claimed": [
-    "a real hardened comparable pair",
-    "cohort independence from publication or geographic difference alone",
-    "method equivalence from broad technology-family similarity",
-    "pooled human acetate reference value",
-    "universal healthy-human SCFA reference vector",
-    "clinical safety or efficacy",
-    "safe human formulation from a simulation optimum",
-    "human dosing guidance",
-    "validated GMO strain",
-    "wet-lab genetic engineering protocol"
-  ],
+  "license": "Apache-2.0",
   "related": {
+    "registry": "https://github.com/Hawkar-usls/janus-meta-registry",
     "genesis": "https://github.com/Hawkar-usls/Janus_Genesis",
-    "twai": "https://github.com/Hawkar-usls/ESP32-TWAI-CAN",
-    "registry": "https://github.com/Hawkar-usls/janus-meta-registry"
+    "twai": "https://github.com/Hawkar-usls/ESP32-TWAI-CAN"
   }
 }
