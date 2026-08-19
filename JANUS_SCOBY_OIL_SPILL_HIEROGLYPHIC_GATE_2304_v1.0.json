@@ -1,0 +1,216 @@
+{
+  "artifact_uuid": "JANUS-SCOBY-OIL-SPILL-HIEROGLYPHIC-GATE-2304-2026-08-19-v1.0",
+  "version": "v1.0",
+  "timestamp_local": "2026-08-19T23:04:00+03:00",
+  "repository": "Hawkar-usls/SCOBY-D0",
+  "status": "EGYPTOLOGICAL_REVERSE_PATTERN_GATE",
+  "parent_artifact": "JANUS_SCOBY_OIL_SPILL_SORBENT_SPONGE_2258_v1.1.json",
+  "source_gate": "GREEN vs BLACK -> D0-D3 drying -> 50x50 coupons -> oil/water test -> press recovery -> pad -> big sponge",
+  "method": "Translate only operational concepts that have defensible Ancient Egyptian lexical equivalents, preserve modern experimental concepts as MODERN_CONSTRUCT, then search for independently attested Egyptian process parallels.",
+  "critical_boundary": {
+    "rule": "Lexical or procedural overlap is not evidence that ancient Egyptians used SCOBY, kombucha, bacterial cellulose aerogels, tea-derived sorbents, or an oil-spill sponge.",
+    "tea_claim": "NO_ANCIENT_EGYPTIAN_TEA_MATCH_CLAIMED",
+    "scoby_claim": "NOT_DEMONSTRATED",
+    "oil_spill_sponge_claim": "NOT_DEMONSTRATED",
+    "metric_coupon_claim": "MODERN_EXPERIMENTAL_CONSTRUCT"
+  },
+  "gate_projection": [
+    {
+      "stage": "GREEN_vs_BLACK",
+      "modern_meaning": "green-tea versus black-tea production arms",
+      "egyptian_nodes": [
+        {
+          "transliteration": "wꜣḏ",
+          "hieroglyphs": "𓇅𓆓𓏛",
+          "TLA_lemma_id": "43580",
+          "meaning": "to be green; to flourish",
+          "attestation": "2886 BCE-14 CE",
+          "match": "COLOR_ONLY"
+        },
+        {
+          "transliteration": "km",
+          "hieroglyphs": "𓆎𓅓",
+          "TLA_lemma_id": "401218",
+          "meaning": "black",
+          "attestation": "2414 BCE-324 CE",
+          "match": "COLOR_ONLY"
+        }
+      ],
+      "verdict": "LEXICAL_COLOR_PARALLEL_ONLY; NO_TEA_EQUIVALENCE"
+    },
+    {
+      "stage": "D0_D3_DRYING",
+      "modern_meaning": "different drying architectures",
+      "egyptian_nodes": [
+        {
+          "transliteration": "šw",
+          "hieroglyphs": "𓆄𓅱𓇳",
+          "TLA_lemma_id": "152730",
+          "meaning": "dry; dried",
+          "attestation": "1580 BCE-30 BCE",
+          "match": "DIRECT_RESULT_STATE"
+        }
+      ],
+      "verdict": "STRONG_LEXICAL_MATCH_FOR_DRY_STATE; FREEZE_DRYING_AND_HYDROPHOBIC_ENGINEERING_ARE_MODERN"
+    },
+    {
+      "stage": "COUPON_50x50",
+      "modern_meaning": "standardized square material test coupon",
+      "egyptian_nodes": [
+        {
+          "transliteration": "ḥbs.wt",
+          "hieroglyphs": "𓎛𓃀𓋴𓅱𓏏𓋳",
+          "TLA_lemma_id": "103920",
+          "meaning": "piece of cloth; covering; wrapping",
+          "attestation": "1292 BCE-712 BCE",
+          "match": "FUNCTIONAL_MATERIAL_PIECE_ANALOGY"
+        }
+      ],
+      "verdict": "MATERIAL_PIECE_HAS_AN_ANCIENT_PARALLEL; 50x50_MM_AND_STANDARDIZED_COUPON_TESTING_ARE_MODERN"
+    },
+    {
+      "stage": "OIL_WATER_TEST",
+      "modern_meaning": "compare oil uptake with water uptake",
+      "egyptian_nodes": [
+        {
+          "transliteration": "mw",
+          "hieroglyphs": "𓈗",
+          "TLA_lemma_id": "69000",
+          "meaning": "water",
+          "attestation": "2686 BCE-324 CE",
+          "match": "DIRECT"
+        },
+        {
+          "transliteration": "mrḥ.t",
+          "hieroglyphs": "𓌸𓂋𓎛𓏏𓏊𓏥",
+          "TLA_lemma_id": "72840",
+          "meaning": "fat in general; unguent/anointing oil",
+          "attestation": "3350 BCE-324 CE",
+          "match": "DIRECT_MATERIAL_CLASS"
+        }
+      ],
+      "related_soak_node": {
+        "transliteration": "sp",
+        "TLA_lemma_id": "132400",
+        "meaning": "to dip; to soak; to immerse",
+        "hieroglyphic_corpus_occurrences": 0,
+        "demotic_successor": "sp(j), attested 664 BCE-250 CE, to immerse/moisten/soak",
+        "status": "LEXEME_SUPPORTED_BUT_NO_HIEROGLYPHIC_CORPUS_OCCURRENCE"
+      },
+      "verdict": "OIL_AND_WATER_ARE_STRONGLY_ATTESTED; CONTROLLED_SELECTIVITY_TEST_IS_MODERN"
+    },
+    {
+      "stage": "PRESS_RECOVERY",
+      "modern_meaning": "mechanically squeeze oil-loaded sorbent and recover liquid oil fraction",
+      "egyptian_nodes": [
+        {
+          "transliteration": "nwdi̯",
+          "hieroglyphs_attested_example": "𓍉𓏌𓏲𓏏𓏭𓊮",
+          "TLA_lemma_id": "81540",
+          "meaning": "to press out oil; to cook an unguent",
+          "attestation": "1479 BCE-161 CE",
+          "match": "DIRECT_PROCESS_MATCH"
+        },
+        {
+          "transliteration": "sꜥrq",
+          "hieroglyphs": "𓋴𓂝𓂋𓈎𓏝",
+          "TLA_lemma_id": "129050",
+          "meaning": "to wring out laundry",
+          "attestation": "2345 BCE-2181 BCE",
+          "match": "DIRECT_MECHANICAL_LIQUID_REMOVAL_FROM_TEXTILE_MATCH"
+        }
+      ],
+      "verdict": "VERY_STRONG_PROCEDURAL_PARALLEL: EGYPTIAN HAS BOTH OIL-PRESSING AND WRINGING-LIQUID-FROM-CLOTH OPERATORS"
+    },
+    {
+      "stage": "PAD",
+      "modern_meaning": "retrievable sorbent pad or boom insert",
+      "egyptian_nodes": [
+        {
+          "transliteration": "mnḫ.t",
+          "hieroglyphs": "𓏠𓈖𓐍𓏏𓋲",
+          "TLA_lemma_id": "71170",
+          "meaning": "cloth; garment; mummy wrapping",
+          "attestation": "3150 BCE-324 CE",
+          "match": "STRONG_FORM_FACTOR_ANALOGY_NOT_MATERIAL_IDENTITY"
+        },
+        {
+          "transliteration": "sšr.w",
+          "hieroglyphs": "𓋴𓈙𓂋𓅱𓋳",
+          "TLA_lemma_id": "145530",
+          "meaning": "linen fabric",
+          "attestation": "2800 BCE-324 CE",
+          "match": "TEXTILE_CONTROL_ANALOGY"
+        }
+      ],
+      "verdict": "STRONG_ANCIENT_TEXTILE_FORM_FACTOR; NO_BACTERIAL_CELLULOSE_IDENTITY"
+    },
+    {
+      "stage": "BIG_SPONGE",
+      "modern_meaning": "large porous oil-sorbent module",
+      "egyptian_nodes": [],
+      "verdict": "NO_SECURE_ANCIENT_EGYPTIAN_SPONGE_OR_POROUS_OIL_SORBENT_EQUIVALENT_IDENTIFIED_IN_THIS_PASS"
+    }
+  ],
+  "reverse_pattern": {
+    "modern_chain": [
+      "MATERIAL_PAD",
+      "CONTACT_WITH_OIL_AND_WATER",
+      "LIQUID_UPTAKE",
+      "RETRIEVE",
+      "WRING_OR_PRESS",
+      "RECOVER_OIL"
+    ],
+    "egyptian_attested_operator_chain": [
+      "mnḫ.t / ḥbs.wt = cloth or wrapping / piece of cloth",
+      "mw = water",
+      "mrḥ.t = oil/fat/unguent",
+      "sp = dip/soak lexeme (hieroglyphic corpus occurrence absent; later Demotic continuation attested)",
+      "sꜥrq = wring out laundry",
+      "nwdi̯ = press out oil"
+    ],
+    "compact_hieroglyphic_projection": "𓏠𓈖𓐍𓏏𓋲 + 𓈗 + 𓌸𓂋𓎛𓏏𓏊𓏥 -> 𓋴𓂝𓂋𓈎𓏝 / 𓍉𓏌𓏲𓏏𓏭𓊮",
+    "gloss": "cloth/wrapping + water + oil -> wring textile / press out oil",
+    "status": "COMPOSITE_OF_INDEPENDENTLY_ATTESTED_LEXEMES; NOT_AN_ANCIENT_QUOTATION"
+  },
+  "match_assessment": {
+    "direct_lexical_nodes": ["DRY", "WATER", "OIL", "CLOTH/WRAPPING"],
+    "direct_process_nodes": ["WRING_OUT_LAUNDRY", "PRESS_OUT_OIL"],
+    "partial_or_late_node": ["DIP/SOAK"],
+    "modern_only_nodes": ["GREEN_TEA", "BLACK_TEA", "FREEZE_DRY", "HYDROPHOBIC_ENGINEERING", "50x50_MM_COUPON", "OIL_WATER_SELECTIVITY_METRIC", "BACTERIAL_CELLULOSE", "BIG_SORBENT_SPONGE"],
+    "procedural_overlap": "STRONG_AT_THE_LIQUID_REMOVAL_AND_OIL_RECOVERY_CORE",
+    "material_identity_overlap": "NOT_DEMONSTRATED",
+    "whole_recipe_match": "PARTIAL_COMPOSITE_MATCH_NOT_SINGLE_TEXT_MATCH"
+  },
+  "strongest_new_result": {
+    "finding": "The modern press-recovery stage independently maps to two attested Egyptian operators: nwdi̯ 'press out oil' and sꜥrq 'wring out laundry'. This creates a real ancient procedural bridge between an oil-bearing liquid and a squeezable textile-like carrier.",
+    "importance": "HIGH_FOR_REVERSE_PATTERN_SEARCH",
+    "limitation": "No ancient text was identified in this pass that combines these operators into a SCOBY-like sorbent workflow."
+  },
+  "next_gate": {
+    "name": "EGYPTIAN_COOCCURRENCE_LIQUID_CARRIER_GATE",
+    "search_pairs": [
+      "mrḥ.t + mnḫ.t",
+      "mrḥ.t + ḥbs.wt",
+      "mrḥ.t + sꜥrq",
+      "mw + sꜥrq",
+      "nwdi̯ + textile terms",
+      "soak/dip terms + mrḥ.t + textile terms"
+    ],
+    "goal": "Find a single ancient sentence or tightly connected instruction in which an absorbent textile/material is contacted with oil or another liquid and then squeezed, wrung, pressed, drained or reused.",
+    "promotion_rule": "Do not promote to ANCIENT_SORBENT_PROCESS unless a real textual or material-analysis context joins carrier + liquid + uptake/contact + recovery/removal in one evidence chain."
+  },
+  "sources": [
+    {"authority":"Thesaurus Linguae Aegyptiae","lemma_id":"43580","use":"wꜣḏ green"},
+    {"authority":"Thesaurus Linguae Aegyptiae","lemma_id":"401218","use":"km black"},
+    {"authority":"Thesaurus Linguae Aegyptiae","lemma_id":"152730","use":"šw dry/dried"},
+    {"authority":"Thesaurus Linguae Aegyptiae","lemma_id":"69000","use":"mw water"},
+    {"authority":"Thesaurus Linguae Aegyptiae","lemma_id":"72840","use":"mrḥ.t oil/fat/unguent"},
+    {"authority":"Thesaurus Linguae Aegyptiae","lemma_id":"132400","use":"sp dip/soak; no hieroglyphic corpus occurrence"},
+    {"authority":"Thesaurus Linguae Aegyptiae","lemma_id":"81540","use":"nwdi̯ press out oil"},
+    {"authority":"Thesaurus Linguae Aegyptiae","lemma_id":"129050","use":"sꜥrq wring out laundry"},
+    {"authority":"Thesaurus Linguae Aegyptiae","lemma_id":"71170","use":"mnḫ.t cloth/garment/mummy wrapping"},
+    {"authority":"Thesaurus Linguae Aegyptiae","lemma_id":"103920","use":"ḥbs.wt cloth piece/cover/wrapping"},
+    {"authority":"Thesaurus Linguae Aegyptiae","lemma_id":"145530","use":"sšr.w linen fabric"}
+  ]
+}
