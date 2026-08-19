@@ -1,0 +1,47 @@
+{
+  "artifact_uuid": "JANUS-SCOBY-EGYPTIAN-SINGLE-TEXT-CLOTH-OIL-MOISTEN-GATE-2331-2026-08-19-v1.0",
+  "version": "v1.0",
+  "checkpoint_local": "2026-08-19T23:31:00+03:00",
+  "checkpoint_label": "23:31",
+  "repository": "Hawkar-usls/SCOBY-D0",
+  "status": "PARTIAL_PASS_SINGLE_TEXT_GATE",
+  "mirror_of": "Hawkar-usls/janus-meta-registry@audit/goldprompt-handshake-logic-hardening-v1_1:data/JANUS-SCOBY-EGYPTIAN-SINGLE-TEXT-CLOTH-OIL-MOISTEN-GATE-2331-2026-08-19-v1.0.json",
+  "target_gate": "Find one real Egyptian text where cloth/wrapping + oil/liquid + soaking/moistening + wringing/pressing occur in one local instruction or tightly connected procedure.",
+  "strongest_single_text_match": {
+    "source": "Papyrus Edwin Smith, 17th Dynasty, case sequence around column 5",
+    "TLA_primary_token": "IBUBd3PnW4YIV0SCiUI5BsBRngw",
+    "TLA_parallel_token": "IBUBd5PzWfr4gEpltLlfM4GrEKQ",
+    "transliteration_primary": "wdi̯.ḫr=k sšm.wj.DU n(.j) ḥbs jwḥ m mrḥ.t m-ẖnw msꜣḏ.t.DU=fj",
+    "semantic_summary": "Two swabs/plugs made of cloth/linen are specified as moistened with oil/fat and placed into the nostrils; a nearby parallel instruction repeats the same cloth + oil/fat + moistening structure.",
+    "status": "SAME_TEXT_CLOTH_PLUS_OIL_PLUS_MOISTEN_PASS"
+  },
+  "operator_support": {
+    "sꜥrq": {
+      "hieroglyphs": "𓋴𓂝𓂋𓈎𓏝",
+      "TLA_lemma_id": "129050",
+      "meaning": "wring out laundry",
+      "status": "ATTESTED_SEPARATE_CONTEXT"
+    },
+    "nwdi̯": {
+      "meaning": "press out oil",
+      "status": "ATTESTED_SEPARATE_CONTEXT_FROM_PARENT_GATE"
+    }
+  },
+  "gate_matrix": {
+    "cloth_or_wrapping": "PASS_IN_SINGLE_TEXT",
+    "oil_or_fat": "PASS_IN_SINGLE_TEXT",
+    "moistening_or_impregnation": "PASS_IN_SINGLE_TEXT",
+    "wringing_or_pressing": "ATTESTED_SEPARATELY",
+    "wringing_or_pressing_in_same_instruction": "NOT_YET_FOUND",
+    "oil_recovery_in_same_instruction": "NOT_YET_FOUND",
+    "ancient_scoby_identity": "NOT_DEMONSTRATED"
+  },
+  "modern_to_ancient_projection": {
+    "modern": "PAD -> OIL + WATER -> UPTAKE -> RETRIEVE -> WRING/PRESS -> RECOVER OIL",
+    "same_text_ancient_core_found": "CLOTH -> MOISTEN WITH OIL/FAT -> PLACE/APPLY",
+    "missing_edge": "OIL-BEARING CLOTH -> WRING/PRESS -> RECOVER OIL IN THE SAME PROCEDURE"
+  },
+  "verdict": "PARTIAL_PASS_STRONGER_THAN_LEXICAL_ONLY_MATCH",
+  "scientific_boundary": "The Edwin Smith passage is a medical treatment using oil-moistened linen swabs. It does not describe SCOBY, oil sorption cleanup, wringing those swabs, or recovering oil from them.",
+  "next_gate": "Search medical, embalming, laundry, perfumery and oil-production texts for local co-occurrence of textile + wetting/soaking + oil + squeeze/press, preferably in one sequential instruction."
+}
