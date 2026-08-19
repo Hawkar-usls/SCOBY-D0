@@ -1,74 +1,59 @@
 {
-  "schema": "scoby-d0.research-lineage.v1",
+  "schema": "scoby-d0.research-lineage.v2",
   "project": "SCOBY-D0",
   "origin_date": "2026-08-09",
-  "runtime_references": {
-    "janus_genesis_exact_commit": "98699273bc4dfc08d4eda795869b4bcfe1134b72",
-    "esp32_twai_can_exact_commit": "5781b0644209b8aa26fcb8a50ccc29e8cf67a828"
-  },
-  "frozen_v0_2_source_object_sha256": "ec5401e32a959b5513031a84b9e73b50d28ffba5311bd289117b4d5c3aace0a0",
-  "v0_6_1_multicontext_gate_sha256": "8a34ab7e69b7442e0c219d5b38686b4f2bf496efdb0e4b72d1eeec5c4da63432",
-  "v0_6_2_comparable_gate_sha256": "8efdf5966c60eb7c7f98941426df510109da62e33523406db63e9a8bb98d4069",
-  "v0_6_3_hardening_gate_sha256": "1832de82793c150cfdb2ea8aa6caa06ad7f59f4780eab14d3402973e94fd3649",
-  "v0_6_4_frontier_sha256": "6335af70d49d86139acce91f7d72d85da18c2474e162682460283ac749bb1581",
-  "v0_6_5_resolution_frontier_sha256": "fa219ea4fe41c47e8321bc43a15229e8c21921ccb1fc6be5950b7f4a8fd111e1",
-  "v0_6_5_1_resolution_receipt_sha256": "70cad644fbd76c430d8e97379f08a94c8a2bea0f5749e81143f547217415fcc3",
-  "v0_6_5_2_public_evidence_boundary_sha256": "f40a5b470df00271aa91b1fb71357f0d6e112f271ea35eb9b01e447839d6fcaf",
-  "v0_6_5_3_oslo_provenance_correction_sha256": "820e108f587cd281ff0941836c04c0b89ad8c2eefbf4cd493b54603667490fb8",
-  "v0_6_5_4_oslo_public_boundary_sha256": "c943fdabdfc849b40431c3e84352f3b217ea16f34267f3de45d783877ad83247",
-  "v0_6_6_candidate_ledger": "evidence/reference_context/HARDENED_CANDIDATE_LEDGER_V0_6_6.json",
-  "v0_6_6_candidate_ledger_sha256": "d28cdcbac1e9cf401e3eb2074a4fb7cb6e85387207e867901f37d2cc528a292d",
-  "current_reference_manifest": "evidence/reference_context/REFERENCE_DATASET_V0_6_6.json",
-  "rule": "Artifact hashes identify specific object versions for integrity and lineage; they are not hashes of truth.",
-  "current_reference_state": {
-    "authoritative_observations": 10,
-    "existing_context_buckets": 6,
-    "candidate_count": 6,
-    "measurement_key_fully_bound_singles": 2,
-    "exact_eleven_field_matching_pairs": 0,
-    "real_hardened_ready_pairs": 0,
-    "cohort_independence_resolved_pairs": 0,
-    "new_authoritative_observations": 0,
-    "cross_study_aggregation_allowed": false,
-    "pooled_reference_created": false,
-    "averaging_performed": false,
-    "human_reference_standard": "NOT_ESTABLISHED",
-    "external_review": "NOT_YET_ESTABLISHED",
-    "biological_reference_vector": "UNSET_PENDING_PRIMARY_DATA_AND_EXTERNAL_REVIEW",
-    "pareto_search": "BLOCKED_PENDING_REAL_HARDENED_PAIR_AND_SEPARATE_V0_7_PREREGISTRATION"
-  },
-  "v0_6_6_discovery_state": {
-    "fully_bound_singles": [
-      "MASLD_2024_HEALTHY_CONTROL_ACETATE",
-      "USDA_NPS_2024_HEALTHY_ACETATE"
-    ],
-    "explicit_nonmatch": {
-      "pair": "MASLD_2024_HEALTHY_CONTROL_ACETATE__USDA_NPS_2024_HEALTHY_ACETATE",
-      "differing_fields": [
-        "fasting_duration",
-        "preanalytic_handling",
-        "analytical_method_family"
-      ]
+  "last_extended": "2026-08-20",
+  "rule": "Artifact hashes identify object versions for integrity and lineage; they are not hashes of truth.",
+  "lineages": {
+    "legacy_c2_context_engine": {
+      "status": "PRESERVED",
+      "runtime_references": {
+        "janus_genesis_exact_commit": "98699273bc4dfc08d4eda795869b4bcfe1134b72",
+        "esp32_twai_can_exact_commit": "5781b0644209b8aa26fcb8a50ccc29e8cf67a828"
+      },
+      "v0_6_6_candidate_ledger": "evidence/reference_context/HARDENED_CANDIDATE_LEDGER_V0_6_6.json",
+      "v0_6_6_candidate_ledger_sha256": "d28cdcbac1e9cf401e3eb2074a4fb7cb6e85387207e867901f37d2cc528a292d",
+      "authority_change_from_material_program": "NONE"
     },
-    "near_candidates": [
-      "RYEWEIGHT2_2026_BASELINE_ACETATE",
-      "BAIN_2022_HEALTHY_BLOOD_COLLECTION_METHOD_CONTEXT",
-      "DRB_2025_HEALTHY_PLASMA_ORGANIC_ACIDS",
-      "FRISTEDT_2024_HUMAN_PLASMA_METHOD_AUTHORITY"
-    ],
-    "admission_effect": "NONE"
+    "biopapyrus_material_line": {
+      "status": "ACTIVE_EXPERIMENTAL",
+      "artifacts": [
+        "JANUS_BIOPAPYRUS_RECIPE_v1.0.json",
+        "JANUS_BIOPAPYRUS_EGYPTIAN_HIEROGLYPHIC_MAPPING_v1.0.json",
+        "JANUS_BIOPAPYRUS_OIL_BRIDGE_2222_v1.0.json",
+        "JANUS_SCOBY_MUMMY_OIL_SORPTION_DECAY_GATE_v1.0.json",
+        "JANUS_SCOBY_EGYPTIAN_OIL_WRING_PROCESS_BRIDGE_v1.0.json",
+        "JANUS_SCOBY_EGYPTIAN_SINGLE_TEXT_CLOTH_OIL_MOISTEN_GATE_2332_v1.0.json"
+      ],
+      "claim_boundary": "Modern bacterial-cellulose material/process experiments and Ancient Egyptian lexical/process parallels do not establish ancient SCOBY material identity."
+    },
+    "marine_oil_sorbent_line": {
+      "status": "ACTIVE_LEAD",
+      "artifacts": [
+        "JANUS_SCOBY_OIL_SPILL_SORBENT_SPONGE_2233_v1.0.json",
+        "JANUS_SCOBY_OIL_SPILL_SORBENT_SPONGE_2258_v1.1.json",
+        "JANUS_SCOBY_OIL_SPILL_HIEROGLYPHIC_GATE_2304_v1.0.json",
+        "JANUS_SCOBY_MARINE_DYNAMIC_SALTWATER_BOOM_GATE_0018_v1.0.json",
+        "JANUS_SCOBY_M1A_FINALISTS_EXTERNAL_VALIDATION_0036_v1.0.json"
+      ],
+      "current_state": "M1A_FINALISTS_SELECTED_NOT_EMPIRICALLY_PROMOTED",
+      "finalists": {
+        "A": "D3_FREEZE_DRY_PLUS_MINIMAL_ENVIRONMENTALLY_COMPATIBLE_HYDROPHOBIC_SURFACE_ENGINEERING",
+        "B": "D1_LOW_COMPACTION_AIR_DRY"
+      },
+      "controls": [
+        "D2_FREEZE_DRY_UNMODIFIED",
+        "COMMERCIAL_OIL_SORBENT_PAD"
+      ],
+      "current_winner": null,
+      "next_gate": "STAGE0_FEEDSTOCK_PROCESS_SCREEN -> 100x100_M1A_STATIC_FRESH_VS_ARTIFICIAL_SEAWATER -> M1B_DYNAMIC -> M2_1M_BOOM",
+      "scale_metric": "COST_PER_KG_RECOVERED_OIL"
+    }
   },
-  "new_invariants": [
-    "CANDIDATE_LEDGER_NE_EVIDENCE_AUTHORITY",
-    "SINGLE_FULLY_BOUND_NE_COMPARABLE_READY",
-    "METHOD_AUTHORITY_ONLY_NE_BIOLOGICAL_COHORT",
-    "PROTOCOL_NE_NUMERIC_OBSERVATION",
-    "LITERAL_ELEVEN_FIELD_KEY_REQUIRED",
-    "AT_LEAST_4_HOURS_NE_12_HOURS_WATER_ONLY",
-    "EDTA_PLASMA_NE_HEPARIN_PLASMA",
-    "SD_NE_CI95",
-    "RANKING_NE_ADMISSION",
-    "DISTINCT_COHORT_ESTABLISHED_REQUIRES_PAIR_SPECIFIC_EVIDENCE"
-  ],
-  "next_gate": "FIND_A_SECOND_PRIMARY_HUMAN_COHORT_MATCHING_ONE_COMPLETE_ELEVEN_FIELD_KEY_EXACTLY; THEN_RESOLVE_PAIR_SPECIFIC_COHORT_INDEPENDENCE_AND_REPLAY_EXISTING_V0_5_AND_V0_6_3_KERNELS; DO_NOT_RELAX_KEY_FIELDS; BIOLOGICAL_REFERENCE_VECTOR_REMAINS_UNSET; PARETO_REMAINS_BLOCKED"
+  "janus_method_invariant": {
+    "schema": "JANUS-FORWARD-REVERSE-SEMANTIC-PASS-v1.0",
+    "required": true,
+    "rule": "Major artifacts should carry a forward walk and a reverse audit over the same claimed edges. Reverse analysis may expose a break edge and cannot manufacture missing evidence."
+  },
+  "license": "Apache-2.0"
 }
