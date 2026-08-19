@@ -1,0 +1,114 @@
+{
+  "artifact_uuid": "JANUS-SCOBY-M1A-FINALISTS-EXTERNAL-VALIDATION-0036-2026-08-20-v1.0",
+  "version": "v1.0",
+  "created_local": "2026-08-20T00:36:00+03:00",
+  "repository": "Hawkar-usls/SCOBY-D0",
+  "status": "PREREGISTERED_FINALISTS_NOT_EMPIRICAL_WINNERS",
+  "parent": "JANUS_SCOBY_MARINE_DYNAMIC_SALTWATER_BOOM_GATE_0018_v1.0.json",
+  "selection_rule": "Select one performance lead and one cost-down challenger before M1A; do not call either a winner until measured marine gates close.",
+  "finalists": [
+    {
+      "rank": "A",
+      "name": "D3_PERFORMANCE_LEAD",
+      "architecture": "FREEZE_DRY_BC + MINIMAL_ENVIRONMENTALLY_COMPATIBLE_HYDROPHOBIC_SURFACE_ENGINEERING",
+      "role": "PERFORMANCE_LEAD",
+      "why_selected": [
+        "Porous freeze-dried BC architectures are the strongest literature-backed class for high oil uptake and compressibility.",
+        "Hydrophobic surface engineering directly addresses native BC water affinity and therefore the key oil-over-water selectivity problem.",
+        "Mechanical squeezing recovery has a strong literature precedent for engineered BC aerogels."
+      ],
+      "risks": [
+        "freeze-drying energy/capital cost",
+        "hydrophobic-treatment cost",
+        "leachables/ecotoxicity",
+        "process complexity",
+        "scale-up reproducibility"
+      ],
+      "winner_condition": "Must pass all M1A/M1B gates and remain economically defensible on cost_per_kg_recovered_oil."
+    },
+    {
+      "rank": "B",
+      "name": "D1_COST_DOWN_CHALLENGER",
+      "architecture": "LOW_COMPACTION_AIR_DRY_BC",
+      "role": "COST_DOWN_CHALLENGER",
+      "why_selected": [
+        "lowest-energy and simplest processing branch",
+        "fewest process steps",
+        "best chance to preserve a genuinely low-cost emergency-response proposition"
+      ],
+      "risks": [
+        "native BC hydrophilicity",
+        "pore collapse during air drying",
+        "lower oil/water selectivity",
+        "lower capacity and retention"
+      ],
+      "winner_condition": "Can defeat D3 even at lower g/g if it passes hard gates and materially lowers cost_per_kg_recovered_oil while remaining fully retrievable."
+    }
+  ],
+  "nonfinalist_controls": [
+    {
+      "name": "D2_FREEZE_DRY_UNMODIFIED",
+      "role": "STRUCTURE_CONTROL",
+      "reason": "Separates pore-preservation benefit from hydrophobic-surface benefit."
+    },
+    {
+      "name": "COMMERCIAL_OIL_SORBENT_PAD",
+      "role": "MARKET_REFERENCE_CONTROL",
+      "reason": "Prevents the project from optimizing only against itself."
+    }
+  ],
+  "feedstock_status": {
+    "green_vs_black": "OPEN",
+    "rule": "Do not nominate green or black tea as material winner from literature alone. Advance the feedstock that wins the matched Stage-0 production/material screen.",
+    "fallback_for_external_proposal": "Describe feedstock as bacterial cellulose produced by SCOBY fermentation; present tea identity as an upstream optimization variable, not the claimed innovation."
+  },
+  "winner_decision": {
+    "hard_gate_first": true,
+    "required": [
+      "M1_G1 uptake",
+      "M1_G2 selectivity",
+      "M1_G3 retention",
+      "M1_G4 retrieval",
+      "M1_G5 press recovery if claimed",
+      "M1_G6 salinity robustness",
+      "M1_G7 dynamic robustness",
+      "M1_G8 replication"
+    ],
+    "after_hard_gates": "Use Pareto comparison rather than an arbitrary weighted score: minimize cost_per_kg_recovered_oil and energy_per_kg_recovered_oil while maximizing selectivity, recovered oil, integrity and retrieval.",
+    "winner_label": "M1A_MARINE_WINNER",
+    "current_winner": null
+  },
+  "external_validation_targets": [
+    {
+      "priority": 1,
+      "organization": "CEDRE — Centre of Documentation, Research and Experimentation on Accidental Water Pollution",
+      "country": "France",
+      "contact": "contact@cedre.fr",
+      "ask": "Independent advice/test design for sorbent pads and a 1 m retrievable BC boom cartridge under salinity/current/temperature conditions; later standardized/custom/deployment testing.",
+      "why": "CEDRE explicitly evaluates spill-response sorbents/equipment and can test under realistic environmental conditions."
+    },
+    {
+      "priority": 2,
+      "organization": "State Key Laboratory of New Textile Materials and Advanced Processing Technology / Wuhan Textile University",
+      "contact": "ybo@wtu.edu.cn",
+      "person": "Bo Yang",
+      "ask": "Materials-science feedback or collaboration on robust crosslinked/hydrophobic BC aerogel processing and compression recovery.",
+      "why": "Corresponding-author expertise in mechanically robust BC aerogels for oil absorption."
+    },
+    {
+      "priority": 3,
+      "organization": "Chuiko Institute of Surface Chemistry, National Academy of Sciences of Ukraine",
+      "contact": "info@isc.gov.ua",
+      "ask": "Local collaboration on porous-sorbent characterization, surface chemistry, adsorption and environmentally compatible surface modification.",
+      "why": "Official institute research includes porous sorbents, adsorption and hybrid-material surface chemistry."
+    }
+  ],
+  "janus_tranception": {
+    "schema": "JANUS-FORWARD-REVERSE-SEMANTIC-PASS-v1.0",
+    "forward": "BC_BRANCH -> 100x100_M1A_PAD -> SALTWATER_SELECTIVITY -> RETRIEVAL -> PRESS_RECOVERY -> COST_ACCOUNTING -> EXTERNAL_VALIDATION -> MARINE_WINNER",
+    "reverse": "MARINE_WINNER -> REQUIRES_EXTERNAL_OR_REPLICATED_VALIDATION -> REQUIRES_COST_AND_RECOVERY_DATA -> REQUIRES_RETRIEVAL -> REQUIRES_SALTWATER_SELECTIVITY -> REQUIRES_DEFINED_BC_BRANCH",
+    "mirror_status": "DESIGN_LOOP_CLOSED_EMPIRICAL_WINNER_OPEN",
+    "promotion_rule": "A proposal, publication or external interest cannot promote a branch; only measured gates and independent/replicated evidence can."
+  },
+  "next_action": "Finish Stage-0 matched feedstock/process screen; fabricate D3 and D1 100x100 mm pads from the winning feedstock; run M1A static freshwater vs artificial seawater with D2 and a commercial control; send external validation proposal in parallel without claiming field readiness."
+}
