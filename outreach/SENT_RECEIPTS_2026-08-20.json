@@ -1,0 +1,70 @@
+{
+  "schema": "scoby-d0.outreach-receipt.v1",
+  "date": "2026-08-20",
+  "status": "SENT_MESSAGES_VERIFIED_IN_GMAIL",
+  "purpose": "Prevent duplicate scientific outreach and preserve topic/recipient provenance.",
+  "messages": [
+    {
+      "recipient_type": "researcher",
+      "name": "Qihe Chen",
+      "email": "chenqh@zju.edu.cn",
+      "subject": "Technical question on in-situ TiO2 exposure during bacterial-cellulose formation",
+      "track": "TIO2_COMPATIBILITY",
+      "gmail_message_id": "1a01f8aafb65bb25",
+      "status": "SENT_VERIFIED",
+      "followup_rule": "No duplicate introduction. Follow up only after a reply or after new controlled TiO2/BC measurements exist."
+    },
+    {
+      "recipient_type": "researcher",
+      "name": "Bo Yang",
+      "email": "ybo@wtu.edu.cn",
+      "subject": "Request for technical feedback on bacterial-cellulose oil sorbent validation",
+      "track": "OIL_SORPTION_ENVIRONMENT",
+      "gmail_message_id": "1a01f8adb59fac23",
+      "status": "SENT_VERIFIED",
+      "followup_rule": "No duplicate introduction. Follow up only after a reply or materially new marine sorbent data."
+    },
+    {
+      "recipient_type": "researcher",
+      "name": "Hyeongmin Seo",
+      "email": "hyeongmin-seo@uiowa.edu",
+      "subject": "Open BC research program — request for feedback on production and metabolic gates",
+      "track": "SCOBY_D0_C2_EVIDENCE",
+      "gmail_message_id": "1a01f8af4135d5e0",
+      "status": "SENT_VERIFIED",
+      "followup_rule": "No duplicate introduction. Follow up only after a reply or new production/carbon-flow measurements."
+    },
+    {
+      "recipient_type": "organization",
+      "name": "CEDRE — Centre of Documentation, Research and Experimentation on Accidental Water Pollution",
+      "email": "contact@cedre.fr",
+      "subject": "Open R&D proposal: low-cost retrievable bacterial-cellulose sorbent boom for marine oil spills",
+      "track": "MARINE_EXTERNAL_VALIDATION",
+      "gmail_message_id": "1a01f8b16628a07c",
+      "status": "SENT_VERIFIED",
+      "followup_rule": "Do not resend the proposal. Follow up only on their response or when Stage-0/M1A measured data and sample specifications are available."
+    }
+  ],
+  "same_day_overlap_audit": {
+    "already_contacted_before_this_batch": [
+      "Silvia Vignolini",
+      "Maria Laura Foresti",
+      "Patricia Cerrutti",
+      "Cuicui Ding",
+      "Min Zhang",
+      "Santosh Mathapati",
+      "Monika Trzaskowska"
+    ],
+    "deferred_due_to_overlap_or_immature_data": [
+      "Serena Danti — defer additional chitin outreach until replies or new interface/mechanical data",
+      "Fatemeh Yazdian — defer until sensor baseline data exist",
+      "Jeffrey Catchmark — defer until baseline composite data exist"
+    ]
+  },
+  "invariants": [
+    "SENT_NE_READ",
+    "READ_NE_ENDORSEMENT",
+    "EXTERNAL_INTEREST_NE_VALIDATION",
+    "NO_DUPLICATE_INTRODUCTION_WITHOUT_NEW_INFORMATION"
+  ]
+}
