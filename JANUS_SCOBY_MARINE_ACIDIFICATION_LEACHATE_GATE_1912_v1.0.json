@@ -1,0 +1,43 @@
+{
+  "artifact_uuid": "JANUS-SCOBY-MARINE-ACIDIFICATION-LEACHATE-GATE-1912-2026-08-20-v1.0",
+  "version": "v1.0",
+  "created_local": "2026-08-20T19:12:00+03:00",
+  "repository": "Hawkar-usls/SCOBY-D0",
+  "status": "ENVIRONMENTAL_GATE_PREREGISTERED_EMPIRICAL_DATA_PENDING",
+  "mirror_of": "Hawkar-usls/janus-meta-registry@audit/goldprompt-handshake-logic-hardening-v1_1:data/JANUS-SCOBY-MARINE-ACIDIFICATION-LEACHATE-GATE-1912-2026-08-20-v1.0.json",
+  "preliminary_answer": "Purified, neutral, retrievable bacterial cellulose is not expected to materially acidify seawater. Raw live SCOBY or poorly washed BC is blocked because residual acetic acid, sugars, microorganisms and dissolved organic matter could cause local pH shift and oxygen demand.",
+  "required_state": [
+    "PURIFIED_OR_THOROUGHLY_WASHED_BC",
+    "FINAL_RINSE_NEAR_NEUTRAL",
+    "LOW_LEACHABLE_ORGANIC_LOAD",
+    "RETRIEVABLE_PAD_OR_MESH_CARTRIDGE",
+    "NO_OPEN_WATER_ABANDONMENT"
+  ],
+  "M0_leachate_test": {
+    "medium": "ARTIFICIAL_SEAWATER_35_PLUS_MINUS_2_PSU",
+    "controls": ["SEAWATER_BLANK", "COMMERCIAL_PP_CONTROL_IF_AVAILABLE"],
+    "timepoints": ["T0", "1_HOUR", "24_HOUR", "7_DAY_SCREEN"],
+    "measurements": ["pH", "TOTAL_ALKALINITY_IF_AVAILABLE", "DISSOLVED_OXYGEN", "TOC_OR_COD", "ACETATE_IF_AVAILABLE", "FRAGMENTATION", "COATING_LEACHABLES_IF_PRESENT"]
+  },
+  "internal_gates_not_regulatory": {
+    "A1": "Absolute sample-minus-blank pH shift after 24 h <=0.10 pH unit.",
+    "A2": "Dissolved-oxygen loss attributable to sorbent <=10% relative to blank over 24 h.",
+    "A3": "Final rinse near-neutral and stable.",
+    "A4": "No large unexplained TOC/COD or acetate increase relative to blank; report detection limits.",
+    "A5": ">=99% dry-equivalent material retrieval with no visible fragment escape.",
+    "A6": "Any hydrophobic treatment passes an independent leachate test.",
+    "A7": "Repeat in at least two independent BC batches."
+  },
+  "janus_tranception": {
+    "schema": "JANUS-FORWARD-REVERSE-SEMANTIC-PASS-v1.0",
+    "forward": "FERMENTED_SCOBY -> PURIFY/WASH -> NEUTRAL_RINSE -> ENGINEER -> MARINE_CONTACT -> RETRIEVE -> NO_MATERIAL_PH_OR_OXYGEN_STRESS",
+    "reverse": "NO_PH_OR_OXYGEN_STRESS -> LOW_ACID/ORGANIC_LEACHATE -> NEUTRAL_WASHED_BC -> REMOVE_BROTH/MICROBIAL_RESIDUES -> CONTROLLED_PROCESS",
+    "mirror_status": "ENVIRONMENTAL_LOGIC_CLOSED_EMPIRICAL_LEACHATE_DATA_OPEN"
+  },
+  "verdict": {
+    "RAW_SCOBY": "NO_GO_FOR_MARINE_DEPLOYMENT",
+    "PURIFIED_NEUTRAL_RETRIEVABLE_BC": "PLAUSIBLE_AND_ENVIRONMENTALLY_TESTABLE",
+    "GREEN_BOOM_CONTACT_POSITION": "Discuss a purified neutral BC insert and propose matched seawater pH/DO/leachate testing, not raw kombucha SCOBY."
+  },
+  "next_action": "Run M0 leachate gate before any field claim; Green Boom can be approached as a collaboration partner for matched biomass-vs-BC validation."
+}
