@@ -1,0 +1,48 @@
+{
+  "artifact_uuid": "JANUS-SCOBY-OIL-BOOM-CURRENT-MARKET-COMPARATOR-1903-2026-08-20-v1.0",
+  "version": "v1.0",
+  "created_local": "2026-08-20T19:03:00+03:00",
+  "repository": "Hawkar-usls/SCOBY-D0",
+  "status": "CURRENT_MARKET_COMPARATOR_SCENARIO_MODEL_EMPIRICAL_SCOBY_DATA_PENDING",
+  "mirror_of": "Hawkar-usls/janus-meta-registry@audit/goldprompt-handshake-logic-hardening-v1_1:data/JANUS-SCOBY-OIL-BOOM-CURRENT-MARKET-COMPARATOR-1903-2026-08-20-v1.0.json",
+  "market_cost_USD_per_nominal_kg_absorbed_oil": {
+    "Uline_S19490_PP": 1.253,
+    "Spilfyter_M54S_PP": 1.252,
+    "Green_Boom_B0510S_biobased": 2.616,
+    "New_Pig_BOM406_PP": 4.453,
+    "3M_T270_approx": 2.438
+  },
+  "market_retail_price_USD_per_meter": {
+    "Uline_S19490_PP": 10.581,
+    "Spilfyter_M54S_PP": 9.254,
+    "Green_Boom_B0510S_biobased": 16.567,
+    "New_Pig_BOM406_PP": 9.589,
+    "3M_T270": 44.400
+  },
+  "scoby_at_14_8_USD_per_kg_dry_BC_and_60_percent_recovery": [
+    {"q_g_g":10,"BC_only_USD_per_kg_recovered_oil":2.467,"verdict":"NOT_COST_WIN_BEFORE_PROCESSING"},
+    {"q_g_g":20,"BC_only_USD_per_kg_recovered_oil":1.233,"verdict":"BORDERLINE_VS_CHEAP_PP_STRONGER_VS_BIOBASED"},
+    {"q_g_g":40,"BC_only_USD_per_kg_recovered_oil":0.617,"verdict":"PROMISING_COST_HEADROOM"},
+    {"q_g_g":80,"BC_only_USD_per_kg_recovered_oil":0.308,"verdict":"VERY_STRONG_IF_MARINE_PERFORMANCE_SURVIVES"}
+  ],
+  "scoby_at_1_89_USD_per_kg_low_cost_scenario_and_60_percent_recovery": [
+    {"q_g_g":20,"BC_only_USD_per_kg_recovered_oil":0.158},
+    {"q_g_g":40,"BC_only_USD_per_kg_recovered_oil":0.079},
+    {"q_g_g":80,"BC_only_USD_per_kg_recovered_oil":0.039}
+  ],
+  "closest_biobased_competitor": {
+    "name":"Green Boom B0510S",
+    "composition":"cotton skin + wheat-straw/proprietary cellulosic filler",
+    "capacity":"6 gal/boom; 24 gal/case",
+    "example_current_price_USD_per_case_4":"201.99 at Zoro",
+    "key_point":"Bio-based hydrophobic, marine, retrievable and wring/reuse concepts already exist commercially. SCOBY must win by cost/performance/feedstock route, not by biodegradability alone."
+  },
+  "janus_tranception": {
+    "schema":"JANUS-FORWARD-REVERSE-SEMANTIC-PASS-v1.0",
+    "forward":"SCOBY_SOURCE -> PROCESS_COST -> MARINE_q -> RETRIEVE -> PRESS -> RECOVERED_OIL -> TOTAL_COST_PER_RECOVERED_KG -> MARKET",
+    "reverse":"MARKET_PRICE_CEILING -> MAX_TOTAL_COST -> PROCESS_HEADROOM -> REQUIRED_q_X_RECOVERY -> MAX_BC_COST -> SCOBY_SOURCE",
+    "mirror_status":"MARKET_LOGIC_CLOSED_EMPIRICAL_SCOBY_DATA_OPEN"
+  },
+  "preliminary_output":"At central dry-BC cost, q≈20 g/g is borderline against cheapest polypropylene once processing is added; q≈40 g/g is the practical economic target. If SCOBY is a genuinely low-cost byproduct, q≈20 g/g can already be economically interesting. Against the closest bio-based Green Boom analogue, q>=20 g/g shows plausible raw-material advantage, but total processed cost must be measured.",
+  "next_gate":"Test SCOBY and a cheap PP control under one frozen marine protocol; ideally add Green Boom as the bio-based control. Report total cost per actually recovered kg oil, not nominal capacity."
+}
