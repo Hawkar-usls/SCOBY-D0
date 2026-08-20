@@ -1,0 +1,85 @@
+{
+  "artifact_uuid": "JANUS-SCOBY-OIL-BOOM-PRELIMINARY-ECONOMIC-GATE-1851-2026-08-20-v1.0",
+  "version": "v1.0",
+  "created_local": "2026-08-20T18:51:00+03:00",
+  "repository": "Hawkar-usls/SCOBY-D0",
+  "status": "PRELIMINARY_ECONOMIC_GATE_ANALYTICALLY_CLOSED_EMPIRICALLY_OPEN",
+  "mirror_of": "Hawkar-usls/janus-meta-registry@audit/goldprompt-handshake-logic-hardening-v1_1:data/JANUS-SCOBY-OIL-BOOM-PRELIMINARY-ECONOMIC-GATE-1851-2026-08-20-v1.0.json",
+  "parent_artifacts": [
+    "JANUS_SCOBY_MARINE_DYNAMIC_SALTWATER_BOOM_GATE_0018_v1.0.json",
+    "JANUS_SCOBY_OIL_SPILL_SORBENT_SPONGE_2258_v1.1.json"
+  ],
+  "core_formulae": {
+    "dry_BC_kg_per_kg_recovered_oil": "1 / (q_oil_g_g * press_recovery_fraction)",
+    "BC_material_cost_per_kg_recovered_oil": "BC_cost_USD_per_kg / (q_oil_g_g * press_recovery_fraction)",
+    "break_even_BC_cost_USD_per_kg": "commercial_benchmark_USD_per_kg_oil * q_oil_g_g * press_recovery_fraction"
+  },
+  "frozen_assumptions": {
+    "press_recovery_fraction": 0.60,
+    "oil_density_kg_L_for_capacity_normalization": 0.85,
+    "boundary": "Scenario inputs only; not measured SCOBY-D0 performance."
+  },
+  "commercial_benchmarks": {
+    "MAT403_pad": {
+      "price_USD_per_100": 164.90,
+      "nominal_capacity_L": 83.27,
+      "approx_cost_USD_per_nominal_kg_oil": 2.33
+    },
+    "PIG_3in_x_10ft_boom": {
+      "price_USD_per_boom": 28.77,
+      "length_m": 3.048,
+      "nominal_capacity_L": 7.57,
+      "approx_price_USD_per_m": 9.44,
+      "approx_nominal_oil_kg_per_m": 2.11,
+      "approx_cost_USD_per_nominal_kg_oil": 4.47
+    }
+  },
+  "BC_cost_scenarios_USD_per_kg": {
+    "optimistic_large_scale_TEA": 1.89,
+    "central_molasses_large_scale_TEA": 14.80,
+    "conservative_high_cost_TEA": 63.80
+  },
+  "economics_at_60_percent_recovery": [
+    {"q_g_g":10,"dry_BC_g_per_kg_recovered":166.67,"BC_cost_per_recovered_kg_USD_at_14_8":2.467,"BC_cost_per_recovered_kg_USD_at_63_8":10.633},
+    {"q_g_g":20,"dry_BC_g_per_kg_recovered":83.33,"BC_cost_per_recovered_kg_USD_at_14_8":1.233,"BC_cost_per_recovered_kg_USD_at_63_8":5.317},
+    {"q_g_g":40,"dry_BC_g_per_kg_recovered":41.67,"BC_cost_per_recovered_kg_USD_at_14_8":0.617,"BC_cost_per_recovered_kg_USD_at_63_8":2.658},
+    {"q_g_g":80,"dry_BC_g_per_kg_recovered":20.83,"BC_cost_per_recovered_kg_USD_at_14_8":0.308,"BC_cost_per_recovered_kg_USD_at_63_8":1.329}
+  ],
+  "break_even_against_MAT403_before_other_costs": [
+    {"BC_cost_USD_per_kg":1.89,"minimum_q_g_g":1.35},
+    {"BC_cost_USD_per_kg":14.80,"minimum_q_g_g":10.59},
+    {"BC_cost_USD_per_kg":63.80,"minimum_q_g_g":45.64}
+  ],
+  "meter_boom_target": {
+    "reference_oil_kg_per_m": 2.11,
+    "reference_price_USD_per_m": 9.44,
+    "requirements_at_60_percent_recovery": [
+      {"q_g_g":10,"dry_BC_g_per_m":351.88,"BC_material_USD_per_m_at_14_8":5.21},
+      {"q_g_g":20,"dry_BC_g_per_m":175.94,"BC_material_USD_per_m_at_14_8":2.60},
+      {"q_g_g":40,"dry_BC_g_per_m":87.97,"BC_material_USD_per_m_at_14_8":1.30},
+      {"q_g_g":80,"dry_BC_g_per_m":43.99,"BC_material_USD_per_m_at_14_8":0.65}
+    ]
+  },
+  "economic_gates": {
+    "E0": "10 g/g remains technical floor only.",
+    "E1": "Target >=20 g/g and >=60% oil recovery for a plausible low-cost route unless dry BC delivered cost is below ~10-15 USD/kg.",
+    "E2": ">=40 g/g and >=60% recovery is a strong economic target with substantial processing-cost headroom under the central BC-cost scenario.",
+    "E3": "1 m cartridge should target <=9.44 USD/m total manufacturing cost while recovering about 2.1 kg oil-equivalent per meter, or beat the commercial cost-per-recovered-kg benchmark.",
+    "E4": "Final economics must include drying, hydrophobic treatment, sleeve, labor, energy, retrieval and waste handling.",
+    "E5": "Economic PASS requires matched commercial control and at least two independent BC batches."
+  },
+  "business_model_verdict": {
+    "GROW_TO_SORB": "ECONOMICALLY_UNCERTAIN",
+    "WASTE_TO_BOOM": "MOST_PROMISING_LOW_COST_ROUTE",
+    "reason": "Kombucha bacterial-cellulose pellicle is documented as a low-value coproduct/residue; using an existing waste stream can avoid much of the fermentation cost."
+  },
+  "janus_tranception": {
+    "schema": "JANUS-FORWARD-REVERSE-SEMANTIC-PASS-v1.0",
+    "mode": "BIDIRECTIONAL_REQUIRED",
+    "forward": "BC_SOURCE_COST -> PROCESSING -> q_OIL -> RETRIEVAL -> PRESS_RECOVERY -> RECOVERED_OIL -> COST_PER_RECOVERED_KG -> COMMERCIAL_COMPARISON",
+    "reverse": "COMMERCIAL_PRICE_CEILING -> ALLOWABLE_COST_PER_RECOVERED_KG -> REQUIRED_q_TIMES_RECOVERY -> MAX_BC_AND_PROCESS_COST -> PROCESS_ROUTE -> BC_SOURCE",
+    "mirror_status": "ECONOMIC_LOGIC_LOOP_CLOSED_EMPIRICAL_VALUES_OPEN"
+  },
+  "preliminary_verdict": "CONDITIONALLY_PROMISING: likely competitive if low-cost byproduct BC reaches roughly 20-40 g/g in marine conditions with >=60% recoverable oil; likely unattractive if specialty-cost BC only reaches ~10 g/g.",
+  "next_action": "Run the frozen 50x50 GREEN/BLACK x D0-D3 screen while logging real consumable and energy cost. Feed measured q, water uptake, press recovery and dry-BC cost into this gate; if q>=20 g/g, recovery>=0.60 and delivered dry-BC cost<=15 USD/kg, advance to M1A with a commercial control."
+}
