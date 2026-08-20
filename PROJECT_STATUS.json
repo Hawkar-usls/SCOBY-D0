@@ -5,8 +5,8 @@
   "last_reviewed": "2026-08-20",
   "portfolio_class": "evidence_gated_bacterial_cellulose_research_platform",
   "maturity": "EARLY_R_AND_D",
-  "completion_status": "ACTIVE_MARINE_M1A_PREREGISTRATION_WITH_LEGACY_EVIDENCE_TRACK_PRESERVED",
-  "summary": "SCOBY-D0 now exposes a clear multi-track structure. The active lead application is a low-cost retrievable bacterial-cellulose sorbent for oil-on-water cleanup. Two processing finalists have been preregistered for M1A: D3 freeze-dried BC with minimal environmentally compatible hydrophobic surface engineering as the performance lead, and D1 low-compaction air-dried BC as the cost-down challenger. Neither is an empirical winner yet. The legacy C2 context/evidence program remains preserved and unchanged in authority.",
+  "completion_status": "ACTIVE_MARINE_M1A_PREREGISTRATION_WITH_TARGETED_EXTERNAL_OUTREACH_SENT",
+  "summary": "SCOBY-D0 exposes a clear multi-track structure. The active lead application is a low-cost retrievable bacterial-cellulose sorbent for oil-on-water cleanup. Two processing finalists have been preregistered for M1A: D3 freeze-dried BC with minimal environmentally compatible hydrophobic surface engineering as the performance lead, and D1 low-compaction air-dried BC as the cost-down challenger. Neither is an empirical winner yet. Targeted external outreach has been sent to CEDRE, Bo Yang, Qihe Chen and Hyeongmin Seo; external interest or replies do not promote evidence status.",
   "active_tracks": {
     "marine_oil_sorbent": {
       "priority": 1,
@@ -55,11 +55,20 @@
     "M1_G8 independent-batch replication"
   ],
   "external_validation": {
-    "status": "OUTREACH_READY_NOT_SENT",
+    "status": "TARGETED_OUTREACH_SENT_AWAITING_RESPONSES",
     "primary_target": "CEDRE",
+    "primary_target_status": "SENT_VERIFIED_GMAIL",
     "materials_science_target": "Wuhan Textile University / Bo Yang",
+    "materials_science_target_status": "SENT_VERIFIED_GMAIL",
+    "tio2_target": "Zhejiang University / Qihe Chen",
+    "tio2_target_status": "SENT_VERIFIED_GMAIL",
+    "bc_production_target": "University of Iowa / Hyeongmin Seo",
+    "bc_production_target_status": "SENT_VERIFIED_GMAIL",
     "ukraine_characterization_target": "Chuiko Institute of Surface Chemistry, NAS of Ukraine",
-    "packet": "docs/OUTREACH_EXTERNAL_VALIDATION.md"
+    "ukraine_characterization_target_status": "NOT_YET_SENT",
+    "packet": "docs/OUTREACH_EXTERNAL_VALIDATION.md",
+    "receipt": "outreach/SENT_RECEIPTS_2026-08-20.json",
+    "followup_policy": "Do not resend introductions. Follow up only after a response or after materially new measured data are available."
   },
   "license": "Apache-2.0",
   "related": {
