@@ -1,0 +1,14 @@
+{
+  "artifact_uuid":"JANUS-SCOBY-UNIVERSAL-RESEARCH-INTEGRATION-1707-2026-08-20-v1.0",
+  "created_local":"2026-08-20T17:07:00+03:00",
+  "repository":"Hawkar-usls/SCOBY-D0",
+  "status":"INTEGRATED_NAVIGATION_AND_OUTREACH_DRAFTS",
+  "source_guide":"Hawkar-usls/janus-meta-registry:data/SCOBY-UNIVERSAL-RESEARCH-GUIDE-2026-08-20-v1.0.json",
+  "source_guide_blob_sha":"8b258651e195c79ae4ccf7bae9437d4b98c3b3f6",
+  "tracks_created":["SKINGPT_SENSOR_SKIN","SCOBY_D0_C2_EVIDENCE","SCOBY_D1_COMPOSITES","CARBON_MATERIALS","OIL_SORPTION_ENVIRONMENT","CHITIN_VIBRISSA","TIO2_COMPATIBILITY","EXTERNAL_REVIEW_OUTREACH","SEPARATE_SPECULATIVE_BRANCH"],
+  "artifact_memberships_indexed":50,
+  "unique_canonical_artifacts_referenced":45,
+  "duplication_policy":"Do not copy the same canonical meta-registry artifact into multiple SCOBY-D0 folders; track membership is expressed by navigation bridges.",
+  "outreach":{"status":"DRAFTS_NOT_SENT","researcher_drafts":6,"matrix":"outreach/RESEARCHER_OUTREACH_MATRIX.json"},
+  "safety_and_epistemic_boundary":["external_interest_ne_validation","speculative_branch_isolated","food_and_materials_claims_separated","negative_results_first_class","hash_is_integrity_not_truth"]
+}

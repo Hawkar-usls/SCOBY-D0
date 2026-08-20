@@ -1,0 +1,10 @@
+{
+  "schema":"scoby-d0.track-bridge.v1",
+  "track_id":"CARBON_MATERIALS",
+  "role":"Treated/thermal black-residue and carbon-material hypothesis lane",
+  "epistemic_status":"SEPARATE_CHARACTERIZATION_REQUIRED",
+  "canonical_source":{"repository":"Hawkar-usls/janus-meta-registry","base_url":"https://github.com/Hawkar-usls/janus-meta-registry/blob/main/"},
+  "artifact_refs":["data/SCOBY-D0-RESEARCH-LINE-v2.4.json","data/SCOBY-D0-RESEARCH-LINE-v2.5.json","data/SCOBY-D0-RESEARCH-LINE-v2.6.json","data/SCOBY-D0-RESEARCH-LINE-v2.7.json","data/SCOBY-D0-RESEARCH-LINE-v2.8.json"],
+  "claim_boundary":"Visual blackening or thermal treatment does not establish carbon material identity or application class.",
+  "outreach_fit":"Deferred until Raman/XRD/elemental/porosity characterization exists."
+}

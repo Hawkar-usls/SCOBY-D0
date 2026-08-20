@@ -1,0 +1,10 @@
+{
+  "schema":"scoby-d0.track-bridge.v1",
+  "track_id":"SCOBY_D0_C2_EVIDENCE",
+  "role":"Legacy C2/acetate/context evidence lineage and food-additive boundary",
+  "epistemic_status":"PRESERVED_EVIDENCE_LINE",
+  "canonical_source":{"repository":"Hawkar-usls/janus-meta-registry","base_url":"https://github.com/Hawkar-usls/janus-meta-registry/blob/main/"},
+  "artifact_refs":["data/SCOBY-D0-RESEARCH-LINE-v1.0.json","data/SCOBY-D0-RESEARCH-LINE-v1.1.json","data/SCOBY-D0-RESEARCH-LINE-v1.2.json","data/SCOBY-D0-RESEARCH-LINE-v1.3.json","data/SCOBY-D0-RESEARCH-LINE-v1.4.json","data/SCOBY-D0-RESEARCH-LINE-v1.5.json","data/SCOBY-D0-RESEARCH-LINE-v1.6.json","data/SCOBY-D0-RESEARCH-LINE-v1.7.json","data/SCOBY-D0-RESEARCH-LINE-v1.8.json","data/SCOBY-D0-RESEARCH-LINE-v1.9.json","data/SCOBY-D0-RESEARCH-LINE-v2.0.json","data/SCOBY-D0-RESEARCH-LINE-v2.1.json","data/SCOBY-D0-RESEARCH-LINE-v2.2.json","data/SCOBY-D0-RESEARCH-LINE-v2.3.json","data/SCOBY-D0-RESEARCH-LINE-v2.4.json","data/SCOBY-D0-RESEARCH-LINE-v2.5.json","data/SCOBY-D0-RESEARCH-LINE-v2.6.json","data/SCOBY-D0-RESEARCH-LINE-v2.7.json","data/SCOBY-D0-RESEARCH-LINE-v2.8.json","data/JANUS-C2-METABOLIC-DUPLEX-SIM-v0.1.json","data/JANUS-GENESIS-ACETATE-SOURCE-EQUIVALENCE-v0.2.json","data/SCOBY-FOOD-ADDITIVES-E262-BOUNDARY-v1.0.json"],
+  "claim_boundary":"Simulation and chemical equivalence are not biological validation; technical acetate and food-grade E262 remain separate.",
+  "outreach_fit":"BC production/metabolic engineering; first target Hyeongmin Seo."
+}

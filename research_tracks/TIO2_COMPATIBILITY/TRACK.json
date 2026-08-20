@@ -1,0 +1,12 @@
+{
+  "schema":"scoby-d0.track-bridge.v1",
+  "track_id":"TIO2_COMPATIBILITY",
+  "role":"TiO2 effect on SCOBY/BC growth versus post-harvest BC-TiO2 composite behavior",
+  "epistemic_status":"HYPOTHESIS_UNVERIFIED",
+  "canonical_source":{"repository":"Hawkar-usls/janus-meta-registry","base_url":"https://github.com/Hawkar-usls/janus-meta-registry/blob/main/"},
+  "artifact_refs":["data/SCOBY-TIO2-COMPATIBILITY-BOUNDARY-2026-08-20-v1.0.json"],
+  "minimum_gate":["matched SCOBY_without_TiO2 control","vehicle/dispersion control if used","TiO2 grade and particle specification","concentration and addition time","pH time series","wet/dry BC mass","thickness","growth-failure/contamination record"],
+  "next_characterization":["microscopy/SEM distribution","elemental or mass-fraction confirmation","mechanical comparison","electrical/dielectric comparison if relevant"],
+  "claim_boundary":"Fermentation compatibility, composite performance and food safety are separate questions.",
+  "outreach_fit":"Qihe Chen for in-situ BC/TiO2 composite formation and characterization."
+}

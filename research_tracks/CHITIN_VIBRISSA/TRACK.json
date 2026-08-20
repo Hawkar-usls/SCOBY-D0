@@ -1,0 +1,10 @@
+{
+  "schema":"scoby-d0.track-bridge.v1",
+  "track_id":"CHITIN_VIBRISSA",
+  "role":"Chitin reinforcement and biotube/vibrissa-inspired exploratory material questions",
+  "epistemic_status":"EXPLORATORY_WITH_IDENTITY_GATES",
+  "canonical_source":{"repository":"Hawkar-usls/janus-meta-registry","base_url":"https://github.com/Hawkar-usls/janus-meta-registry/blob/main/"},
+  "artifact_refs":["data/JANUS-SCOBY-VIBRISSA-CHITIN-BIOTUBE-2026-08-20-v1.0.json","data/JANUS-SCOBY-BOY-MILK-VIBRISSA-CHITIN-GATE-2026-08-20-v1.0.json","data/JANUS-FELINE-NATURALLY-SHED-VIBRISSA-CHEMISTRY-2026-08-20-v1.0.json"],
+  "claim_boundary":"Natural whisker identity or chitin content cannot be inferred from analogy; material identity, loading and composition first.",
+  "outreach_fit":"Serena Danti for controlled BC/chitin nanofibril methodology; keep feline-vibrissa-specific claims internal until chemistry is measured."
+}

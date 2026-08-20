@@ -1,0 +1,35 @@
+{
+  "schema": "scoby-d0.universal-research-navigation.v1",
+  "id": "SCOBY-UNIVERSAL-RESEARCH-GUIDE-2026-08-20-v1.0",
+  "date": "2026-08-20",
+  "status": "ACTIVE_NAVIGATION_OBJECT",
+  "source": {
+    "repository": "Hawkar-usls/janus-meta-registry",
+    "path": "data/SCOBY-UNIVERSAL-RESEARCH-GUIDE-2026-08-20-v1.0.json",
+    "blob_sha": "8b258651e195c79ae4ccf7bae9437d4b98c3b3f6",
+    "source_repo_head_at_integration": "fb198d7986731c91f9684aaaf2748fd2fc9df93c"
+  },
+  "canonical_rules": [
+    "OBSERVATION_BEFORE_INTERPRETATION",
+    "MATERIAL_IDENTITY_BEFORE_APPLICATION_CLASSIFICATION",
+    "SIMULATION_PASS_NE_BIOLOGICAL_VALIDATION",
+    "HASH_IS_INTEGRITY_NOT_TRUTH",
+    "GM_PRODUCER_NE_GM_PRODUCT",
+    "SAME_MOLECULE_NE_SAME_PHYSIOLOGICAL_EVENT",
+    "EVIDENCE_PROVENANCE_MUST_BE_PRESERVED",
+    "NEGATIVE_RESULTS_ARE_FIRST_CLASS_RESULTS"
+  ],
+  "tracks": [
+    {"track_id":"SKINGPT_SENSOR_SKIN","local_index":"research_tracks/SKINGPT_SENSOR_SKIN/TRACK.json","artifact_memberships":3},
+    {"track_id":"SCOBY_D0_C2_EVIDENCE","local_index":"research_tracks/SCOBY_D0_C2_EVIDENCE/TRACK.json","artifact_memberships":22},
+    {"track_id":"SCOBY_D1_COMPOSITES","local_index":"research_tracks/SCOBY_D1_COMPOSITES/TRACK.json","artifact_memberships":8},
+    {"track_id":"CARBON_MATERIALS","local_index":"research_tracks/CARBON_MATERIALS/TRACK.json","artifact_memberships":5},
+    {"track_id":"OIL_SORPTION_ENVIRONMENT","local_index":"research_tracks/OIL_SORPTION_ENVIRONMENT/TRACK.json","artifact_memberships":2},
+    {"track_id":"CHITIN_VIBRISSA","local_index":"research_tracks/CHITIN_VIBRISSA/TRACK.json","artifact_memberships":3},
+    {"track_id":"TIO2_COMPATIBILITY","local_index":"research_tracks/TIO2_COMPATIBILITY/TRACK.json","artifact_memberships":1},
+    {"track_id":"EXTERNAL_REVIEW_OUTREACH","local_index":"research_tracks/EXTERNAL_REVIEW_OUTREACH/TRACK.json","artifact_memberships":2},
+    {"track_id":"SEPARATE_SPECULATIVE_BRANCH","local_index":"research_tracks/SEPARATE_SPECULATIVE_BRANCH/TRACK.json","artifact_memberships":4}
+  ],
+  "promotion_ladder": ["IDEA_OR_OBSERVATION","HYPOTHESIS_UNVERIFIED","PREREGISTERED_SCREEN","CONTROLLED_REPLICATED_RESULT","INSTRUMENT_CHARACTERIZED_RESULT","INDEPENDENT_REPLICATION_OR_EXTERNAL_VALIDATION","APPLICATION_SPECIFIC_VALIDATION"],
+  "integration_policy": "SCOBY-D0 owns executable/material R&D organization; janus-meta-registry remains canonical cross-project provenance."
+}

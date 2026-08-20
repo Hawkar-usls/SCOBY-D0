@@ -1,0 +1,15 @@
+{
+  "schema":"scoby-d0.researcher-outreach-matrix.v1",
+  "date":"2026-08-20",
+  "status":"DRAFT_TARGETS_NOT_SENT",
+  "rules":["Match one researcher to one concrete track/question.","State early-R&D status and claim ceiling explicitly.","Ask for critique or independent replication, not endorsement.","Do not send the speculative branch externally by default.","External interest does not promote evidence status."],
+  "targets":[
+    {"name":"Bo Yang","affiliation":"Wuhan Textile University","email":"ybo@wtu.edu.cn","track":"OIL_SORPTION_ENVIRONMENT","fit":"BC aerogels, hydrophobic modification and oil/water separation","research_anchor":"https://pubmed.ncbi.nlm.nih.gov/41519329/","draft":"outreach/drafts/BO_YANG_MARINE_OIL_SORBENT.md"},
+    {"name":"Qihe Chen","affiliation":"Zhejiang University","email":"chenqh@zju.edu.cn","track":"TIO2_COMPATIBILITY","fit":"one-step in-situ BC/MoS2/TiO2 biosynthesis and photocatalytic water-treatment materials","research_anchor":"https://pubs.acs.org/doi/10.1021/acsami.4c21052","draft":"outreach/drafts/QIHE_CHEN_TIO2_BC.md"},
+    {"name":"Hyeongmin Seo","affiliation":"University of Iowa","email":"hyeongmin-seo@uiowa.edu","track":"SCOBY_D0_C2_EVIDENCE","fit":"metabolic engineering and scale-up of bacterial fiber production","research_anchor":"https://ebsl.lab.uiowa.edu/research","draft":"outreach/drafts/HYEONGMIN_SEO_BC_PRODUCTION.md"},
+    {"name":"Serena Danti","affiliation":"University of Pisa","email":"serena.danti@unipi.it","track":"CHITIN_VIBRISSA","fit":"bacterial-cellulose meshes with chitin nanofibrils","research_anchor":"https://pubmed.ncbi.nlm.nih.gov/37962275/","draft":"outreach/drafts/SERENA_DANTI_BC_CHITIN.md"},
+    {"name":"Fatemeh Yazdian","affiliation":"University of Tehran","email":"yazdian@ut.ac.ir","track":"SKINGPT_SENSOR_SKIN","fit":"bacterial cellulose for biosensor development","research_anchor":"https://pubs.rsc.org/en/content/articlehtml/2026/su/d5su00426h","draft":"outreach/drafts/FATEMEH_YAZDIAN_SKINGPT_BC_SENSOR.md"},
+    {"name":"Jeffrey Catchmark","affiliation":"Penn State","email":"jcatchmark@engr.psu.edu","track":"SCOBY_D1_COMPOSITES","fit":"bacterial-cellulose production, cellulose characterization and polysaccharide composites","research_anchor":"https://abe.psu.edu/directory/jmc102","draft":"outreach/drafts/JEFFREY_CATCHMARK_BC_COMPOSITES.md"}
+  ],
+  "deferred":{"CARBON_MATERIALS":"Wait for Raman/XRD/elemental/porosity data before specialist outreach.","SEPARATE_SPECULATIVE_BRANCH":"No outreach until a falsifiable empirical gate yields instrument-characterized evidence."}
+}

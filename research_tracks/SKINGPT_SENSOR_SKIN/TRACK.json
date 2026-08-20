@@ -1,0 +1,10 @@
+{
+  "schema":"scoby-d0.track-bridge.v1",
+  "track_id":"SKINGPT_SENSOR_SKIN",
+  "role":"BC-derived tactile/thermal sensor-skin and circular biomanufacturing bridge",
+  "epistemic_status":"RESEARCH_TRACK_INDEXED",
+  "canonical_source":{"repository":"Hawkar-usls/janus-meta-registry","base_url":"https://github.com/Hawkar-usls/janus-meta-registry/blob/main/"},
+  "artifact_refs":["registry/research_portfolio/SKINGPT-BIODERIVED-TACTILE-THERMAL-SKIN-DOSSIER-v1.0.0.json","data/SKYBU-SKINGPT-CIRCULAR-BIOMANUFACTURING-CONCEPT-v1.0.json","data/JANUS-NEXUS-V2-1-SKINGPT-OBSERVATION-EDGE-PROMOTION-2026-08-19-v1.0.json"],
+  "claim_boundary":"No sensing-performance claim without instrument characterization and matched humidity/deformation/temperature controls.",
+  "outreach_fit":"BC biosensor and wearable-sensing researchers; first target Fatemeh Yazdian."
+}

@@ -1,0 +1,10 @@
+{
+  "schema":"scoby-d0.track-bridge.v1",
+  "track_id":"EXTERNAL_REVIEW_OUTREACH",
+  "role":"External-review targets, contact receipts and validation correspondence",
+  "epistemic_status":"OUTREACH_INFRASTRUCTURE",
+  "canonical_source":{"repository":"Hawkar-usls/janus-meta-registry","base_url":"https://github.com/Hawkar-usls/janus-meta-registry/blob/main/"},
+  "artifact_refs":["data/SCOBY-EXTERNAL-REVIEW-UA-MOD-CNDI-2026-08-14-v1.0.json","data/JANUS-SCOBY-OUTREACH-EMAIL-RECEIPTS-2026-08-20-v1.0.json"],
+  "claim_boundary":"Correspondence, interest or collaboration discussion cannot promote scientific status.",
+  "local_matrix":"outreach/RESEARCHER_OUTREACH_MATRIX.json"
+}

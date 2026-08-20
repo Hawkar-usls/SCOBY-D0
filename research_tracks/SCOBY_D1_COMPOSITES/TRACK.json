@@ -1,0 +1,10 @@
+{
+  "schema":"scoby-d0.track-bridge.v1",
+  "track_id":"SCOBY_D1_COMPOSITES",
+  "role":"Baseline architectures, chitin reinforcement, electrosynthesis and structural matrix engineering",
+  "epistemic_status":"MIXED_HYPOTHESIS_AND_PROTOCOL_READY",
+  "canonical_source":{"repository":"Hawkar-usls/janus-meta-registry","base_url":"https://github.com/Hawkar-usls/janus-meta-registry/blob/main/"},
+  "artifact_refs":["data/SCOBY-D1-ELECTROSYNTHESIS-SIM-01.json","data/SCOBY-D1-CHITIN-BIOCOMPOSITE-v1.0.json","data/SCOBY-D1-EXOGENOUS-CHITIN-ARMOUR-v1.1.json","data/SCOBY-D1-REINFORCEMENT-COMPARISON-v1.0.json","data/SCOBY-D1-MULTIFUNC-RESEARCH-ROADMAP-v1.0.json","data/SCOBY-D1-CONSOLIDATED-RESEARCH-MAP-v1.0.json","experiments/SCOBY-D1-STAGE1-SCREENING-01-v1.1.json","data/SCOBY-D0-D1-CANONICAL-RESEARCH-PROGRAM-v2.0.json"],
+  "claim_boundary":"Process -> composition -> microstructure -> mesostructure -> bulk property -> function; no reinforcement claim before matched controls and structure-property evidence.",
+  "outreach_fit":"Jeffrey Catchmark for broad BC/composites methodology; Serena Danti for chitin-specific controls."
+}

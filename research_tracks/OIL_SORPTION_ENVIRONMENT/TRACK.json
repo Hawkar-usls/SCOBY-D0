@@ -1,0 +1,11 @@
+{
+  "schema":"scoby-d0.track-bridge.v1",
+  "track_id":"OIL_SORPTION_ENVIRONMENT",
+  "role":"BC oil-sorption, oil/water selectivity, marine pad and retrievable-boom validation",
+  "epistemic_status":"ACTIVE_LEAD_APPLICATION",
+  "canonical_source":{"repository":"Hawkar-usls/janus-meta-registry","base_url":"https://github.com/Hawkar-usls/janus-meta-registry/blob/main/"},
+  "artifact_refs":["data/JANUS-SCOBY-MUMMY-OIL-SORPTION-DECAY-GATE-2026-08-19-v1.0.json","data/JANUS-BIOPAPYRUS-OIL-BRIDGE-2222-2026-08-19-v1.0.json"],
+  "local_execution_refs":["JANUS_SCOBY_MARINE_DYNAMIC_SALTWATER_BOOM_GATE_0018_v1.0.json","JANUS_SCOBY_M1A_FINALISTS_EXTERNAL_VALIDATION_0036_v1.0.json"],
+  "claim_boundary":"No field-readiness claim before static/dynamic seawater, retrieval, replication and cost gates.",
+  "outreach_fit":"Bo Yang for BC oil/water aerogel methodology; CEDRE for independent spill-response validation."
+}

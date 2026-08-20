@@ -1,0 +1,10 @@
+{
+  "schema":"scoby-d0.track-bridge.v1",
+  "track_id":"SEPARATE_SPECULATIVE_BRANCH",
+  "role":"Isolated speculative hypotheses retained for provenance without contaminating empirical tracks",
+  "epistemic_status":"SPECULATIVE_ISOLATED",
+  "canonical_source":{"repository":"Hawkar-usls/janus-meta-registry","base_url":"https://github.com/Hawkar-usls/janus-meta-registry/blob/main/"},
+  "artifact_refs":["data/JANUS-XY-PLACENTA-MILK-SCOBY-FULL-REVERSE-GATE-2026-08-20-v1.0.json","data/JANUS-DIRAC-SCOBY-BUROVCHIK-CAUSAL-TOPOLOGICAL-MEMORY-HYPOTHESIS-v1.0.json","data/JANUS-DIRAC-SCOBY-BUROVCHIK-CAUSAL-TOPOLOGICAL-MEMORY-HYPOTHESIS-v1.1.json","data/JANUS-DIRAC-SCOBY-BUROVCHIK-PRECOGNITIVE-SEMANTIC-RETURN-EXTENSION-v1.1.json"],
+  "claim_boundary":"No semantic, causal, predictive or application promotion without independent empirical gates.",
+  "outreach_fit":"NO_EXTERNAL_OUTREACH_BY_DEFAULT"
+}
