@@ -1,0 +1,15 @@
+condition_id,time_h,reentry_state,sample_mode,purpose,population_growth_status,key_control
+BC_BASELINE,,BASELINE,none,baseline bacterial-cellulose formation,not_applicable,baseline
+TREHALOSE_MATCH,,CONTROL,trehalose_only,isolate trehalose/osmolarity effect,not_applicable,quantitatively matched trehalose
+MEDIUM_MATCH,,CONTROL,medium_only,isolate Pv11 medium carryover,not_applicable,matched medium
+R1_1H_WHOLE,1,R1,washed_whole_cells,early functional restart,no significant growth expected,biomass matched
+R1_1H_CFF,1,R1,cell_free_fraction,test soluble early-state signal,no significant growth expected,same processing
+R2_3H_WHOLE,3,R2,washed_whole_cells,RAD16-like recovery window,no significant growth expected,biomass matched
+R2_3H_CFF,3,R2,cell_free_fraction,test soluble repair-state signal,no significant growth expected,same processing
+R2_24H_WHOLE,24,R2,washed_whole_cells,protein/repair recovery window,no significant growth expected,biomass matched
+R2_24H_CFF,24,R2,cell_free_fraction,test soluble recovery chemistry,no significant growth expected,same processing
+R3_48H_WHOLE,48,R3,washed_whole_cells,latest clean non-proliferative window,live-cell concentration stable in cited Pv11 system,biomass matched
+R3_48H_CFF,48,R3,cell_free_fraction,latest clean soluble-state test,live-cell concentration stable in cited Pv11 system,same processing
+R4_72H_WHOLE,72,R4,washed_whole_cells,proliferative-state comparator,significant growth begins,biomass normalization plus cell count
+R4_72H_CFF,72,R4,cell_free_fraction,post-permission soluble comparator,proliferation confound present,same processing
+NONACTIVE_CELL_CTRL,,CONTROL,matched_nonactive_cells,separate cell presence from active recovery state,off,biomass matched
