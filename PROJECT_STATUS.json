@@ -2,11 +2,11 @@
   "schema_id": "hawkar.project-status.v2",
   "project": "SCOBY-D0",
   "repository": "https://github.com/Hawkar-usls/SCOBY-D0",
-  "last_reviewed": "2026-08-20",
+  "last_reviewed": "2026-08-24",
   "portfolio_class": "evidence_gated_bacterial_cellulose_research_platform",
   "maturity": "EARLY_R_AND_D",
-  "completion_status": "ACTIVE_MARINE_M1A_PREREGISTRATION_WITH_TARGETED_EXTERNAL_OUTREACH_SENT",
-  "summary": "SCOBY-D0 exposes a clear multi-track structure. The active lead application is a low-cost retrievable bacterial-cellulose sorbent for oil-on-water cleanup. Two processing finalists have been preregistered for M1A: D3 freeze-dried BC with minimal environmentally compatible hydrophobic surface engineering as the performance lead, and D1 low-compaction air-dried BC as the cost-down challenger. Neither is an empirical winner yet. Targeted external outreach has been sent to CEDRE, Bo Yang, Qihe Chen and Hyeongmin Seo; external interest or replies do not promote evidence status.",
+  "completion_status": "ACTIVE_MARINE_M1A_PLUS_EXTREMOPHILE_REENTRY_MATRIX_P0",
+  "summary": "SCOBY-D0 remains led by the marine bacterial-cellulose sorbent program while adding a separate exploratory mechanistic track on extremophile reentry-state coupling to BC formation. The new Polypedilum/Pv11 line is frozen at P0 kinetic-anchor status: public evidence supports function-before-proliferation and recovery-associated DNA-repair timing, but no Pv11-to-SCOBY matrix effect has been measured. Promotion requires matched BC experiments that control trehalose, medium carryover, biomass, pH and oxygen.",
   "active_tracks": {
     "marine_oil_sorbent": {
       "priority": 1,
@@ -20,13 +20,22 @@
       "winner": "NOT_YET",
       "next_gate": "Finish matched Stage-0 feedstock/process screen; fabricate 100x100 mm finalists; run M1A fresh-water vs artificial-seawater static test with D2 and commercial controls."
     },
-    "biopapyrus_and_material_process": {
+    "extremophile_reentry_matrix_coupling": {
       "priority": 2,
+      "status": "P0_KINETIC_ANCHOR_PREREGISTERED_EMPIRICAL_BC_EFFECT_OPEN",
+      "lead_gate": "JANUS_SCOBY_EXTREMOPHILE_REENTRY_MATRIX_GATE_0018_v1.0.json",
+      "primary_anchor": "Polypedilum vanderplanki / Pv11",
+      "current_claim": "Recovery-state timing is resolved well enough to define a pre-proliferative test window; matrix modulation is not established.",
+      "current_promotion": "P0",
+      "next_gate": "Test R1-R3 versus R4 with trehalose, medium-carryover, biomass, pH and oxygen controls plus whole-cell versus cell-free separation."
+    },
+    "biopapyrus_and_material_process": {
+      "priority": 3,
       "status": "EXPERIMENTAL_AND_COMPARATIVE",
       "claim_boundary": "Modern BC sheet research and Egyptian lexical/process parallels do not demonstrate ancient SCOBY papyrus."
     },
     "legacy_c2_context_engine": {
-      "priority": 3,
+      "priority": 4,
       "status": "PRESERVED_V0_6_6_HARDENED_CANDIDATE_LEDGER",
       "authority_change": "NONE",
       "human_reference_standard": "NOT_ESTABLISHED",
@@ -43,6 +52,15 @@
     "EXTERNAL_INTEREST_NE_VALIDATION",
     "FORWARD_PASS_REQUIRES_REVERSE_AUDIT",
     "HASH_IS_INTEGRITY_NOT_TRUTH"
+  ],
+  "reentry_matrix_invariants": [
+    "FUNCTION_BEFORE_PROLIFERATION_NE_MATRIX_EFFECT",
+    "KINETIC_SEPARATION_NE_CAUSAL_CHECKPOINT",
+    "TREHALOSE_CARRYOVER_NE_RECOVERY_SIGNAL",
+    "SECOND_ORGANISM_BC_EFFECT_NE_POLYPEDILUM_BC_EFFECT",
+    "CELL_NUMBER_MUST_BE_SEPARATED_FROM_CELL_STATE",
+    "MATRIX_CHANGE_NE_MATERIAL_MEMORY",
+    "P0_KINETIC_ANCHOR_NE_P1_EMPIRICAL_EFFECT"
   ],
   "marine_promotion_gates": [
     "M1_G1 oil uptake in artificial seawater",
