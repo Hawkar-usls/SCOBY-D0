@@ -247,7 +247,7 @@
       "matrix_prediction": "Could alter hydration, interfaces or macromolecular stabilization; direct BC effect untested."
     },
     {
-      "family": "THIOREDOXIN_REDox_SYSTEM",
+      "family": "THIOREDOXIN_REDOX_SYSTEM",
       "status": "MECHANISTIC_CANDIDATE",
       "matrix_prediction": "Could alter local redox/ROS environment; direct BC effect untested."
     },
