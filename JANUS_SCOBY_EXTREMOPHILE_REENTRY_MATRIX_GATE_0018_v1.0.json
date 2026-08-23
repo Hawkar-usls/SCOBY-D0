@@ -1,0 +1,285 @@
+{
+  "artifact_uuid": "JANUS-SCOBY-EXTREMOPHILE-REENTRY-MATRIX-GATE-0018-2026-08-24-v1.0",
+  "version": "v1.0",
+  "created_local": "2026-08-24T00:18:00+03:00",
+  "repository": "Hawkar-usls/SCOBY-D0",
+  "branch": "research/reentry-matrix-coupling-v1",
+  "status": "PREREGISTERED_MECHANISTIC_GATE_NO_EMPIRICAL_SCOBY_EFFECT_YET",
+  "track": "extremophile_reentry_matrix_coupling",
+  "core_question": "Can a transient, non-proliferative recovery state in an extremotolerant biological system alter bacterial-cellulose formation before population growth becomes a confound?",
+  "claim_ceiling": [
+    "POLYPEDILUM_REHYDRATION_KINETICS_SUPPORT_A_NONPROLIFERATIVE_FUNCTIONAL_WINDOW",
+    "PV11_RECOVERY_ASSOCIATED_DNA_REPAIR_PROGRAM_IS_PUBLICLY_SUPPORTED",
+    "PV11_TO_SCOBY_MATRIX_MODULATION_IS_UNTESTED",
+    "RECOVERY_STATE_TO_MATRIX_COUPLING_IS_A_PREREGISTERED_HYPOTHESIS_NOT_A_RESULT",
+    "SCOBY_BIOLOGICAL_STATE_MEMORY_REMAINS_CLOSED_UNTIL_SPATIOTEMPORAL_MATRIX_DATA_EXIST"
+  ],
+  "public_evidence": [
+    {
+      "id": "PV11_2025_FUNCTION_VS_GROWTH",
+      "organism_or_system": "Polypedilum vanderplanki / Pv11-00443-Or47a cells",
+      "source": "Scientific Reports 2025, An anhydrobiotic cell line expressing odorant receptors shows odorant responses after dry storage",
+      "doi": "10.1038/s41598-025-19627-x",
+      "observations": [
+        "Partial membrane/co-receptor function is detectable about 1 h after rehydration.",
+        "A de-novo-protein-dependent odorant response becomes significant from about 12 h and is recovered by 24 h.",
+        "Live-cell concentration is reported as stable through the first 48 h after rehydration.",
+        "Statistically significant cell growth begins at about 72 h and reaches a plateau by about 144 h."
+      ],
+      "role": "KINETIC_ANCHOR_FOR_FUNCTION_BEFORE_PROLIFERATION"
+    },
+    {
+      "id": "PV11_2018_REPAIR_TRANSCRIPTOMICS",
+      "organism_or_system": "Polypedilum vanderplanki / Pv11 cells",
+      "source": "Scientific Reports 2018, Transcriptome analysis of the anhydrobiotic cell line Pv11 infers the mechanism of desiccation tolerance and recovery",
+      "doi": "10.1038/s41598-018-36124-6",
+      "observations": [
+        "Pv.07646, with similarity to Rad16, is specifically upregulated at R3.",
+        "NER-associated genes are active during dehydration and rehydration, including recovery-associated expression at R24.",
+        "HR, NER and NHEJ are implicated in the desiccation/recovery program.",
+        "The standard Pv11 induction protocol includes 600 mM trehalose pretreatment for 48 h."
+      ],
+      "role": "RECOVERY_ASSOCIATED_REPAIR_STATE_ANCHOR"
+    },
+    {
+      "id": "LARVA_2010_DNA_RESTORATION",
+      "organism_or_system": "Polypedilum vanderplanki whole larvae",
+      "source": "PLOS ONE 2010, Anhydrobiosis-associated nuclear DNA damage and repair in the sleeping chironomid: linkage with radioresistance",
+      "doi": "10.1371/journal.pone.0014008",
+      "observations": [
+        "Physiological activity returns within about 1 h after rehydration.",
+        "Nuclear DNA integrity typically returns over about 72-96 h after rehydration."
+      ],
+      "role": "WHOLE_ORGANISM_FUNCTION_BEFORE_FULL_NUCLEAR_DNA_RESTORATION_ANCHOR"
+    },
+    {
+      "id": "BC_SECOND_ORGANISM_PRINCIPLE_2026",
+      "organism_or_system": "Komagataeibacter hansenii plus Chlamydomonas reinhardtii",
+      "source": "Advanced Materials 2026, artificial living bacterial-cellulose composite",
+      "doi": "10.1002/adma.202514125",
+      "observations": [
+        "A second living organism can become physically entrapped by growing bacterial cellulose.",
+        "The physiology of the second organism can alter local oxygen availability and spatial cellulose growth."
+      ],
+      "role": "INDEPENDENT_SUPPORT_FOR_SECOND_ORGANISM_STATE_TO_BC_ARCHITECTURE_PRINCIPLE",
+      "boundary": "This does not demonstrate a Polypedilum or recovery-state effect."
+    }
+  ],
+  "imported_cross_lineage_context": {
+    "status": "CONTEXT_ONLY_NOT_REVERIFIED_IN_THIS_REPOSITORY",
+    "lineages": [
+      {
+        "name": "Bacillus",
+        "imported_claim": "repair/checkpoint activity is temporally associated with later replication/outgrowth",
+        "use_here": "motivate a broader reentry-phase abstraction"
+      },
+      {
+        "name": "Adineta",
+        "imported_claim": "somatic recovery can precede fuller genome restoration, with a distinct high-fidelity reproductive repair window",
+        "use_here": "motivate separation of basic recovery from higher-risk reproductive restart"
+      },
+      {
+        "name": "Polypedilum/Pv11",
+        "imported_claim": "basic function and repair-associated recovery precede significant proliferation",
+        "use_here": "primary lineage for the SCOBY mechanistic gate"
+      }
+    ],
+    "rule": "Cross-lineage generalization cannot be promoted in SCOBY-D0 until each lineage is provenance-bound to primary evidence."
+  },
+  "reentry_state_model": [
+    {
+      "state": "R0",
+      "label": "DORMANT_OR_DESICCATED",
+      "population_growth": "OFF"
+    },
+    {
+      "state": "R1",
+      "label": "BASIC_FUNCTION_RESTART",
+      "population_growth": "OFF_OR_NOT_DETECTABLY_INCREASED"
+    },
+    {
+      "state": "R2",
+      "label": "REPAIR_AND_RECONSTRUCTION",
+      "population_growth": "OFF_OR_NOT_DETECTABLY_INCREASED"
+    },
+    {
+      "state": "R3",
+      "label": "VERIFIED_SURVIVOR_WINDOW",
+      "population_growth": "OFF_OR_NOT_DETECTABLY_INCREASED"
+    },
+    {
+      "state": "R4",
+      "label": "PROLIFERATION_PERMITTED",
+      "population_growth": "ON"
+    }
+  ],
+  "polypedilum_time_axis": [
+    {
+      "time_after_rehydration": "1 h",
+      "state": "R1",
+      "anchor": "partial membrane/co-receptor and cellular function"
+    },
+    {
+      "time_after_rehydration": "3 h",
+      "state": "R2",
+      "anchor": "RAD16-like Pv.07646 recovery-associated upregulation"
+    },
+    {
+      "time_after_rehydration": "12-24 h",
+      "state": "R2",
+      "anchor": "de-novo-protein-dependent functional recovery; NER-associated recovery continues"
+    },
+    {
+      "time_after_rehydration": "48 h",
+      "state": "R3",
+      "anchor": "live-cell concentration still without significant growth versus 1 h baseline"
+    },
+    {
+      "time_after_rehydration": "72 h",
+      "state": "R4",
+      "anchor": "significant proliferation begins"
+    },
+    {
+      "time_after_rehydration": "72-96 h",
+      "state": "R4",
+      "anchor": "whole-larva nuclear DNA integrity approaches restored baseline in classical comet/TEM work"
+    }
+  ],
+  "primary_scoby_hypothesis": {
+    "id": "RECOVERY_STATE_TO_MATRIX_COUPLING",
+    "prediction": "If a recovery-state signal affects Komagataeibacter cellulose deposition, a reproducible matrix phenotype should appear during R1-R3 before a proliferation-driven population increase can explain the effect.",
+    "null": "After controlling for medium carryover, trehalose, biomass, pH, oxygen and handling, R1-R3 exposures do not alter bacterial-cellulose production or architecture relative to matched controls."
+  },
+  "mandatory_controls": [
+    "SCOBY_OR_KOMAGATAEIBACTER_BASELINE",
+    "HANDLING_MATCHED_CONTROL",
+    "TREHALOSE_MATCHED_CONTROL",
+    "MEDIUM_CARRYOVER_MATCHED_CONTROL",
+    "BIOMASS_MATCHED_NONRECOVERY_CELL_CONTROL",
+    "CELL_FREE_FRACTION_FOR_EACH_SELECTED_RECOVERY_STATE",
+    "PH_AND_DISSOLVED_OXYGEN_TRACKING",
+    "R72_OR_LATER_PROLIFERATIVE_STATE_COMPARATOR"
+  ],
+  "experimental_decomposition": {
+    "phase_A_state_screen": {
+      "conditions": [
+        "CONTROL",
+        "R1_1H",
+        "R2_3H",
+        "R2_24H",
+        "R3_48H",
+        "R4_72H"
+      ],
+      "readouts": [
+        "dry bacterial-cellulose mass",
+        "pellicle thickness",
+        "formation rate",
+        "water retention",
+        "porosity or pore-size proxy",
+        "fibril or bundle morphology where imaging is available",
+        "mechanical properties where material quantity permits",
+        "pH",
+        "dissolved oxygen or oxygen proxy",
+        "producer viability"
+      ]
+    },
+    "phase_B_contact_vs_soluble": {
+      "compare": [
+        "WASHED_WHOLE_CELLS",
+        "CELL_FREE_RECOVERY_FRACTION",
+        "MATCHED_NONACTIVE_CELL_CONTROL"
+      ],
+      "interpretation": {
+        "whole_only": "contact, surface, adhesion, nucleation or local oxygen mechanism favored",
+        "cell_free_only_or_both": "soluble matrix-modifying chemistry favored",
+        "neither": "no detectable matrix coupling under tested conditions"
+      }
+    },
+    "phase_C_transient_state_memory": {
+      "question": "Can a short recovery-state exposure leave a persistent spatial layer in subsequently formed cellulose?",
+      "design_principle": "Apply a bounded exposure window, then return to matched baseline conditions and map the resulting material along the growth/time axis.",
+      "promotion_requirement": "A persistent, spatially localized material difference must survive removal of the transient biological exposure and remain distinguishable from pH, oxygen, trehalose and biomass controls."
+    }
+  },
+  "trehalose_confound": {
+    "status": "CRITICAL",
+    "reason": "Trehalose is part of the standard Pv11 anhydrobiosis-induction protocol and can independently alter carbon availability, osmolarity and bacterial-cellulose physiology.",
+    "rule": "No Pv11-specific matrix claim is admissible unless trehalose and medium carryover are quantitatively matched or removed and separately controlled."
+  },
+  "pre_registered_decision_rules": [
+    {
+      "id": "G1_EARLY_MATRIX_EFFECT",
+      "pass_if": "At least one R1-R3 condition shows a reproducible matrix change versus all relevant matched controls while cell number remains within the non-significant-growth window.",
+      "fail_if": "No R1-R3 condition differs from matched controls."
+    },
+    {
+      "id": "G2_STATE_NOT_CELL_NUMBER",
+      "pass_if": "Matrix phenotype differs across R1-R3 states despite comparable viable-cell abundance or after normalization to viable-cell abundance.",
+      "fail_if": "Phenotype scales only with increasing cell number."
+    },
+    {
+      "id": "G3_CONTACT_VS_SOLUBLE",
+      "pass_if": "Whole-cell and cell-free comparisons identify a reproducible mechanistic direction.",
+      "fail_if": "Effects disappear after carryover and handling controls or remain irreproducible."
+    },
+    {
+      "id": "G4_TRANSIENT_STATE_MEMORY",
+      "pass_if": "A bounded recovery-state exposure leaves a persistent spatial/material signature after return to baseline growth conditions.",
+      "fail_if": "Any apparent layer tracks only bulk pH, oxygen, trehalose, biomass or handling differences."
+    }
+  ],
+  "kill_rules": [
+    "If matrix changes begin only after the proliferative R4 window, reject NON_PROLIFERATIVE_RECOVERY_STATE as the explanatory mechanism for that effect.",
+    "If trehalose-matched controls reproduce the Pv11-associated phenotype, reject a Pv11-specific interpretation.",
+    "If matched medium carryover reproduces the phenotype, reject a cell-state-specific interpretation.",
+    "If repeated independent BC batches fail to reproduce the direction of effect, keep the gate closed.",
+    "If cell-free and whole-cell effects vanish after pH and oxygen matching, classify the result as MICROENVIRONMENT_MEDIATED rather than recovery-factor specific."
+  ],
+  "candidate_modifier_families": [
+    {
+      "family": "TREHALOSE_AND_OTHER_COMPATIBLE_SOLUTES",
+      "status": "HIGH_PRIORITY_CONFOUND_AND_POSSIBLE_MODIFIER",
+      "matrix_prediction": "May change osmolarity, water organization, carbon flux and cellulose yield/structure."
+    },
+    {
+      "family": "LEA_PROTEINS",
+      "status": "MECHANISTIC_CANDIDATE",
+      "matrix_prediction": "Could alter hydration, interfaces or macromolecular stabilization; direct BC effect untested."
+    },
+    {
+      "family": "THIOREDOXIN_REDOX_SYSTEM",
+      "status": "MECHANISTIC_CANDIDATE",
+      "matrix_prediction": "Could alter local redox/ROS environment; direct BC effect untested."
+    },
+    {
+      "family": "PIMT_AND_PROTEIN_REPAIR_ASSOCIATED_FACTORS",
+      "status": "MECHANISTIC_CANDIDATE",
+      "matrix_prediction": "Primary role is intracellular repair; extracellular BC effect is currently speculative."
+    },
+    {
+      "family": "CELL_SURFACE_AND_MEMBRANE_STATE",
+      "status": "CONTACT_MECHANISM_CANDIDATE",
+      "matrix_prediction": "Could alter adhesion, entrapment, cellulose nucleation or local oxygen geometry."
+    }
+  ],
+  "janus_tranception": {
+    "schema": "JANUS-FORWARD-REVERSE-SEMANTIC-PASS-v1.0",
+    "forward": "REHYDRATION_STATE -> RECOVERY_PHYSIOLOGY -> CONTACT_OR_SOLUBLE_SIGNAL -> KOMAGATAEIBACTER_MICROENVIRONMENT -> CELLULOSE_DEPOSITION -> BC_MATERIAL_PHENOTYPE -> PERSISTENT_LAYER_TEST",
+    "reverse": "PERSISTENT_LAYER_TEST -> REQUIRES_SPATIAL_MATERIAL_DIFFERENCE -> REQUIRES_CONTROLLED_CELLULOSE_DEPOSITION -> REQUIRES_MATCHED_PH_O2_TREHALOSE_BIOMASS -> REQUIRES_DEFINED_RECOVERY_STATE -> REQUIRES_REHYDRATION_KINETIC_ANCHOR",
+    "mirror_status": "DESIGN_LOOP_CLOSED_EMPIRICAL_LOOP_OPEN",
+    "break_edges": [
+      "PV11_RECOVERY_STATE_TO_BC_EFFECT_UNMEASURED",
+      "DEFINED_SOLUBLE_FACTOR_NOT_IDENTIFIED",
+      "TRANSIENT_SIGNAL_TO_PERSISTENT_LAYER_UNMEASURED"
+    ]
+  },
+  "promotion_ladder": {
+    "P0": "KINETIC_ANCHOR_ONLY",
+    "P1": "EARLY_MATRIX_EFFECT_REPRODUCED",
+    "P2": "CONTACT_OR_SOLUBLE_MECHANISM_DISCRIMINATED",
+    "P3": "DEFINED_FACTOR_OR_DEFINED_MICROENVIRONMENT_CAUSALLY_REPRODUCES_EFFECT",
+    "P4": "TRANSIENT_STATE_LEAVES_PERSISTENT_SPATIAL_MATRIX_RECORD",
+    "current": "P0"
+  },
+  "next_action": "Run or obtain matched early-window data focused on R1-R3 versus R4, with trehalose/medium carryover controls and whole-cell versus cell-free separation before making any claim of extremophile-conditioned bacterial cellulose."
+}
