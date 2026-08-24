@@ -1,0 +1,167 @@
+{
+  "schema": "scoby-d0.o2-transfer-x-assimilable-n-switch-gate.v1",
+  "artifact_id": "JANUS-SCOBY-O2-TRANSFER-X-ASSIMILABLE-N-SWITCH-2026-08-24-v1.0",
+  "title": "O2-transfer × assimilable-N carbon-allocation switch gate",
+  "date": "2026-08-24",
+  "status": "P0_PREREGISTERED_O2_TRANSFER_X_ASSIMILABLE_N_SWITCH_NO_DATA",
+  "current_promotion": "P0",
+  "parents": [
+    "JANUS_SCOBY_O2_N2_DUAL_AXIS_GATE_1537_v1.0.json",
+    "JANUS_SCOBY_CAUSAL_MEDIATOR_RESCUE_GATE_1429_v1.0.json",
+    "JANUS_SCOBY_SOURCE_INVARIANT_RESPONSE_SURFACE_GATE_1424_v1.0.json"
+  ],
+  "question": "Does a reproducible interaction between oxygen-transfer state and assimilable-nitrogen availability create a narrow regime in which cells remain metabolically active while a larger fraction of consumed carbon is recovered as extracellular bacterial cellulose?",
+  "core_hypothesis": "O2_TRANSFER_X_ASSIMILABLE_N_INTERACTION_CAN_CHANGE_CARBON_ALLOCATION_TO_BC_WITHOUT_SIMPLE_CELL_COLLAPSE",
+  "central_invariants": [
+    "O2_GAS_FRACTION_NE_O2_TRANSFER_STATE",
+    "GASEOUS_N2_NE_ASSIMILABLE_NITROGEN",
+    "ASSIMILABLE_N_AMOUNT_NE_N_SOURCE_IDENTITY",
+    "BC_MASS_NE_CARBON_FLUX",
+    "CARBON_ALLOCATION_CLAIM_REQUIRES_MEASURED_CARBON_BALANCE_OR_MUST_BE_LABELLED_PARTIAL_PROXY",
+    "CELL_ACTIVITY_MUST_NOT_COLLAPSE_AT_CANDIDATE_SWITCH",
+    "CO2_PH_OSMOLALITY_AND_TRANSFER_CONTEXT_MUST_NOT_SILENTLY_TRACK_FACTOR_LEVELS",
+    "ONE_DEFINED_N_SOURCE_IDENTITY_IS_FROZEN_FOR_THE_PRIMARY_SURFACE",
+    "FACTOR_LEVELS_AND_ANALYTICAL_ACCEPTANCE_BOUNDS_FREEZE_BEFORE_CONFIRMATORY_BC_OUTCOMES",
+    "P0_NE_SWITCH_DISCOVERY"
+  ],
+  "factors": {
+    "o2_transfer_axis": {
+      "levels": ["O1_LOW", "O2_MID", "O3_HIGH"],
+      "selection": "ABIOTICALLY_CALIBRATED_MEASURED_TRANSFER_ZONES",
+      "measured_state": ["dissolved_O2_profile", "kLa_or_validated_transfer_proxy", "OTR_or_validated_transfer_proxy"],
+      "rule": "The factor is measured oxygen-transfer state, not nominal gas fraction."
+    },
+    "assimilable_n_axis": {
+      "levels": ["N1_LOW", "N2_MID", "N3_HIGH"],
+      "selection": "DEFINED_ASSIMILABLE_N_LEVELS_FROZEN_BEFORE_CONFIRMATORY_OUTCOMES",
+      "source_identity": "ONE_DEFINED_ASSIMILABLE_N_SOURCE_IDENTITY_FROZEN",
+      "measured_state": ["initial_assimilable_N", "residual_or_consumed_assimilable_N", "C_to_N_context"]
+    }
+  },
+  "fixed_or_bounded_context": [
+    "pCO2_or_validated_CO2_proxy",
+    "carbon_source_identity_and_starting_carbon",
+    "pH",
+    "osmolality_or_water_activity",
+    "temperature",
+    "strain_identity",
+    "inoculum_state",
+    "vessel_geometry_and_working_volume",
+    "mixing_or_shear_context",
+    "nitrogen_source_identity",
+    "buffer_and_ionic_strength"
+  ],
+  "primary_endpoint": {
+    "name": "BC_CARBON_ALLOCATION_PROXY",
+    "formula": "measured_carbon_recovered_in_dry_BC / measured_substrate_carbon_consumed",
+    "interpretation": "Allocation proxy only unless carbon-balance closure criteria are met.",
+    "full_flux_language_allowed_only_if": "CARBON_BALANCE_CLOSURE_WITHIN_FROZEN_ANALYTICAL_ACCEPTANCE_BOUND"
+  },
+  "required_carbon_balance_channels": [
+    "substrate_carbon_consumed",
+    "dry_BC_carbon_recovered",
+    "biomass_or_cell_carbon_proxy",
+    "major_measured_organic_acid_or_other_carbon_sinks",
+    "CO2_carbon_if_quantified"
+  ],
+  "secondary_endpoints": [
+    "dry_BC_mass",
+    "cell_activity_or_viability_proxy",
+    "biomass_or_independent_cell_count",
+    "substrate_consumption",
+    "major_organic_acids",
+    "pH",
+    "dissolved_O2_and_transfer_state",
+    "assimilable_N_consumption",
+    "BC_morphology_or_material_properties_as_secondary_only"
+  ],
+  "preregistered_sequence": [
+    "STAGE_0_ANALYTICAL_AND_ABIOTIC_CALIBRATION",
+    "FREEZE_O1_O2_O3_AND_N1_N2_N3_LEVELS",
+    "FREEZE_CO2_PH_OSMOLALITY_AND_TECHNICAL_ACCEPTANCE_BOUNDS",
+    "STAGE_A_RUN_FULL_3X3_FACTORIAL_ON_DISCOVERY_BATCHES",
+    "FIT_ADDITIVE_INTERACTION_AND_SWITCH_CANDIDATE_MODELS_WITH_FROZEN_MODEL_FAMILIES",
+    "STAGE_B_DENSIFY_ONLY_BY_FROZEN_STEEPEST_INTERACTION_GRADIENT_RULE",
+    "STAGE_C_TEST_RIDGE_AND_FLANKS_ON_FULLY_INDEPENDENT_BATCHES",
+    "APPLY_TOPA_KILL_RULES_BEFORE_ANY_PROMOTION"
+  ],
+  "model_gate": {
+    "null_additive_model": "BC_ALLOCATION ~ O2_TRANSFER + ASSIMILABLE_N",
+    "interaction_model": "BC_ALLOCATION ~ O2_TRANSFER + ASSIMILABLE_N + O2_TRANSFER:ASSIMILABLE_N",
+    "switch_candidate_model": "PREDECLARED_PIECEWISE_OR_SIGMOIDAL_SURFACE_WITH_NO_POST_HOC_MODEL_FAMILY_SWAPS",
+    "promotion_requires": [
+      "interaction_or_switch_model_materially_improves_heldout_prediction_over_additive_model_with_a_frozen_predictive_margin",
+      "candidate_ridge_or_transition_geometry_repeats_on_an_independent_batch",
+      "candidate_switch_has_noncollapsed_cell_activity",
+      "carbon_balance_or_partial-proxy_classification_passes_its_frozen_analytical_rule"
+    ]
+  },
+  "stage_b_selection_rule": {
+    "rule": "Identify the largest adjacent change in the preregistered allocation endpoint across the 3x3 grid, then place midpoint and flank confirmation points by a frozen deterministic rule; Stage-B data cannot redefine the rule.",
+    "purpose": "Densify a possible narrow transition without outcome-driven hand tuning."
+  },
+  "switch_candidate_definition": [
+    "BC_ALLOCATION_PROXY_CHANGES_SHARPLY_ACROSS_A_LOCAL_O2_TRANSFER_X_N_REGION",
+    "CELL_ACTIVITY_OR_VIABILITY_REMAINS_WITHIN_PREDECLARED_NONCOLLAPSE_BOUND",
+    "BIOMASS_CHANGE_ALONE_DOES_NOT_EXPLAIN_THE_BC_ALLOCATION_CHANGE",
+    "CO2_PH_OSMOLALITY_AND_TRANSFER_CONFOUNDS_REMAIN_WITHIN_BOUNDS",
+    "THE_RIDGE_OR_TRANSITION_REPEATS_INDEPENDENTLY"
+  ],
+  "decision_rules": [
+    {"id": "R0_NO_INTERACTION", "if": "additive model predicts held-out data as well as or better than interaction/switch models", "then": "NO_O2_X_N_SWITCH_SUPPORT"},
+    {"id": "R1_BC_MASS_ONLY", "if": "dry BC mass changes but carbon-allocation proxy does not", "then": "PRODUCTION_EFFECT_NOT_CARBON_ALLOCATION_SWITCH"},
+    {"id": "R2_CELL_COLLAPSE", "if": "candidate ridge coincides with loss of cell activity or severe biomass collapse", "then": "STRESS_OR_STARVATION_ARTIFACT_CANDIDATE"},
+    {"id": "R3_PARTIAL_BALANCE", "if": "carbon balance is incomplete or outside closure acceptance", "then": "PARTIAL_CARBON_ALLOCATION_PROXY_ONLY_NO_FULL_FLUX_LANGUAGE"},
+    {"id": "R4_INTERACTION_RIDGE", "if": "interaction improves held-out prediction and a noncollapsed ridge repeats independently", "then": "O2_TRANSFER_X_ASSIMILABLE_N_ALLOCATION_SWITCH_CANDIDATE"},
+    {"id": "R5_CAUSAL_RESCUE_READY", "if": "R4 plus an orthogonal rescue can move the mediator vector across and back over the ridge without changing N-source identity or source-factor availability", "then": "READY_FOR_BIDIRECTIONAL_CAUSAL_SWITCH_TEST"}
+  ],
+  "kill_rules": [
+    "Reject switch language if CO2 systematically tracks O2-transfer levels outside frozen bounds.",
+    "Reject nitrogen-amount interpretation if nitrogen source identity changes across the primary surface.",
+    "Reject carbon-flux language if only BC dry mass is measured.",
+    "Reject allocation-switch interpretation if the apparent ridge is explained by cell death or gross growth collapse.",
+    "Reject a universal switch if the geometry fails independent-batch replication.",
+    "Reject O2-specific language if the effect is better explained by shear, bubble-size, or transfer-geometry changes not captured by measured transfer state."
+  ],
+  "claim_ceiling": {
+    "current": "P0",
+    "full_gate_pass_allows": "DOMAIN_BOUNDED_O2_TRANSFER_X_ASSIMILABLE_N_ALLOCATION_SWITCH_CANDIDATE",
+    "does_not_allow": [
+      "UNIVERSAL_BIOLOGICAL_LAW",
+      "FULL_METABOLIC_FLUX_CLAIM_WITHOUT_CLOSED_CARBON_BALANCE",
+      "N2_GAS_SPECIFIC_CAUSALITY",
+      "NITROGEN_FIXATION_CLAIM",
+      "MATERIAL_MEMORY",
+      "HUMAN_MILK_OR_PLACENTA_EFFECT"
+    ]
+  },
+  "literature_anchors": [
+    {
+      "doi": "10.1016/j.ijbiomac.2026.150572",
+      "role": "OXYGEN_TRANSFER_CAN_FAVOR_BIOMASS_WITHOUT_PROPORTIONAL_BNC_PRODUCTIVITY",
+      "note": "Nanobubble OTR was much higher than airlift, increased cell density, but BNC volumetric productivity remained similar to airlift; carbon allocation therefore cannot be inferred from oxygen supply alone."
+    },
+    {
+      "doi": "10.1007/s00253-025-13702-z",
+      "role": "NITROGEN_AVAILABILITY_AND_SOURCE_CHANGE_BC_YIELD_AND_STRUCTURE",
+      "note": "2026 K. xylinus study normalizing total nitrogen showed strong nitrogen-dependent production differences and discussed metabolic balance."
+    },
+    {
+      "doi": "10.3389/fmicb.2019.01958",
+      "role": "NITROGEN_SOURCE_AFFECTS_BC_MORE_STRONGLY_THAN_CARBON_SOURCE_IN_SCREEN",
+      "note": "Nitrogen source significantly affected BC production while optical density was poorly correlated with polymer production."
+    },
+    {
+      "doi": "10.1007/s002530000503",
+      "role": "OXYGEN_ENRICHMENT_CHANGES_BC_RATE_YIELD_AND_CARBON_BALANCE",
+      "note": "Airlift work showed oxygen-enriched gas increased BC production and altered final carbon mass balance."
+    },
+    {
+      "doi": "10.1007/s00253-022-12192-7",
+      "role": "OXYGEN_SIGNALING_CAN_REPROGRAM_BC_PRODUCTION",
+      "note": "Hypoxia-signaling engineering supports regulatory oxygen effects rather than a simple more-O2 rule."
+    }
+  ],
+  "safety_scope": "Non-operational preregistration only. Any gas-transfer, pressure, or culture work must follow appropriate laboratory SOPs; no donor human milk, placenta, or human tissue is used.",
+  "next_gate": "RUN_STAGE_0_CALIBRATION_THEN_FULL_3X3_O2_TRANSFER_X_ASSIMILABLE_N_SURFACE_WITH_FIXED_CO2_AND_CARBON_BALANCE_READOUTS"
+}
