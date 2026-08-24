@@ -5,8 +5,8 @@
   "last_reviewed": "2026-08-24",
   "portfolio_class": "evidence_gated_bacterial_cellulose_research_platform",
   "maturity": "EARLY_R_AND_D",
-  "completion_status": "ACTIVE_MARINE_M1A_PLUS_EXTREMOPHILE_REENTRY_MATRIX_P0",
-  "summary": "SCOBY-D0 remains led by the marine bacterial-cellulose sorbent program while adding a separate exploratory mechanistic track on extremophile reentry-state coupling to BC formation. The new Polypedilum/Pv11 line is frozen at P0 kinetic-anchor status: public evidence supports function-before-proliferation and recovery-associated DNA-repair timing, but no Pv11-to-SCOBY matrix effect has been measured. Promotion requires matched BC experiments that control trehalose, medium carryover, biomass, pH and oxygen.",
+  "completion_status": "ACTIVE_MARINE_M1A_PLUS_EXTREMOPHILE_REENTRY_MATRIX_P0_PROVENANCE_BOUND",
+  "summary": "SCOBY-D0 remains led by the marine bacterial-cellulose sorbent program while the exploratory extremophile reentry track now has primary-source provenance bound for Bacillus, Adineta and Polypedilum plus a candidate recovery-modifier map. This does not promote the SCOBY effect: the track remains P0 until a matched early-window BC experiment separates trehalose, medium carryover, biomass, pH, oxygen, contact and soluble effects.",
   "active_tracks": {
     "marine_oil_sorbent": {
       "priority": 1,
@@ -22,12 +22,26 @@
     },
     "extremophile_reentry_matrix_coupling": {
       "priority": 2,
-      "status": "P0_KINETIC_ANCHOR_PREREGISTERED_EMPIRICAL_BC_EFFECT_OPEN",
+      "status": "P0_KINETIC_PLUS_PRIMARY_PROVENANCE_CANDIDATE_MODIFIER_MAP_EMPIRICAL_BC_EFFECT_OPEN",
       "lead_gate": "JANUS_SCOBY_EXTREMOPHILE_REENTRY_MATRIX_GATE_0018_v1.0.json",
+      "modifier_map": "JANUS_SCOBY_RECOVERY_MODIFIER_TO_BC_MAP_0921_v1.0.json",
+      "three_lineage_provenance": "JANUS_SCOBY_THREE_LINEAGE_REENTRY_PROVENANCE_0921_v1.0.json",
       "primary_anchor": "Polypedilum vanderplanki / Pv11",
-      "current_claim": "Recovery-state timing is resolved well enough to define a pre-proliferative test window; matrix modulation is not established.",
+      "cross_lineage_state": {
+        "Bacillus": "PRIMARY_CAUSAL_CHECKPOINT_ANCHOR",
+        "Adineta": "PRIMARY_COMPARTMENT_SPECIFIC_REPAIR_TIMING_ANCHOR",
+        "Polypedilum": "PRIMARY_KINETIC_ANCHOR_CAUSAL_GATE_OPEN"
+      },
+      "candidate_priority": [
+        "TREHALOSE",
+        "LEA",
+        "THIOREDOXIN_REDOX",
+        "PIMT_STATE_MARKER_FIRST",
+        "LIL_MEMBRANE_CONTACT_STATE"
+      ],
+      "current_claim": "Recovery-state timing and cross-lineage biological rationale are provenance-bound well enough to define a mechanistic test, but matrix modulation is not established.",
       "current_promotion": "P0",
-      "next_gate": "Test R1-R3 versus R4 with trehalose, medium-carryover, biomass, pH and oxygen controls plus whole-cell versus cell-free separation."
+      "next_gate": "Test R1-R3 versus R4; deconfound trehalose first; then separate whole-cell/contact from cell-free/soluble effects with matched biomass, pH and oxygen."
     },
     "biopapyrus_and_material_process": {
       "priority": 3,
@@ -56,11 +70,14 @@
   "reentry_matrix_invariants": [
     "FUNCTION_BEFORE_PROLIFERATION_NE_MATRIX_EFFECT",
     "KINETIC_SEPARATION_NE_CAUSAL_CHECKPOINT",
+    "BACILLUS_CAUSAL_CHECKPOINT_NE_UNIVERSAL_CHECKPOINT",
+    "ADINETA_DELAYED_GERMLINE_REPAIR_NE_FIXED_REPRODUCTION_TIMER_CAUSALITY",
+    "THREE_LINEAGE_PROVENANCE_NE_SCOBY_EFFECT",
     "TREHALOSE_CARRYOVER_NE_RECOVERY_SIGNAL",
-    "SECOND_ORGANISM_BC_EFFECT_NE_POLYPEDILUM_BC_EFFECT",
+    "CANDIDATE_MODIFIER_NE_DEFINED_CAUSAL_MODIFIER",
     "CELL_NUMBER_MUST_BE_SEPARATED_FROM_CELL_STATE",
     "MATRIX_CHANGE_NE_MATERIAL_MEMORY",
-    "P0_KINETIC_ANCHOR_NE_P1_EMPIRICAL_EFFECT"
+    "P0_NE_P1_EMPIRICAL_EFFECT"
   ],
   "marine_promotion_gates": [
     "M1_G1 oil uptake in artificial seawater",
