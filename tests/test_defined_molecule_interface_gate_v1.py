@@ -42,7 +42,7 @@ class TestDefinedMoleculeInterfaceGateV1(unittest.TestCase):
     def test_three_frozen_pvlea4_tiers_exist(self):
         names = {row["condition"] for row in self.rows}
         self.assertTrue({"PVLEA4_LOW", "PVLEA4_MID", "PVLEA4_HIGH"}.issubset(names))
-        self.assertIn("Outcome-driven dose tuning is forbidden", self.gate["dose_rule"])
+        self.assertIn("outcome-driven dose tuning is forbidden", self.gate["dose_rule"].lower())
 
     def test_interface_is_measured_before_interpretation(self):
         interface = set(self.gate["readout_layers"]["L1_interface"])
