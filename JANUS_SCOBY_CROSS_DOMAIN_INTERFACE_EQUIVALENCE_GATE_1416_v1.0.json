@@ -1,0 +1,206 @@
+{
+  "schema": "janus.scoby.cross-domain-interface-equivalence.v1",
+  "artifact_uuid": "JANUS-SCOBY-CROSS-DOMAIN-INTERFACE-EQUIVALENCE-GATE-2026-08-24-v1.0",
+  "version": "v1.0",
+  "timestamp_local": "2026-08-24T14:16:00+03:00",
+  "repository": "Hawkar-usls/SCOBY-D0",
+  "status": "PREREGISTERED_CROSS_DOMAIN_EQUIVALENCE_TEST_NO_EMPIRICAL_BC_EFFECT",
+  "current_promotion": "P0",
+  "title": "Cross-domain defined-state -> interface-equivalence -> bacterial-cellulose causal gate",
+  "purpose": "Test whether distinct biological-state-derived defined inputs converge on a common measured interface/microenvironment state that predicts bacterial-cellulose phenotype better than the source label itself.",
+  "topa_law": "MEASURED_MEDIATOR_VECTOR_PRECEDES_SOURCE_LABEL_INTERPRETATION",
+  "claim_boundary": "This artifact preregisters a causal discrimination test. It does not establish that PvLEA4, lactoferrin, placental state, maternal milk, infant sex, or any extremophile changes bacterial cellulose.",
+  "upstream": [
+    {
+      "repository": "Hawkar-usls/TOPA",
+      "path": "data/TOPA-SCOBY-PLACENTA-MILK-EXTREMOPHILE-STATE-INTERFACE-CROSS-GATE-2026-08-24-v1.0.json",
+      "commit": "3a2cb7cbc4946ddc3ac28c4cea7661584656b964",
+      "role": "TOPA_CROSS_DOMAIN_FALSIFICATION_GATE"
+    },
+    {
+      "repository": "Hawkar-usls/SCOBY-D0",
+      "path": "JANUS_SCOBY_TOPA_PREGNANCY_RECOVERY_STATE_INTERFACE_CROSS_GATE_1352_v1.0.json",
+      "role": "LOCAL_TOPA_MIRROR"
+    },
+    {
+      "repository": "Hawkar-usls/SCOBY-D0",
+      "path": "JANUS_SCOBY_DEFINED_MOLECULE_INTERFACE_GATE_0929_v1.0.json",
+      "role": "PVLEA4_DEFINED_FACTOR_PARENT"
+    },
+    {
+      "repository": "Hawkar-usls/janus-meta-registry",
+      "path": "data/JANUS-PAIRED-MATERNAL-MILK-MATCHED-PLACENTA-BC-GATE-2026-08-20-v1.0.json",
+      "role": "PREGNANCY_LINKED_MILK_PLACENTA_CONTEXT_ONLY"
+    }
+  ],
+  "scientific_anchors": [
+    {
+      "finding": "Human lactoferrin can coadsorb into a phospholipid monolayer at the air/water interface and measurably alter surface pressure.",
+      "pmid": "17114223",
+      "evidence_role": "DEFINED_MILK_SIDE_INTERFACIAL_PROTEIN_ANCHOR"
+    },
+    {
+      "finding": "Milk-fat-globule membrane is a protein/lipid colloidal interface with phospholipids, glycoproteins and other amphiphilic constituents.",
+      "pmid": "28457499",
+      "doi": "10.1016/j.cis.2017.04.010",
+      "evidence_role": "MILK_INTERFACE_SYSTEM_CONTEXT"
+    },
+    {
+      "finding": "A non-nutritional silicone-polyether surfactant changed bacterial-cellulose synthesis; medium surface tension significantly affected BC yield and water-holding capacity.",
+      "doi": "10.1016/j.ijbiomac.2022.03.124",
+      "evidence_role": "INTERFACE_TO_BC_CAUSAL_PRECEDENT"
+    },
+    {
+      "finding": "Komagataeibacter normally forms BC at the air-liquid interface because oxygen is required; photosynthetic oxygen-generating partners can shift BC growth into the bulk.",
+      "pmid": "41588861",
+      "evidence_role": "OXYGEN_GEOMETRY_TO_BC_SPATIAL_CAUSAL_PRECEDENT"
+    },
+    {
+      "finding": "Komagataeibacter can form cellulosic biofilms at oil-water as well as air-water interfaces, with lower oxygen supply associated with lower yield and different mechanical properties.",
+      "pmcid": "PMC8904243",
+      "evidence_role": "INTERFACE_IDENTITY_AND_OXYGEN_CONTROL_PRECEDENT"
+    }
+  ],
+  "competing_hypotheses": {
+    "H1_SHARED_INTERFACE_MEDIATOR": "Distinct defined inputs produce equivalent BC phenotypes when the relevant interface/microenvironment mediator vector is matched.",
+    "H2_SOURCE_SPECIFIC_RESIDUAL": "A reproducible BC difference remains after mediator matching, implying an unmeasured or source-specific mechanism rather than source-label causality by itself.",
+    "H3_GENERIC_PROTEIN_OR_LIPID_EFFECT": "Apparent lactoferrin or PvLEA4 specificity collapses to total protein load, phospholipid load, osmolarity, carbon, pH or other generic medium effects.",
+    "H4_INTERFACE_PERTURBATION_INSUFFICIENT": "The inputs measurably alter interface state but BC phenotype does not change reproducibly.",
+    "H5_MEDIATOR_VECTOR_INCOMPLETE": "BC changes reproducibly without the preregistered mediator vector explaining or matching the response."
+  },
+  "portable_mediator_vector": {
+    "pair_match_core": [
+      "surface_or_interfacial_tension",
+      "dissolved_oxygen_or_oxygen_transfer_proxy",
+      "pH",
+      "osmolality_or_water_activity_proxy"
+    ],
+    "composition_controls": [
+      "available_carbohydrate_profile",
+      "total_protein_load",
+      "phospholipid_or_interfacial_lipid_load",
+      "buffer_and_ionic_strength",
+      "redox_or_ROS_proxy_if_measurable"
+    ],
+    "rule": "Source identity is intentionally not matched; generic physicochemical load is matched or measured so source-specific residuals can be tested rather than assumed."
+  },
+  "stage_A_abiotic_calibration": {
+    "bc_producer_present": false,
+    "goal": "Find preregistered interface-state match points among distinct defined input families before any bacterial-cellulose outcome is available.",
+    "candidate_families": [
+      "PVLEA4",
+      "HUMAN_LACTOFERRIN",
+      "HUMAN_LACTOFERRIN_PLUS_DPPC_INTERFACE_MODEL",
+      "NON_NUTRITIONAL_SURFACE_TENSION_REFERENCE"
+    ],
+    "required_controls": [
+      "BASE_MEDIUM",
+      "VEHICLE_BUFFER",
+      "DPPC_ONLY",
+      "GENERIC_SOLUBLE_PROTEIN",
+      "TREHALOSE",
+      "LACTOSE"
+    ],
+    "dose_lock_rule": "Candidate levels are selected only from Stage-A mediator measurements, solubility/stability constraints and reagent feasibility. All selected levels are frozen before Stage-B BC outcomes are inspected.",
+    "pair_match_tolerance_rule": "Numerical tolerances must be fixed from instrument repeatability, technical replicates or an independent calibration set before Stage-B outcomes. Outcome-driven widening of tolerances is forbidden.",
+    "failure_rule": "If no cross-family mediator match can be achieved within preregistered tolerance, the interface-equivalence comparison is not interpretable and no source-label conclusion is allowed."
+  },
+  "stage_B_locked_BC_challenge": {
+    "bc_producer": "same frozen Komagataeibacter/BC-producing system across all arms",
+    "dose_status": "LOCKED_FROM_STAGE_A_BEFORE_BC_OUTCOMES",
+    "causal_order": [
+      "DEFINED_INPUT",
+      "EARLY_INTERFACE_STATE",
+      "EARLY_OXYGEN_STATE",
+      "PELLICLE_ONSET",
+      "BC_PRODUCTION",
+      "BC_STRUCTURE",
+      "BC_MECHANICS"
+    ],
+    "co_primary_mechanism_endpoints": [
+      "surface_or_interfacial_tension_before_substantial_pellicle_formation",
+      "dissolved_oxygen_or_oxygen_transfer_proxy_before_substantial_pellicle_formation"
+    ],
+    "primary_material_endpoint": "dry_BC_mass under one frozen matched-batch harvest rule",
+    "secondary_endpoints": [
+      "pellicle_onset_time",
+      "pellicle_thickness",
+      "water_holding_or_wet_state_retention",
+      "fiber_or_pore_architecture_by_available_orthogonal_imaging",
+      "mechanical_response_where feasible",
+      "cellulose_identity_by an orthogonal material method"
+    ]
+  },
+  "equivalence_logic": {
+    "not_equal_to": "failure_to_reject_a_difference_test",
+    "required": "A BC-equivalence claim requires a preregistered equivalence margin and confidence interval or equivalent bounded criterion; p > 0.05 alone is not evidence of equivalence.",
+    "equivalence_margin_rule": "The BC equivalence margin must be frozen before treatment outcomes using historical batch variability, an independent pilot, or an engineering minimum-difference-of-interest rationale. It may not be estimated from the same blinded treatment outcomes being judged.",
+    "source_residual_rule": "Source-specific residual analysis is allowed only after the mediator-match criterion passes."
+  },
+  "decision_rules": [
+    {
+      "id": "D0_CALIBRATION_FAIL",
+      "if": "cross-family interface-state matching fails",
+      "classification": "NO_EQUIVALENCE_TEST__CALIBRATION_BLOCKED"
+    },
+    {
+      "id": "D1_SHARED_MEDIATOR_SUPPORT",
+      "if": "mediator-matched distinct inputs produce BC outcomes inside the preregistered equivalence bound across independent batches",
+      "classification": "SHARED_INTERFACE_MEDIATOR_CANDIDATE_SUPPORTED_WITHIN_BOUND"
+    },
+    {
+      "id": "D2_SOURCE_RESIDUAL",
+      "if": "mediator match passes but a reproducible BC difference remains outside the equivalence bound",
+      "classification": "SOURCE_SPECIFIC_OR_MISSING_MEDIATOR_RESIDUAL__DEFINED_FACTOR_SEARCH_REQUIRED"
+    },
+    {
+      "id": "D3_GENERIC_PROTEIN",
+      "if": "generic protein reproduces the candidate protein effect",
+      "classification": "GENERIC_PROTEIN_OR_INTERFACE_EFFECT__NO_PVLEA4_OR_LACTOFERRIN_SPECIFICITY"
+    },
+    {
+      "id": "D4_LIPID_ONLY",
+      "if": "DPPC-only reproduces the lactoferrin-plus-DPPC result",
+      "classification": "PHOSPHOLIPID_INTERFACE_EFFECT__NO_LACTOFERRIN_SPECIFICITY"
+    },
+    {
+      "id": "D5_SURFACTANT_PHENOCOPY",
+      "if": "the non-nutritional surface-tension reference phenocopies the candidate result after mediator matching",
+      "classification": "DEFINED_INTERFACE_MICROENVIRONMENT_CAUSAL_CANDIDATE"
+    },
+    {
+      "id": "D6_INTERFACE_INSUFFICIENT",
+      "if": "interface state shifts reproducibly but BC phenotype does not",
+      "classification": "INTERFACE_PERTURBATION_MEASURED_BUT_INSUFFICIENT_FOR_BC_EFFECT"
+    }
+  ],
+  "kill_rules": [
+    "No empirical BC promotion from source labels alone.",
+    "MOTHER_OF_SON and XY_PLACENTA are provenance/covariate labels, not treatment identities in this defined-component test.",
+    "No lactoferrin specificity if generic protein explains the result.",
+    "No lactoferrin-plus-lipid specificity if DPPC alone explains the result.",
+    "No shared-interface conclusion if pair matching fails.",
+    "No equivalence conclusion from non-significant difference testing alone.",
+    "No promotion without independent-batch replication.",
+    "No direct protein-cellulose binding claim without a direct binding/surface assay.",
+    "No material-memory claim from a terminal bulk phenotype alone."
+  ],
+  "human_material_boundary": {
+    "human_milk_used_in_this_gate": false,
+    "placental_tissue_used_in_this_gate": false,
+    "defined_components_only": true,
+    "note": "This stage deliberately avoids donor human milk and placental material. Any later human-derived-material work remains institution-only under consent, ethics, biosafety, handling and disposal procedures."
+  },
+  "material_memory_future_gate": {
+    "status": "CLOSED_UNTIL_SHARED_OR_SOURCE_SPECIFIC_CAUSAL_MEDIATOR_IS_REPLICATED",
+    "required_future_logic": "A transient, time-bounded mediator exposure must leave a spatially localizable persistent BC layer difference after the signal is removed or changed; bulk endpoint differences alone are insufficient."
+  },
+  "promotion_logic": {
+    "current": "P0",
+    "P1": "reproducible defined-input BC effect with early mediator measurements",
+    "P2": "mediator-matched equivalence or reproducible source residual discriminated with generic controls",
+    "P3": "defined causal mediator or defined source-specific factor reproduced independently",
+    "P4": "transient-state spatial record / material-memory gate passed"
+  },
+  "next_gate": "RUN_STAGE_A_ABIOTIC_INTERFACE_CALIBRATION; LOCK MATCHED LEVELS AND TOLERANCES BEFORE ANY STAGE_B BC OUTCOME; THEN RUN THE FROZEN TEN_ARM DEFINED_COMPONENT MATRIX."
+}
