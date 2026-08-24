@@ -1,0 +1,131 @@
+{
+  "artifact_uuid": "JANUS-SCOBY-DEFINED-MOLECULE-INTERFACE-GATE-0929-2026-08-24-v1.0",
+  "version": "v1.0",
+  "created_local": "2026-08-24T09:29:00+03:00",
+  "repository": "Hawkar-usls/SCOBY-D0",
+  "branch": "research/defined-molecule-interface-test-v1",
+  "parent": "JANUS_SCOBY_RECOVERY_MODIFIER_TO_BC_MAP_0921_v1.0.json",
+  "status": "PREREGISTERED_DEFINED_FACTOR_TEST_NO_EMPIRICAL_BC_EFFECT",
+  "question": "Can defined PvLEA4 produce a reproducible bacterial-cellulose phenotype that is not explained by trehalose, generic protein loading, bulk pH/osmolarity, oxygen availability, or air-liquid interfacial effects?",
+  "claim_ceiling": [
+    "PVLEA4_HAS_BIOPHYSICALLY_CHARACTERIZED_MOLECULAR_SHIELD_PROPERTIES",
+    "LEA_FAMILY_INTERFACIAL_ACTIVITY_IS_PUBLICLY_SUPPORTED",
+    "KOMAGATAEIBACTER_BC_FORMATION_IS_AIR_LIQUID_INTERFACE_AND_OXYGEN_SENSITIVE",
+    "SURFACE_TENSION_CAN_MODULATE_BC_YIELD_AND_WATER_HOLDING_CAPACITY",
+    "PVLEA4_TO_BC_EFFECT_REMAINS_UNTESTED",
+    "NO_DEFINED_FACTOR_NO_P3_PROMOTION"
+  ],
+  "public_evidence": [
+    {
+      "id": "PVLEA4_MOLECULAR_SHIELD_2013",
+      "doi": "10.1016/j.ibmb.2013.08.004",
+      "finding": "PvLEA4 is highly hydrophilic, becomes alpha-helical on drying, and limits growth of dehydration-induced protein aggregates in a dose-dependent manner.",
+      "role": "DEFINED_FACTOR_BIOPHYSICS"
+    },
+    {
+      "id": "LEA_AIR_WATER_INTERFACE_2019",
+      "doi": "10.1042/BCJ20180901",
+      "finding": "Model LEA proteins preferentially adsorb to air-water interfaces and alter interfacial protection behavior.",
+      "role": "INTERFACE_MECHANISM_PRECEDENT",
+      "boundary": "This study did not test PvLEA4 or bacterial cellulose directly."
+    },
+    {
+      "id": "KOMBUCHA_INTERFACE_BC_2022",
+      "doi": "10.1016/j.crbiot.2022.01.001",
+      "finding": "Komagataeibacter-rich kombucha forms cellulose at interfaces; cellulose fibers become visible at the air-kombucha interface early in biofilm formation and interfacial tension was directly measured.",
+      "role": "BC_INTERFACE_SENSITIVITY_ANCHOR"
+    },
+    {
+      "id": "SURFACE_TENSION_BC_2022",
+      "doi": "10.1016/j.ijbiomac.2022.03.124",
+      "finding": "A non-nutritional silicone polyether surfactant lowered medium surface tension and increased BC yield and water-holding capacity in Komagataeibacter xylinus.",
+      "role": "SURFACE_TENSION_CAUSAL_PRECEDENT",
+      "boundary": "Surfactant behavior cannot be assumed to equal LEA behavior."
+    },
+    {
+      "id": "TREHALOSE_BC_METABOLOMICS_2015",
+      "doi": "10.1016/j.bej.2015.05.002",
+      "finding": "Trehalose accumulation in agitated Gluconacetobacter xylinus was associated with a stress-protective metabolic branch and reduced carbon flux toward BC under those conditions.",
+      "role": "TREHALOSE_CONFOUND_ANCHOR"
+    }
+  ],
+  "mechanistic_paths": {
+    "H1_interface": "PvLEA4 -> air-liquid interface adsorption / surface-tension or interfacial-rheology change -> altered oxygen geometry -> altered cellulose deposition",
+    "H2_direct_matrix": "PvLEA4 -> direct cellulose/fibril or producer-surface interaction -> altered bundling/nucleation -> altered matrix phenotype",
+    "H3_generic_protein": "protein load rather than LEA identity -> altered medium/interface -> apparent BC phenotype",
+    "H4_trehalose": "trehalose/osmolarity/carbon carryover -> altered producer metabolism -> apparent PvLEA-associated phenotype",
+    "H0": "defined PvLEA4 produces no reproducible BC phenotype after matched controls"
+  },
+  "preregistered_conditions": [
+    {"id": "C0", "condition": "BC_BASELINE", "role": "baseline"},
+    {"id": "C1", "condition": "VEHICLE_BUFFER_MATCH", "role": "defined-factor vehicle control"},
+    {"id": "C2", "condition": "TREHALOSE_MATCH", "role": "mandatory sugar/osmolarity/carbon confound"},
+    {"id": "C3", "condition": "GENERIC_SOLUBLE_PROTEIN_MATCH", "role": "protein-load and generic interface control"},
+    {"id": "C4", "condition": "PVLEA4_LOW", "role": "defined-factor dose screen"},
+    {"id": "C5", "condition": "PVLEA4_MID", "role": "defined-factor dose screen"},
+    {"id": "C6", "condition": "PVLEA4_HIGH", "role": "defined-factor dose screen"},
+    {"id": "C7", "condition": "PVLEA4_PLUS_TREHALOSE_MATCH", "role": "interaction/synergy discriminator"},
+    {"id": "C8", "condition": "NON_NUTRITIONAL_SURFACE_TENSION_REFERENCE", "role": "interface-mediated positive reference; use only a validated material-compatible reference condition"}
+  ],
+  "dose_rule": "LOW/MID/HIGH are frozen as relative tiers before BC outcome inspection. Exact concentrations must be chosen from solubility, protein availability, osmolarity and interface-measurement feasibility; outcome-driven dose tuning is forbidden.",
+  "readout_layers": {
+    "L0_input": ["defined_factor_identity", "protein_mass_or_molar_exposure", "trehalose_concentration", "vehicle", "pH", "osmolarity_or_proxy"],
+    "L1_interface": ["surface_tension", "interfacial_rheology_if_available", "dissolved_oxygen_or_oxygen_proxy", "visible_interface_coverage_or_pellicle_onset"],
+    "L2_production": ["dry_BC_mass", "formation_rate", "pellicle_thickness"],
+    "L3_structure": ["water_holding_capacity", "porosity_or_pore_proxy", "fibril_or_bundle_morphology", "crystallinity_if_available"],
+    "L4_mechanics": ["tensile_or_compression_metric_if_material_quantity_permits"]
+  },
+  "primary_endpoint": "dry_BC_mass normalized to matched batch and harvest rule",
+  "co_primary_mechanism_endpoint": "surface_tension with oxygen proxy before substantial pellicle formation",
+  "batch_rule": "No promotion from a single BC batch. Direction must reproduce across independent BC batches under the same frozen condition map.",
+  "decision_rules": [
+    {
+      "id": "D1_DEFINED_FACTOR_EFFECT",
+      "pass_if": "At least one frozen PvLEA4 tier reproducibly changes a BC endpoint versus baseline, vehicle, trehalose and generic-protein controls.",
+      "fail_if": "PvLEA4 conditions are indistinguishable from matched controls across independent BC batches."
+    },
+    {
+      "id": "D2_GENERIC_PROTEIN_REJECTION",
+      "pass_if": "PvLEA4 differs from the generic soluble-protein control in direction or dose-response after matched protein load and vehicle.",
+      "fail_if": "Generic protein reproduces the full PvLEA4 phenotype."
+    },
+    {
+      "id": "D3_TREHALOSE_REJECTION",
+      "pass_if": "PvLEA4 effect persists after quantitative trehalose matching and is not reproduced by trehalose alone.",
+      "fail_if": "Trehalose alone reproduces the phenotype or PvLEA4 loses the effect after trehalose matching."
+    },
+    {
+      "id": "D4_INTERFACE_MEDIATION",
+      "pass_if": "PvLEA4 alters interface/oxygen metrics in temporal order before the BC phenotype and a defined surface-tension reference phenocopies the material direction.",
+      "classification": "DEFINED_MICROENVIRONMENT_CAUSAL_CANDIDATE_NOT_DIRECT_LEA_CELLULOSE_BINDING"
+    },
+    {
+      "id": "D5_DIRECT_OR_NONINTERFACE_CANDIDATE",
+      "pass_if": "PvLEA4 changes BC structure after surface-tension, oxygen, pH, osmolarity, trehalose and generic-protein effects are matched or statistically separated.",
+      "classification": "DIRECT_OR_OTHER_DEFINED_FACTOR_MECHANISM_REQUIRES_BINDING_OR_SURFACE_ASSAY"
+    }
+  ],
+  "kill_rules": [
+    "If trehalose alone reproduces the PvLEA4 phenotype, reject a PvLEA4-specific interpretation.",
+    "If generic soluble protein reproduces the PvLEA4 phenotype, classify as GENERIC_PROTEIN_OR_INTERFACE_EFFECT rather than LEA-specific.",
+    "If all BC differences vanish after matching pH, osmolarity, oxygen and surface tension, reject direct matrix modification.",
+    "If a non-nutritional surface-tension reference reproduces the phenotype and PvLEA4 has no residual effect after interface matching, classify as INTERFACE_MEDIATED, not direct LEA-cellulose coupling.",
+    "If direction fails independent-batch replication, keep P0/P1 closed regardless of nominal significance in one batch.",
+    "No cell-free recovery fraction or recombinant-factor result may be called a Polypedilum-in-SCOBY effect."
+  ],
+  "promotion_logic": {
+    "current": "P0",
+    "P1": "DEFINED_PVLEA4_OR_EARLY_RECOVERY_ASSOCIATED_BC_PHENOTYPE_REPRODUCED_AGAINST_CONTROLS",
+    "P2": "INTERFACE_VS_NONINTERFACE_MECHANISM_DISCRIMINATED",
+    "P3": "DEFINED_FACTOR_OR_DEFINED_MICROENVIRONMENT_CAUSALLY_REPRODUCES_EFFECT",
+    "P4": "TRANSIENT_EXPOSURE_LEAVES_PERSISTENT_SPATIAL_MATRIX_RECORD",
+    "this_artifact_ceiling_without_data": "P0_PREREGISTERED_DEFINED_FACTOR_TEST"
+  },
+  "janus_forward_reverse": {
+    "forward": "PVLEA4_IDENTITY -> INTERFACE_OR_DIRECT_PROPERTY -> OXYGEN_OR_MATRIX_INTERACTION -> CELLULOSE_DEPOSITION -> MATERIAL_PHENOTYPE",
+    "reverse": "MATERIAL_PHENOTYPE -> REQUIRES_BATCH_REPLICATION -> REQUIRES_TREHALOSE_AND_GENERIC_PROTEIN_REJECTION -> REQUIRES_INTERFACE_MEASUREMENT -> REQUIRES_DEFINED_PVLEA4_IDENTITY",
+    "break_edges": ["PVLEA4_TO_BC_EFFECT_UNMEASURED", "PVLEA4_INTERFACE_EFFECT_IN_BC_MEDIUM_UNMEASURED", "PVLEA4_DIRECT_CELLULOSE_BINDING_UNMEASURED"]
+  },
+  "safety_boundary": "Contained non-pathogenic material research only. This artifact does not authorize environmental release or field deployment.",
+  "next_action": "Run the frozen defined-factor matrix or obtain equivalent collaborator data; measure interface state before interpreting any BC morphology change."
+}
