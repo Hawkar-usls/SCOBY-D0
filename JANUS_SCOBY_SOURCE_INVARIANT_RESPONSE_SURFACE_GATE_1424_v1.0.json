@@ -1,0 +1,136 @@
+{
+  "schema": "janus.scoby.source-invariant-response-surface.v1",
+  "artifact_uuid": "JANUS-SCOBY-SOURCE-INVARIANT-RESPONSE-SURFACE-GATE-2026-08-24-v1.0",
+  "version": "v1.0",
+  "timestamp_local": "2026-08-24T14:24:00+03:00",
+  "repository": "Hawkar-usls/SCOBY-D0",
+  "status": "PREREGISTERED_RESPONSE_SURFACE_TEST_NO_EMPIRICAL_BC_EFFECT",
+  "current_promotion": "P0",
+  "title": "Source-invariant mediator response-surface gate",
+  "parent_gate": "JANUS_SCOBY_CROSS_DOMAIN_INTERFACE_EQUIVALENCE_GATE_1416_v1.0.json",
+  "topa_attack": "SAME_PHENOTYPE_DOES_NOT_PROVE_SAME_MECHANISM",
+  "purpose": "Strengthen the pairwise interface-equivalence design by requiring multiple matched mediator zones across independent source families and an orthogonal interface reference, so a shared mechanism candidate is supported only if source families collapse onto one reproducible mediator-to-BC response surface.",
+  "central_claim_boundary": "A response-surface collapse can support a source-invariant mediator model within the tested domain. It does not prove a universal biological law, complete causal mediation, or material memory.",
+  "source_families": [
+    "PVLEA4",
+    "HUMAN_LACTOFERRIN",
+    "HUMAN_LACTOFERRIN_PLUS_DPPC_INTERFACE_MODEL",
+    "NON_NUTRITIONAL_SURFACE_TENSION_REFERENCE"
+  ],
+  "mediator_target_zones": [
+    {
+      "id": "Z1_LOW",
+      "definition": "lowest preregistered nonzero interface-state displacement from baseline that is reliably distinguishable from technical noise"
+    },
+    {
+      "id": "Z2_MID",
+      "definition": "intermediate preregistered interface-state displacement"
+    },
+    {
+      "id": "Z3_HIGH",
+      "definition": "highest preregistered interface-state displacement compatible with stability, feasibility and the non-destructive calibration boundary"
+    }
+  ],
+  "zone_freeze_rule": "Z1/Z2/Z3 target vectors and their matching tolerances are defined from Stage-A abiotic calibration and technical repeatability before any response-surface BC outcomes are inspected.",
+  "mediator_vector": [
+    "surface_or_interfacial_tension",
+    "dissolved_oxygen_or_oxygen_transfer_proxy",
+    "pH",
+    "osmolality_or_water_activity_proxy"
+  ],
+  "measured_covariates": [
+    "available_carbohydrate_profile",
+    "total_protein_load",
+    "phospholipid_or_interfacial_lipid_load",
+    "buffer_and_ionic_strength",
+    "redox_or_ROS_proxy_if_available",
+    "batch_identity"
+  ],
+  "design_logic": {
+    "within_zone_question": "At the same mediator target zone, are BC outcomes equivalent across distinct source families within a preregistered BC equivalence margin?",
+    "between_zone_question": "Across Z1/Z2/Z3, does BC phenotype change reproducibly with mediator state rather than remaining flat?",
+    "orthogonal_reference_question": "Does the non-nutritional interface reference fall on the same zone-to-BC relation as the biological proteins/interface model?",
+    "holdout_question": "On a fully independent batch, does a source-blind mediator model predict BC as well as a source-aware model within a preregistered predictive tolerance?"
+  },
+  "required_for_source_invariant_surface_candidate": [
+    "MEDIATOR_MATCH_PASSES_IN_EACH_ZONE",
+    "WITHIN_ZONE_CROSS_FAMILY_BC_EQUIVALENCE_PASSES_FOR_ALL_PREREGISTERED_ZONES",
+    "BETWEEN_ZONE_BC_RESPONSE_IS_REPRODUCIBLE_AND_NONFLAT_OR_DIRECTIONALLY_ORDERED_AS_PREREGISTERED",
+    "ORTHOGONAL_NON_NUTRITIONAL_INTERFACE_REFERENCE_TRACKS_THE_COMMON_RELATION",
+    "INDEPENDENT_BATCH_REPLICATION_PASSES",
+    "SOURCE_BLIND_HOLDOUT_PREDICTION_IS_NOT_MATERIALLY_WORSE_THAN_SOURCE_AWARE_PREDICTION_WITHIN_FROZEN_TOLERANCE"
+  ],
+  "model_comparison_gate": {
+    "source_blind_model": "Y_BC = f(MEDIATOR_VECTOR, measured_generic_covariates, batch structure)",
+    "source_aware_model": "Y_BC = f(MEDIATOR_VECTOR, measured_generic_covariates, batch structure) + SOURCE_FAMILY and preregistered source interactions",
+    "same_functional_basis_required": true,
+    "model_family_freeze": "The functional basis, regularization/complexity rule, held-out batch definition and predictive tolerance must be frozen before outcome comparison.",
+    "interpretation": "If source-aware information materially improves held-out prediction, source-invariant mediation is not established even if some matched pairs look similar."
+  },
+  "equifinality_controls": [
+    "MULTIPLE_MEDIATOR_ZONES_NOT_SINGLE_MATCH_POINT",
+    "ORTHOGONAL_NON_NUTRITIONAL_INTERFACE_REFERENCE",
+    "WITHIN_ZONE_EQUIVALENCE_PLUS_BETWEEN_ZONE_GRADIENT",
+    "HELD_OUT_INDEPENDENT_BATCH",
+    "SOURCE_AWARE_VS_SOURCE_BLIND_PREDICTION",
+    "GENERIC_PROTEIN_DPPC_TREHALOSE_LACTOSE_CONTROLS_REMAIN_AVAILABLE_FROM_PARENT_GATE"
+  ],
+  "decision_rules": [
+    {
+      "id": "R0_NO_ZONE_MATCH",
+      "if": "one or more required source families cannot be matched into the preregistered mediator zones",
+      "classification": "RESPONSE_SURFACE_BLOCKED__NO_SOURCE_INVARIANT_CLAIM"
+    },
+    {
+      "id": "R1_LOCAL_ONLY",
+      "if": "cross-family equivalence passes in only one zone",
+      "classification": "LOCAL_CONVERGENCE_ONLY__NO_COMMON_SURFACE"
+    },
+    {
+      "id": "R2_FLAT_RESPONSE",
+      "if": "mediator zones differ measurably but BC response is reproducibly flat",
+      "classification": "MEASURED_MEDIATOR_NOT_SUFFICIENT_WITHIN_TESTED_RANGE"
+    },
+    {
+      "id": "R3_FAMILY_SPECIFIC_CURVES",
+      "if": "within-zone equivalence fails reproducibly or source-aware holdout prediction materially outperforms source-blind prediction",
+      "classification": "SOURCE_SPECIFIC_OR_MISSING_MEDIATOR_STRUCTURE_REMAINS"
+    },
+    {
+      "id": "R4_BIOLOGICAL_ONLY_COLLAPSE",
+      "if": "biological protein families collapse but the orthogonal non-nutritional interface reference does not",
+      "classification": "COMMON_BIOLOGICAL_OR_GENERIC_PROTEIN_ROUTE_CANDIDATE__INTERFACE_MEDIATION_NOT_SUFFICIENTLY_SUPPORTED"
+    },
+    {
+      "id": "R5_SOURCE_INVARIANT_SURFACE",
+      "if": "all required collapse, gradient, orthogonal-reference, replication and held-out prediction gates pass",
+      "classification": "SOURCE_INVARIANT_MEDIATOR_RESPONSE_SURFACE_SUPPORTED_WITHIN_TESTED_DOMAIN"
+    }
+  ],
+  "causal_ceiling_after_R5": "R5 supports source-invariant mediation within the tested domain but does not by itself prove full necessity. A later compensatory or orthogonal intervention that changes the mediator while the source factor is held fixed is required for stronger causal mediation language.",
+  "future_necessity_gate": {
+    "status": "CLOSED",
+    "question": "When a candidate source factor is held present, can an independent compensatory intervention restore the mediator vector toward baseline and correspondingly attenuate the BC phenotype without introducing a new dominant mechanism?",
+    "warning": "Compensatory mixtures can create new interactions; any necessity experiment requires its own controls and preregistration."
+  },
+  "material_memory_gate": {
+    "status": "CLOSED",
+    "reason": "Neither pairwise equivalence nor response-surface collapse establishes a persistent spatial record of a transient biological state."
+  },
+  "promotion_logic": {
+    "current": "P0",
+    "surface_candidate_after_data": "P2_SOURCE_INVARIANT_MEDIATOR_MODEL_SUPPORTED_WITHIN_TESTED_DOMAIN",
+    "stronger_causal_mediation": "P3_REQUIRES_ORTHOGONAL_OR_COMPENSATORY_INTERVENTION",
+    "material_memory": "P4_REQUIRES_TRANSIENT_PULSE_SPATIAL_RECORD_GATE"
+  },
+  "kill_rules": [
+    "Same phenotype at one matched point is not a common mechanism.",
+    "No common response surface without all preregistered mediator zones.",
+    "No interface-mediation claim if the orthogonal non-nutritional interface reference fails to track the relation.",
+    "No source-invariant claim if source-aware information materially improves held-out prediction.",
+    "No universal-law wording from a finite tested domain.",
+    "No causal-necessity wording before the future necessity gate.",
+    "No material-memory wording before a transient pulse leaves a spatially persistent record."
+  ],
+  "next_gate": "CALIBRATE Z1/Z2/Z3 FOR EACH SOURCE FAMILY WITHOUT BC OUTCOME FEEDBACK; FREEZE RESPONSE-SURFACE ANALYSIS AND HELD-OUT BATCH; THEN RUN MULTI_ZONE BC CHALLENGE."
+}
