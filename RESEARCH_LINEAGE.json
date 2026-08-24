@@ -50,7 +50,8 @@
       "scale_metric": "COST_PER_KG_RECOVERED_OIL"
     },
     "extremophile_reentry_matrix_line": {
-      "status": "ACTIVE_EXPLORATORY_P0_PROVENANCE_BOUND_CANDIDATE_MAP",
+      "status": "ACTIVE_EXPLORATORY_P0_KINETIC_ANCHOR",
+      "evidence_state": "PRIMARY_PROVENANCE_BOUND_CANDIDATE_MODIFIER_MAP_ADDED_NO_PROMOTION",
       "artifacts": [
         "JANUS_SCOBY_EXTREMOPHILE_REENTRY_MATRIX_GATE_0018_v1.0.json",
         "JANUS_SCOBY_RECOVERY_MODIFIER_TO_BC_MAP_0921_v1.0.json",
