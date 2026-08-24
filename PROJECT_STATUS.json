@@ -5,8 +5,8 @@
   "last_reviewed": "2026-08-24",
   "portfolio_class": "evidence_gated_bacterial_cellulose_research_platform",
   "maturity": "EARLY_R_AND_D",
-  "completion_status": "ACTIVE_MARINE_M1A_PLUS_EXTREMOPHILE_REENTRY_MATRIX_P0_PROVENANCE_BOUND",
-  "summary": "SCOBY-D0 remains led by the marine bacterial-cellulose sorbent program while the exploratory extremophile reentry track now has primary-source provenance bound for Bacillus, Adineta and Polypedilum plus a candidate recovery-modifier map. This does not promote the SCOBY effect: the track remains P0 until a matched early-window BC experiment separates trehalose, medium carryover, biomass, pH, oxygen, contact and soluble effects.",
+  "completion_status": "ACTIVE_MARINE_M1A_PLUS_EXTREMOPHILE_REENTRY_MATRIX_P0_DEFINED_FACTOR_TEST_PREREGISTERED",
+  "summary": "SCOBY-D0 remains led by the marine bacterial-cellulose sorbent program. The exploratory extremophile reentry line now includes a preregistered defined-molecule test focused on PvLEA4 versus trehalose, generic protein and interface-mediated explanations. No PvLEA4-to-BC effect has been measured; promotion remains P0 until controlled independent-batch data exist.",
   "active_tracks": {
     "marine_oil_sorbent": {
       "priority": 1,
@@ -22,10 +22,12 @@
     },
     "extremophile_reentry_matrix_coupling": {
       "priority": 2,
-      "status": "P0_KINETIC_PLUS_PRIMARY_PROVENANCE_CANDIDATE_MODIFIER_MAP_EMPIRICAL_BC_EFFECT_OPEN",
+      "status": "P0_KINETIC_PLUS_PRIMARY_PROVENANCE_DEFINED_FACTOR_TEST_PREREGISTERED_EMPIRICAL_BC_EFFECT_OPEN",
       "lead_gate": "JANUS_SCOBY_EXTREMOPHILE_REENTRY_MATRIX_GATE_0018_v1.0.json",
       "modifier_map": "JANUS_SCOBY_RECOVERY_MODIFIER_TO_BC_MAP_0921_v1.0.json",
       "three_lineage_provenance": "JANUS_SCOBY_THREE_LINEAGE_REENTRY_PROVENANCE_0921_v1.0.json",
+      "defined_molecule_gate": "JANUS_SCOBY_DEFINED_MOLECULE_INTERFACE_GATE_0929_v1.0.json",
+      "defined_factor_matrix": "experiments/PVLEA4_TREHALOSE_BC_DEFINED_FACTOR_MATRIX_v1.0.csv",
       "primary_anchor": "Polypedilum vanderplanki / Pv11",
       "cross_lineage_state": {
         "Bacillus": "PRIMARY_CAUSAL_CHECKPOINT_ANCHOR",
@@ -39,9 +41,9 @@
         "PIMT_STATE_MARKER_FIRST",
         "LIL_MEMBRANE_CONTACT_STATE"
       ],
-      "current_claim": "Recovery-state timing and cross-lineage biological rationale are provenance-bound well enough to define a mechanistic test, but matrix modulation is not established.",
+      "current_claim": "PvLEA4 is now a preregistered defined-factor candidate with interface-mediated and direct/non-interface mechanisms explicitly separated; no BC phenotype has yet been observed.",
       "current_promotion": "P0",
-      "next_gate": "Test R1-R3 versus R4; deconfound trehalose first; then separate whole-cell/contact from cell-free/soluble effects with matched biomass, pH and oxygen."
+      "next_gate": "Run or obtain the frozen PvLEA4/trehalose/generic-protein/interface matrix; record surface tension and oxygen state before interpreting dry BC mass or morphology."
     },
     "biopapyrus_and_material_process": {
       "priority": 3,
@@ -75,6 +77,10 @@
     "THREE_LINEAGE_PROVENANCE_NE_SCOBY_EFFECT",
     "TREHALOSE_CARRYOVER_NE_RECOVERY_SIGNAL",
     "CANDIDATE_MODIFIER_NE_DEFINED_CAUSAL_MODIFIER",
+    "PVLEA4_BIOPHYSICS_NE_PVLEA4_BC_EFFECT",
+    "LEA_INTERFACE_PRECEDENT_NE_PVLEA4_INTERFACE_EFFECT",
+    "SURFACE_TENSION_BC_PRECEDENT_NE_DIRECT_LEA_CELLULOSE_BINDING",
+    "GENERIC_PROTEIN_EFFECT_MUST_BE_REJECTED_BEFORE_LEA_SPECIFICITY",
     "CELL_NUMBER_MUST_BE_SEPARATED_FROM_CELL_STATE",
     "MATRIX_CHANGE_NE_MATERIAL_MEMORY",
     "P0_NE_P1_EMPIRICAL_EFFECT"
