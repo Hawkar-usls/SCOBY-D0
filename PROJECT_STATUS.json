@@ -5,8 +5,8 @@
   "last_reviewed": "2026-08-24",
   "portfolio_class": "evidence_gated_bacterial_cellulose_research_platform",
   "maturity": "EARLY_R_AND_D",
-  "completion_status": "ACTIVE_MARINE_M1A_PLUS_EXTREMOPHILE_REENTRY_P0_PLUS_CROSS_DOMAIN_INTERFACE_EQUIVALENCE_P0",
-  "summary": "SCOBY-D0 remains led by the marine bacterial-cellulose sorbent program. The extremophile reentry track remains P0, and a new TOPA-bound cross-domain interface-equivalence track now preregisters an abiotic mediator calibration followed by a locked BC challenge across PvLEA4, lactoferrin, a lactoferrin+DPPC interface model and a non-nutritional interface reference. No cross-domain BC effect has been measured.",
+  "completion_status": "ACTIVE_MARINE_M1A_PLUS_EXTREMOPHILE_REENTRY_P0_PLUS_CROSS_DOMAIN_RESPONSE_SURFACE_P0",
+  "summary": "SCOBY-D0 remains led by the marine bacterial-cellulose sorbent program. The extremophile reentry track remains P0. The TOPA-bound cross-domain line now contains both a pairwise interface-equivalence test and a stronger four-family × three-zone source-invariant response-surface gate with an orthogonal non-nutritional interface reference and held-out source-blind versus source-aware prediction. No cross-domain BC effect has been measured.",
   "active_tracks": {
     "marine_oil_sorbent": {
       "priority": 1,
@@ -47,9 +47,11 @@
     },
     "cross_domain_state_interface_equivalence": {
       "priority": 3,
-      "status": "P0_TOPA_BOUND_ABIOTIC_CALIBRATION_AND_LOCKED_BC_EQUIVALENCE_TEST_PREREGISTERED",
+      "status": "P0_TOPA_BOUND_PAIRWISE_EQUIVALENCE_PLUS_MULTI_ZONE_SOURCE_INVARIANT_RESPONSE_SURFACE_PREREGISTERED",
       "lead_gate": "JANUS_SCOBY_CROSS_DOMAIN_INTERFACE_EQUIVALENCE_GATE_1416_v1.0.json",
+      "response_surface_gate": "JANUS_SCOBY_SOURCE_INVARIANT_RESPONSE_SURFACE_GATE_1424_v1.0.json",
       "matrix": "experiments/CROSS_DOMAIN_DEFINED_INTERFACE_EQUIVALENCE_MATRIX_v1.0.csv",
+      "response_surface_matrix": "experiments/SOURCE_INVARIANT_MEDIATOR_RESPONSE_SURFACE_v1.0.csv",
       "protocol": "docs/CROSS_DOMAIN_INTERFACE_EQUIVALENCE_TEST.md",
       "defined_inputs": [
         "PVLEA4",
@@ -63,11 +65,14 @@
         "PH",
         "OSMOLALITY_OR_WATER_ACTIVITY_PROXY"
       ],
-      "current_claim": "A shared biological-state-to-interface-to-BC mechanism is a falsifiable candidate only. Source labels have no causal authority; Stage-A mediator matching must precede Stage-B BC interpretation.",
+      "response_surface_design": "FOUR_SOURCE_FAMILIES_X_THREE_MEDIATOR_ZONES_PLUS_BASELINE",
+      "holdout_gate": "SOURCE_BLIND_MEDIATOR_MODEL_VS_SOURCE_AWARE_MODEL_ON_FULLY_INDEPENDENT_BATCH",
+      "current_claim": "A shared state-to-interface-to-BC mechanism remains a falsifiable P0 candidate. Pairwise matched equivalence is insufficient; stronger support requires multi-zone within-zone equivalence, a reproducible between-zone BC response, an orthogonal non-nutritional interface reference and held-out source-blind predictive adequacy.",
       "current_promotion": "P0",
       "human_materials_in_this_gate": false,
+      "causal_necessity_status": "CLOSED",
       "material_memory_status": "CLOSED",
-      "next_gate": "Run Stage-A abiotic calibration, freeze cross-family match points/tolerances and an independent BC equivalence margin, then run the locked ten-arm BC challenge."
+      "next_gate": "Calibrate Z1/Z2/Z3 for all four source families without BC outcome feedback; freeze response-surface equivalence/model rules and held-out batch; then run multi-zone BC challenge."
     },
     "biopapyrus_and_material_process": {
       "priority": 4,
@@ -117,8 +122,13 @@
     "PVLEA4_INTERFACE_PRECEDENT_NE_PVLEA4_BC_EFFECT",
     "PAIR_MATCH_MUST_PRECEDE_SOURCE_RESIDUAL_INTERPRETATION",
     "NON_SIGNIFICANT_DIFFERENCE_NE_EQUIVALENCE",
+    "SAME_PHENOTYPE_AT_ONE_MATCH_POINT_NE_COMMON_MECHANISM",
+    "COMMON_SURFACE_REQUIRES_MULTI_ZONE_COLLAPSE",
+    "ORTHOGONAL_INTERFACE_REFERENCE_REQUIRED",
+    "SOURCE_BLIND_HELDOUT_MODEL_MUST_NOT_BE_MATERIALLY_WORSE_THAN_SOURCE_AWARE_MODEL",
     "GENERIC_PROTEIN_AND_DPPC_CONTROLS_REQUIRED_FOR_SPECIFICITY",
     "NO_HUMAN_MATERIAL_IN_CURRENT_GATE",
+    "CAUSAL_NECESSITY_REMAINS_CLOSED",
     "MATERIAL_MEMORY_REMAINS_CLOSED",
     "P0_NE_SHARED_INTERFACE_LAW"
   ],
