@@ -1,0 +1,10 @@
+arm_id,source_factor,compensator,orthogonal_reference,stage,primary_purpose,required_pre_bc_check,primary_bc_endpoint,interpretation_ceiling
+C0,NONE,NONE,NONE,C,baseline,baseline mediator vector,dry_BC_mass,reference
+C1,SOURCE_FACTOR,NONE,NONE,C,source effect,source factor reproducibly shifts mediator vector,dry_BC_mass,source-associated effect only
+C2,NONE,COMPENSATOR,NONE,C,compensator control,compensator alone remains within frozen mediator/direct-effect bounds,dry_BC_mass,compensator cleanliness
+C3,SOURCE_FACTOR,COMPENSATOR,NONE,C,mediator rescue,source retained while mediator vector returns toward baseline within frozen tolerance,dry_BC_mass,causal mediation candidate if BC rescues
+C4,SOURCE_FACTOR,SHAM_COMPENSATOR,NONE,C,sham control,source mediator shift remains present,dry_BC_mass,handling control
+C5,NONE,NONE,ORTHOGONAL_MEDIATOR_REFERENCE,C,source-free sufficiency,orthogonal route reproduces target mediator vector,dry_BC_mass,mediator sufficiency candidate
+C6,NONE,COUNTER_RESCUE,ORTHOGONAL_MEDIATOR_REFERENCE,C,bidirectional control,counter-rescue reverses orthogonal mediator shift,dry_BC_mass,bidirectional mediator control candidate
+H1,SOURCE_FACTOR,COMPENSATOR,NONE,D,independent batch rescue,all frozen tolerances unchanged,dry_BC_mass,replication only
+H2,NONE,NONE,ORTHOGONAL_MEDIATOR_REFERENCE,D,independent batch sufficiency,all frozen tolerances unchanged,dry_BC_mass,replication only
