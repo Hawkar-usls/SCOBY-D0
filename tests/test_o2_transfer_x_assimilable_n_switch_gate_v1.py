@@ -1,7 +1,6 @@
 import csv
 import json
 import unittest
-from collections import Counter
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -87,7 +86,7 @@ class TestO2TransferXAssimilableNSwitchGateV1(unittest.TestCase):
     def test_additive_vs_interaction_is_heldout_predictive(self):
         model = self.gate["model_gate"]
         self.assertIn("O2_TRANSFER:ASSIMILABLE_N", model["interaction_model"])
-        text = " ".join(model["promotion_requires"])
+        text = " ".join(model["promotion_requires"]).replace("_", " ")
         self.assertIn("heldout prediction", text)
         self.assertIn("additive model", text)
 
