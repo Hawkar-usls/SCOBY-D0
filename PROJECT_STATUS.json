@@ -5,8 +5,8 @@
   "last_reviewed": "2026-08-24",
   "portfolio_class": "evidence_gated_bacterial_cellulose_research_platform",
   "maturity": "EARLY_R_AND_D",
-  "completion_status": "ACTIVE_MARINE_M1A_PLUS_EXTREMOPHILE_REENTRY_MATRIX_P0_DEFINED_FACTOR_TEST_PREREGISTERED",
-  "summary": "SCOBY-D0 remains led by the marine bacterial-cellulose sorbent program. The exploratory extremophile reentry line now includes a preregistered defined-molecule test focused on PvLEA4 versus trehalose, generic protein and interface-mediated explanations. No PvLEA4-to-BC effect has been measured; promotion remains P0 until controlled independent-batch data exist.",
+  "completion_status": "ACTIVE_MARINE_M1A_PLUS_EXTREMOPHILE_REENTRY_P0_PLUS_CROSS_DOMAIN_INTERFACE_EQUIVALENCE_P0",
+  "summary": "SCOBY-D0 remains led by the marine bacterial-cellulose sorbent program. The extremophile reentry track remains P0, and a new TOPA-bound cross-domain interface-equivalence track now preregisters an abiotic mediator calibration followed by a locked BC challenge across PvLEA4, lactoferrin, a lactoferrin+DPPC interface model and a non-nutritional interface reference. No cross-domain BC effect has been measured.",
   "active_tracks": {
     "marine_oil_sorbent": {
       "priority": 1,
@@ -41,17 +41,41 @@
         "PIMT_STATE_MARKER_FIRST",
         "LIL_MEMBRANE_CONTACT_STATE"
       ],
-      "current_claim": "PvLEA4 is now a preregistered defined-factor candidate with interface-mediated and direct/non-interface mechanisms explicitly separated; no BC phenotype has yet been observed.",
+      "current_claim": "PvLEA4 is a preregistered defined-factor candidate with interface-mediated and direct/non-interface mechanisms explicitly separated; no BC phenotype has yet been observed.",
       "current_promotion": "P0",
       "next_gate": "Run or obtain the frozen PvLEA4/trehalose/generic-protein/interface matrix; record surface tension and oxygen state before interpreting dry BC mass or morphology."
     },
-    "biopapyrus_and_material_process": {
+    "cross_domain_state_interface_equivalence": {
       "priority": 3,
+      "status": "P0_TOPA_BOUND_ABIOTIC_CALIBRATION_AND_LOCKED_BC_EQUIVALENCE_TEST_PREREGISTERED",
+      "lead_gate": "JANUS_SCOBY_CROSS_DOMAIN_INTERFACE_EQUIVALENCE_GATE_1416_v1.0.json",
+      "matrix": "experiments/CROSS_DOMAIN_DEFINED_INTERFACE_EQUIVALENCE_MATRIX_v1.0.csv",
+      "protocol": "docs/CROSS_DOMAIN_INTERFACE_EQUIVALENCE_TEST.md",
+      "defined_inputs": [
+        "PVLEA4",
+        "HUMAN_LACTOFERRIN",
+        "HUMAN_LACTOFERRIN_PLUS_DPPC_INTERFACE_MODEL",
+        "NON_NUTRITIONAL_SURFACE_TENSION_REFERENCE"
+      ],
+      "core_mediator_vector": [
+        "SURFACE_OR_INTERFACIAL_TENSION",
+        "DISSOLVED_OXYGEN_OR_TRANSFER_PROXY",
+        "PH",
+        "OSMOLALITY_OR_WATER_ACTIVITY_PROXY"
+      ],
+      "current_claim": "A shared biological-state-to-interface-to-BC mechanism is a falsifiable candidate only. Source labels have no causal authority; Stage-A mediator matching must precede Stage-B BC interpretation.",
+      "current_promotion": "P0",
+      "human_materials_in_this_gate": false,
+      "material_memory_status": "CLOSED",
+      "next_gate": "Run Stage-A abiotic calibration, freeze cross-family match points/tolerances and an independent BC equivalence margin, then run the locked ten-arm BC challenge."
+    },
+    "biopapyrus_and_material_process": {
+      "priority": 4,
       "status": "EXPERIMENTAL_AND_COMPARATIVE",
       "claim_boundary": "Modern BC sheet research and Egyptian lexical/process parallels do not demonstrate ancient SCOBY papyrus."
     },
     "legacy_c2_context_engine": {
-      "priority": 4,
+      "priority": 5,
       "status": "PRESERVED_V0_6_6_HARDENED_CANDIDATE_LEDGER",
       "authority_change": "NONE",
       "human_reference_standard": "NOT_ESTABLISHED",
@@ -85,6 +109,19 @@
     "MATRIX_CHANGE_NE_MATERIAL_MEMORY",
     "P0_NE_P1_EMPIRICAL_EFFECT"
   ],
+  "cross_domain_invariants": [
+    "SOURCE_LABEL_NE_CAUSAL_MEDIATOR",
+    "MOTHER_OF_SON_NE_STABLE_MATERIAL_CLASS",
+    "XY_PLACENTA_NE_BC_EFFECT",
+    "LACTOFERRIN_INTERFACE_PRECEDENT_NE_LACTOFERRIN_BC_EFFECT",
+    "PVLEA4_INTERFACE_PRECEDENT_NE_PVLEA4_BC_EFFECT",
+    "PAIR_MATCH_MUST_PRECEDE_SOURCE_RESIDUAL_INTERPRETATION",
+    "NON_SIGNIFICANT_DIFFERENCE_NE_EQUIVALENCE",
+    "GENERIC_PROTEIN_AND_DPPC_CONTROLS_REQUIRED_FOR_SPECIFICITY",
+    "NO_HUMAN_MATERIAL_IN_CURRENT_GATE",
+    "MATERIAL_MEMORY_REMAINS_CLOSED",
+    "P0_NE_SHARED_INTERFACE_LAW"
+  ],
   "marine_promotion_gates": [
     "M1_G1 oil uptake in artificial seawater",
     "M1_G2 oil/water selectivity",
@@ -115,6 +152,7 @@
   "related": {
     "registry": "https://github.com/Hawkar-usls/janus-meta-registry",
     "genesis": "https://github.com/Hawkar-usls/Janus_Genesis",
-    "twai": "https://github.com/Hawkar-usls/ESP32-TWAI-CAN"
+    "twai": "https://github.com/Hawkar-usls/ESP32-TWAI-CAN",
+    "topa": "https://github.com/Hawkar-usls/TOPA"
   }
 }
