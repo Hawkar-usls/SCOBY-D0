@@ -1,0 +1,105 @@
+{
+  "schema": "janus.scoby.causal-mediator-rescue.v1",
+  "artifact_id": "JANUS_SCOBY_CAUSAL_MEDIATOR_RESCUE_GATE_1429_v1.0",
+  "version": "1.0",
+  "date": "2026-08-24",
+  "repository": "Hawkar-usls/SCOBY-D0",
+  "status": "P0_PREREGISTERED_CAUSAL_MEDIATION_GATE_NO_EMPIRICAL_EFFECT",
+  "parent_gates": [
+    "JANUS_SCOBY_CROSS_DOMAIN_INTERFACE_EQUIVALENCE_GATE_1416_v1.0.json",
+    "JANUS_SCOBY_SOURCE_INVARIANT_RESPONSE_SURFACE_GATE_1424_v1.0.json"
+  ],
+  "question": "If a defined biological factor changes BC through a measured interface/O2 mediator state, does restoring that mediator toward baseline while keeping source-factor exposure present rescue the BC phenotype?",
+  "core_logic": [
+    "SOURCE_FACTOR_PRESENT_AND_MEDIATOR_SHIFTED",
+    "ORTHOGONAL_COMPENSATOR_RESTORES_MEDIATOR_TOWARD_BASELINE_WITH_SOURCE_FACTOR_STILL_PRESENT",
+    "BC_OUTCOME_FOLLOWS_MEDIATOR_RESCUE_OR_DOES_NOT",
+    "ORTHOGONAL_REFERENCE_REPRODUCES_MEDIATOR_SHIFT_WITHOUT_SOURCE_FACTOR",
+    "HELD_OUT_BATCH_REPLICATION"
+  ],
+  "candidate_source_factors": [
+    "PVLEA4",
+    "HUMAN_LACTOFERRIN",
+    "HUMAN_LACTOFERRIN_PLUS_DPPC_INTERFACE_MODEL"
+  ],
+  "mediator_vector": [
+    "SURFACE_OR_INTERFACIAL_TENSION",
+    "DISSOLVED_OXYGEN_OR_TRANSFER_PROXY",
+    "PH",
+    "OSMOLALITY_OR_WATER_ACTIVITY_PROXY"
+  ],
+  "compensator_requirements": [
+    "SELECTED_WITHOUT_BC_OUTCOME_FEEDBACK",
+    "NON_NUTRITIONAL_OR_NUTRITIONALLY_MATCHED",
+    "NO_KNOWN_DIRECT_CELLULOSE_OR_SOURCE_PROTEIN_BINDING_ROUTE_IN_TESTED_CONTEXT",
+    "DOES_NOT_MATERIALLY_SHIFT_PH_OR_OSMOLALITY_OUTSIDE_FROZEN_TOLERANCE",
+    "DOES_NOT_CHANGE_SOURCE_FACTOR_IDENTITY_OR_REMOVE_SOURCE_FACTOR_FROM_SYSTEM",
+    "MEDIATOR_RESCUE_MAGNITUDE_VERIFIED_ABIOTICALLY_BEFORE_BC_CHALLENGE"
+  ],
+  "frozen_arms": [
+    {"id":"C0","condition":"BASELINE","purpose":"reference"},
+    {"id":"C1","condition":"SOURCE_FACTOR_ONLY","purpose":"establish source-associated mediator and BC shift"},
+    {"id":"C2","condition":"COMPENSATOR_ONLY","purpose":"test compensator direct effect"},
+    {"id":"C3","condition":"SOURCE_FACTOR_PLUS_COMPENSATOR_RESCUE","purpose":"necessity-style rescue test"},
+    {"id":"C4","condition":"SHAM_COMPENSATOR_WITH_SOURCE_FACTOR","purpose":"handling/control chemistry"},
+    {"id":"C5","condition":"ORTHOGONAL_MEDIATOR_REFERENCE_ONLY","purpose":"source-free mediator sufficiency test"},
+    {"id":"C6","condition":"ORTHOGONAL_MEDIATOR_REFERENCE_PLUS_COUNTER_RESCUE","purpose":"second-route rescue"}
+  ],
+  "preregistered_sequence": [
+    "STAGE_A_ABIOTIC_SOURCE_MEDIATOR_CALIBRATION",
+    "STAGE_B_ABIOTIC_COMPENSATOR_RESCUE_CALIBRATION",
+    "FREEZE_DOSES_TOLERANCES_AND_EQUIVALENCE_MARGIN",
+    "STAGE_C_LOCKED_BC_RESCUE_CHALLENGE",
+    "STAGE_D_INDEPENDENT_BATCH_REPLICATION",
+    "STAGE_E_HELD_OUT_SOURCE_BLIND_MEDIATION_CHECK"
+  ],
+  "primary_endpoint": "DRY_BC_MASS_UNDER_ONE_FROZEN_HARVEST_RULE",
+  "mechanism_endpoints": [
+    "EARLY_SURFACE_OR_INTERFACIAL_TENSION",
+    "EARLY_DISSOLVED_OXYGEN_OR_TRANSFER_PROXY",
+    "PH",
+    "OSMOLALITY_OR_WATER_ACTIVITY_PROXY"
+  ],
+  "promotion_logic": {
+    "R0": "SOURCE_FACTOR_DOES_NOT_REPRODUCIBLY_SHIFT_MEDIATOR_AND_BC -> STOP",
+    "R1": "SOURCE_FACTOR_SHIFTS_MEDIATOR_AND_BC_BUT_COMPENSATOR_FAILS_TO_RESTORE_MEDIATOR -> RESCUE_UNINFORMATIVE",
+    "R2": "MEDIATOR_RESCUED_BUT_BC_REMAINS_SOURCE_SHIFTED -> SOURCE_SPECIFIC_OR_MISSING_MEDIATOR_ROUTE",
+    "R3": "MEDIATOR_RESCUED_AND_BC_RETURNS_WITHIN_FROZEN_EQUIVALENCE_BOUND -> CAUSAL_MEDIATION_SUPPORTED_WITHIN_TESTED_DOMAIN",
+    "R4": "ORTHOGONAL_REFERENCE_REPRODUCES_MEDIATOR_AND_BC_SHIFT_AND_COUNTER_RESCUE_REVERSES_BOTH -> BIDIRECTIONAL_MEDIATOR_CONTROL_SUPPORTED_WITHIN_TESTED_DOMAIN",
+    "R5": "R4_PLUS_INDEPENDENT_BATCH_AND_HELD_OUT_SOURCE_BLIND_PASS -> STRONG_CAUSAL_MEDIATOR_CANDIDATE_WITHIN_TESTED_DOMAIN"
+  },
+  "kill_rules": [
+    "COMPENSATOR_ONLY_CHANGES_BC_MATERIALLY -> COMPENSATOR_NOT_CLEAN",
+    "COMPENSATOR_CHANGES_SOURCE_FACTOR_IDENTITY_OR_AVAILABILITY -> RESCUE_INVALID",
+    "MEDIATOR_RESCUE_WITHOUT_BC_RESCUE -> MEDIATOR_INSUFFICIENT_OR_MISSING_MEDIATOR",
+    "BC_RESCUE_WITHOUT_MEDIATOR_RESCUE -> NON_MEDIATOR_COMPENSATOR_ROUTE_SUSPECTED",
+    "ORTHOGONAL_REFERENCE_FAILS_TO_REPRODUCE_DIRECTION -> NECESSITY_ONLY_CLAIM_BLOCKED_FROM_SUFFICIENCY_LANGUAGE",
+    "SOURCE_AWARE_MODEL_MATERIALLY_OUTPERFORMS_SOURCE_BLIND_MEDIATOR_MODEL_ON_HELD_OUT_BATCH -> SOURCE_SPECIFIC_STRUCTURE_REMAINS"
+  ],
+  "claim_ceiling": {
+    "current": "P0",
+    "full_gate_pass_allows": "STRONG_CAUSAL_MEDIATOR_CANDIDATE_WITHIN_TESTED_DOMAIN",
+    "does_not_allow": [
+      "UNIVERSAL_BIOLOGICAL_LAW",
+      "MATERIAL_MEMORY",
+      "HUMAN_MILK_OR_PLACENTA_EFFECT",
+      "PVLEA4_OR_LACTOFERRIN_SPECIFIC_BC_EFFECT_OUTSIDE_TESTED_DOMAIN"
+    ]
+  },
+  "literature_anchors": [
+    {
+      "finding": "A non-nutritional silicone polyether surfactant lowered medium surface tension and increased BC yield and water-holding capacity in Komagataeibacter xylinus.",
+      "doi": "10.1016/j.ijbiomac.2022.03.124"
+    },
+    {
+      "finding": "Interfacial tension and interface identity affect Komagataeibacter cellulosic biofilm formation in kombucha oil-water systems.",
+      "pmid": "35280972"
+    },
+    {
+      "finding": "Oxygen-transfer engineering can alter cell growth, BNC productivity and material structure, so oxygen must remain a co-mediator rather than a hidden confound.",
+      "source": "Nanobubble-enhanced oxygen transfer in bacterial nanocellulose production, 2026"
+    }
+  ],
+  "safety_scope": "Defined non-pathogenic materials research only; no donor human milk, placenta or human tissue is used in this gate.",
+  "next_gate": "IDENTIFY_ONE_CLEAN_COMPENSATOR_BY_ABIOTIC_CALIBRATION_THAT_RESTORES_THE_SOURCE_INDUCED_MEDIATOR_VECTOR_WITHOUT_REMOVING_OR_BINDING_THE_SOURCE_FACTOR; FREEZE_RESCUE_TOLERANCES_BEFORE_ANY_BC_OUTCOME."
+}
