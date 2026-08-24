@@ -1,0 +1,17 @@
+{
+  "schema": "scoby-d0.causal-mediation-status.v1",
+  "project": "SCOBY-D0",
+  "date": "2026-08-24",
+  "status": "P0_PREREGISTERED_CAUSAL_MEDIATION_GATE_NO_DATA",
+  "parent_response_surface": "JANUS_SCOBY_SOURCE_INVARIANT_RESPONSE_SURFACE_GATE_1424_v1.0.json",
+  "active_gate": "JANUS_SCOBY_CAUSAL_MEDIATOR_RESCUE_GATE_1429_v1.0.json",
+  "matrix": "experiments/CAUSAL_MEDIATOR_RESCUE_MATRIX_v1.0.csv",
+  "protocol": "docs/CAUSAL_MEDIATOR_RESCUE_TEST.md",
+  "current_promotion": "P0",
+  "causal_necessity": "PREREGISTERED_NOT_PASSED",
+  "causal_sufficiency": "PREREGISTERED_NOT_PASSED",
+  "bidirectional_control": "PREREGISTERED_NOT_PASSED",
+  "material_memory": "CLOSED",
+  "universal_law": "NOT_ESTABLISHED",
+  "next_gate": "ABIOTICALLY IDENTIFY A CLEAN COMPENSATOR THAT RESTORES THE SOURCE-INDUCED MEDIATOR VECTOR WITHOUT REMOVING OR BINDING THE SOURCE FACTOR; FREEZE ALL RESCUE TOLERANCES BEFORE BC OUTCOMES."
+}
