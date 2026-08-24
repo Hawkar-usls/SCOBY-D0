@@ -50,22 +50,32 @@
       "scale_metric": "COST_PER_KG_RECOVERED_OIL"
     },
     "extremophile_reentry_matrix_line": {
-      "status": "ACTIVE_EXPLORATORY_P0_KINETIC_ANCHOR",
+      "status": "ACTIVE_EXPLORATORY_P0_PROVENANCE_BOUND_CANDIDATE_MAP",
       "artifacts": [
         "JANUS_SCOBY_EXTREMOPHILE_REENTRY_MATRIX_GATE_0018_v1.0.json",
+        "JANUS_SCOBY_RECOVERY_MODIFIER_TO_BC_MAP_0921_v1.0.json",
+        "JANUS_SCOBY_THREE_LINEAGE_REENTRY_PROVENANCE_0921_v1.0.json",
         "experiments/POLYPEDILUM_SCOBY_REENTRY_MATRIX_DESIGN_v1.0.csv",
+        "experiments/POLYPEDILUM_RECOVERY_MODIFIER_BC_PREDICTIONS_v1.0.csv",
         "docs/EXTREMOPHILE_REENTRY_MATRIX_PROTOCOL.md"
       ],
       "primary_anchor": "Polypedilum vanderplanki / Pv11 rehydration kinetics",
       "current_state": "RECOVERY_STATE_TO_MATRIX_COUPLING_PREREGISTERED_NOT_EMPIRICALLY_TESTED",
-      "promotion_ladder": "P0_KINETIC_ANCHOR -> P1_EARLY_MATRIX_EFFECT -> P2_CONTACT_OR_SOLUBLE -> P3_DEFINED_CAUSAL_MODIFIER -> P4_PERSISTENT_SPATIAL_MATRIX_RECORD",
-      "claim_boundary": "Function-before-proliferation kinetics and recovery-associated DNA-repair evidence do not establish that Pv11 changes bacterial cellulose. A SCOBY/BC effect requires matched experiments with trehalose, medium, biomass, pH and oxygen controls.",
+      "promotion_ladder": "P0_KINETIC_AND_PROVENANCE_ANCHOR -> P1_EARLY_MATRIX_EFFECT -> P2_CONTACT_OR_SOLUBLE -> P3_DEFINED_CAUSAL_MODIFIER -> P4_PERSISTENT_SPATIAL_MATRIX_RECORD",
+      "claim_boundary": "Function-before-proliferation kinetics, cross-lineage repair architecture and candidate modifier biophysics do not establish that Pv11 changes bacterial cellulose. A SCOBY/BC effect requires matched experiments with trehalose, medium, biomass, pH and oxygen controls.",
       "cross_lineage_context": {
-        "Bacillus": "IMPORTED_CONTEXT_PENDING_PRIMARY_PROVENANCE_BINDING_IN_SCOBY_D0",
-        "Adineta": "IMPORTED_CONTEXT_PENDING_PRIMARY_PROVENANCE_BINDING_IN_SCOBY_D0",
-        "Polypedilum": "PRIMARY_PUBLIC_EVIDENCE_BOUND"
+        "Bacillus": "PRIMARY_CAUSAL_CHECKPOINT_PROVENANCE_BOUND",
+        "Adineta": "PRIMARY_COMPARTMENT_SPECIFIC_REPAIR_TIMING_PROVENANCE_BOUND",
+        "Polypedilum": "PRIMARY_KINETIC_PROVENANCE_BOUND_CAUSAL_GATE_OPEN"
       },
-      "next_gate": "P0_TO_P1_EARLY_NONPROLIFERATIVE_MATRIX_EFFECT_WITH_MATCHED_CONFOUND_CONTROLS"
+      "candidate_modifier_priority": [
+        "TREHALOSE",
+        "LEA",
+        "THIOREDOXIN_REDOX",
+        "PIMT_STATE_MARKER_FIRST",
+        "LIL_MEMBRANE_CONTACT_STATE"
+      ],
+      "next_gate": "P0_TO_P1_EARLY_NONPROLIFERATIVE_MATRIX_EFFECT_WITH_MATCHED_CONFOUND_CONTROLS; TREHALOSE_FIRST_DECONFOUNDING"
     }
   },
   "janus_method_invariant": {
