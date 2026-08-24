@@ -1,0 +1,132 @@
+{
+  "artifact_uuid": "JANUS-SCOBY-RECOVERY-MODIFIER-TO-BC-MAP-0921-2026-08-24-v1.0",
+  "version": "v1.0",
+  "created_local": "2026-08-24T09:21:00+03:00",
+  "repository": "Hawkar-usls/SCOBY-D0",
+  "branch": "research/recovery-modifier-map-v1",
+  "parent_gate": "JANUS_SCOBY_EXTREMOPHILE_REENTRY_MATRIX_GATE_0018_v1.0.json",
+  "status": "MECHANISTIC_CANDIDATE_MAP_NO_BC_EFFECT_CLAIM",
+  "question": "Which Polypedilum/Pv11 recovery-associated molecular families are plausible bacterial-cellulose modifiers, and what observation would falsify each proposed mechanism?",
+  "claim_boundary": [
+    "ANHYDROBIOSIS_ROLE_NE_BC_MODIFIER_ROLE",
+    "INTRACELLULAR_FUNCTION_NE_EXTRACELLULAR_AVAILABILITY",
+    "PHYSICOCHEMICAL_PREDICTION_NE_SCOBY_PHENOTYPE",
+    "TREHALOSE_IS_BOTH_CANDIDATE_AND_MANDATORY_CONFOUND"
+  ],
+  "source_anchors": [
+    {
+      "id": "PV_LEA4_2013",
+      "doi": "10.1016/j.ibmb.2013.08.004",
+      "finding": "PvLEA4 is highly hydrophilic, desiccation inducible and limits aggregation of dehydration-sensitive proteins.",
+      "use": "MOLECULAR_SHIELD_AND_HYDRATION_INTERFACE_ANCHOR"
+    },
+    {
+      "id": "PV_LEA_EXPRESSION_2015",
+      "doi": "10.1007/s00425-015-2284-6",
+      "finding": "Multiple PvLEA genes show distinct expression profiles across desiccation and rehydration.",
+      "use": "STATE_DEPENDENT_LEA_PROGRAM_ANCHOR"
+    },
+    {
+      "id": "PV_PIMT_2020",
+      "doi": "10.3390/insects11090634",
+      "finding": "Pv PIMT paralogs show heterogeneous desiccation/rehydration expression; selected paralogs retain canonical methyltransferase activity under tested conditions.",
+      "use": "PROTEIN_REPAIR_FAMILY_ANCHOR"
+    },
+    {
+      "id": "PV11_HSF1_2021",
+      "doi": "10.3390/ijms22115798",
+      "finding": "Trehalose pretreatment activates a broad Pv11 anhydrobiosis program including LEA, thioredoxin, PIMT and LIL genes.",
+      "use": "COORDINATED_PROTECTIVE_STATE_ANCHOR"
+    },
+    {
+      "id": "PV11_STRT1_2024",
+      "doi": "10.1073/pnas.2317254121",
+      "finding": "STRT1 contributes to trehalose export during rehydration; knockout slows trehalose release and morphological recovery.",
+      "use": "TIME_DEPENDENT_TREHALOSE_CARRYOVER_ANCHOR"
+    },
+    {
+      "id": "PV11_RECOVERY_TRANSCRIPTOME_2018",
+      "doi": "10.1038/s41598-018-36124-6",
+      "finding": "Pv11 rehydration includes recovery-associated DNA-repair programs and molecularly distinct trehalose-treated, desiccated and rehydrated states.",
+      "use": "RECOVERY_STATE_SEPARATION_ANCHOR"
+    }
+  ],
+  "candidate_families": [
+    {
+      "id": "M1_TREHALOSE",
+      "priority": 1,
+      "pv_evidence": "HIGH",
+      "extracellular_plausibility": "HIGH",
+      "known_property": "compatible solute; water replacement and vitrification; osmotic and carbon-source effects",
+      "bc_hypothesis": "Changes osmolarity, water activity and carbon availability around Komagataeibacter and can therefore alter BC yield or architecture.",
+      "predicted_readouts": ["dry_BC_mass", "formation_rate", "water_retention", "porosity_proxy", "pH", "dissolved_oxygen"],
+      "critical_control": "Quantitative trehalose-matched control plus post-wash carryover measurement.",
+      "falsifier": "The Pv11-associated phenotype disappears after trehalose matching/removal or is fully reproduced by trehalose alone.",
+      "positive_classification": "MICROENVIRONMENT_MODIFIER_UNLESS_NON_TREHALOSE_SIGNAL_SEPARATED"
+    },
+    {
+      "id": "M2_LEA",
+      "priority": 2,
+      "pv_evidence": "HIGH",
+      "extracellular_plausibility": "LOW_TO_UNKNOWN",
+      "known_property": "highly hydrophilic molecular shield; anti-aggregation; drying-induced structuralization",
+      "bc_hypothesis": "If released or surface-exposed, LEA material may alter hydration shells, polymer interfaces, fibril bundling or nucleation.",
+      "predicted_readouts": ["fibril_bundle_morphology", "porosity_proxy", "water_retention", "mechanical_properties"],
+      "critical_control": "Defined recombinant protein or peptide exposure at matched ionic strength plus protein-only negative controls.",
+      "falsifier": "Defined LEA exposure does not reproduce a cell-free recovery-fraction phenotype across independent BC batches.",
+      "positive_classification": "DEFINED_MATRIX_MODIFIER_CANDIDATE"
+    },
+    {
+      "id": "M3_THIOREDOXIN_REDOX",
+      "priority": 3,
+      "pv_evidence": "HIGH",
+      "extracellular_plausibility": "LOW_TO_UNKNOWN",
+      "known_property": "redox control and ROS attenuation during desiccation/recovery",
+      "bc_hypothesis": "A released redox-active factor could alter producer stress, local oxidative state or cellulose-synthesis physiology.",
+      "predicted_readouts": ["producer_viability", "ROS_proxy", "dry_BC_mass", "formation_rate", "fibril_bundle_morphology"],
+      "critical_control": "Redox-matched controls and a direct ROS/redox readout.",
+      "falsifier": "The matrix effect survives redox matching or defined redox manipulation fails to reproduce the phenotype.",
+      "positive_classification": "REDOX_MEDIATED_MATRIX_COUPLING"
+    },
+    {
+      "id": "M4_PIMT",
+      "priority": 4,
+      "pv_evidence": "MODERATE_TO_HIGH_INTRACELLULAR",
+      "extracellular_plausibility": "LOW",
+      "known_property": "protein L-isoaspartate repair methyltransferase activity for selected paralogs",
+      "bc_hypothesis": "Direct extracellular BC action is weakly motivated; PIMT is stronger as a recovery-state marker or intracellular proteome-repair contributor.",
+      "predicted_readouts": ["recovery_state_biomarker_first"],
+      "critical_control": "Do not infer a BC mechanism from PIMT expression alone.",
+      "falsifier": "No extracellular PIMT/activity is detectable and defined exposure produces no BC phenotype.",
+      "positive_classification": "REQUIRES_DIRECT_DEFINED_FACTOR_EVIDENCE"
+    },
+    {
+      "id": "M5_LIL_MEMBRANE_STATE",
+      "priority": 5,
+      "pv_evidence": "MODERATE",
+      "extracellular_plausibility": "CONTACT_ONLY",
+      "known_property": "anhydrobiosis-associated transmembrane proteins and candidate membrane protectants",
+      "bc_hypothesis": "Recovery-dependent cell-surface state may alter adhesion, entrapment, nucleation geometry or local oxygen transport.",
+      "predicted_readouts": ["whole_vs_cell_free_difference", "cell_entrapment", "spatial_BC_growth", "dissolved_oxygen"],
+      "critical_control": "Washed whole cells versus cell-free fraction with matched biomass and oxygen.",
+      "falsifier": "Whole-cell specificity disappears after oxygen/contact matching or whole and cell-free fractions become equivalent after soluble-factor matching.",
+      "positive_classification": "CONTACT_OR_MICROENVIRONMENT_MEDIATED"
+    }
+  ],
+  "decision_tree": [
+    "SCREEN_R1_R3_CELL_FREE_AND_WHOLE_CELL",
+    "IF_CELL_FREE_EFFECT_TEST_TREHALOSE_FIRST",
+    "IF_EFFECT_SURVIVES_TREHALOSE_FRACTIONATE_SOLUBLE_COMPONENTS",
+    "IF_WHOLE_ONLY_EFFECT_TEST_CONTACT_OXYGEN_AND_SURFACE_STATE",
+    "DEFINED_FACTOR_MUST_REPRODUCE_DIRECTION_ACROSS_INDEPENDENT_BC_BATCHES",
+    "NO_DEFINED_FACTOR_NO_P3_PROMOTION"
+  ],
+  "promotion_rule": {
+    "current": "P0",
+    "P1": "EARLY_PREPROLIFERATIVE_BC_PHENOTYPE_REPRODUCED_AGAINST_MATCHED_CONFOUNDS",
+    "P2": "CONTACT_VS_SOLUBLE_MECHANISM_DISCRIMINATED",
+    "P3": "DEFINED_FACTOR_OR_DEFINED_MICROENVIRONMENT_CAUSALLY_REPRODUCES_EFFECT",
+    "ceiling_for_this_artifact": "CANDIDATE_MAP_ONLY"
+  },
+  "next_action": "Prioritize trehalose, LEA and contact/oxygen mechanisms; keep PIMT as a state-marker-first candidate unless extracellular evidence emerges."
+}

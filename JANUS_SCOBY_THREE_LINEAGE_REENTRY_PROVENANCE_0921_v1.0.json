@@ -1,0 +1,106 @@
+{
+  "artifact_uuid": "JANUS-SCOBY-THREE-LINEAGE-REENTRY-PROVENANCE-0921-2026-08-24-v1.0",
+  "version": "v1.0",
+  "created_local": "2026-08-24T09:21:00+03:00",
+  "repository": "Hawkar-usls/SCOBY-D0",
+  "branch": "research/recovery-modifier-map-v1",
+  "parent_gate": "JANUS_SCOBY_EXTREMOPHILE_REENTRY_MATRIX_GATE_0018_v1.0.json",
+  "status": "THREE_LINEAGE_PRIMARY_PROVENANCE_BOUND_GENERAL_CAUSAL_CLAIM_OPEN",
+  "core_abstraction": "BASIC_OR_EARLY_RETURN_TO_FUNCTION_CAN_BE_SEPARATED_FROM_HIGHER_RISK_REPLICATION_OR_REPRODUCTIVE_REENTRY_BY_A_DAMAGE_PROCESSING_WINDOW",
+  "lineages": [
+    {
+      "lineage": "Bacillus_subtilis_spore",
+      "evidence_class": "PRIMARY_CAUSAL_CHECKPOINT_ANCHOR",
+      "sources": [
+        {
+          "doi": "10.1128/JB.01259-13",
+          "year": 2014,
+          "finding": "Nfo/ExoA repair deficiency greatly delays spore outgrowth; disrupting DisA suppresses that slow-outgrowth phenotype, supporting a DisA-dependent DNA-integrity checkpoint during return to vegetative growth."
+        },
+        {
+          "doi": "10.1002/mbo3.593",
+          "year": 2018,
+          "finding": "DisA with Mfd/UvrA coordinates repair during outgrowth; repair-pathway defects delay early nucleoid division and impair efficient return to vegetative growth."
+        },
+        {
+          "doi": "10.3390/microorganisms13040939",
+          "year": 2025,
+          "finding": "Additional DisA-independent checkpoint behavior is revealed when BER lesions remain unresolved; severe repair/checkpoint defects impair first-round chromosome segregation during outgrowth."
+        }
+      ],
+      "admitted_claim": "DNA_DAMAGE_PROCESSING_AND_CHECKPOINT_STATE_CAN_CAUSALLY_MODULATE_OUTGROWTH_AND_REPLICATION_REENTRY",
+      "not_admitted": "ALL_SPORE_REENTRY_DELAY_IS_CAUSED_BY_DISA_OR_ONE_CHECKPOINT"
+    },
+    {
+      "lineage": "Adineta_vaga",
+      "evidence_class": "PRIMARY_COMPARTMENT_SPECIFIC_REPAIR_TIMING_ANCHOR",
+      "sources": [
+        {
+          "doi": "10.1111/jeb.12326",
+          "year": 2014,
+          "finding": "After desiccation, full mobility can recover while DNA double-strand-break repair remains incomplete; repair proceeds over the following 24-48 h and damage can remain after mobility has returned."
+        },
+        {
+          "doi": "10.1126/sciadv.adc8829",
+          "year": 2022,
+          "finding": "Somatic repair synthesis begins rapidly, whereas damaged primary oocytes do not immediately repair; germline repair is delayed to a defined oogenesis window with homologous chromosome juxtaposition and accurate genome restoration in offspring."
+        },
+        {
+          "doi": "10.1186/s12915-023-01807-8",
+          "year": 2024,
+          "finding": "Early post-rehydration transcription includes DNA-repair and oxidoreduction programs, supporting a rapid recovery response distinct from later reproductive processing."
+        }
+      ],
+      "current_2026_supportive_update": {
+        "status": "PREPRINT_SUPPORTIVE_NOT_AUTHORITY_UPGRADE",
+        "doi": "10.64898/2026.04.30.722046",
+        "finding": "Spatial expression data further support early somatic NHEJ/BER-associated activity and later HR-associated activity in maturing oocytes."
+      },
+      "admitted_claim": "SOMATIC_FUNCTIONAL_RECOVERY_AND_SOMATIC_REPAIR_CAN_PRECEDE_A_SEPARATE_DELAYED_HIGH_FIDELITY_GERMLINE_REPAIR_WINDOW",
+      "not_admitted": "GERMLINE_REPAIR_DELAY_HAS_BEEN_SHOWN_BY_PERTURBATION_TO_CAUSE_A_FIXED_REPRODUCTION_TIMER"
+    },
+    {
+      "lineage": "Polypedilum_vanderplanki_Pv11",
+      "evidence_class": "PRIMARY_KINETIC_ANCHOR_CAUSAL_GATE_OPEN",
+      "sources": [
+        {
+          "doi": "10.1371/journal.pone.0014008",
+          "year": 2010,
+          "finding": "Whole-larva physiological activity can return within about 1 h while nuclear DNA integrity recovers over roughly 72-96 h."
+        },
+        {
+          "doi": "10.1038/s41598-018-36124-6",
+          "year": 2018,
+          "finding": "Pv11 rehydration is associated with DNA-repair programs including RAD16-like R3 expression and NER/HR/NHEJ-related recovery."
+        },
+        {
+          "doi": "10.1038/s41598-025-19627-x",
+          "year": 2025,
+          "finding": "Partial function returns early after rehydration, protein-dependent function recovers over 12-24 h, live-cell abundance remains without significant growth through 48 h, and significant proliferation begins around 72 h."
+        }
+      ],
+      "admitted_claim": "BASIC_FUNCTION_AND_RECOVERY_PROGRAM_PRECEDE_SIGNIFICANT_PROLIFERATION",
+      "not_admitted": "DNA_REPAIR_CHECKPOINT_HAS_BEEN_CAUSALLY_SHOWN_TO_SET_THE_72H_PROLIFERATION_ONSET"
+    }
+  ],
+  "cross_lineage_result": {
+    "status": "P0_PROVENANCE_BOUND_CONVERGENT_REENTRY_ARCHITECTURE",
+    "supported": [
+      "THREE_DISTINCT_LINEAGES_SHOW_A_DAMAGE_PROCESSING_OR_REPAIR_WINDOW_DURING_RETURN_FROM_DORMANCY_OR_DESICCATION",
+      "HIGHER_RISK_REPLICATION_OR_REPRODUCTIVE_REENTRY_IS_NOT_IDENTICAL_TO_THE_FIRST_RETURN_OF_BASIC_FUNCTION",
+      "BACILLUS_PROVIDES_A_DIRECT_CAUSAL_CHECKPOINT_EXAMPLE"
+    ],
+    "open": [
+      "A_SINGLE_CONSERVED_MOLECULAR_CHECKPOINT_ACROSS_ALL_THREE_LINEAGES",
+      "DNA_REPAIR_CAUSES_THE_REENTRY_DELAY_IN_POLYPEDILUM",
+      "THE_SAME_REENTRY_STATE_CAN_MODULATE_BACTERIAL_CELLULOSE_ACROSS_LINEAGES"
+    ]
+  },
+  "janus_forward_reverse": {
+    "forward": "DORMANCY_OR_DESICCATION -> FUNCTIONAL_RESTART -> DAMAGE_PROCESSING_OR_REPAIR -> REPLICATION_OR_REPRODUCTIVE_REENTRY",
+    "reverse": "REPLICATION_OR_REPRODUCTIVE_REENTRY -> REQUIRES_LINEAGE_SPECIFIC_PERMISSION_STATE -> REQUIRES_DAMAGE_PROCESSING_EVIDENCE -> REQUIRES_PRIMARY_SOURCE_BINDING",
+    "mirror_status": "PROVENANCE_LOOP_CLOSED_GENERAL_CAUSAL_LOOP_OPEN"
+  },
+  "promotion_rule": "Do not promote RECOVERY_STATE_TO_MATRIX_COUPLING from this cross-lineage evidence. This artifact only strengthens the biological rationale and provenance for the preregistered SCOBY test.",
+  "next_action": "Use Bacillus as the causal-positive reference, Adineta as the soma-versus-germline timing reference, and Polypedilum as the clean pre-proliferative kinetic test system for the SCOBY matrix gate."
+}
