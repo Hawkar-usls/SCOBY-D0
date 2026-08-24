@@ -81,6 +81,37 @@
       ],
       "defined_factor_focus": "PVLEA4_VS_TREHALOSE_VS_GENERIC_PROTEIN_WITH_INTERFACE_AND_OXYGEN_DISCRIMINATION",
       "next_gate": "RUN_OR_OBTAIN_FROZEN_DEFINED_FACTOR_MATRIX; MEASURE_INTERFACE_STATE_BEFORE_BC_PHENOTYPE_INTERPRETATION"
+    },
+    "cross_domain_state_interface_line": {
+      "status": "ACTIVE_EXPLORATORY_P0_PREREGISTERED",
+      "evidence_state": "TOPA_BOUND_DEFINED_COMPONENT_INTERFACE_EQUIVALENCE_TEST_NO_EMPIRICAL_BC_EFFECT",
+      "artifacts": [
+        "JANUS_SCOBY_TOPA_PREGNANCY_RECOVERY_STATE_INTERFACE_CROSS_GATE_1352_v1.0.json",
+        "JANUS_SCOBY_CROSS_DOMAIN_INTERFACE_EQUIVALENCE_GATE_1416_v1.0.json",
+        "experiments/CROSS_DOMAIN_DEFINED_INTERFACE_EQUIVALENCE_MATRIX_v1.0.csv",
+        "docs/CROSS_DOMAIN_INTERFACE_EQUIVALENCE_TEST.md"
+      ],
+      "upstream_context": [
+        "TOPA placenta-milk-extremophile state-interface cross gate",
+        "paired maternal milk + matched placental dECM gate",
+        "PvLEA4 defined-molecule interface gate"
+      ],
+      "defined_input_focus": [
+        "PVLEA4",
+        "HUMAN_LACTOFERRIN",
+        "HUMAN_LACTOFERRIN_PLUS_DPPC_INTERFACE_MODEL",
+        "NON_NUTRITIONAL_SURFACE_TENSION_REFERENCE"
+      ],
+      "portable_mediator_focus": [
+        "SURFACE_OR_INTERFACIAL_TENSION",
+        "OXYGEN_AVAILABILITY_OR_TRANSFER_PROXY",
+        "PH",
+        "OSMOLALITY_OR_WATER_ACTIVITY",
+        "GENERIC_PROTEIN_LIPID_CARBOHYDRATE_LOAD"
+      ],
+      "current_state": "STAGE_A_ABIOTIC_MEDIATOR_CALIBRATION_PREREGISTERED_STAGE_B_BC_CHALLENGE_LOCKED_PENDING_DATA",
+      "claim_boundary": "Cross-domain mechanistic similarity does not establish one universal biological law, a boy-milk material class, a placental sex material effect, or a PvLEA4-to-BC effect. Defined components must first survive mediator matching, specificity controls, equivalence bounds and independent-batch replication.",
+      "next_gate": "CALIBRATE CROSS_FAMILY MEDIATOR MATCHES WITHOUT BC; FREEZE LEVELS, MATCH TOLERANCES AND BC EQUIVALENCE MARGIN; THEN RUN TEN_ARM LOCKED BC CHALLENGE."
     }
   },
   "janus_method_invariant": {
