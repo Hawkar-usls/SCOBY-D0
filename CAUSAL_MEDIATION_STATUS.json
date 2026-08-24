@@ -5,13 +5,19 @@
   "status": "P0_PREREGISTERED_CAUSAL_MEDIATION_GATE_NO_DATA",
   "parent_response_surface": "JANUS_SCOBY_SOURCE_INVARIANT_RESPONSE_SURFACE_GATE_1424_v1.0.json",
   "active_gate": "JANUS_SCOBY_CAUSAL_MEDIATOR_RESCUE_GATE_1429_v1.0.json",
+  "gas_nitrogen_refinement_gate": "JANUS_SCOBY_O2_N2_DUAL_AXIS_GATE_1537_v1.0.json",
   "matrix": "experiments/CAUSAL_MEDIATOR_RESCUE_MATRIX_v1.0.csv",
+  "gas_nitrogen_matrix": "experiments/O2_N2_GAS_NUTRIENT_N_DISCRIMINATION_MATRIX_v1.0.csv",
   "protocol": "docs/CAUSAL_MEDIATOR_RESCUE_TEST.md",
+  "gas_nitrogen_protocol": "docs/O2_N2_DUAL_AXIS_TEST.md",
   "current_promotion": "P0",
   "causal_necessity": "PREREGISTERED_NOT_PASSED",
   "causal_sufficiency": "PREREGISTERED_NOT_PASSED",
   "bidirectional_control": "PREREGISTERED_NOT_PASSED",
+  "gas_vector_state": "PREREGISTERED_O2_N2_CO2_TRANSFER_DECOMPOSITION_NOT_MEASURED",
+  "nutrient_n_state": "PREREGISTERED_ASSIMILABLE_N_SOURCE_AND_CN_AXIS_NOT_MEASURED",
+  "gas_nitrogen_invariant": "A rescue is invalid if O2 appears restored while pCO2, transfer state or assimilable-N moved outside frozen bounds; gaseous N2 and nutrient nitrogen are distinct causal axes unless direct strain-specific N2 fixation is independently established.",
   "material_memory": "CLOSED",
   "universal_law": "NOT_ESTABLISHED",
-  "next_gate": "ABIOTICALLY IDENTIFY A CLEAN COMPENSATOR THAT RESTORES THE SOURCE-INDUCED MEDIATOR VECTOR WITHOUT REMOVING OR BINDING THE SOURCE FACTOR; FREEZE ALL RESCUE TOLERANCES BEFORE BC OUTCOMES."
+  "next_gate": "ABIOTICALLY CALIBRATE THE GAS VECTOR [pO2, dissolved-O2/transfer, N2 fraction, pCO2/CO2 proxy] SEPARATELY FROM ASSIMILABLE-N/C:N; THEN IDENTIFY A CLEAN COMPENSATOR THAT RESTORES THE FROZEN MEDIATOR VECTOR WITHOUT REMOVING OR BINDING THE SOURCE FACTOR."
 }

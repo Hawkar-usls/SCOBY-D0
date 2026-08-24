@@ -1,0 +1,161 @@
+{
+  "artifact_uuid": "JANUS-SCOBY-O2-N2-DUAL-AXIS-GATE-2026-08-24-v1.0",
+  "version": "v1.0",
+  "status": "PREREGISTERED_GAS_VS_NUTRIENT_N_DISCRIMINATION_NO_EMPIRICAL_BC_EFFECT",
+  "repository": "Hawkar-usls/SCOBY-D0",
+  "track": "cross_domain_state_interface_equivalence",
+  "purpose": "Separate gas-phase oxygen/nitrogen physics from assimilable-nitrogen metabolism before attributing bacterial-cellulose changes to an O2+N2 state vector.",
+  "current_promotion": "P0",
+  "claim_ceiling": [
+    "OXYGEN_AVAILABILITY_STRONGLY_AFFECTS_KOMAGATAEIBACTER_GROWTH_AND_BC_FORMATION",
+    "ASSIMILABLE_NITROGEN_SOURCE_CAN_CHANGE_BC_YIELD_AND_STRUCTURE",
+    "N2_GAS_IS_NOT_EQUIVALENT_TO_ASSIMILABLE_NITROGEN",
+    "N2_FIXATION_MUST_BE_VERIFIED_PER_STRAIN_BEFORE_TREATING_GASEOUS_N2_AS_A_METABOLIC_INPUT",
+    "CO2_MUST_BE_CONTROLLED_BECAUSE_PCO2_CAN_CHANGE_BC_PRODUCTIVITY",
+    "NO_O2_N2_CAUSAL_LAW_IS_ESTABLISHED"
+  ],
+  "mediator_decomposition": {
+    "gas_phase_axis": [
+      "O2_PARTIAL_PRESSURE_OR_GAS_FRACTION",
+      "DISSOLVED_OXYGEN_OR_TRANSFER_PROXY",
+      "N2_GAS_FRACTION_AS_DILUENT_OR_TRANSFER_CONTEXT",
+      "CO2_PARTIAL_PRESSURE_OR_ACCUMULATION_PROXY",
+      "TOTAL_PRESSURE_OR_GAS_TRANSFER_CONTEXT"
+    ],
+    "nutrient_nitrogen_axis": [
+      "ASSIMILABLE_N_CONCENTRATION",
+      "N_SOURCE_IDENTITY",
+      "C_TO_N_RATIO",
+      "BUFFERING_OR_IONIC_EFFECTS_OF_N_SOURCE"
+    ],
+    "interface_axis": [
+      "SURFACE_OR_INTERFACIAL_TENSION",
+      "OXYGEN_PENETRATION_OR_TRANSFER_GEOMETRY",
+      "PH",
+      "OSMOLALITY_OR_WATER_ACTIVITY"
+    ]
+  },
+  "central_invariants": [
+    "GASEOUS_N2_NE_ASSIMILABLE_NITROGEN",
+    "O2_FRACTION_NE_DISSOLVED_O2_STATE",
+    "N2_FRACTION_CHANGE_NE_N2_SPECIFIC_EFFECT_IF_PO2_OR_PCO2_ALSO_CHANGE",
+    "NITROGEN_SOURCE_EFFECT_NE_N2_GAS_EFFECT",
+    "CO2_MUST_NOT_BE_SILENTLY_ALLOWED_TO_TRACK_GAS_COMPOSITION",
+    "N2_FIXATION_CAPABILITY_MUST_BE_VERIFIED_PER_STRAIN",
+    "NANOBUBBLE_OR_GAS_TRANSFER_EFFECT_NE_CHEMICAL_GAS_IDENTITY_EFFECT",
+    "P0_NE_EMPIRICAL_CAUSAL_RESULT"
+  ],
+  "evidence_anchors": [
+    {
+      "finding": "Komagataeibacter cellulose production is strongly oxygen-dependent; low or controlled oxygen states can alter BC yield and material properties depending on strain and cultivation mode.",
+      "doi": "10.1007/s00253-017-8680-z",
+      "pmid": "29199354"
+    },
+    {
+      "finding": "Dissolved oxygen controlled near 10% saturation maximized cellulose yield in one agitated fed-batch Acetobacter xylinum BRC5 system.",
+      "doi": "10.1016/S1389-1723(99)80199-6"
+    },
+    {
+      "finding": "High carbon-dioxide partial pressure reduced BC production in agitated Acetobacter culture, creating a gas-composition confound distinct from oxygen.",
+      "doi": "10.1016/S0922-338X(97)85682-6"
+    },
+    {
+      "finding": "Nitrogen-source identity significantly affected cellulose production across Komagataeibacter isolates; peptone outperformed ammonium sulfate and urea on average in the reported screen.",
+      "doi": "10.3389/fmicb.2019.01958",
+      "pmid": "31551945"
+    },
+    {
+      "finding": "A 2026 K. xylinus study confirmed that nitrogen-normalized medium composition can materially change BC yield and structural characteristics.",
+      "doi": "10.1007/s00253-025-13702-z",
+      "pmid": "41612060"
+    },
+    {
+      "finding": "One K. hansenii JR-02 isolate produced some BC in nitrogen-free medium and carried a possible nifH sequence; this is treated as strain-specific and not a genus-wide N2-fixation claim.",
+      "doi": "10.1002/bab.1703",
+      "pmid": "30359481"
+    }
+  ],
+  "preregistered_questions": [
+    "Q1_DOES_BC_FOLLOW_O2_TRANSFER_STATE_WHEN_ASSIMILABLE_N_AND_CO2_ARE_HELD_WITHIN_FROZEN_BOUNDS",
+    "Q2_DOES_CHANGING_N2_GAS_FRACTION_ADD_EXPLANATORY_POWER_AFTER_PO2_DO_PCO2_AND_TRANSFER_ARE_MATCHED",
+    "Q3_DOES_ASSIMILABLE_N_CHANGE_BC_INDEPENDENTLY_OF_THE_MATCHED_GAS_VECTOR",
+    "Q4_IS_ANY_APPARENT_N2_GAS_EFFECT_LOST_IN_A_STRAIN_WITHOUT_VERIFIED_N2_FIXATION_CAPABILITY",
+    "Q5_DOES_THE_CAUSAL_MEDIATOR_RESCUE_GATE_STILL_WORK_AFTER_GAS_AND_NUTRIENT_N_AXES_ARE_SEPARATED"
+  ],
+  "non_operational_factor_matrix": {
+    "gas_family": [
+      "AIR_REFERENCE",
+      "O2_SHIFT_WITH_N2_BALANCE_AND_CO2_CONTROL",
+      "N2_FRACTION_SHIFT_WITH_PO2_AND_PCO2_MATCHED_WHERE_TECHNICALLY_FEASIBLE",
+      "CO2_CONTROL_OR_MONITORING_ARM"
+    ],
+    "nutrient_n_family": [
+      "FIXED_ASSIMILABLE_N_REFERENCE",
+      "MATCHED_TOTAL_N_ALTERNATE_SOURCE",
+      "LOWER_ASSIMILABLE_N_WITH_C_N_TRACKED"
+    ],
+    "required_readouts": [
+      "DISSOLVED_O2_OR_TRANSFER_PROXY",
+      "GAS_PHASE_O2",
+      "GAS_PHASE_CO2_OR_ACCUMULATION_PROXY",
+      "SURFACE_OR_INTERFACIAL_TENSION",
+      "PH",
+      "OSMOLALITY_OR_WATER_ACTIVITY",
+      "ASSIMILABLE_N_OR_TOTAL_N_PROXY",
+      "DRY_BC_MASS",
+      "BC_STRUCTURE_OR_CRYSTALLINITY_WHERE_AVAILABLE",
+      "BIOMASS_OR_CELL_NUMBER_PROXY"
+    ]
+  },
+  "decision_rules": [
+    {
+      "id": "R1_O2_DOMINANT",
+      "if": "BC tracks dissolved O2/transfer state across gas mixtures while N2 fraction adds no reproducible residual after pO2, pCO2 and nutrient-N matching",
+      "then": "PROMOTE_O2_TRANSFER_AS_PRIMARY_GAS_MEDIATOR_WITHIN_TESTED_DOMAIN"
+    },
+    {
+      "id": "R2_NUTRIENT_N_INDEPENDENT",
+      "if": "BC changes with assimilable-N source or C:N while gas mediator vector is matched",
+      "then": "SEPARATE_NUTRIENT_N_METABOLIC_AXIS_FROM_GAS_AXIS"
+    },
+    {
+      "id": "R3_APPARENT_N2_IS_CO2_OR_O2_CONFOUND",
+      "if": "N2-associated BC difference disappears after pO2/dissolved-O2 and pCO2 matching",
+      "then": "REJECT_N2_GAS_SPECIFIC_CAUSAL_CLAIM"
+    },
+    {
+      "id": "R4_N2_RESIDUAL",
+      "if": "A reproducible N2-associated residual survives pO2, dissolved-O2, pCO2, total-pressure, transfer, pH, osmolality and nutrient-N matching",
+      "then": "OPEN_STRAIN_SPECIFIC_N2_MECHANISM_GATE_WITHOUT_PROMOTING_N2_FIXATION"
+    },
+    {
+      "id": "R5_N2_FIXATION_ROUTE",
+      "if": "Direct strain-specific nitrogen-fixation capability is independently verified and gas-phase N2 availability causally changes nitrogen incorporation or BC phenotype under matched gas-transfer conditions",
+      "then": "OPEN_N2_METABOLIC_INPUT_CANDIDATE_FOR_THAT_STRAIN_ONLY"
+    }
+  ],
+  "kill_rules": [
+    "If pCO2 is not measured or bounded, an O2:N2 gas-composition effect cannot be assigned to N2.",
+    "If dissolved oxygen or transfer state differs, gas-fraction comparisons cannot establish N2 specificity.",
+    "If assimilable nitrogen differs, gas N2 and nutrient-N interpretations must remain separate.",
+    "A possible nifH sequence in one isolate is not proof that the tested strain fixes N2.",
+    "A nanobubble result does not by itself distinguish gas chemistry from bubble-mediated mass transfer.",
+    "No universal O2+N2 law may be promoted from one strain or one cultivation geometry."
+  ],
+  "janus_forward": [
+    "GAS_COMPOSITION_AND_NUTRIENT_N_STATE",
+    "O2_TRANSFER_CO2_AND_N_METABOLIC_STATE",
+    "KOMAGATAEIBACTER_GROWTH_AND_CELLULOSE_SYNTHASE_CONTEXT",
+    "CELLULOSE_DEPOSITION",
+    "BC_YIELD_STRUCTURE_AND_MATERIAL_PHENOTYPE"
+  ],
+  "janus_reverse": [
+    "BC_PHENOTYPE_REQUIRES_SEPARATING_GAS_TRANSFER_FROM_NUTRIENT_N",
+    "GAS_EFFECT_REQUIRES_PO2_DO_PCO2_AND_TRANSFER_BOUNDS",
+    "N2_SPECIFICITY_REQUIRES_RESIDUAL_AFTER_GAS_PHYSICS_MATCHING",
+    "METABOLIC_N2_CLAIM_REQUIRES_DIRECT_STRAIN_SPECIFIC_N2_FIXATION_EVIDENCE",
+    "PROMOTION_REQUIRES_INDEPENDENT_BATCH_REPLICATION"
+  ],
+  "next_gate": "RUN_ABIOTIC_GAS_VECTOR_CALIBRATION_FIRST; FREEZE PO2_DO_PCO2_TRANSFER_AND_NUTRIENT_N_MATCHING RULES; THEN INSERT_THE_DUAL_AXIS_VECTOR_INTO_THE_EXISTING_CAUSAL_MEDIATOR_RESCUE_TEST.",
+  "safety_boundary": "This artifact is a non-operational research design. Compressed-gas, pressure-vessel, sterile-culture and laboratory handling require appropriate trained personnel, equipment and institutional procedures."
+}

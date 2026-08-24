@@ -1,0 +1,10 @@
+arm_id,gas_axis,nutrient_n_axis,primary_purpose,required_matching,interpretation_if_bc_changes
+G0,AIR_REFERENCE,FIXED_ASSIMILABLE_N_REFERENCE,baseline,"pH;osmolality;temperature;carbon","baseline only"
+G1,O2_SHIFT_N2_BALANCE_CO2_CONTROL,FIXED_ASSIMILABLE_N_REFERENCE,test O2-transfer effect,"pCO2;nutrient-N;surface/interface context","O2/transfer candidate if DO shifts and BC follows"
+G2,N2_FRACTION_SHIFT_PO2_PCO2_MATCHED,FIXED_ASSIMILABLE_N_REFERENCE,test N2-gas residual,"pO2;DO;transfer;pCO2;pressure;nutrient-N","N2-specific gate opens only if residual survives all matches"
+G3,CO2_CONTROL_OR_MONITORING_ARM,FIXED_ASSIMILABLE_N_REFERENCE,isolate CO2 confound,"pO2;DO;nutrient-N","CO2 confound if BC follows pCO2"
+N1,AIR_REFERENCE,MATCHED_TOTAL_N_ALTERNATE_SOURCE,test nutrient-N identity,"gas vector;total N;carbon","nutrient-N identity effect if BC changes"
+N2,AIR_REFERENCE,LOWER_ASSIMILABLE_N_CN_TRACKED,test nutrient-N availability,"gas vector;carbon;pH;osmolality","nutrient limitation/C:N effect if BC changes"
+X1,O2_SHIFT_N2_BALANCE_CO2_CONTROL,MATCHED_TOTAL_N_ALTERNATE_SOURCE,test gas×nutrient interaction,"gas vector;total N;carbon","interaction candidate only after main effects bounded"
+X2,N2_FRACTION_SHIFT_PO2_PCO2_MATCHED,MATCHED_TOTAL_N_ALTERNATE_SOURCE,stress-test N2 residual across N-source,"pO2;DO;transfer;pCO2;pressure;total N","N2 residual must replicate across nutrient-N contexts"
+H1,N2_FRACTION_SHIFT_PO2_PCO2_MATCHED,FIXED_ASSIMILABLE_N_REFERENCE,independent-batch holdout,"all preregistered gas and nutrient bounds","replicate or reject N2-specific residual"
