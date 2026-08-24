@@ -1,0 +1,16 @@
+{
+  "schema": "janus.organism.member_link.v1",
+  "organism_id": "JANUS_FEDERATED_ORGANISM",
+  "canonical_manifest": "Hawkar-usls/Janus:organism/JANUS_ORGANISM_v1.json",
+  "member_repository": "Hawkar-usls/SCOBY-D0",
+  "organ_key": "materials_lab",
+  "class": "DOMAIN_LAB",
+  "role": "BACTERIAL_CELLULOSE_AND_MATERIALS_RESEARCH",
+  "consumes": ["MATERIAL_SAMPLE", "PROTOCOL", "CONTROL", "MEASUREMENT"],
+  "emits": ["MATERIAL_MEASUREMENT", "NEGATIVE_RESULT", "MATERIAL_CANDIDATE", "EXPERIMENT_RECEIPT"],
+  "routes_to": ["measurement_bench", "guardian_cortex", "memory"],
+  "authority": "DOMAIN_EVIDENCE_WITHIN_FROZEN_GATES",
+  "authority_delta": 0,
+  "cross_repo_write_default": "DENY",
+  "claim_boundary": ["MATERIAL_CANDIDATE != FIELD_VALIDATION", "FORWARD_PASS != PROOF", "REVERSE_PASS != PROOF"]
+}
