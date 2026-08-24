@@ -1,0 +1,157 @@
+{
+  "artifact_uuid": "JANUS-SCOBY-TOPA-PREGNANCY-RECOVERY-STATE-INTERFACE-CROSS-GATE-1352-2026-08-24-v1.0",
+  "version": "v1.0",
+  "created_local": "2026-08-24T13:52:00+03:00",
+  "repository": "Hawkar-usls/SCOBY-D0",
+  "status": "TOPA_CROSS_DOMAIN_AUDIT_PREREGISTERED_NO_EMPIRICAL_PROMOTION",
+  "parent_artifacts": [
+    "JANUS_SCOBY_EXTREMOPHILE_REENTRY_MATRIX_GATE_0018_v1.0.json",
+    "JANUS_SCOBY_RECOVERY_MODIFIER_TO_BC_MAP_0921_v1.0.json",
+    "JANUS_SCOBY_DEFINED_MOLECULE_INTERFACE_GATE_0929_v1.0.json"
+  ],
+  "external_topa_receipt": "Hawkar-usls/TOPA:data/TOPA-SCOBY-PLACENTA-MILK-EXTREMOPHILE-STATE-INTERFACE-CROSS-GATE-2026-08-24-v1.0.json",
+  "registry_provenance": [
+    "Hawkar-usls/janus-meta-registry:data/JANUS-SCOBY-BOY-MILK-VIBRISSA-CHITIN-GATE-2026-08-20-v1.0.json",
+    "Hawkar-usls/janus-meta-registry:data/JANUS-FETAL-SEX-HUMAN-MILK-Y-MICROCHIMERISM-GATE-2026-08-20-v1.0.json",
+    "Hawkar-usls/janus-meta-registry:data/JANUS-XY-PLACENTA-MILK-SCOBY-FULL-REVERSE-GATE-2026-08-20-v1.0.json",
+    "Hawkar-usls/janus-meta-registry:data/JANUS-PAIRED-MATERNAL-MILK-MATCHED-PLACENTA-BC-GATE-2026-08-20-v1.0.json"
+  ],
+  "core_question": "Do biologically different source states alter bacterial-cellulose formation through a common measurable interface/microenvironment state, or through source-specific molecules or scaffolds that retain effects after those mediators are matched?",
+  "TOPA_claim_ceiling": [
+    "PREGNANCY_PLACENTA_TO_COMPONENT_SPECIFIC_MILK_VARIATION_IS_SUPPORTED_WITHIN_BOUND",
+    "BOY_MILK_IS_NOT_A_STABLE_MODERN_MATERIALS_CLASS",
+    "PLACENTAL_dECM_TO_BC_EFFECT_IS_A_STRUCTURAL_HYPOTHESIS",
+    "PVLEA4_OR_EXTREMOPHILE_RECOVERY_TO_BC_EFFECT_REMAINS_UNMEASURED",
+    "COMMON_STATE_INTERFACE_MATRIX_COUPLING_IS_A_FALSIFIABLE_CANDIDATE_NOT_A_RESULT",
+    "SCOBY_D0_REMAINS_P0"
+  ],
+  "cross_domain_architecture": {
+    "pregnancy_lactation_soluble_channel": [
+      "PREGNANCY_AND_PLACENTAL_STATE",
+      "MATERNAL_PHYSIOLOGICAL_RESPONSE",
+      "MEASURED_MILK_COMPONENT_VECTOR",
+      "INTERFACE_OR_MICROENVIRONMENT_STATE",
+      "KOMAGATAEIBACTER_RESPONSE",
+      "BC_PHENOTYPE"
+    ],
+    "extremophile_recovery_soluble_channel": [
+      "ANHYDROBIOTIC_RECOVERY_STATE",
+      "DEFINED_RECOVERY_COMPONENT",
+      "INTERFACE_OR_MICROENVIRONMENT_STATE",
+      "KOMAGATAEIBACTER_RESPONSE",
+      "BC_PHENOTYPE"
+    ],
+    "placental_structural_channel": [
+      "PLACENTAL_dECM_COMPOSITION",
+      "STRUCTURAL_SCAFFOLD_STATE",
+      "BC_CONTACT_OR_INTERPENETRATION",
+      "COMPOSITE_ARCHITECTURE",
+      "MATERIAL_PHENOTYPE"
+    ],
+    "non_collapse_rule": "The soluble-state channels and the structural-scaffold channel are distinct causal routes and may not be treated as one mechanism without direct evidence."
+  },
+  "portable_state_vector": [
+    "surface_or_interfacial_tension",
+    "oxygen_availability_or_transfer_proxy",
+    "osmolarity_or_water_activity_proxy",
+    "pH",
+    "defined_carbohydrate_or_compatible_solute_profile",
+    "protein_load_and_selected_identity",
+    "lipid_or_interfacial_lipid_load",
+    "glycan_or_oligosaccharide_class",
+    "redox_or_ROS_proxy_where_relevant"
+  ],
+  "new_TOPA_rule_for_SCOBY_D0": "MEASURED_MEDIATOR_VECTOR_PRECEDES_SOURCE_LABEL_INTERPRETATION",
+  "source_label_examples_not_allowed_as_causal_shortcuts": [
+    "MOTHER_OF_SON",
+    "XY_PLACENTA",
+    "EXTREMOPHILE_RECOVERY",
+    "PVLEA4_SOURCE",
+    "MATCHED_DONOR_PAIR"
+  ],
+  "adversarial_competing_models": [
+    {
+      "id": "M1_GENERIC_INTERFACE_MICROENVIRONMENT",
+      "prediction": "Different source classes converge toward similar BC phenotypes once the portable state vector is matched.",
+      "classification_if_pass": "GENERIC_STATE_TO_INTERFACE_TO_MATRIX_COUPLING_SUPPORTED_WITHIN_BOUND"
+    },
+    {
+      "id": "M2_SOURCE_SPECIFIC_DEFINED_FACTOR",
+      "prediction": "A residual BC effect remains after mediator matching and is reproduced by a defined source-specific molecule across independent BC batches.",
+      "classification_if_pass": "DEFINED_FACTOR_CAUSAL_CANDIDATE"
+    },
+    {
+      "id": "M3_BULK_NUTRIENT_COMMUNITY_EFFECT",
+      "prediction": "Milk-associated changes are reproduced by defined lactose/protein/lipid/glycan analog composition without donor or infant-sex provenance.",
+      "classification_if_pass": "BULK_COMPOSITION_OR_ECOLOGY_EFFECT"
+    },
+    {
+      "id": "M4_dECM_STRUCTURAL_EFFECT",
+      "prediction": "Most placental-material effect is reproduced by characterized dECM alone and does not require paired milk.",
+      "classification_if_pass": "STRUCTURAL_SCAFFOLD_EFFECT"
+    },
+    {
+      "id": "M5_SEX_LABEL_CONFOUND",
+      "prediction": "Infant-sex association disappears after lactation-stage, donor and measured composition controls.",
+      "classification_if_pass": "SEX_LABEL_NOT_CAUSAL_FOR_TESTED_BC_PHENOTYPE"
+    }
+  ],
+  "preregistered_cross_test": {
+    "name": "STATE_VECTOR_COLLAPSE_TEST",
+    "principle": "Compare source classes only after measuring or matching the portable state vector; then test whether source-label residuals remain.",
+    "prediction_A": "If source-label differences collapse after mediator matching, do not promote source identity as causal.",
+    "prediction_B": "If a reproducible residual survives mediator matching, isolate and test a defined factor or structural property.",
+    "prediction_C": "If a defined factor reproduces the residual direction across independent BC batches while generic controls do not, promote only the factor-level mechanism.",
+    "prediction_D": "If matched and mismatched donor placenta-milk pairings converge after direct composition matching, pairing provenance is not a causal materials mechanism."
+  },
+  "high_value_bridge_candidates": [
+    {
+      "candidate": "INTERFACE_ACTIVE_PROTEIN_OR_LIPID_STATE",
+      "pregnancy_lactation_side": "human milk contains interface-active proteins and lipid structures; infant-sex and lactation-stage associations may affect some protein abundances but do not define a universal class",
+      "extremophile_side": "LEA-family proteins provide a candidate interface-active recovery factor",
+      "status": "HIGH_VALUE_FALSIFIABLE_BRIDGE_NOT_PROVEN"
+    },
+    {
+      "candidate": "OSMOTIC_COMPATIBLE_SOLUTE_STATE",
+      "pregnancy_lactation_side": "milk carbohydrate and osmolality profiles are direct measurable variables",
+      "extremophile_side": "trehalose is a major recovery-associated compatible-solute confound/candidate",
+      "status": "HIGH_VALUE_GENERIC_MICROENVIRONMENT_BRIDGE"
+    },
+    {
+      "candidate": "OXYGEN_TRANSFER_GEOMETRY",
+      "pregnancy_lactation_side": "protein/lipid interfacial layers can alter physical interface behavior",
+      "extremophile_side": "defined protein/interface effects can alter the same air-liquid boundary",
+      "status": "HIGH_PRIORITY_MECHANISM_READOUT"
+    }
+  ],
+  "kill_rules": [
+    "If direct composition and interface matching remove the source-class BC difference, reject source-label causality for that phenotype.",
+    "If a generic protein or trehalose control reproduces a PvLEA4-associated phenotype, reject PvLEA4 specificity.",
+    "If defined milk-analog composition reproduces a donor-milk phenotype, do not attribute the effect to fetal sex or pregnancy provenance without an additional residual.",
+    "If dECM-only reproduces a paired placenta-milk phenotype, classify the result as a structural scaffold effect unless a paired residual remains.",
+    "If sex-associated effects fail independent-donor replication, do not retain a sex-specific materials claim.",
+    "If BC identity is not orthogonally separated from protein precipitate, mixed biomass or scaffold material, no matrix-mechanism promotion is admissible."
+  ],
+  "promotion_logic": {
+    "current": "P0",
+    "P1": "REPRODUCIBLE_BC_PHENOTYPE_AFTER_MATCHED_CONTROLS",
+    "P2": "GENERIC_INTERFACE_VS_SOURCE_SPECIFIC_RESIDUAL_DISCRIMINATED",
+    "P3": "DEFINED_FACTOR_OR_DEFINED_STRUCTURAL_PROPERTY_CAUSALLY_REPRODUCES_EFFECT",
+    "P4": "CROSS_DOMAIN_GENERALIZATION_REPLICATES_WITHOUT_SOURCE_LABEL_SHORTCUTS",
+    "ceiling_for_this_artifact": "P0_TOPA_CROSS_DOMAIN_PREREGISTRATION"
+  },
+  "human_material_boundary": "No operational culture of human milk or raw placenta is introduced by this artifact. Human-derived work remains institution-only under consent, ethics, biosafety, handling and disposal procedures; defined analogs and non-human controls remain the preferred first mechanistic step.",
+  "janus_forward_reverse": {
+    "forward": "BIOLOGICAL_STATE -> MEASURED_COMPONENT_OR_SCAFFOLD -> INTERFACE_OR_STRUCTURE -> KOMAGATAEIBACTER_OR_BC_INTERACTION -> MATRIX_PHENOTYPE",
+    "reverse": "MATRIX_PHENOTYPE -> CONFIRM_BC_IDENTITY -> MATCH_INTERFACE_COMPOSITION_STRUCTURE_CONTROLS -> TEST_SOURCE_LABEL_RESIDUAL -> TEST_DEFINED_FACTOR_OR_PROPERTY -> REPLICATE",
+    "mirror_status": "DESIGN_LOOP_CLOSED_EMPIRICAL_LOOP_OPEN",
+    "break_edges": [
+      "COMMON_INTERFACE_MECHANISM_UNMEASURED",
+      "MALE_INFANT_MILK_MATERIAL_CLASS_NOT_ESTABLISHED",
+      "PLACENTAL_dECM_BC_EFFECT_UNMEASURED",
+      "PVLEA4_BC_EFFECT_UNMEASURED",
+      "CROSS_DOMAIN_GENERALIZATION_UNMEASURED"
+    ]
+  },
+  "next_action": "Use the existing PvLEA4/trehalose/interface gate as the first soluble-state test and treat the placenta-milk branch as a separate provenance-bound comparison in which direct composition and interface measurements precede any infant-sex or donor-pair interpretation."
+}
