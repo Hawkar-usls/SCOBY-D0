@@ -1,0 +1,125 @@
+{
+  "schema": "scoby-d0.recipe.feedstock-stage0.v1",
+  "artifact_id": "JANUS-SCOBY-BIRCH-SAP-STAGE0-RECIPE-2026-08-25-v0.1",
+  "title": "SCOBY + Birch Sap — Stage-0 Feedstock Challenger",
+  "date": "2026-08-25",
+  "status": "P0_PREREGISTERED_NO_EMPIRICAL_DATA",
+  "repository": "Hawkar-usls/SCOBY-D0",
+  "track": "BACTERIAL_CELLULOSE_FEEDSTOCK_SCREEN",
+  "candidate": "BIRCH_SAP",
+  "purpose": "Test whether birch sap can serve as a reproducible feedstock for bacterial-cellulose production and whether any effect survives carbon and assimilable-nitrogen normalization.",
+  "claim_boundary": [
+    "BIRCH_SAP_IS_ACCEPTED_AS_A_STAGE0_CHALLENGER_NOT_A_WINNER",
+    "NO_BC_YIELD_ADVANTAGE_IS_CLAIMED_WITHOUT_EMPIRICAL_DATA",
+    "NO_MATERIAL_PROPERTY_ADVANTAGE_IS_CLAIMED_WITHOUT_MATCHED_DRYING_AND_COUPON_TESTS",
+    "RAW_FEEDSTOCK_IDENTITY_MUST_NOT_BE_CONFUSED_WITH_CARBON_OR_NITROGEN_DOSE"
+  ],
+  "rationale": {
+    "carbon": "Birch sap naturally supplies fermentable sugars, including glucose and fructose, making a BC-production route biochemically plausible.",
+    "nitrogen": "Assimilable nitrogen may differ materially from canonical tea-based medium and must be measured or experimentally rescued rather than assumed.",
+    "minerals": "The natural mineral/micronutrient matrix is retained as a candidate source-specific factor until controlled comparisons resolve it.",
+    "starting_pH": "Birch sap starting acidity can differ from canonical SCOBY medium and must be recorded and controlled in causal comparisons.",
+    "microbiome": "Native birch-sap microorganisms are a confound; source handling and microbial background must be documented."
+  },
+  "stage0_matrix": [
+    {
+      "lane": "C0",
+      "medium": "CANONICAL_BLACK_TEA_CONTROL",
+      "role": "baseline"
+    },
+    {
+      "lane": "C1",
+      "medium": "CANONICAL_GREEN_TEA_CONTROL",
+      "role": "baseline"
+    },
+    {
+      "lane": "B0",
+      "medium": "BIRCH_SAP_SOURCE_STANDARDIZED",
+      "role": "raw-feedstock challenger"
+    },
+    {
+      "lane": "B1",
+      "medium": "BIRCH_SAP_CARBON_NORMALIZED_TO_CONTROL",
+      "role": "carbon rescue / carbon-dose test"
+    },
+    {
+      "lane": "B2",
+      "medium": "BIRCH_SAP_PLUS_DEFINED_ASSIMILABLE_N",
+      "role": "nitrogen rescue / N-limitation test"
+    },
+    {
+      "lane": "B3",
+      "medium": "BIRCH_SAP_CARBON_AND_ASSIMILABLE_N_NORMALIZED",
+      "role": "full nutritional normalization"
+    }
+  ],
+  "fixed_or_recorded_context": [
+    "strain_or_SCOBY_source",
+    "inoculum_state_and_amount",
+    "vessel_geometry",
+    "working_volume",
+    "temperature",
+    "surface_area_to_volume_ratio",
+    "oxygen_transfer_context",
+    "starting_pH",
+    "starting_glucose",
+    "starting_fructose",
+    "starting_total_fermentable_carbon",
+    "assimilable_nitrogen_or_defined_proxy",
+    "source_batch",
+    "source_handling_and_microbiological_status"
+  ],
+  "stage0_readouts": [
+    "initial_and_residual_glucose_fructose_or_validated_total_sugar_measure",
+    "pH_trajectory",
+    "pellicle_first_appearance_time",
+    "purified_dry_BC_mass",
+    "substrate_consumption",
+    "dry_BC_per_consumed_carbon_proxy",
+    "visible_contamination_or_culture_failure",
+    "BC_morphology_as_secondary_endpoint"
+  ],
+  "decision_rules": [
+    {
+      "id": "R0_FAIL",
+      "if": "B0 repeatedly fails to produce reproducible BC while matched controls succeed",
+      "then": "RAW_BIRCH_SAP_NOT_SUPPORTED_AS_STANDALONE_FEEDSTOCK"
+    },
+    {
+      "id": "R1_CARBON_RESCUE",
+      "if": "B0 underperforms but B1 reproducibly rescues BC production",
+      "then": "RAW_BIRCH_LIMITATION_CANDIDATE_CARBON_DOSE"
+    },
+    {
+      "id": "R2_N_RESCUE",
+      "if": "B0 underperforms but B2 reproducibly rescues BC production",
+      "then": "RAW_BIRCH_LIMITATION_CANDIDATE_ASSIMILABLE_N"
+    },
+    {
+      "id": "R3_NORMALIZED_ADVANTAGE",
+      "if": "B3 differs from normalized controls after carbon, N, pH and culture context are bounded",
+      "then": "BIRCH_SOURCE_MATRIX_EFFECT_CANDIDATE"
+    },
+    {
+      "id": "R4_RAW_ADVANTAGE",
+      "if": "B0 independently repeats superior dry_BC_per_consumed_carbon without contamination or hidden nutrient-dose explanation",
+      "then": "BIRCH_SAP_FEEDSTOCK_ADVANTAGE_CANDIDATE"
+    }
+  ],
+  "promotion_path": [
+    "STAGE0_FEEDSTOCK_REPRODUCIBILITY",
+    "GREEN_VS_BLACK_VS_BIRCH_MATCHED_COMPARISON",
+    "D0_D1_D2_D3_DRYING_STRUCTURE_SCREEN",
+    "50X50_MM_COUPON",
+    "OIL_WATER_SELECTIVITY",
+    "PRESS_RECOVERY",
+    "MARINE_GATES_IF_ELIGIBLE"
+  ],
+  "integration": {
+    "parent_gate": "JANUS_SCOBY_O2_TRANSFER_X_ASSIMILABLE_N_SWITCH_GATE_1550_v1.0.json",
+    "existing_program_extension": "GREEN_vs_BLACK becomes GREEN_vs_BLACK_vs_BIRCH only after Stage-0 production eligibility is demonstrated.",
+    "next_killer_test": "Run B0/B1/B2/B3 beside canonical black and green controls and determine whether carbon normalization, assimilable-N rescue, both, or neither explains birch-sap BC performance."
+  },
+  "safety_scope": "Research recipe/preregistration only. Use appropriate food/microbiology hygiene and contained culture handling. Do not interpret uncontrolled wild fermentation as a defined SCOBY result.",
+  "empirical_state": "NO_DATA_YET"
+}
