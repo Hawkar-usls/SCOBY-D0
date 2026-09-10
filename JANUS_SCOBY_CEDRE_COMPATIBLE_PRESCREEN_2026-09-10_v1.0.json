@@ -1,0 +1,124 @@
+{
+  "schema": "janus.scoby.cedre_compatible_prescreen.v1",
+  "version": "1.0.0",
+  "artifact_uuid": "JANUS-SCOBY-CEDRE-COMPATIBLE-PRESCREEN-2026-09-10-v1.0",
+  "created_local": "2026-09-10T15:53:00+03:00",
+  "repository": "Hawkar-usls/SCOBY-D0",
+  "status": "PREREGISTERED_CEDRE_COMPATIBLE_INTERNAL_PRESCREEN",
+  "parents": [
+    "JANUS_SCOBY_MARINE_DYNAMIC_SALTWATER_BOOM_GATE_0018_v1.0.json",
+    "JANUS_SCOBY_M1A_FINALISTS_EXTERNAL_VALIDATION_0036_v1.0.json",
+    "external-evidence/cedre/2026-09-10/JANUS_SCOBY_CEDRE_FLOATING_SORBENT_PROTOCOL_RECEIPT_2026-09-10_v1.0.json"
+  ],
+  "external_source_provenance": {
+    "organization": "Cedre",
+    "document": "Tests on floating sorbents",
+    "gmail_message_id": "1a08b57c237f166d",
+    "gmail_thread_id": "1a01f8b16628a07c",
+    "source_pdf_filename": "Tests on floating sorbents.pdf",
+    "source_pdf_size_bytes": 299943,
+    "source_pdf_sha256": "34478e4969afd58bd4ec1d20d8841c5e321b3f680b8cb4dfa036f338c071fa17",
+    "cedre_protocol_points_used": {
+      "water_sorption": "water retention is measured by weighing water-saturated sorbent",
+      "protocol_1": "low agitation for 20 min followed by 30 min draining",
+      "protocol_2_optional": "15 min and optionally 24 h contact, followed by 30 s draining",
+      "boom_class": "pillows, socks or booms = type D/E",
+      "boom_sorption_in_weight_criterion": ">10",
+      "hydrophobicity_definition": "retention capacity of water / retention capacity of oil",
+      "hydrophobicity_criterion": "<0.25",
+      "boom_stability_criterion": "stable and un-friable; keep properties"
+    }
+  },
+  "epistemic_firewall": {
+    "cedre_protocol_received": true,
+    "cedre_has_tested_scoby_d0": false,
+    "cedre_endorsement": false,
+    "cedre_approval": false,
+    "scoby_field_ready": false,
+    "rule": "CEDRE_COMPATIBLE_PRESCREEN != CEDRE_TEST != CEDRE_APPROVAL != FIELD_READINESS"
+  },
+  "prescreen_measurements_required": [
+    "dry_mass_g",
+    "oil_loaded_mass_after_frozen_drain_g",
+    "water_loaded_mass_after_frozen_drain_g",
+    "oil_uptake_g_g",
+    "water_uptake_g_g",
+    "water_to_oil_retention_ratio",
+    "wet_strength_or_handling_integrity_after_saturation",
+    "friability_or_fragment_loss",
+    "retrievable_envelope_integrity",
+    "retrieval_fraction"
+  ],
+  "formulas": {
+    "oil_uptake_g_g": "(oil_loaded_mass_after_frozen_drain_g - dry_mass_g) / dry_mass_g",
+    "water_uptake_g_g": "(water_loaded_mass_after_frozen_drain_g - dry_mass_g) / dry_mass_g",
+    "water_to_oil_retention_ratio": "water_uptake_g_g / oil_uptake_g_g",
+    "existing_internal_oil_water_selectivity": "oil_uptake_g_g / water_uptake_g_g"
+  },
+  "cedre_compatible_internal_go_no_go": {
+    "scope": "internal pre-screen for boom-like D/E candidate before requesting external Cedre testing",
+    "oil_uptake_g_g": {
+      "operator": ">",
+      "threshold": 10,
+      "status_note": "Internal operationalization of Cedre's D/E sorption-capacity-in-weight criterion >10; do not quote g/g as a verbatim unit from the supplied Cedre sheet unless later documentation explicitly states the unit."
+    },
+    "water_to_oil_retention_ratio": {
+      "operator": "<",
+      "threshold": 0.25,
+      "origin": "Cedre hydrophobicity criterion for floating sorbents"
+    },
+    "mechanical_integrity": {
+      "required": true,
+      "criterion": "NO_FRIABILITY_AND_NO_FUNCTIONAL_TEARING_AFTER_SATURATION_AND_HANDLING"
+    },
+    "retrievable_envelope": {
+      "required": true,
+      "criterion": "INTACT_AFTER_SATURATION_DRAIN_AND_RETRIEVAL",
+      "origin": "JANUS/SCOBY-D0 project-specific containment requirement; not presented as a Cedre criterion"
+    },
+    "decision": "PASS only if all listed pre-screen criteria pass; otherwise NO_GO_FOR_EXTERNAL_BOOM_TEST_REQUEST"
+  },
+  "relationship_to_existing_M1_gates": {
+    "do_not_replace_existing_preregistered_thresholds": true,
+    "M1_G1_UPTAKE": "existing internal median surrogate-oil uptake >=10 g/g in artificial seawater remains unchanged",
+    "M1_G2_SELECTIVITY": "existing internal oil/water uptake ratio >=5 remains unchanged; if definitions align exactly, this corresponds to water/oil <=0.20 and is stricter than Cedre's <0.25 floor",
+    "M1_G3_RETENTION": "existing >=85% oil retention remains unchanged",
+    "M1_G4_RETRIEVAL": "existing >=99% dry-equivalent retrieval and no hazardous fragmentation remains unchanged",
+    "M1_G5_PRESS_RECOVERY": "existing >=60% single-press recovery remains an internal project target when closed-loop recovery is claimed",
+    "M1_G6_to_G8": "salinity, dynamic robustness and independent-batch replication remain mandatory internal gates",
+    "rule": "CEDRE_FLOOR_IS_AN_EXTERNAL_COMPATIBILITY_SCREEN; JANUS_M1_THRESHOLDS_REMAIN_THE_PROMOTION_AUTHORITY"
+  },
+  "project_targets_not_cedre_standards": {
+    "aspirational_oil_uptake_g_g_range": [20, 40],
+    "press_recovery_fraction_min": 0.60,
+    "labels": [
+      "PROJECT_ENGINEERING_TARGET",
+      "NOT_CEDRE_STANDARD",
+      "NOT_REGULATORY_APPROVAL_CRITERION"
+    ]
+  },
+  "scientific_and_environmental_boundary": {
+    "raw_live_scoby": "NO_GO_FOR_MARINE_DEPLOYMENT",
+    "purified_neutral_retrievable_bacterial_cellulose": "PLAUSIBLE_AND_ENVIRONMENTALLY_TESTABLE",
+    "field_ready": "NO",
+    "notes": [
+      "Live/raw fermentation material is outside the intended marine deployment candidate class.",
+      "Only purified, neutral, contained/retrievable BC architectures may advance to environmental testing.",
+      "Any hydrophobic treatment remains blocked from environmental-safety claims until leachate/ecotoxicity evidence exists.",
+      "Passing this pre-screen does not authorize open-water or petroleum deployment."
+    ]
+  },
+  "frozen_execution_order": [
+    "1_DRY_AND_ID_SAMPLE",
+    "2_MEASURE_DRY_MASS_AND_GEOMETRY",
+    "3_MEASURE_OIL_UPTAKE_UNDER_FROZEN_DRAIN_CONDITION",
+    "4_MEASURE_WATER_UPTAKE_UNDER_MATCHED_CONDITION",
+    "5_COMPUTE_WATER_TO_OIL_RETENTION_RATIO",
+    "6_TEST_WET_HANDLING_STRENGTH_FRIABILITY_AND_FRAGMENT_LOSS",
+    "7_TEST_ENVELOPE_INTEGRITY_AND_FULL_RETRIEVAL",
+    "8_APPLY_CEDRE_COMPATIBLE_INTERNAL_GO_NO_GO",
+    "9_ONLY_IF_PASS_CONTINUE_FULL_M1A_M1B_INTERNAL_GATE_SET",
+    "10_ONLY_AFTER_INTERNAL_GATES_CONSIDER_EXTERNAL_CEDRE_TEST_REQUEST"
+  ],
+  "next_action": "Run this pre-screen on the D3 performance lead and D1 cost-down challenger with D2 and a commercial sorbent control where available. Preserve raw masses, drain timing, photographs, failed samples and batch IDs. Do not retrofit outcomes into the older preregistered M1 thresholds."
+}
