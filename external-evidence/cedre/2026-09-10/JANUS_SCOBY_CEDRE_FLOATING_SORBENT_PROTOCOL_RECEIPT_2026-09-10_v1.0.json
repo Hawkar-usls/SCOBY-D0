@@ -1,0 +1,155 @@
+{
+  "schema": "janus.scoby.external_protocol_receipt.v1",
+  "version": "1.0.0",
+  "receipt_id": "JANUS-SCOBY-CEDRE-FLOATING-SORBENT-PROTOCOL-2026-09-10",
+  "source_class": "DIRECT_EXTERNAL_TECHNICAL_REPLY_WITH_ATTACHMENT",
+  "project": "SCOBY-D0",
+  "repository": "Hawkar-usls/SCOBY-D0",
+  "epistemic_firewall": {
+    "protocol_received": true,
+    "protocol_accessible": true,
+    "cedre_endorsement_of_scoby": false,
+    "scoby_performance_validated": false,
+    "approval_granted": false,
+    "rule": "PROTOCOL_RECEIVED != SCOBY_VALIDATED"
+  },
+  "gmail_provenance": {
+    "message_id": "1a08b57c237f166d",
+    "thread_id": "1a01f8b16628a07c",
+    "from": "Julien GUYOMARCH <Julien.Guyomarch@cedre.fr>",
+    "to": [
+      "hawkarlol@gmail.com"
+    ],
+    "cc": [
+      "CANN Erell <erell.cann@cedre.fr>"
+    ],
+    "subject": "Re: Fwd: Open R&D proposal: low-cost retrievable bacterial-cellulose sorbent boom for marine oil spills",
+    "timestamp_local": "2026-09-10T14:42:56+02:00",
+    "timestamp_utc": "2026-09-10T12:42:56Z",
+    "incoming_message_verbatim_normalized": "Dear Oleksandr,\n\nIn order to get an idea of the type of tests performed at CEDRE\non floating sorbents, please find as attached document our\nprocedure, including experimental details and costs.\n\nKind regards,\n\nJulien Guyomarch",
+    "forwarded_original_outreach_content": "Dear CEDRE team,\n\nI am developing an open, evidence-gated research project called SCOBY-D0, focused on a low-cost retrievable bacterial-cellulose sorbent architecture for oil-on-water cleanup.\n\nThe concept is not being presented as a field-ready product. We have preregistered a staged validation path from 50×50 mm coupons to 100×100 mm marine pads and, only if the material passes salinity, dynamic-water, retention and retrieval gates, to a 1 m modular boom cartridge.\n\nProject: https://github.com/Hawkar-usls/SCOBY-D0\nCurrent marine validation gate: https://github.com/Hawkar-usls/SCOBY-D0/blob/main/JANUS_SCOBY_MARINE_DYNAMIC_SALTWATER_BOOM_GATE_0018_v1.0.json\nM1A finalist selection: https://github.com/Hawkar-usls/SCOBY-D0/blob/main/JANUS_SCOBY_M1A_FINALISTS_EXTERNAL_VALIDATION_0036_v1.0.json\n\nTwo processing branches are currently being advanced as preregistered finalists: a freeze-dried bacterial-cellulose pad with minimal environmentally compatible hydrophobic surface engineering, as the performance lead; and a low-compaction air-dried bacterial-cellulose pad, as the cost-down challenger.\n\nThe intended field architecture is a retrievable outer mesh/sleeve containing modular BC inserts, so the deployed sorbent is recovered as one object rather than released as loose material. After retrieval, the cartridge would be drained or pressed in containment and the recovered oil/water fraction separated.\n\nOur current primary metrics are oil/water selectivity, oil retention during retrieval, material retrieval fraction, compression recovery, salinity and dynamic penalties, independent-batch replication, and ultimately cost per kilogram of recovered oil.\n\nI would be very grateful for your advice on whether this staged protocol is suitable for later independent evaluation at CEDRE, and what minimum sample size, material characterization and preliminary data you would expect before considering standardized, custom or deployment testing.\n\nAt present we are seeking validation guidance, not endorsement, and we make no claim that a marine spill-response product has already been demonstrated.\n\nBest regards,\nOleksandr Ahapov (Hawkar)\nSCOBY-D0 / JANUS research ecosystem\nhttps://github.com/Hawkar-usls",
+    "sender_signature": {
+      "name": "Julien Guyomarch",
+      "title_fr": "Chef du Service Analyses et Moyens",
+      "title_en": "Head of Analysis and Resources Department",
+      "phone": "+33 2 98 33 67 17",
+      "email": "julien.guyomarch@cedre.fr",
+      "postal": "715 rue Alain Colas - 29218 Brest Cedex 2"
+    }
+  },
+  "attachment": {
+    "original_filename": "Tests on floating sorbents.pdf",
+    "mime_type": "application/pdf",
+    "size_bytes": 299943,
+    "page_count": 2,
+    "sha256": "34478e4969afd58bd4ec1d20d8841c5e321b3f680b8cb4dfa036f338c071fa17",
+    "primary_artifact_status": "BYTE_IDENTIFIED_AND_HASHED_LOCALLY",
+    "full_text_extraction": "                                Tests on floating sorbents\nIn the framework of its public service mission, Cedre assesses the efficiency of response products which\nare liable to be used in the environment in case of accidental pollution due to petroleum products.\n\nMethodology\n    The testing procedure is based on the following tests:\n\n    •    Characteristics of the sorbents\n         The characterization will depend on the product nature (surface density, granulometry…)\n\n    •    Measurement of the water sorption capability of floating sorbent\n         The sorbent capacity on water is assessed using the same methodology as the one applied for\n         hydrocarbons. These measurements are performed by weighing the sorbent saturated with\n         water.\n\n    •    Measurement of the hydrocarbons sorption capability of floating sorbent according the\n         protocol 1 of the NFT 90-360 norm\n         This method aims at measuring the sorption capacity at saturation towards hydrocarbons of\n         low and medium viscosity. This method relates exclusively to hydrophobic floating sorbent.\n         This protocol applies to bulk sorbents (type A), sorbent in the form of sheets, rolls and mat\n         (type B and C), as well as the wrapped sorbent (type D and E), for which the test is carried out\n         on the material extracted from its envelope.\n         The sorption capacities are assessed assuming a low level of agitation time during 20 minutes,\n         followed by a draining period of 30 minutes.\n\n    •    Measurement of the maximum hydrocarbons sorption capability of floating sorbent\n         according the protocol 2 of the NFT 90-360 norm (Optional test)\n         This method aims at measuring the maximum hydrocarbon sorption capacity over short and,\n         optionally, long immersion period, determined for contact times of 15 minutes and 24 hours\n         respectively and a draining period of 30 seconds.\n\n         This method replicates the test conditions of the ASTM standard designated F726-99 in\n         terms of immersion and draining period and allows comparison with the results obtained\n         with this norm.\n\nThese tests can be conducted using three different petroleum products: Arabian light crude oil topped\nat 110°C (BAL 110) and/or Diesel oil and/or 5W30 oil. The characteristics of these three oils are as\nfollows:\n\n        Type of hydrocarbons                Density at 20°C               Viscosity at 20°C ((mPa.s)\n              BAL 110                         0.88 ± 0.02                           42-45\n              Diesel oil                      0.83 ± 0.02                             10\n              5W30 oil                        0.85 ± 0.02                         100 - 160\n\fTesting criteria of floating and hydrophobic sorbent\nIn order to be approved, and then to appear on Cedre’s list of approved sorbent to be used at sea and\nin inland waters, products have to meet the following criteria:\n\n       Form of           Type of       Sorption capacity\n                                                                Hydrophobicity              Stability\n       sorbent           sorbent   In weight     Volume\n                                                                                     The product must stay\n         Bulk              A           >5          > 0.5             < 0.25          stable and unfriable to\n                                                                                       keep its properties.\n                                                                                      The product must be\n     Sheets, rolls                                                                    sufficiently strong to\n                       B and C         >5            -               < 0.25\n       or mat                                                                            be manipulated\n                                                                                         without tearing.\n                                                                                     The product must stay\n    Pillows, socks\n                       D and E         > 10          -               < 0.25           stable and un-friable\n      or booms\n                                                                                     its keep its properties.\n\n1\n    Hydrophobicity: retention capacity of water / retention capacity of oil\n\nCosts\n\nThe total cost depends on the tests options chosen. The costs details are presented hereafter:\n\n                                                                                          Cost\n           Designation\n                                                                                          (€)\n           Characteristic of sorbent                                                       152 €\n           Measurement of the hydrocarbons sorption capability of floating and\n           hydrophobic sorbent according the protocol 1 of the NFT 90-360                2 838 €\n           norm\n           Measurement of the maximum hydrocarbons sorption capability of\n           floating sorbent according the protocol 2 of the NFT 90-360 norm                954 €\n           (Optional tests)\n                                                            Total without option         2 990 €\n                                                         Total with optional tests       3 944 €\n\f"
+  },
+  "protocol_structured": {
+    "title": "Tests on floating sorbents",
+    "methodology": [
+      {
+        "test": "Characteristics of the sorbents",
+        "detail": "Depends on product nature; examples: surface density, granulometry."
+      },
+      {
+        "test": "Water sorption capability",
+        "detail": "Same methodology as hydrocarbons; weigh sorbent saturated with water."
+      },
+      {
+        "test": "Hydrocarbon sorption capability - protocol 1 of NFT 90-360",
+        "purpose": "Saturation sorption toward low- and medium-viscosity hydrocarbons",
+        "scope": "Hydrophobic floating sorbents; A, B/C, D/E (wrapped material tested extracted from envelope)",
+        "agitation": "low level",
+        "agitation_minutes": 20,
+        "drain_minutes": 30
+      },
+      {
+        "test": "Maximum hydrocarbon sorption capability - protocol 2 of NFT 90-360",
+        "optional": true,
+        "short_contact_minutes": 15,
+        "long_contact_hours": 24,
+        "drain_seconds": 30,
+        "comparison": "ASTM F726-99 immersion/draining conditions"
+      }
+    ],
+    "hydrocarbons": [
+      {
+        "name": "BAL 110",
+        "density_at_20C": "0.88 ± 0.02",
+        "viscosity_mPa_s_at_20C": "42-45"
+      },
+      {
+        "name": "Diesel oil",
+        "density_at_20C": "0.83 ± 0.02",
+        "viscosity_mPa_s_at_20C": "10"
+      },
+      {
+        "name": "5W30 oil",
+        "density_at_20C": "0.85 ± 0.02",
+        "viscosity_mPa_s_at_20C": "100-160"
+      }
+    ],
+    "approval_criteria": [
+      {
+        "form": "Bulk",
+        "type": "A",
+        "sorption_weight": ">5",
+        "sorption_volume": ">0.5",
+        "hydrophobicity": "<0.25",
+        "stability": "stable and unfriable"
+      },
+      {
+        "form": "Sheets, rolls or mat",
+        "type": "B and C",
+        "sorption_weight": ">5",
+        "sorption_volume": null,
+        "hydrophobicity": "<0.25",
+        "stability": "strong enough to manipulate without tearing"
+      },
+      {
+        "form": "Pillows, socks or booms",
+        "type": "D and E",
+        "sorption_weight": ">10",
+        "sorption_volume": null,
+        "hydrophobicity": "<0.25",
+        "stability": "stable and un-friable"
+      }
+    ],
+    "hydrophobicity_definition": "retention capacity of water / retention capacity of oil",
+    "costs_eur": {
+      "characteristic_of_sorbent": 152,
+      "protocol_1_NFT_90_360": 2838,
+      "protocol_2_optional_NFT_90_360": 954,
+      "total_without_option": 2990,
+      "total_with_optional_tests": 3944
+    }
+  },
+  "janus_crosswalk": {
+    "status": "READY_FOR_FIELD_BY_FIELD_CROSSWALK",
+    "do_not_retrofit_preregistered_thresholds": true,
+    "links": [
+      "water sorption -> OIL+WATER selectivity / water uptake control",
+      "protocol 1 -> UPTAKE controlled low-agitation comparator",
+      "30 min drain -> retention after extended drainage",
+      "protocol 2 15 min/24 h -> short/long contact saturation envelope",
+      "30 s drain -> rapid-drain maximum uptake comparator",
+      "hydrophobicity ratio -> water-retention/oil-retention selectivity",
+      "stability/manipulation -> retrieval integrity/PAD/BIG SPONGE/boom handling",
+      "D/E >10 weight threshold -> external benchmark only, not automatic SCOBY pass threshold"
+    ],
+    "unresolved": [
+      "sample geometry/mass and replicate count not specified in supplied 2-page procedure",
+      "agitation apparatus/intensity not quantified beyond low level",
+      "salinity/dynamic-water conditions for SCOBY-D0 not established by this procedure",
+      "no SCOBY-D0 specimen has yet been tested by Cedre"
+    ]
+  },
+  "integrity": {
+    "pdf_rendered_pages": 2,
+    "visual_check": "PASS: tables/text visually agree with extraction",
+    "pdf_sha256_verified": true,
+    "email_provenance_recorded": true
+  }
+}
