@@ -1,10 +1,10 @@
 {
-  "acknowledged_at": "2026-10-19T20:43:09.138257Z",
-  "batch_id": "d59b8a932604d71115cd",
-  "last_sequence": 1,
+  "acknowledged_at": "2026-11-06T15:23:52.092423Z",
+  "batch_id": "aa5f9128324742f7e1d8",
+  "last_sequence": 2,
   "schema": "janus.beetle.inbox_ack.v1",
   "scientific_authority_delta": 0,
-  "sha256": "18ff58db87748de4c86b36d8711cbacf787e52e948f097c74815de99221336da",
+  "sha256": "2fab07fb1d041282133328ea1eaad96dae4cd5f56e0d5d088b50405686993fc7",
   "status": "INBOX_DURABLE_UNVERIFIED__NOT_RUNTIME_CONSUMPTION",
   "target_repository": "Hawkar-usls/SCOBY-D0"
 }
